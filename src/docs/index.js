@@ -10,10 +10,11 @@ import './index.css';
 
 const title = 'Component Template';
 const gh = 'reactstrap/component-template';
+const basename = process.env.CI ? '/component-template' : '';
 
 const Docs = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <div className="App">
         <LayoutNav title={title} gh={gh} />
         <Match exactly pattern="/" render={() => <Home title={title} gh={gh} />} />
