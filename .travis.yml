@@ -1,20 +1,18 @@
 language: node_js
 node_js:
-  - 6
+- 6
 cache:
   directories:
-    - node_modules
+  - node_modules
 before_script:
-  - chmod +x scripts/docs
+- chmod +x scripts/docs
 script:
-  - npm test -- --coverage
-after_script:
-  - npm run coverage
+- npm test -- --coverage
 after_success:
-  - scripts/docs
+- scripts/docs
 env:
   global:
-    secure: fake
+  - secure: oK9ZZBFLLte+vpg9b/qNvGTpouJazpFks5c4MMNOpuKkO8Mw7Nxa29uyY9RztAlu0FY8jXdTSk5ADaF88IhPrrWhc0U4lUyxswaNqHdmw7yisQm+jAM0HQHeAn2QpNGCQ1my5SpwxhOagXKJISoVxFS52U+XazIbCDfF4f50xVWALafZZTIcny9li06N8MJCX+YXrw4ZogmlVmIY24DkIUCRImToVwxkBx1VmKUZ4Pl9KDny2gBWReauiUq0S4ZM2O6aiNwgKm+csgMqAoYTtPniuVfwHjU4YJtL5Fnqlx3nt9WbGr5VzpVqGh3urHjAlwm6+jWSZkei2x9jtGboY6OudUMNwdlwDtjGEypjrSJPD21uBP65rHKotQHA+gDlbDmO32dfW2Q1Dv+4iWRReZHcsE1yy3ZjQWfsXgMQdfdAZuo6p5z2kCOWKZGrZ9ScFyh3Qvrgcw2UiInRZ+29pEoGH7kfKM/JdnUB+ttNLFpMTQA2k7Atluhq3DV8h9sp/J/Lm6Q/1X84tKzGqp695XxZlJn2FzWkX04YnQU6lgVeJ6uCSMlyVrVy2mrxcQ+/2/wC966G0j4T8OSpzcR7orDLq42g0eihq9a2xeK9tbtVpgAgy2DKf2igRk0eSDL8BheUA/s3vgj5w812qTQViGLyfeXlv+OX3MUblv/UePU=
 branches:
   only:
-    - master
+  - master
