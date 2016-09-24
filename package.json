@@ -1,0 +1,51 @@
+{
+  "name": "component-template",
+  "description": "A React component template for building and publishing reactstrap components",
+  "version": "0.1.0",
+  "homepage": "http://reactstrap.github.io/component-template",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "pre-build": "babel src --out-dir lib --ignore index.js,test.js,src/docs",
+    "create-release-branch": "npm test && sh ./scripts/release",
+    "publish-release": "npm test && sh ./scripts/publish",
+    "deploy-docs": "sh ./scripts/docs"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "bootstrap": "^4.0.0-alpha.4",
+    "conventional-changelog-cli": "^1.1.1",
+    "conventional-recommended-bump": "^0.3.0",
+    "history": "^4.2.0",
+    "react": "^15.3.2",
+    "react-addons-transition-group": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-prism": "^4.0.0",
+    "react-router": "^4.0.0-alpha.3",
+    "react-scripts": "0.5.1",
+    "reactstrap": "^3.3.0"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "reactstrap": "^2.0.0 || ^3.0.0"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md",
+    "lib"
+  ],
+  "keywords": [
+    "reactstrap-component",
+    "bootstrap",
+    "react",
+    "component",
+    "components",
+    "react-component",
+    "ui"
+  ]
+}
