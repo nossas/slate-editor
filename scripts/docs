@@ -3,7 +3,7 @@
 set -e
 
 BUILD_DIR='build'
-GITHUB_REPO='reactstrap/reactstrap.github.io'
+GITHUB_REPO='reactstrap/component-template'
 
 success() {
   echo -e "\033[32;1m$1"
