@@ -34,16 +34,16 @@ if [ ! -d $BUILD_DIR ]; then
   exit 1
 fi
 
+echo "Setting up git config and origin"
+git config user.name "Travis-CI"
+git config user.email "reactstrap@github.io"
+git remote rm origin
+git remote add origin https://${GITHUB_TOKEN}@github.com/${GITHUB_REPO}.git
+
 echo "Committing docs to gh-pages"
 git add -f $BUILD_DIR
 git commit -am "Updating docs from commit: $TRAVIS_COMMIT"
 git filter-branch -f --prune-empty --subdirectory-filter build
-
-echo "Setting up ghtoken for publishing"
-git remote rm origin
-git remote add origin https://${GITHUB_TOKEN}@github.com/${GITHUB_REPO}.git
-git config user.name "Travis-CI"
-git config user.email "reactstrap@github.io"
 
 echo "Pushing gh-pages to origin"
 git push origin gh-pages > /dev/null 2>&1
