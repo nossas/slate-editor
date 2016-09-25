@@ -4,6 +4,7 @@ set -e
 
 BUILD_DIR='build'
 GITHUB_REPO='reactstrap/component-template'
+REPOSITORY=`mktemp -d /tmp/component-template.XXXXXX`
 
 success() {
   echo -e "\033[32;1m$1"
@@ -25,8 +26,6 @@ if [ -z "$GITHUB_TOKEN" ]; then
   exit 1
 fi
 
-git checkout -B gh-pages
-
 npm run build
 
 if [ ! -d $BUILD_DIR ]; then
@@ -37,19 +36,21 @@ fi
 # serve index as 404 page
 cp build/index.html build/404.html
 
-echo "Setting up git config and origin"
+echo "Cloning ${GITHUB_REPO} & applying changes"
+git clone --branch gh-pages https://${GITHUB_TOKEN}@github.com/${GITHUB_REPO}.git $REPOSITORY
+rsync -rt --del --exclude=".git" $BUILD_DIR $REPOSITORY
+cd $REPOSITORY
+
+if [ -z "$(git status --porcelain)" ]; then
+  success "No documentation changes to publish. Skipping deploy."
+  exit 0
+fi
+
+echo "Setting up git config"
 git config user.name "Travis-CI"
 git config user.email "reactstrap@github.io"
-git remote rm origin
-git remote add origin https://${GITHUB_TOKEN}@github.com/${GITHUB_REPO}.git
-
-echo "Committing docs to gh-pages"
-git add -f $BUILD_DIR
-git commit -am "Updating docs from commit: $TRAVIS_COMMIT"
-git filter-branch -f --prune-empty --subdirectory-filter build
-
-echo "Pushing gh-pages to origin"
-git push --set-upstream origin gh-pages -f > /dev/null 2>&1
-git checkout -
+git commit -am "docs(travis): publish documentation for $TRAVIS_COMMIT"
+echo "Pushing up gh-pages"
+git push origin $BRANCH > /dev/null 2>&1
 
 success "Successfully published documentation for commit: $TRAVIS_COMMIT!"
