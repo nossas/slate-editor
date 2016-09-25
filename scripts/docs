@@ -49,7 +49,8 @@ fi
 echo "Setting up git config"
 git config user.name "Travis-CI"
 git config user.email "reactstrap@github.io"
-git commit -am "docs(travis): publish documentation for $TRAVIS_COMMIT"
+git add --all -f
+git commit -m "docs(travis): publish documentation for $TRAVIS_COMMIT"
 echo "Pushing up gh-pages"
 git push origin $BRANCH > /dev/null 2>&1
 
