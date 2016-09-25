@@ -9,7 +9,7 @@ const LayoutNav = ({title, gh}) => {
         <NavbarBrand tag={Link} to="/">{title}</NavbarBrand>
         <Nav className="nav navbar-nav pull-xs-right">
           <NavItem>
-            <NavLink tag={Link} className="nav-link" to="/example" activeClassName="active">Example</NavLink>
+            <NavLink tag={Link} className="nav-link" to="/documentation" activeClassName="active">Documentation</NavLink>
           </NavItem>
           <NavItem>
             <NavLink href={`https://github.com/${gh}`}>Github</NavLink>

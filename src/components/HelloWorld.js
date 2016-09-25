@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import {
   Jumbotron,
-  Button,
   Container,
   Col,
   Row

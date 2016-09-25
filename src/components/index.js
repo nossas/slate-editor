@@ -1,2 +1,6 @@
 // export individual components
-export HelloWorld from './HelloWorld';
+import HelloWorld from './HelloWorld';
+
+export {
+  HelloWorld
+};
