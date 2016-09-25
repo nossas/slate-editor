@@ -11,7 +11,8 @@ import './index.css';
 const title = 'Component Template';
 const gh = 'reactstrap/component-template';
 // if using a root url, remove the basename value here and in BrowserRouter
-const basename = process.env.REACT_APP_GH_PAGES ? '/component-template' : '';
+const basename = process.env.REACT_APP_GH_PAGES_PATH ?
+  `/${process.env.REACT_APP_GH_PAGES_PATH}` || '';
 
 const Docs = () => {
   return (

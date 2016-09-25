@@ -3,15 +3,21 @@
   "description": "A React component template for building and publishing reactstrap components",
   "version": "0.1.0",
   "homepage": "https://reactstrap.github.io/component-template",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/reactstrap/component-template.git"
+  },
+  "main": "lib/index.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "pre-build": "babel src/components --out-dir lib --ignore test.js",
-    "create-release-branch": "npm test && sh ./scripts/release",
-    "publish-release": "npm test && sh ./scripts/publish",
+    "prebuild": "babel src/components --out-dir lib --ignore test.js",
+    "create-release-branch": "sh ./scripts/release",
+    "publish-release": "sh ./scripts/publish",
     "deploy-docs": "sh ./scripts/docs",
-    "gh-pages": "REACT_APP_GH_PAGES=true npm run build"
+    "ci-deploy-docs": "sh ./scripts/docs-ci",
+    "gh-pages": "REACT_APP_GH_PAGES_PATH='component-template' npm run build"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.14.0",
@@ -35,6 +41,7 @@
   "peerDependencies": {
     "reactstrap": "^2.0.0 || ^3.0.0"
   },
+  "license": "MIT",
   "files": [
     "LICENSE",
     "README.md",
