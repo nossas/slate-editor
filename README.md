@@ -48,12 +48,12 @@ npm test -- --coverage
 
 Currently the example component shipped in this project is `HelloWorld`. To add your own components, replace HelloWorld with your own named component and tests.
 
-Notes:
+#### Notes
 
 - Component source code should live in `/src/components`
 - Be sure to export your components here `/src/components/index.js`
 - When published to npm, the `main` script in package.json will be available at `lib/index.js` thanks to the `prebuild` task
-- Use
+- Changelogs are important for communicating to users what features, fixes and breaking changes have been shipped. This project uses the [angular commit convention](https://github.com/angular/angular.js/blob/cf241c425b20569e4c7909bfbd379f5c07694288/CONTRIBUTING.md#-git-commit-guidelines) as standard for creating readable and machine parseable commit messages.
 
 ### Release Flow
 
@@ -61,9 +61,9 @@ Included in this project are a few scripts to help document, release and publish
 
 Once your components are added and tested, use the following steps to release to npm.
 
-## Create Release branch
+#### Create Release branch
 
-First, run the `create-release-branch` script locally, which takes 1 argument, the release version. The release version can be a specific semantic version or it accepts `patch`, `minor`, `major` to automatically increment the current release version. After the script is run, a branch will be pushed to the repo.
+First, run the `create-release-branch` script locally, which takes 1 argument, the release version. The release version can be a specific semantic version or it accepts `patch`, `minor`, `major` to automatically increment the current release version and update the changelog. After the script is run, a branch will be pushed to the repo.
 
 ```sh
 # RELEASE_VERSION: "1.0.0", patch, minor, major
@@ -73,13 +73,13 @@ npm run create-release-branch -- $RELEASE_VERSION
 
 With the branch pushed to github, you can now manually create the pr.
 
-## Publish Docs
+#### Publish Docs
 
 First, update the npm task `gh-pages`, to set the proper `REACT_APP_GH_PAGES_PATH` for your project. Ex: `https://reactstrap.github.io/component-template` project would be `component-template`. No need for the trailing or leading slash.
 
 Follow the next sections to publish locally or via Travis CI.
 
-### Without CI
+##### Without CI
 
 With the `REACT_APP_GH_PAGES_PATH` path updated, run the `deploy-docs` script to compile the production version of your docs and push those changes to the `gh-pages` branch of your repo.
 
@@ -87,11 +87,11 @@ With the `REACT_APP_GH_PAGES_PATH` path updated, run the `deploy-docs` script to
 npm run deploy-docs
 ```
 
-### via Travis CI
+##### via Travis CI
 
 Coming soon
 
-## Publish Release
+#### Publish Release
 
 First, be sure to [signup for npm](https://docs.npmjs.com/getting-started/publishing-npm-packages#creating-a-user) if you haven't or run `npm login` with your existing credentials.
 
@@ -100,3 +100,7 @@ Next, run the `publish-release` task which will pull the latest changes, compile
 ```sh
 npm run publish-release
 ```
+
+## Missing Something
+
+Feel free to create an [issue](https://github.com/reactstrap/component-template/issues/new) or PR.
