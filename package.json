@@ -13,8 +13,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "prebuild": "babel src/components --out-dir lib --ignore test.js",
-    "create-release-branch": "sh ./scripts/release",
-    "publish-release": "sh ./scripts/publish",
+    "create-release-branch": "sh ./scripts/create-release-branch",
+    "publish-release": "sh ./scripts/publish-release",
     "deploy-docs": "sh ./scripts/docs",
     "ci-deploy-docs": "sh ./scripts/docs-ci",
     "gh-pages": "REACT_APP_GH_PAGES_PATH='component-template' npm run build"
