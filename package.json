@@ -26,6 +26,7 @@
     "bootstrap": "^4.0.0-alpha.4",
     "conventional-changelog-cli": "^1.1.1",
     "conventional-recommended-bump": "^0.3.0",
+    "dentist": "^1.0.3",
     "enzyme": "^2.4.1",
     "history": "^4.2.0",
     "react": "^15.3.2",

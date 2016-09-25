@@ -195,10 +195,20 @@ pre, code {
   border-radius: 0;
   border-color: #d8d8d8;
   margin: 0;
+  color: red;
+}
+
+.docs-example + pre {
+  border: 1px solid #d8d8d8;
+  border-top: none;
+  padding: 1em;
+  margin-top: 0 !important;
+  clear: both;
 }
 
 code[class*="language-"],
 pre[class*="language-"] {
+  border-radius: 0;
 	color: #f8f8f2;
 	background: none;
 	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
@@ -236,4 +246,10 @@ pre[class*="language-"] {
 	padding: .1em;
 	border-radius: .3em;
 	white-space: normal;
+}
+
+code .tag {
+  font-size: inherit;
+  padding: 0;
+  display: inherit;
 }
