@@ -36,7 +36,7 @@
     "react-dom": "^15.3.2",
     "react-prism": "^4.0.0",
     "react-router": "^4.0.0-alpha.3",
-    "react-scripts": "0.5.1",
+    "react-scripts": "0.6.0",
     "reactstrap": "^3.3.0"
   },
   "dependencies": {},
