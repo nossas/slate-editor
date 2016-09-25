@@ -20,6 +20,7 @@
     "gh-pages": "REACT_APP_GH_PAGES_PATH='component-template' npm run build"
   },
   "devDependencies": {
+    "babel-cli": "^6.14.0",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
@@ -50,12 +51,12 @@
     "lib"
   ],
   "keywords": [
-    "reactstrap-component",
-    "bootstrap",
+    "component-template",
     "react",
     "component",
     "components",
     "react-component",
-    "ui"
+    "reactstrap-component",
+    "bootstrap"
   ]
 }
