@@ -26,7 +26,7 @@ if [ -z "$GITHUB_TOKEN" ]; then
   exit 1
 fi
 
-npm run build
+npm run gh-pages
 
 if [ ! -d $BUILD_DIR ]; then
   error "Build directory does not exist. Stopping deploy."

@@ -11,7 +11,8 @@
     "pre-build": "babel src --out-dir lib --ignore index.js,test.js,src/docs",
     "create-release-branch": "npm test && sh ./scripts/release",
     "publish-release": "npm test && sh ./scripts/publish",
-    "deploy-docs": "sh ./scripts/docs"
+    "deploy-docs": "sh ./scripts/docs",
+    "gh-pages": "REACT_APP_GH_PAGES=true npm run build"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.14.0",
