@@ -83,6 +83,10 @@ Follow the next sections to publish locally or via Travis CI.
 
 With the `REACT_APP_GH_PAGES_PATH` path updated, run the `deploy-docs` script to compile the production version of your docs and push those changes to the `gh-pages` branch of your repo.
 
+```sh
+npm run deploy-docs
+```
+
 ### via Travis CI
 
 Coming soon
@@ -92,3 +96,7 @@ Coming soon
 First, be sure to [signup for npm](https://docs.npmjs.com/getting-started/publishing-npm-packages#creating-a-user) if you haven't or run `npm login` with your existing credentials.
 
 Next, run the `publish-release` task which will pull the latest changes, compile the components, tag the current commit as the `version` in `packge.json`. push the tags to github and finally will run `npm publish`. Check the [publish-release](/scripts/publish-release) script for more info.
+
+```sh
+npm run publish-release
+```
