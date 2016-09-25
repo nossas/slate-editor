@@ -1,7 +1,7 @@
 {
   "name": "component-template",
   "description": "A React component template for building and publishing reactstrap components",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://reactstrap.github.io/component-template",
   "repository": {
     "type": "git",
