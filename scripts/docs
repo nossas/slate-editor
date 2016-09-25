@@ -38,7 +38,7 @@ cp build/index.html build/404.html
 
 echo "Cloning ${GITHUB_REPO} & applying changes"
 git clone --branch gh-pages https://${GITHUB_TOKEN}@github.com/${GITHUB_REPO}.git $REPOSITORY
-rsync -rt --del --exclude=".git" $BUILD_DIR $REPOSITORY
+rsync -rt --del --exclude=".git" $BUILD_DIR/ $REPOSITORY
 cd $REPOSITORY
 
 if [ -z "$(git status --porcelain)" ]; then
