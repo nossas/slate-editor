@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { Editor, Raw } from 'slate';
 
 import MarkHotkey, { Bold } from './MarkHotkey';
-import InsertImage, { Image } from './InsertImage';
+import ImagePlugin, { InsertImageButton } from './ImagePlugin';
+
+import './assets/css/font-awesome.css';
 
 
 const initialState = Raw.deserialize({
@@ -23,15 +25,13 @@ const initialState = Raw.deserialize({
 
 const plugins = [
   MarkHotkey({ key: 'b', type: 'bold' }),
+  ImagePlugin(),
 ]
 
 const schema = {
   marks: {
     bold: Bold,
   },
-  nodes: {
-    image: Image,
-  }
 }
 
 
@@ -51,35 +51,14 @@ class REditor extends Component {
     console.info('RawState SlateJS', Raw.serialize(this.state.state));
   }
 
-  /*onDocumentChange(document, state) {
-    const blocks = document.getBlocks()
-    const last = blocks.last()
-    if (last.type != 'image') return
-
-    const normalized = state
-      .transform()
-      .collapseToEndOf(last)
-      .splitBlock()
-      .setBlock({
-        type: 'paragraph',
-        isVoid: false,
-        data: {}
-      })
-      .apply({
-        save: false
-      })
-
-    this.onChange(normalized)
-  }*/
-
   render() {
 
     return (
-      <div>
-        <div className="toolbar">
-          <InsertImage state={this.state.state} onChange={this.onChange.bind(this)} />
+      <div className="editor--root">
+        <div className="editor--toolbar">
+          <InsertImageButton state={this.state.state} onChange={this.onChange.bind(this)} />
         </div>
-        <div className="editor">
+        <div className="editor--content">
           <Editor
             schema={schema}
             plugins={plugins}
@@ -87,7 +66,9 @@ class REditor extends Component {
             onChange={this.onChange.bind(this)}
           />
         </div>
-        <button onClick={this.showLogState.bind(this)}>LOG State</button>
+        <div className="editor--footer">
+          <button onClick={this.showLogState.bind(this)}>LOG State</button>
+        </div>
       </div>
     );
   }

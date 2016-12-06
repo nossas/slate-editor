@@ -1,12 +1,20 @@
-.docs .editor {
-  width: 500px;
-  min-height: 100px;
-  margin: 0 auto;
-  outline: 1px solid #ccc;
-  padding: .2rem;
-}
-
 .docs h1 {
   margin: 10px auto 15px;
   text-align: center;
+}
+
+.docs .editor--root {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.docs .editor--content {
+  min-height: 100px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: .2rem;
+}
+
+.docs .editor--footer > * {
+  float: right;
 }
