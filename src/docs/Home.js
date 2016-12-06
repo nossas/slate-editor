@@ -6,9 +6,7 @@ const Home = ({title, gh}) => {
   return (
     <div className="docs">
       <h1>{`${title} live demo`}</h1>
-      <div className="editor">
-        <REditor />
-      </div>
+      <REditor />
     </div>
   );
 }

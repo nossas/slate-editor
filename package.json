@@ -37,6 +37,7 @@
     "react-scripts": "0.6.0"
   },
   "dependencies": {
+    "keycode": "^2.1.7",
     "slate": "^0.16.1"
   },
   "peerDependencies": {
