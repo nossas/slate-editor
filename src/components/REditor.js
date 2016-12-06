@@ -4,8 +4,10 @@ import { Editor, Raw } from 'slate';
 import MarkHotkey, { Bold } from './MarkHotkey';
 import ImagePlugin, { InsertImageButton } from './ImagePlugin';
 
-import './assets/css/font-awesome.css';
+import { LinkNode, InsertLinkButton } from './Link'
+import { ToggleEditableButton } from './Editor'
 
+import './assets/css/font-awesome.css';
 
 const initialState = Raw.deserialize({
   nodes: [
@@ -13,10 +15,7 @@ const initialState = Raw.deserialize({
       kind: 'block',
       type: 'paragraph',
       nodes: [
-        {
-          kind: 'text',
-          text: 'A line of text in a paragraph.'
-        }
+        { kind: 'text', text: 'A line of text in a paragraph.' },
       ]
     }
   ]
@@ -31,6 +30,9 @@ const plugins = [
 const schema = {
   marks: {
     bold: Bold,
+  },
+  nodes: {
+    link: LinkNode,
   },
 }
 
@@ -52,11 +54,15 @@ class REditor extends Component {
   }
 
   render() {
-
+    const commonProps = {
+      state: this.state.state,
+      onChange: this.onChange.bind(this)
+    }
     return (
       <div className="editor--root">
         <div className="editor--toolbar">
-          <InsertImageButton state={this.state.state} onChange={this.onChange.bind(this)} />
+          <InsertImageButton {...commonProps} />
+          <InsertLinkButton {...commonProps} />
         </div>
         <div className="editor--content">
           <Editor
