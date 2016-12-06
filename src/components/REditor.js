@@ -3,6 +3,8 @@ import { Editor, Raw } from 'slate';
 
 import MarkHotkey, { Bold } from './MarkHotkey';
 import InsertImage, { Image } from './InsertImage';
+import { LinkNode, InsertLinkButton } from './Link'
+import { ToggleEditableButton } from './Editor'
 
 
 const initialState = Raw.deserialize({
@@ -11,10 +13,7 @@ const initialState = Raw.deserialize({
       kind: 'block',
       type: 'paragraph',
       nodes: [
-        {
-          kind: 'text',
-          text: 'A line of text in a paragraph.'
-        }
+        { kind: 'text', text: 'A line of text in a paragraph.' },
       ]
     }
   ]
@@ -31,6 +30,7 @@ const schema = {
   },
   nodes: {
     image: Image,
+    link: LinkNode,
   }
 }
 
@@ -73,11 +73,16 @@ class REditor extends Component {
   }*/
 
   render() {
-
+    const commonProps = {
+      state: this.state.state,
+      onChange: this.onChange.bind(this)
+    }
     return (
       <div>
         <div className="toolbar">
-          <InsertImage state={this.state.state} onChange={this.onChange.bind(this)} />
+          {/*<ToggleEditableButton {...commonProps} />*/}
+          <InsertImage {...commonProps} />
+          <InsertLinkButton {...commonProps} />
         </div>
         <div className="editor">
           <Editor

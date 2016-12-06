@@ -5,7 +5,8 @@ export default ({ state, onChange }) => {
   const onInsetImage = (e) => {
     e.preventDefault();
 
-    const src = window.prompt('Enter the URL of the image:')
+    // const src = window.prompt('Enter the URL of the image:')
+    const src = 'https://www.ninjadevs.io/wp-content/uploads/group-avatars/17/57d9857f2b874-bpthumb.png'
     onChange(state
       .transform()
       .insertInline({
@@ -22,16 +23,17 @@ export default ({ state, onChange }) => {
 };
 
 export const Image = (props) => {
-
   const { node, state } = props
-
   const isFocused = state.selection.hasEdgeIn(node)
-
   const src = node.data.get('src')
-
   const className = isFocused ? 'active' : null
 
   return (
-    <img src={src} className={className} {...props.attributes} />
+    <img
+      {...props.attributes}
+      src={src}
+      role="presentation"
+      className={className}
+    />
   )
 }
