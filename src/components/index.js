@@ -1,6 +1,6 @@
 // export individual components
-import HelloWorld from './HelloWorld';
+import REditor from './REditor';
 
 export {
-  HelloWorld
+  REditor
 };

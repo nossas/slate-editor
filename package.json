@@ -32,14 +32,13 @@
     "history": "^4.2.0",
     "react": "^15.3.2",
     "react-addons-test-utils": "^15.3.2",
-    "react-addons-transition-group": "^15.3.2",
     "react-dom": "^15.3.2",
-    "react-prism": "^4.0.0",
     "react-router": "^4.0.0-alpha.3",
-    "react-scripts": "0.6.0",
-    "reactstrap": "^3.3.0"
+    "react-scripts": "0.6.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "slate": "^0.16.1"
+  },
   "peerDependencies": {
     "reactstrap": "^2.0.0 || ^3.0.0"
   },
