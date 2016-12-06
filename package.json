@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "keycode": "^2.1.7",
+    "react-fontawesome": "^1.4.0",
     "slate": "^0.16.1"
   },
   "peerDependencies": {
