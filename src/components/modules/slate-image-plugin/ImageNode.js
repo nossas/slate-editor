@@ -1,7 +1,15 @@
 import React from 'react'
+import classnames from 'classnames'
 
 
-const ImageNode = ({ node, state, attributes }) => {
+const ImageNode = ({
+  node,
+  state,
+  attributes,
+  editor: {
+    props: { readOnly }
+  }
+}) => {
 
   const isFocused = state.selection.hasEdgeIn(node)
   const src = node.data.get('src')
@@ -11,7 +19,11 @@ const ImageNode = ({ node, state, attributes }) => {
     <img
       {...attributes}
       role="presentation"
-      className={className}
+      className={classnames(
+        'image-node',
+        { 'readonly': readOnly },
+        className,
+      )}
       src={src}
     />
   )

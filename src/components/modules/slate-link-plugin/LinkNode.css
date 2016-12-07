@@ -1,6 +1,14 @@
 .link-node .image-node {
   border: 1px solid #0275d8;
+  margin: -1px;
 }
 .link-node .image-node:hover {
   border: 1px solid #014c8c;
+}
+.link-node .image-node.readonly {
+  border-color: transparent;
+}
+.link-node .image-node.readonly:hover {
+  border-color: #014c8c;
+  margin: -1px;
 }
