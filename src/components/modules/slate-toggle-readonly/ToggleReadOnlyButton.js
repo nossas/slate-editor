@@ -2,11 +2,11 @@ import React from 'react'
 import FontAwesome from 'react-fontawesome'
 
 
-const ToggleReadOnlyButton = ({ state: { editorState, readOnly }, onChange }) => (
+const ToggleReadOnlyButton = ({ state, outerState: { readOnly }, onChange, changeState }) => (
   <button
     onClick={e => {
       e.preventDefault()
-      onChange({ editorState, readOnly: !readOnly })
+      changeState({ state, readOnly: !readOnly })
     }}
   >
     <FontAwesome name={readOnly ? 'toggle-on' : 'toggle-off'} style={{ marginRight: 5 }} />

@@ -1,22 +1,37 @@
 import React, { Component } from 'react'
 import classnames from 'classnames'
+import { Raw } from 'slate'
 import Utils from './Utils'
 
-import initialEditorState from './initialEditorState'
 import '../assets/css/font-awesome.css'
+
+
+const initialState = Raw.deserialize({
+  nodes: [
+    {
+      kind: 'block',
+      type: 'paragraph',
+      nodes: [
+        { kind: 'text', text: 'A line of text in a paragraph.' },
+      ]
+    }
+  ]
+}, { terse: true })
 
 
 class SlateEditor extends Component {
 
   constructor(props) {
     super(props)
-    this.state = {
-      editorState: initialEditorState,
-      readOnly: false
-    }
+
+    this.state = { state: initialState, readOnly: false }
   }
 
   onChange(state) {
+    this.setState({ state })
+  }
+
+  changeState(state) {
     this.setState(state)
   }
 
@@ -26,8 +41,10 @@ class SlateEditor extends Component {
 
     const childProps = {
       plugins,
-      state: this.state,
-      onChange: this.onChange.bind(this)
+      state: this.state.state,
+      outerState: this.state,
+      onChange: this.onChange.bind(this),
+      changeState: this.changeState.bind(this)
     }
 
     return (

@@ -1,0 +1,6 @@
+.link-node .image-node {
+  border: 1px solid #0275d8;
+}
+.link-node .image-node:hover {
+  border: 1px solid #014c8c;
+}

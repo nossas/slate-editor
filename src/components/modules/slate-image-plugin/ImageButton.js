@@ -4,11 +4,11 @@ import FontAwesome from 'react-fontawesome'
 import { insertImageStrategy } from './ImageUtils'
 
 
-const ImageButton = ({ state: { editorState }, onChange }) => (
+const ImageButton = ({ state, onChange }) => (
   <button
     onClick={e => {
       e.preventDefault()
-      onChange(insertImageStrategy(editorState))
+      onChange(insertImageStrategy(state))
     }}
   >
     <FontAwesome name="image" />

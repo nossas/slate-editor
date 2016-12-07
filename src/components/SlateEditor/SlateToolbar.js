@@ -5,11 +5,11 @@ import Utils from './Utils'
 
 export default props => {
 
-  let { children, className, state, onChange } = props
+  let { children, className, ...rest } = props
 
   return (
     <div className={classnames("editor--toolbar", className)}>
-      {Utils.cloneElement(children, { state, onChange })}
+      {Utils.cloneElement(children, rest)}
     </div>
   )
 }
