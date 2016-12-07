@@ -1,9 +1,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import REditor from './REditor';
+import SlateEditor from './SlateEditor';
 
-describe('REditor', () => {
+describe('SlateEditor', () => {
   it('renders without crashing', () => {
-    mount(<REditor />);
+    mount(<SlateEditor />);
   });
 });
