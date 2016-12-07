@@ -1,5 +1,3 @@
-import { Raw } from 'slate'
-
 export const hasLinks = state => state.inlines.some(inline => inline.type === 'link')
 
 export const insertLinkStrategy = state => {
