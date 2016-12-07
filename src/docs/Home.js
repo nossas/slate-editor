@@ -5,6 +5,7 @@ import ItalicPlugin, { ItalicButton } from '../components/modules/slate-italic-p
 import ImagePlugin, { ImageButton } from '../components/modules/slate-image-plugin'
 import LinkPlugin, { LinkButton } from '../components/modules/slate-link-plugin'
 import { StateLoggerButton } from '../components/modules/slate-state-logger'
+import { ToggleReadOnlyButton } from '../components/modules/slate-toggle-readonly'
 
 const plugins = [
   BoldPlugin(),
@@ -27,6 +28,7 @@ const Home = ({ title, gh }) => {
         <SlateContent />
         <SlateToolbar className="footer">
           <StateLoggerButton />
+          <ToggleReadOnlyButton />
         </SlateToolbar>
       </SlateEditor>
     </div>
