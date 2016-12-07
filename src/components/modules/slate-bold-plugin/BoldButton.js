@@ -4,11 +4,11 @@ import FontAwesome from 'react-fontawesome'
 import { boldMarkStrategy } from './BoldUtils'
 
 
-const BoldButton = ({ state, onChange }) => (
+const BoldButton = ({ state: { editorState }, onChange }) => (
   <button
     onClick={e => {
       e.preventDefault()
-      onChange(boldMarkStrategy(state))
+      onChange(boldMarkStrategy(editorState))
     }}
   >
     <FontAwesome name="bold" />

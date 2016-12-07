@@ -5,13 +5,13 @@ import { insertLinkStrategy, hasLinks } from './LinkUtils'
 import './LinkButton.css'
 
 
-const LinkButton = ({ state, onChange }) => (
+const LinkButton = ({ state: { editorState }, onChange }) => (
   <button
     onMouseDown={e => {
       e.preventDefault()
-      onChange(insertLinkStrategy(state))
+      onChange(insertLinkStrategy(editorState))
     }}
-    data-active={hasLinks(state)}
+    data-active={hasLinks(editorState)}
   >
     <FontAwesome name="link" />
   </button>

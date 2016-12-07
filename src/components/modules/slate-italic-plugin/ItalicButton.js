@@ -4,11 +4,11 @@ import FontAwesome from 'react-fontawesome'
 import { italicMarkStrategy } from './ItalicUtils'
 
 
-const ItalicButton = ({ state, onChange }) => (
+const ItalicButton = ({ state: { editorState }, onChange }) => (
   <button
     onClick={e => {
       e.preventDefault()
-      onChange(italicMarkStrategy(state))
+      onChange(italicMarkStrategy(editorState))
     }}
   >
     <FontAwesome name="italic" />
