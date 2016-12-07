@@ -6,7 +6,7 @@ The goal of this plugin is to offers an easy handling of SlateJS link mark node 
 
 # Usage
 
-#### Slate Link Plugin
+#### SlateJS Link Plugin
 ```js
 import React, { Component } from 'react'
 import LinkPlugin from 'slate-link-plugin'
@@ -31,10 +31,10 @@ class SlateEditor extends Component {
 }
 ```
 
-#### Slate Link Plugin Button
+#### SlateJS Link Plugin Button
 ```js
 import React, { Component } from 'react'
-import LinkPlugin from 'slate-link-plugin'
+import { LinkButton } from 'slate-link-plugin'
 
 class SlateEditor extends Component {
   onChange(state) {
