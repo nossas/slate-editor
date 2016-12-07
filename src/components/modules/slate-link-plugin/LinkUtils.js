@@ -1,5 +1,7 @@
 import { Raw } from 'slate'
 
+export const httpPreffixStrategy = href => href.search('https?://') >= 0 ? href : `http://${href}`
+
 export const hasLinks = state => state.inlines.some(inline => inline.type === 'link')
 
 export const insertLinkStrategy = state => {
@@ -9,12 +11,14 @@ export const insertLinkStrategy = state => {
       .unwrapInline('link')
       .apply()
   } else if (state.isExpanded) {
-    const href = window.prompt('Enter the URL of the link:')
+    const href = httpPreffixStrategy(window.prompt('Enter the URL of the link:'))
+    const title = window.prompt('Enter the title of the link:')
+    const target = window.confirm('Do you want to open it into a new tab?:') ? '_blank' : '_top'
     const newState = state
       .transform()
       .wrapInline({
         type: 'link',
-        data: { href }
+        data: { href, title, target }
       })
       .collapseToEnd()
       .apply()
