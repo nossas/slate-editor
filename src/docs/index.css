@@ -9,10 +9,13 @@
 }
 
 .docs .editor--content {
-  min-height: 100px;
   margin: 0 auto;
   border: 1px solid #ccc;
   padding: .2rem;
+}
+
+.docs .editor--content > div {
+  min-height: 100px;
 }
 
 .docs .editor--footer > * {
