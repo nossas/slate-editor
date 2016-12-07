@@ -5,7 +5,7 @@ import Home from './Home';
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 
-const title = 'REditor';
+const title = 'Reboo Slate Editor';
 const gh = 'ourcities/rebu-editor';
 // if using a root url, remove the basename value here and in BrowserRouter
 const basename = process.env.REACT_APP_GH_PAGES_PATH ?
