@@ -25,6 +25,7 @@ const Home = ({ title, gh }) => {
     <div className="docs">
       <h1>{title}</h1>
       <SlateEditor plugins={plugins}>
+
         <SlateToolbar>
           <BoldButton />
           <ItalicButton />
@@ -33,11 +34,14 @@ const Home = ({ title, gh }) => {
           <FontFamilyDropdown />
           <FontSizeInput initialFontSize={fontSizePluginOptions.initialFontSize} />
         </SlateToolbar>
+
         <SlateContent />
+
         <SlateToolbar className="footer">
           <StateLoggerButton />
           <ToggleReadOnlyButton />
         </SlateToolbar>
+
       </SlateEditor>
     </div>
   );

@@ -1,27 +1,13 @@
 import React from 'react'
 
 
-const FontSizeNode = ({
-  attributes,
-  children,
-  state,
-  node: { data },
-  editor: {
-    props: {
-      changeState,
-      outerState: { fontSize: fontSizeOuterState },
-    },
-  },
-}) => {
-  const fontSize = data.get('fontSize')
-
-  if (fontSizeOuterState !== fontSize) changeState({ state, fontSize })
-
-  return (
-    <span {...attributes} style={{ fontSize, verticalAlign: 'middle' }}>
-      {children}
-    </span>
-  )
-}
+const FontSizeNode = ({ attributes, children, node: { data } }) => (
+  <span
+    {...attributes}
+    style={{ fontSize: data.get('fontSize'), verticalAlign: 'middle' }}
+  >
+    {children}
+  </span>
+)
 
 export default FontSizeNode
