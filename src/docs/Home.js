@@ -3,6 +3,7 @@ import { SlateEditor, SlateToolbar, SlateContent } from '../components/SlateEdit
 import BoldPlugin, { BoldButton } from '../components/modules/slate-bold-plugin'
 import ItalicPlugin, { ItalicButton } from '../components/modules/slate-italic-plugin'
 import UnderlinePlugin, { UnderlineButton } from '../components/modules/slate-underline-plugin'
+import StrikethroughPlugin, { StrikethroughButton } from '../components/modules/slate-strikethrough-plugin'
 import ImagePlugin, { ImageButton } from '../components/modules/slate-image-plugin'
 import LinkPlugin, { LinkButton } from '../components/modules/slate-link-plugin'
 import FontFamilyPlugin, { FontFamilyDropdown } from '../components/modules/slate-font-family-plugin'
@@ -16,6 +17,7 @@ const plugins = [
   BoldPlugin(),
   ItalicPlugin(),
   UnderlinePlugin(),
+  StrikethroughPlugin(),
   ImagePlugin(),
   LinkPlugin(),
   FontFamilyPlugin(),
@@ -32,6 +34,7 @@ const Home = ({ title, gh }) => {
           <BoldButton />
           <ItalicButton />
           <UnderlineButton />
+          <StrikethroughButton />
           <ImageButton />
           <LinkButton />
           <FontFamilyDropdown />
