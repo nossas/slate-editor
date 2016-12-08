@@ -16,7 +16,7 @@ export default options => {
   return {
     schema: {
       nodes: {
-        'font-size': FontSizeNode({ initialFontSize }),
+        'font-size': FontSizeNode,
       },
     },
     ...FontSizeKeyboardShortcut({ initialFontSize }),
