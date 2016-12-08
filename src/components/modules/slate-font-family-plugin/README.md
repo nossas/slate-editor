@@ -58,8 +58,8 @@ class SlateEditor extends Component {
 | Platform                 | Action  | Shortcut |
 |--------------------------|---------|----------|
 | ![Apple Logo][apple]     | Apply   | `⌘`+`j`  |
-| ![Apple Logo][apple]     | Remove  | `⌘`+`j`  |
-| ![Windows Logo][windows] | Apply   | `^`+`i`  |
+| ![Apple Logo][apple]     | Remove  | `⌘`+`i`  |
+| ![Windows Logo][windows] | Apply   | `^`+`j`  |
 | ![Windows Logo][windows] | Remove  | `^`+`i`  |
 
 # API
