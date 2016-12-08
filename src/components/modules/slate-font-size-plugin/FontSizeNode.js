@@ -18,7 +18,7 @@ const FontSizeNode = ({
   if (fontSizeOuterState !== fontSize) changeState({ state, fontSize })
 
   return (
-    <span {...attributes} style={{ fontSize }}>
+    <span {...attributes} style={{ fontSize, verticalAlign: 'middle' }}>
       {children}
     </span>
   )

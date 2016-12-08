@@ -19,23 +19,15 @@ export const applyNode = ({ state, fontSizeIndex }) => state
   .focus()
   .apply()
 
-/**
- * Strategy that decides how increase font size node needs to be applied.
- *
- * @param {Object} attributes
- *    @property {State} state
- *    @property {int} fontSizeIndex
- */
-export const fontSizeNodeIncreaseStrategy = ({ state, fontSize }) => {
+export const fontSizeStrategy = ({ state, fontSize }) => {
   if (hasInline(state)) {
     if (state.isExpanded) {
-      const inline = getInline(state)
       return state
         .transform()
-        .unwrapInline(inline)
+        .unwrapInline(getInline(state))
         .wrapInline({
           type: 'font-size',
-          data: { fontSize: Number(inline.data.get('fontSize')) + 1 },
+          data: { fontSize },
         })
         .focus()
         .apply()
@@ -49,7 +41,7 @@ export const fontSizeNodeIncreaseStrategy = ({ state, fontSize }) => {
         .transform()
         .wrapInline({
           type: 'font-size',
-          data: { fontSize: Number(fontSize) + 1 },
+          data: { fontSize },
         })
         .focus()
         .apply()
@@ -58,4 +50,22 @@ export const fontSizeNodeIncreaseStrategy = ({ state, fontSize }) => {
   }
 
   return state
+}
+
+/**
+ * Strategy that decides how increase font size node needs to be applied.
+ *
+ * @param {Object} attributes
+ *    @property {State} state
+ *    @property {int} fontSizeIndex
+ */
+export const fontSizeNodeIncreaseStrategy = ({ state, fontSize }) => {
+  const size = hasInline(state) ?
+    Number(getInline(state).data.get('fontSize')) :
+    Number(fontSize)
+
+  return fontSizeStrategy({
+    state,
+    fontSize: size + 1,
+  })
 }
