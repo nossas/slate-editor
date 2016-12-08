@@ -20,12 +20,11 @@ export const applyNode = ({ state, fontSizeIndex }) => state
   .apply()
 
 /**
- * Strategy that decides how font family mark plugin
- * needs to be applied.
+ * Strategy that decides how increase font size node needs to be applied.
  *
  * @param {Object} attributes
- *     -> {State} state
- *     -> {int} fontSizeIndex
+ *    @property {State} state
+ *    @property {int} fontSizeIndex
  */
 export const fontSizeNodeIncreaseStrategy = ({ state, fontSize }) => {
   if (hasInline(state)) {
@@ -36,7 +35,7 @@ export const fontSizeNodeIncreaseStrategy = ({ state, fontSize }) => {
         .unwrapInline(inline)
         .wrapInline({
           type: 'font-size',
-          data: { fontSize: Number(inline.data.get('fontSize')) + 5 },
+          data: { fontSize: Number(inline.data.get('fontSize')) + 1 },
         })
         .focus()
         .apply()
