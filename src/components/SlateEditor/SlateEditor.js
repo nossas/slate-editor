@@ -24,7 +24,7 @@ class SlateEditor extends Component {
   constructor(props) {
     super(props)
 
-    this.state = { state: initialState, readOnly: false, fontSize: 14 }
+    this.state = { state: initialState, readOnly: false }
   }
 
   onChange(state) {

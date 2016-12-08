@@ -9,13 +9,15 @@ import FontSizePlugin, { FontSizeInput } from '../components/modules/slate-font-
 import { StateLoggerButton } from '../components/modules/slate-state-logger'
 import { ToggleReadOnlyButton } from '../components/modules/slate-toggle-readonly'
 
+const fontSizePluginOptions = { initialFontSize: 16 }
+
 const plugins = [
   BoldPlugin(),
   ItalicPlugin(),
   ImagePlugin(),
   LinkPlugin(),
   FontFamilyPlugin(),
-  FontSizePlugin(),
+  FontSizePlugin(fontSizePluginOptions),
 ]
 
 const Home = ({ title, gh }) => {
@@ -29,7 +31,7 @@ const Home = ({ title, gh }) => {
           <ImageButton />
           <LinkButton />
           <FontFamilyDropdown />
-          <FontSizeInput />
+          <FontSizeInput initialFontSize={fontSizePluginOptions.initialFontSize} />
         </SlateToolbar>
         <SlateContent />
         <SlateToolbar className="footer">

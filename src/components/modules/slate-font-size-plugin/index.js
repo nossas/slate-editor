@@ -4,14 +4,24 @@ import FontSizeInput from './FontSizeInput'
 import FontSizeKeyboardShortcut from './FontSizeKeyboardShortcut'
 
 
-export default options => ({
-  schema: {
-    nodes: {
-      'font-size': FontSizeNode,
+export default options => {
+  const sign = '[SlateJS][FontSizePlugin]'
+  if (!options) throw new Error(`${sign} You must supply the options to configure the plugin.`)
+  if (!options.initialFontSize) throw new Error(`${sign} You must supply the \`initialFontSize\`.`)
+
+  const { initialFontSize } = options
+
+  if (!initialFontSize) throw new Error('You must supply an `applyTransform` function...')
+
+  return {
+    schema: {
+      nodes: {
+        'font-size': FontSizeNode({ initialFontSize }),
+      },
     },
-  },
-  ...FontSizeKeyboardShortcut,
-})
+    ...FontSizeKeyboardShortcut({ initialFontSize }),
+  }
+}
 
 export {
   FontSizeNode,

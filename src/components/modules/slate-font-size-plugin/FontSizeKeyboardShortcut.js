@@ -1,16 +1,15 @@
 import keycode from 'keycode'
 
 import { fontSizeNodeIncreaseStrategy } from './FontSizeUtils'
-import { DEFAULT_FONT_SIZE } from './FontSizeConstants'
 
 
-const FontSizeKeyboardShortcut = ({
+const FontSizeKeyboardShortcut = ({ initialFontSize }) => ({
   onKeyDown(event, data, state) {
     const key = keycode(data.code) === '='
     const increaseMac = data.isCmd && data.isCtrl && key
     const increaseWin = data.isCtrl && data.isAlt && key
 
-    const fontSize = DEFAULT_FONT_SIZE
+    const fontSize = initialFontSize
 
     if (increaseMac || increaseWin) return fontSizeNodeIncreaseStrategy({ state, fontSize })
     return
