@@ -4,7 +4,7 @@ import FontAwesome from 'react-fontawesome'
 import { underlineMarkStrategy } from './UnderlineUtils'
 
 
-const Underline = ({ state, onChange, changeState }) => (
+const UnderlineButton = ({ state, onChange, changeState }) => (
   <button
     onClick={e => {
       e.preventDefault()
@@ -15,4 +15,4 @@ const Underline = ({ state, onChange, changeState }) => (
   </button>
 )
 
-export default Underline
+export default UnderlineButton
