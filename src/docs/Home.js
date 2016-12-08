@@ -6,6 +6,7 @@ import UnderlinePlugin, { UnderlineButton } from '../components/modules/slate-un
 import StrikethroughPlugin, { StrikethroughButton } from '../components/modules/slate-strikethrough-plugin'
 import ImagePlugin, { ImageButton } from '../components/modules/slate-image-plugin'
 import LinkPlugin, { LinkButton } from '../components/modules/slate-link-plugin'
+import ColorPlugin, { ColorButton } from '../components/modules/slate-color-plugin'
 import FontFamilyPlugin, { FontFamilyDropdown } from '../components/modules/slate-font-family-plugin'
 import FontSizePlugin, { FontSizeInput } from '../components/modules/slate-font-size-plugin'
 import { StateLoggerButton } from '../components/modules/slate-state-logger'
@@ -20,6 +21,7 @@ const plugins = [
   StrikethroughPlugin(),
   ImagePlugin(),
   LinkPlugin(),
+  ColorPlugin(),
   FontFamilyPlugin(),
   FontSizePlugin(fontSizePluginOptions),
 ]
@@ -37,6 +39,7 @@ const Home = ({ title, gh }) => {
           <StrikethroughButton />
           <ImageButton />
           <LinkButton />
+          <ColorButton />
           <FontFamilyDropdown />
           <FontSizeInput initialFontSize={fontSizePluginOptions.initialFontSize} />
         </SlateToolbar>

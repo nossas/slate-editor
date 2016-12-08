@@ -1,0 +1,9 @@
+.slate-color-plugin--toolbar {
+  display: inline-block;
+  position: relative;
+}
+.slate-color-plugin--toolbar .sketch-picker {
+  position: absolute;
+  right: 220px;
+  top: 0;
+}
