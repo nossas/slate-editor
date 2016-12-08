@@ -4,6 +4,11 @@ import ColorButton from './ColorButton'
 import ColorKeyboardShortcut from './ColorKeyboardShortcut'
 import ColorStateModel from './ColorStateModel'
 
+//
+// onSelect
+//
+import SelectionPickerColorUpdate from './SelectionPickerColorUpdate'
+
 
 export default options => ({
   schema: {
@@ -12,20 +17,8 @@ export default options => ({
     },
   },
   ...ColorKeyboardShortcut,
-  onSelect(event, data, state, editor) {
-    const { hasMark, getMark } = ColorUtils
-    const {
-      outerState: { color },
-      changeState,
-    } = editor.props
-
-    if (hasMark(state)) {
-      const newColorState = {
-        ...color,
-        rgba: getMark(state).data.get('rgba'),
-      }
-      changeState({ color: newColorState })
-    }
+  onSelect(...args) {
+    SelectionPickerColorUpdate(...args)
   }
 })
 
