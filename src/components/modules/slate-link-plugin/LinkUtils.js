@@ -1,5 +1,3 @@
-import { Raw } from 'slate'
-
 export const httpPreffixStrategy = href => href.search('https?://') >= 0 ? href : `http://${href}`
 
 export const hasLinks = state => state.inlines.some(inline => inline.type === 'link')

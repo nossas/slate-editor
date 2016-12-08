@@ -1,5 +1,3 @@
-import FontFamilyList from './FontFamilyList'
-
 export const hasFontFamily = state => state.marks.some(mark => mark.type === 'font-family')
 
 export const getMark = state => state.marks.first()

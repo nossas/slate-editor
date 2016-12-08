@@ -1,5 +1,4 @@
 import React from 'react'
-import FontAwesome from 'react-fontawesome'
 
 import FontFamilyList from './FontFamilyList'
 import { fontFamilyMarkStrategy } from './FontFamilyUtils'
