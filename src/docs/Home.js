@@ -2,6 +2,7 @@ import React from 'react'
 import { SlateEditor, SlateToolbar, SlateContent } from '../components/SlateEditor'
 import BoldPlugin, { BoldButton } from '../components/modules/slate-bold-plugin'
 import ItalicPlugin, { ItalicButton } from '../components/modules/slate-italic-plugin'
+import UnderlinePlugin, { UnderlineButton } from '../components/modules/slate-underline-plugin'
 import ImagePlugin, { ImageButton } from '../components/modules/slate-image-plugin'
 import LinkPlugin, { LinkButton } from '../components/modules/slate-link-plugin'
 import FontFamilyPlugin, { FontFamilyDropdown } from '../components/modules/slate-font-family-plugin'
@@ -14,6 +15,7 @@ const fontSizePluginOptions = { initialFontSize: 16 }
 const plugins = [
   BoldPlugin(),
   ItalicPlugin(),
+  UnderlinePlugin(),
   ImagePlugin(),
   LinkPlugin(),
   FontFamilyPlugin(),
@@ -29,6 +31,7 @@ const Home = ({ title, gh }) => {
         <SlateToolbar>
           <BoldButton />
           <ItalicButton />
+          <UnderlineButton />
           <ImageButton />
           <LinkButton />
           <FontFamilyDropdown />
