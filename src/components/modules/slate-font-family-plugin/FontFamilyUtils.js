@@ -1,6 +1,5 @@
-export const hasFontFamily = state => state.marks.some(mark => mark.type === 'font-family')
-
-export const getMark = state => state.marks.first()
+export const hasMark = state => state.marks.some(mark => mark.type === 'font-family')
+export const getMark = state => state.marks.filter(mark => mark.type === 'font-family').first()
 
 export const createMark = fontFamilyIndex => ({
   type: 'font-family',
@@ -31,7 +30,7 @@ export const applyMark = ({ state, fontFamilyIndex }) => state
 export const fontFamilyMarkStrategy = attributes => {
   const { state } = attributes
 
-  if (hasFontFamily(state)) {
+  if (hasMark(state)) {
     if (state.isExpanded) {
       return reapplyMark(attributes)
     }
