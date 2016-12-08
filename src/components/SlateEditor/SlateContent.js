@@ -4,8 +4,8 @@ import { Editor } from 'slate'
 
 
 export default props => {
-
-  const { className, state, outerState: { readOnly }, plugins, onChange } = props
+  const { className, state, outerState, plugins, onChange, changeState } = props
+  const { readOnly } = outerState
 
   return (
     <div className={classnames("editor--content", className)}>
@@ -14,6 +14,8 @@ export default props => {
         state={state}
         onChange={onChange}
         readOnly={readOnly}
+        changeState={changeState}
+        outerState={outerState}
       />
     </div>
   )
