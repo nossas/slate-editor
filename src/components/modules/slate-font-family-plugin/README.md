@@ -73,7 +73,14 @@ class SlateEditor extends Component {
 
 # TODO
 
-- Make keyboard shortcut accepts customization
+- Make keyboard shortcut accepts customization;
+- Add keyboard shortcut to apply font family to expanded selection;
+- Add keyboard shortcut to remove font family from expanded selection;
+- Add button to apply font family to expanded selection;
+- Add button to remove font family from expanded selection;
+- Add handle to manipulates collapsed selection to remove font family to anchor word;
+- Add behaviour to show which font family have applied to collapsed selection;
+- Add behaviour to show which font family have applied to expanded selection;
 
 [apple]: https://cdn2.iconfinder.com/data/icons/designer-skills/128/apple-ios-system-platform-os-mac-linux-48.png
 [windows]: https://cdn2.iconfinder.com/data/icons/designer-skills/128/windows-48.png
