@@ -45,14 +45,23 @@ export const fontSizeStrategy = ({ state, fontSize, changeState }) => {
   return state
 }
 
-export const fontSizeNodeIncreaseStrategy = ({ state, fontSize, changeState }) => {
-  const size = hasMark(state) ?
+const fontSizeLocationStrategy = ({ state, fontSize }) => hasMark(state) ?
     Number(getMark(state).data.get('fontSize')) :
     Number(fontSize)
 
-  return fontSizeStrategy({
+export const fontSizeIncrease = ({ state, fontSize, changeState }) => (
+  fontSizeStrategy({
     state,
     changeState,
-    fontSize: size + 1,
+    fontSize: fontSizeLocationStrategy({ state, fontSize }) + 1,
   })
-}
+)
+
+export const fontSizeDecrease = ({ state, fontSize, changeState }) => (
+  fontSizeStrategy({
+    state,
+    changeState,
+    fontSize: fontSizeLocationStrategy({ state, fontSize }) - 1,
+  })
+)
+
