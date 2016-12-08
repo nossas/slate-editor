@@ -1,4 +1,4 @@
-import FontSizeNode from './FontSizeNode'
+import FontSizeMark from './FontSizeMark'
 import FontSizeUtils from './FontSizeUtils'
 import FontSizeInput from './FontSizeInput'
 import FontSizeKeyboardShortcut from './FontSizeKeyboardShortcut'
@@ -15,8 +15,8 @@ export default options => {
 
   return {
     schema: {
-      nodes: {
-        'font-size': FontSizeNode,
+      marks: {
+        'font-size': FontSizeMark,
       },
     },
     ...FontSizeKeyboardShortcut({ initialFontSize }),
@@ -24,7 +24,7 @@ export default options => {
 }
 
 export {
-  FontSizeNode,
+  FontSizeMark,
   FontSizeUtils,
   FontSizeInput,
   FontSizeKeyboardShortcut,

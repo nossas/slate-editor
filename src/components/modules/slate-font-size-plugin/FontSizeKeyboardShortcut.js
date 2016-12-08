@@ -1,6 +1,6 @@
 import keycode from 'keycode'
 
-import { fontSizeNodeIncreaseStrategy, hasInline } from './FontSizeUtils'
+import { fontSizeNodeIncreaseStrategy, hasMark } from './FontSizeUtils'
 
 
 const FontSizeKeyboardShortcut = ({ initialFontSize }) => ({
@@ -20,7 +20,7 @@ const FontSizeKeyboardShortcut = ({ initialFontSize }) => ({
     const fontSize = initialFontSize
 
     // Move this verification to outside of keyboard shortcut class.
-    if (!hasInline(state) && fontSizeState !== initialFontSize) changeState({ fontSize })
+    if (!hasMark(state) && fontSizeState !== initialFontSize) changeState({ fontSize })
 
     if (isIncrease) return fontSizeNodeIncreaseStrategy({ state, fontSize, changeState })
     return

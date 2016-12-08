@@ -1,8 +1,7 @@
 import React from 'react'
 import keycode from 'keycode'
 
-import { fontSizeNodeIncreaseStrategy, fontSizeStrategy } from './FontSizeUtils'
-
+import { fontSizeStrategy } from './FontSizeUtils'
 import './FontSizeInput.css'
 
 const FontSizeInput = ({

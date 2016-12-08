@@ -1,58 +1,10 @@
-export const hasInline = state => state.inlines.some(inline => inline.type === 'font-size')
-export const getInline = state => state.inlines.filter(inline => inline.type === 'font-size').first()
+export const hasMark = state => state.marks.some(mark => mark.type === 'font-size')
+export const getMark = state => state.marks.filter(mark => mark.type === 'font-size').first()
 
-export const createNode = fontSizeIndex => ({
+export const createMark = fontSize => ({
   type: 'font-size',
-  data: { fontSizeIndex },
+  data: { fontSize },
 })
-
-export const reapplyNode = ({ state, fontSizeIndex }) => state
-  .transform()
-  .removeNode(getInline(state))
-  .addNode(createNode(fontSizeIndex))
-  .focus()
-  .apply()
-
-export const applyNode = ({ state, fontSizeIndex }) => state
-  .transform()
-  .addNode(createNode(fontSizeIndex))
-  .focus()
-  .apply()
-
-export const fontSizeStrategy = ({ state, fontSize, changeState }) => {
-  if (hasInline(state)) {
-    if (state.isExpanded) {
-      changeState({ fontSize })
-      return state
-        .transform()
-        .unwrapInline(getInline(state))
-        .wrapInline({
-          type: 'font-size',
-          data: { fontSize },
-        })
-        .focus()
-        .apply()
-    }
-    else console.info('[SlateJS][FontSizePlugin] selection collapsed, w/ inline.')
-  }
-
-  else {
-    if (state.isExpanded) {
-      changeState({ fontSize })
-      return state
-        .transform()
-        .wrapInline({
-          type: 'font-size',
-          data: { fontSize },
-        })
-        .focus()
-        .apply()
-    }
-    else console.info('[SlateJS][FontSizePlugin] selection collapsed, w/o inline.')
-  }
-
-  return state
-}
 
 /**
  * Strategy that decides how increase font size node needs to be applied.
@@ -62,9 +14,40 @@ export const fontSizeStrategy = ({ state, fontSize, changeState }) => {
  *    @property {int} fontSize
  *    @property {function} changeState
  */
+export const fontSizeStrategy = ({ state, fontSize, changeState }) => {
+  if (hasMark(state)) {
+    if (state.isExpanded) {
+      // Change outerState to update the input font size number.
+      changeState({ fontSize })
+      return state
+        .transform()
+        .removeMark(getMark(state))
+        .addMark(createMark(fontSize))
+        .focus()
+        .apply()
+    }
+    else console.info('[SlateJS][FontSizePlugin] selection collapsed, w/ inline.')
+  }
+
+  else {
+    if (state.isExpanded) {
+      // Change outerState to update the input font size number.
+      changeState({ fontSize })
+      return state
+        .transform()
+        .addMark(createMark(fontSize))
+        .focus()
+        .apply()
+    }
+    else console.info('[SlateJS][FontSizePlugin] selection collapsed, w/o inline.')
+  }
+
+  return state
+}
+
 export const fontSizeNodeIncreaseStrategy = ({ state, fontSize, changeState }) => {
-  const size = hasInline(state) ?
-    Number(getInline(state).data.get('fontSize')) :
+  const size = hasMark(state) ?
+    Number(getMark(state).data.get('fontSize')) :
     Number(fontSize)
 
   return fontSizeStrategy({
