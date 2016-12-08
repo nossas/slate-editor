@@ -10,7 +10,7 @@ const LinkButton = ({ state, onChange }) => (
       onMouseDown={e => {
         e.preventDefault()
         console.info('RawState SlateJS', Raw.serialize(state))
-        console.log('Raw.serialize(state)', beautify(Raw.serialize(state), null, 2, 100))
+        console.info('Raw.serialize(state)', beautify(Raw.serialize(state), null, 2, 100))
       }}
     >
       <FontAwesome name="code" style={{ marginRight: 5 }} />
