@@ -1,18 +1,18 @@
 <img src="https://www.psdmockups.com/wp-content/uploads/2016/07/slatejs-520x292.jpg" alt="Nossas Cidades logo" title="Nossas Cidades" align="right" height="70"/>
 <img src="https://avatars2.githubusercontent.com/u/1479357?v=3&s=250" alt="Nossas Cidades logo" title="Nossas Cidades" align="right" height="70"/>
 
-# [SlateJS](https://github.com/ianstormtaylor/slate) - Bold Plugin
-The goal of this plugin is to offers an easy handling of SlateJS bold mark node content editable. Providing a simple API and easy usage, basing on concept of plugin-centric by SlateJS framework.
+# [SlateJS](https://github.com/ianstormtaylor/slate) - Font Family Plugin
+The goal of this plugin is to offers an easy handling of SlateJS font family mark node content editable. Providing a simple API and easy usage, basing on concept of plugin-centric by SlateJS framework.
 
 # Usage
 
-#### SlateJS Bold Plugin
+#### SlateJS Font Family Plugin
 ```js
 import React, { Component } from 'react'
-import BoldPlugin from 'slate-bold-plugin'
+import FontFamilyPlugin from 'slate-font-family-plugin'
 
 const plugins = [
-  BoldPlugin()
+  FontFamilyPlugin()
 ]
 
 class SlateEditor extends Component {
@@ -31,10 +31,10 @@ class SlateEditor extends Component {
 }
 ```
 
-#### SlateJS Bold Plugin Button
+#### SlateJS Font Family Plugin Button
 ```js
 import React, { Component } from 'react'
-import { BoldButton } from 'slate-bold-plugin'
+import { FontFamilyButton } from 'slate-font-family-plugin'
 
 class SlateEditor extends Component {
   onChange(state) {
@@ -43,7 +43,7 @@ class SlateEditor extends Component {
   render() {
     return (
       <div className="editor--toolbar">
-        <BoldButton
+        <FontFamilyButton
           state={this.state.state}
           onChange={this.onChange.bind(this)}
         />
@@ -55,19 +55,21 @@ class SlateEditor extends Component {
 
 # Keyboard Shortcut
 
-| Platform                 | Shortcut |
-|--------------------------|----------|
-| ![Apple Logo][apple]     | `⌘`+`b`  |
-| ![Windows Logo][windows] | `^`+`b`  |
+| Platform                 | Action  | Shortcut |
+|--------------------------|---------|----------|
+| ![Apple Logo][apple]     | Apply   | `⌘`+`j`  |
+| ![Apple Logo][apple]     | Remove  | `⌘`+`j`  |
+| ![Windows Logo][windows] | Apply   | `^`+`i`  |
+| ![Windows Logo][windows] | Remove  | `^`+`i`  |
 
 # API
 
-| Target               | Description                                                               |
-|----------------------|---------------------------------------------------------------------------|
-| BoldNode             | Component that holds the html that will wrap the content with bold style. |
-| BoldUtils            | Generic file that holds the util common functions.                        |
-| BoldButton           | Button component that have behaviour to wrap content with bold style.     |
-| BoldKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS. |
+| Target                     | Description                                                                      |
+|----------------------------|----------------------------------------------------------------------------------|
+| FontFamilyNode             | Component that holds the html that will wrap the content with font family style. |
+| FontFamilyUtils            | Generic file that holds the util common functions.                               |
+| FontFamilyButton           | Button component that have behaviour to wrap content with font family style.     |
+| FontFamilyKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS.        |
 
 # TODO
 
