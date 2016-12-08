@@ -4,6 +4,7 @@ import BoldPlugin, { BoldButton } from '../components/modules/slate-bold-plugin'
 import ItalicPlugin, { ItalicButton } from '../components/modules/slate-italic-plugin'
 import ImagePlugin, { ImageButton } from '../components/modules/slate-image-plugin'
 import LinkPlugin, { LinkButton } from '../components/modules/slate-link-plugin'
+import FontFamilyPlugin, { FontFamilyDropdown } from '../components/modules/slate-font-family-plugin'
 import { StateLoggerButton } from '../components/modules/slate-state-logger'
 import { ToggleReadOnlyButton } from '../components/modules/slate-toggle-readonly'
 
@@ -12,6 +13,7 @@ const plugins = [
   ItalicPlugin(),
   ImagePlugin(),
   LinkPlugin(),
+  FontFamilyPlugin(),
 ]
 
 const Home = ({ title, gh }) => {
@@ -24,6 +26,7 @@ const Home = ({ title, gh }) => {
           <ItalicButton />
           <ImageButton />
           <LinkButton />
+          <FontFamilyDropdown />
         </SlateToolbar>
         <SlateContent />
         <SlateToolbar className="footer">
