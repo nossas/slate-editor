@@ -24,7 +24,7 @@ class SlateEditor extends Component {
   constructor(props) {
     super(props)
 
-    this.state = { state: initialState, readOnly: false }
+    this.state = { state: initialState, readOnly: false, fontSize: 14 }
   }
 
   onChange(state) {
@@ -32,7 +32,18 @@ class SlateEditor extends Component {
   }
 
   changeState(state) {
-    this.setState(state)
+    //
+    // The `setTimeout` function is need to prevent the warning below:
+    //
+    // Warning: setState(...): Cannot update during an existing state transition
+    // (such as within `render` or another component's constructor). Render methods
+    // should be a pure function of props and state; constructor side-effects are
+    // an anti-pattern, but can be moved to `componentWillMount`.
+    //
+    // It needs to check a better way to solve the case to update "outerState"
+    // inside the SlateJS node component like `FontSizeNode`.
+    //
+    setTimeout(() => { this.setState(state) }, 0)
   }
 
   render() {
