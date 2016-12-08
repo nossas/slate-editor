@@ -1,6 +1,8 @@
 import React from 'react'
 import classnames from 'classnames'
 
+import './ImageNode.css'
+
 
 const ImageNode = ({
   node,
