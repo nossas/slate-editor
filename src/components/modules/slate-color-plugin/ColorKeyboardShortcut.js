@@ -1,15 +1,16 @@
 import keycode from 'keycode'
 
-import { colorMarkStrategy } from './ColorUtils'
-
 
 const ColorKeyboardShortcut = ({
-  onKeyDown(event, data, state) {
-    const key = keycode(data.code) === 'c'
-    const mac = data.isCmd && data.isCtrl && key
-    const win = data.isCtrl && data.isAlt && key
+  onKeyDown(event, data, state, editor) {
+    const { changeState, outerState } = editor.props
+    const { color: { showPicker } } = outerState
 
-    if (mac || win) return colorMarkStrategy(state)
+    const key = keycode(data.code) === 'l'
+    const mac = data.isCmd && data.isShift && key
+    const win = data.isAlt && data.isShift && key
+
+    if (mac || win) changeState({ color: { showPicker: !showPicker } })
     return
   }
 })
