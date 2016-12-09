@@ -7,6 +7,7 @@ import './LinkButton.css'
 
 const LinkButton = ({ state, onChange }) => (
   <button
+    className="slate-link-plugin--button"
     onMouseDown={e => {
       e.preventDefault()
       onChange(insertLinkStrategy(state))
