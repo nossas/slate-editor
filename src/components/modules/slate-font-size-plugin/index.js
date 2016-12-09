@@ -3,6 +3,10 @@ import FontSizeUtils from './FontSizeUtils'
 import FontSizeInput from './FontSizeInput'
 import FontSizeKeyboardShortcut from './FontSizeKeyboardShortcut'
 
+//
+// onSelect
+//
+import SelectionUpdateInputValue from './SelectionUpdateInputValue'
 
 export default options => {
   const sign = '[SlateJS][FontSizePlugin]'
@@ -23,7 +27,12 @@ export default options => {
         'font-size': FontSizeMark,
       },
     },
+
     ...FontSizeKeyboardShortcut({ initialFontSize }),
+
+    onSelect(...args) {
+      SelectionUpdateInputValue(...args, initialFontSize)
+    }
   }
 }
 

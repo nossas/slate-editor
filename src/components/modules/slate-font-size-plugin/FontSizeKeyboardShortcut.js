@@ -1,16 +1,11 @@
 import keycode from 'keycode'
 
-import { fontSizeIncrease, fontSizeDecrease, hasMark } from './FontSizeUtils'
+import { fontSizeIncrease, fontSizeDecrease } from './FontSizeUtils'
 
 
 const FontSizeKeyboardShortcut = ({ initialFontSize }) => ({
   onKeyDown(event, data, state, editor) {
-    const {
-      props: {
-        changeState,
-        fontSize: fontSizeState,
-      }
-    } = editor
+    const { changeState } = editor.props
 
     const increase = keycode(data.code) === '='
     const decrease = keycode(data.code) === '-'
@@ -27,9 +22,6 @@ const FontSizeKeyboardShortcut = ({ initialFontSize }) => ({
     const isDecrease = isDecreaseMac || isDecreaseWin
 
     const fontSize = initialFontSize
-
-    // Move this verification to outside of keyboard shortcut class.
-    if (!hasMark(state) && fontSizeState !== initialFontSize) changeState({ fontSize })
 
     if (isIncrease) return fontSizeIncrease({ state, fontSize, changeState })
     if (isDecrease) return fontSizeDecrease({ state, fontSize, changeState })
