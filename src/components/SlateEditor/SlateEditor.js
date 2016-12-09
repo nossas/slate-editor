@@ -3,27 +3,14 @@ import classnames from 'classnames'
 import { Raw } from 'slate'
 import Utils from './Utils'
 
+import initialEditorState from './initialEditorState'
 import '../assets/css/font-awesome.css'
 
 
-const initialState = Raw.deserialize({
-  nodes: [
-    {
-      kind: 'block',
-      type: 'paragraph',
-      nodes: [
-        { kind: 'text', text: 'A line of text in a paragraph.' },
-      ]
-    }
-  ]
-}, { terse: true })
-
-
 class SlateEditor extends Component {
-
   constructor(props) {
     super(props)
-    this.state = { state: initialState, readOnly: false }
+    this.state = { state: initialEditorState, readOnly: false }
   }
 
   onChange(state) {
