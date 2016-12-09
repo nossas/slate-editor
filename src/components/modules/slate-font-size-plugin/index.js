@@ -28,11 +28,13 @@ export default options => {
       },
     },
 
-    ...FontSizeKeyboardShortcut({ initialFontSize }),
+    onKeyDown(...args) {
+      return FontSizeKeyboardShortcut(...args, initialFontSize)
+    },
 
     onSelect(...args) {
       SelectionUpdateInputValue(...args, initialFontSize)
-    }
+    },
   }
 }
 
