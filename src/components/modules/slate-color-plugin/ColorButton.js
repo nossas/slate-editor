@@ -23,6 +23,7 @@ class ColorButton extends Component {
     return (
       <div className="slate-color-plugin--toolbar">
         <button
+          className="slate-color-plugin--button"
           data-active={showPicker}
           onClick={e => {
             e.preventDefault()
