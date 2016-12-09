@@ -3,22 +3,15 @@ import FontSizeUtils from './FontSizeUtils'
 import FontSizeInput from './FontSizeInput'
 import FontSizeKeyboardShortcut from './FontSizeKeyboardShortcut'
 
-//
+// Validation
+import ValidatePluginOptions from './ValidatePluginOptions'
+
 // onSelect
-//
 import SelectionUpdateInputValue from './SelectionUpdateInputValue'
 
-export default options => {
-  const sign = '[SlateJS][FontSizePlugin]'
+const FontSizePlugin = options => {
 
-  if (!options) {
-    throw new Error(`${sign} You must supply the options to configure the plugin.`)
-  }
-
-  if (!options.initialFontSize) {
-    throw new Error(`${sign} You must supply the \`initialFontSize\`.`)
-  }
-
+  ValidatePluginOptions(options)
   const { initialFontSize } = options
 
   return {
@@ -44,3 +37,4 @@ export {
   FontSizeInput,
   FontSizeKeyboardShortcut,
 }
+export default FontSizePlugin
