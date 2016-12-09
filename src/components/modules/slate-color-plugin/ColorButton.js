@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import FontAwesome from 'react-fontawesome'
-import { SketchPicker } from 'react-color'
 
-import { colorMarkStrategy } from './ColorUtils'
+import DraggableColorPicker from './DraggableColorPicker'
 import './ColorButton.css'
 
 class ColorButton extends Component {
@@ -19,31 +18,20 @@ class ColorButton extends Component {
     // If still does not have the initial state, do not render button.
     if (!color) return null
 
-    const { showPicker, rgba } = color
+    const { showPicker } = color
 
     return (
       <div className="slate-color-plugin--toolbar">
         <button
+          data-active={showPicker}
           onClick={e => {
             e.preventDefault()
             changeState({ state, color: { ...color, showPicker: !showPicker } })
           }}
-          data-active={showPicker}
         >
           <FontAwesome name="eyedropper" />
         </button>
-        {showPicker && (
-          <SketchPicker
-            color={rgba}
-            onChangeComplete={color => {
-              const rgbaChange = color.rgb
-              changeState({
-                state: colorMarkStrategy({ state, rgba: rgbaChange }),
-                color: { rgba: rgbaChange, showPicker },
-              })
-            }}
-          />
-        )}
+        {showPicker && <DraggableColorPicker {...this.props} />}
       </div>
     )
   }

@@ -1,12 +1,7 @@
 .slate-color-plugin--toolbar {
   display: inline-block;
-  position: relative;
 }
-.slate-color-plugin--toolbar .sketch-picker {
-  position: absolute;
-  right: 220px;
-  top: 0;
-}
+
 .slate-color-plugin--toolbar button[data-active="true"] {
   box-shadow: 0 0 5px 1px rgba(0,0,0,.3);
   z-index: 1;
