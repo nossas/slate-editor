@@ -23,15 +23,7 @@ class SlateEditor extends Component {
 
   constructor(props) {
     super(props)
-
-    this.state = {
-      state: initialState,
-      readOnly: false,
-      color: {
-        showPicker: true,
-        rgba: { r: 116, g: 19, b: 19, a: 1 },
-      }
-    }
+    this.state = { state: initialState, readOnly: false }
   }
 
   onChange(state) {
@@ -48,7 +40,7 @@ class SlateEditor extends Component {
     // an anti-pattern, but can be moved to `componentWillMount`.
     //
     // It needs to check a better way to solve the case to update "outerState"
-    // inside the SlateJS node component like `FontSizeNode`.
+    // inside the SlateJS node component.
     //
     setTimeout(() => { this.setState(state) }, 0)
   }
