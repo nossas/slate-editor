@@ -20,6 +20,7 @@ const ColorButton = ({
         e.preventDefault()
         changeState({ state, color: { showPicker: !showPicker } })
       }}
+      data-active={showPicker}
     >
       <FontAwesome name="eyedropper" />
     </button>
