@@ -9,6 +9,8 @@ import LinkPlugin, { LinkButton } from '../components/modules/slate-link-plugin'
 import ColorPlugin, { ColorButton, ColorStateModel } from '../components/modules/slate-color-plugin'
 import FontFamilyPlugin, { FontFamilyDropdown } from '../components/modules/slate-font-family-plugin'
 import FontSizePlugin, { FontSizeInput } from '../components/modules/slate-font-size-plugin'
+import AlignmentPlugin, { AlignmentButton } from '../components/modules/slate-alignment-plugin'
+
 import { StateLoggerButton } from '../components/modules/slate-state-logger'
 import { ToggleReadOnlyButton } from '../components/modules/slate-toggle-readonly'
 
@@ -25,6 +27,7 @@ const plugins = [
   ColorPlugin(),
   FontFamilyPlugin(),
   FontSizePlugin(fontSizePluginOptions),
+  AlignmentPlugin(),
 ]
 
 const Home = ({ title, gh }) => {
@@ -43,6 +46,7 @@ const Home = ({ title, gh }) => {
           <ColorButton initialState={colorPluginOptions} />
           <FontFamilyDropdown />
           <FontSizeInput initialFontSize={fontSizePluginOptions.initialFontSize} />
+          <AlignmentButton />
         </SlateToolbar>
 
         <SlateContent />
