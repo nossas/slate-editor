@@ -10,6 +10,7 @@ import ColorPlugin, { ColorButton, ColorStateModel } from '../components/modules
 import FontFamilyPlugin, { FontFamilyDropdown } from '../components/modules/slate-font-family-plugin'
 import FontSizePlugin, { FontSizeInput } from '../components/modules/slate-font-size-plugin'
 import AlignmentPlugin, { AlignmentButton } from '../components/modules/slate-alignment-plugin'
+import ListPlugin, { ListButton } from '../components/modules/slate-list-plugin'
 
 import { StateLoggerButton } from '../components/modules/slate-state-logger'
 import { ToggleReadOnlyButton } from '../components/modules/slate-toggle-readonly'
@@ -28,6 +29,7 @@ const plugins = [
   FontFamilyPlugin(),
   FontSizePlugin(fontSizePluginOptions),
   AlignmentPlugin(),
+  ListPlugin(),
 ]
 
 const classNames = {
@@ -63,6 +65,7 @@ const Home = ({ title, gh }) => {
           <FontFamilyDropdown className={classNames.dropdown} style={styles.fixDropdown} />
           <FontSizeInput className={classNames.input} {...fontSizePluginOptions} style={styles.fixInput} />
           <AlignmentButton className={classNames.button} />
+          <ListButton className={classNames.button} />
         </SlateToolbar>
 
         <SlateContent />
