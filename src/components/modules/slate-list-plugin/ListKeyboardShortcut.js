@@ -4,6 +4,7 @@ import {
   unorderedListStrategy,
   orderedListStrategy,
   increaseListDepthStrategy,
+  decreaseListDepthStrategy,
 } from './ListUtils'
 
 
@@ -15,7 +16,7 @@ const ListKeyboardShortcut = ({
     //
     if (keycode(data.code) === 'tab') {
       event.preventDefault()
-      if (data.isShift) return
+      if (data.isShift) return decreaseListDepthStrategy(state)
       return increaseListDepthStrategy(state)
     }
 
