@@ -21,3 +21,7 @@
 .docs .editor--toolbar.footer > * {
   float: right;
 }
+
+.not-rounded {
+  border-radius: 0;
+}
