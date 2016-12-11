@@ -12,10 +12,11 @@ const DraggableColorPicker = ({
   outerState: {
     color: { rgba, showPicker },
   },
+  pickerDefaultPosition,
 }) => (
   <Draggable
     handle=".slate-color-plugin--draggable-handle"
-    defaultPosition={{ x: -410, y: 0 }}
+    defaultPosition={pickerDefaultPosition}
     zIndex={100}
   >
     <div className="slate-color-plugin--draggable-handle-container">

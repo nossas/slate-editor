@@ -59,7 +59,7 @@ const Home = ({ title, gh }) => {
           <StrikethroughButton className={classNames.button} />
           <ImageButton className={classNames.button} />
           <LinkButton className={classNames.button} />
-          <ColorButton className={classNames.button} initialState={colorPluginOptions} />
+          <ColorButton className={classNames.button} initialState={colorPluginOptions} pickerDefaultPosition={{ x: -520, y: 17 }} />
           <FontFamilyDropdown className={classNames.dropdown} style={styles.fixDropdown} />
           <FontSizeInput className={classNames.input} {...fontSizePluginOptions} style={styles.fixInput} />
           <AlignmentButton className={classNames.button} />
