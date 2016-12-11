@@ -33,7 +33,17 @@ const plugins = [
 const classNames = {
   button: 'btn btn-primary not-rounded',
   dropdown: 'select col-3 inline-block mx1',
-  input: 'input col-3 inline-block mx1',
+  input: 'input col-3 inline-block mr1',
+}
+const styles = {
+  fixDropdown: {
+    position: 'relative',
+    top: 1,
+  },
+  fixInput: {
+    position: 'relative',
+    top: 2,
+  },
 }
 
 const Home = ({ title, gh }) => {
@@ -50,8 +60,8 @@ const Home = ({ title, gh }) => {
           <ImageButton className={classNames.button} />
           <LinkButton className={classNames.button} />
           <ColorButton className={classNames.button} initialState={colorPluginOptions} />
-          <FontFamilyDropdown className={classNames.dropdown} />
-          <FontSizeInput className={classNames.input} {...fontSizePluginOptions} />
+          <FontFamilyDropdown className={classNames.dropdown} style={styles.fixDropdown} />
+          <FontSizeInput className={classNames.input} {...fontSizePluginOptions} style={styles.fixInput} />
           <AlignmentButton className={classNames.button} />
         </SlateToolbar>
 
