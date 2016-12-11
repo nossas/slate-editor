@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import classnames from 'classnames'
-import { Raw } from 'slate'
 import Utils from './Utils'
 
 import initialEditorState from './initialEditorState'

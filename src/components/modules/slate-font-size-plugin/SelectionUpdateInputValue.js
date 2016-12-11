@@ -2,7 +2,7 @@ import { hasMark, getMark } from './FontSizeUtils'
 
 
 const SelectionUpdateInputValue = (event, data, state, editor, initialFontSize) => {
-  const { changeState, fontSize: fontSizeState } = editor.props
+  const { changeState } = editor.props
 
   // If do not have font-size mark in selection, update input with initial font size.
   if (!hasMark(state)) changeState({ fontSize: initialFontSize })
