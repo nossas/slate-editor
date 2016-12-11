@@ -7,10 +7,12 @@ const ToggleReadOnlyButton = ({
   outerState: { readOnly },
   onChange,
   changeState,
-  className
+  className,
+  style,
 }) => (
   <button
     className={className}
+    style={style}
     onClick={e => {
       e.preventDefault()
       changeState({ state, readOnly: !readOnly })

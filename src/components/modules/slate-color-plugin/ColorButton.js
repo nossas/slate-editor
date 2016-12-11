@@ -14,7 +14,7 @@ class ColorButton extends Component {
   }
 
   render() {
-    const { className, state, changeState, outerState: { color } } = this.props
+    const { className, style, state, changeState, outerState: { color } } = this.props
 
     // If still does not have the initial state, do not render button.
     if (!color) return null
@@ -25,6 +25,7 @@ class ColorButton extends Component {
       <div className="slate-color-plugin--toolbar">
         <button
           className={classnames('slate-color-plugin--button', className)}
+          style={style}
           data-active={showPicker}
           onClick={e => {
             e.preventDefault()

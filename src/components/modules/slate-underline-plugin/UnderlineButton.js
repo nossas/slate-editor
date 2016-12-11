@@ -6,9 +6,10 @@ import { underlineMarkStrategy, hasMark } from './UnderlineUtils'
 import './UnderlineButton.css'
 
 
-const UnderlineButton = ({ state, onChange, changeState, className }) => (
+const UnderlineButton = ({ state, onChange, changeState, className, style }) => (
   <button
     className={classnames('slate-underline-plugin--button', className)}
+    style={style}
     onClick={e => {
       e.preventDefault()
       onChange(underlineMarkStrategy(state))

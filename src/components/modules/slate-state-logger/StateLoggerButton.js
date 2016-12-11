@@ -4,10 +4,11 @@ import { Raw } from 'slate'
 import beautify from 'json-beautify'
 
 
-const LinkButton = ({ state, onChange, className }) => (
+const LinkButton = ({ state, onChange, className, style }) => (
   <div>
     <button
       className={className}
+      style={style}
       onMouseDown={e => {
         e.preventDefault()
         console.info('RawState SlateJS', Raw.serialize(state))

@@ -6,10 +6,11 @@ import { alignmentMarkStrategy, hasMark, getMark } from './AlignmentUtils'
 import './AlignmentButton.css'
 
 
-const AlignmentButton = ({ state, onChange, changeState, className }) => (
+const AlignmentButton = ({ state, onChange, changeState, className, style }) => (
   <div className="slate-alignment-plugin--buttons-bar">
     <button
       className={classnames('slate-alignment-plugin--button', className)}
+      style={style}
       onClick={e => {
         e.preventDefault()
         onChange(alignmentMarkStrategy(state, 'left'))
@@ -21,6 +22,7 @@ const AlignmentButton = ({ state, onChange, changeState, className }) => (
 
     <button
       className={classnames('slate-alignment-plugin--button', className)}
+      style={style}
       onClick={e => {
         e.preventDefault()
         onChange(alignmentMarkStrategy(state, 'center'))
@@ -32,6 +34,7 @@ const AlignmentButton = ({ state, onChange, changeState, className }) => (
 
     <button
       className={classnames('slate-alignment-plugin--button', className)}
+      style={style}
       onClick={e => {
         e.preventDefault()
         onChange(alignmentMarkStrategy(state, 'right'))

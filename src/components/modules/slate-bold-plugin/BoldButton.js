@@ -6,9 +6,10 @@ import { boldMarkStrategy, hasMark } from './BoldUtils'
 import './BoldButton.css'
 
 
-const BoldButton = ({ state, onChange, changeState, className }) => (
+const BoldButton = ({ state, onChange, changeState, className, style }) => (
   <button
     className={classnames('slate-bold-plugin--button', className)}
+    style={style}
     onClick={e => {
       e.preventDefault()
       onChange(boldMarkStrategy(state))

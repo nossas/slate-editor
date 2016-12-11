@@ -6,9 +6,10 @@ import { italicMarkStrategy, hasMark } from './ItalicUtils'
 import './ItalicButton.css'
 
 
-const ItalicButton = ({ state, onChange, className }) => (
+const ItalicButton = ({ state, onChange, className, style }) => (
   <button
     className={classnames('slate-italic-plugin--button', className)}
+    style={style}
     onClick={e => {
       e.preventDefault()
       onChange(italicMarkStrategy(state))
