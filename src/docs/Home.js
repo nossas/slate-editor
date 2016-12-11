@@ -30,6 +30,12 @@ const plugins = [
   AlignmentPlugin(),
 ]
 
+const classNames = {
+  button: 'btn btn-primary not-rounded',
+  dropdown: 'select col-3 inline-block mx1',
+  input: 'input col-3 inline-block mx1',
+}
+
 const Home = ({ title, gh }) => {
   return (
     <div className="docs">
@@ -37,23 +43,23 @@ const Home = ({ title, gh }) => {
       <SlateEditor plugins={plugins}>
 
         <SlateToolbar>
-          <BoldButton />
-          <ItalicButton />
-          <UnderlineButton />
-          <StrikethroughButton />
-          <ImageButton />
-          <LinkButton />
-          <ColorButton initialState={colorPluginOptions} />
-          <FontFamilyDropdown />
-          <FontSizeInput initialFontSize={fontSizePluginOptions.initialFontSize} />
-          <AlignmentButton />
+          <BoldButton className={classNames.button} />
+          <ItalicButton className={classNames.button} />
+          <UnderlineButton className={classNames.button} />
+          <StrikethroughButton className={classNames.button} />
+          <ImageButton className={classNames.button} />
+          <LinkButton className={classNames.button} />
+          <ColorButton className={classNames.button} initialState={colorPluginOptions} />
+          <FontFamilyDropdown className={classNames.dropdown} />
+          <FontSizeInput className={classNames.input} {...fontSizePluginOptions} />
+          <AlignmentButton className={classNames.button} />
         </SlateToolbar>
 
         <SlateContent />
 
         <SlateToolbar className="footer">
-          <StateLoggerButton />
-          <ToggleReadOnlyButton />
+          <StateLoggerButton className={classNames.button} />
+          <ToggleReadOnlyButton className={classNames.button} />
         </SlateToolbar>
 
       </SlateEditor>

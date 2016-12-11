@@ -4,8 +4,9 @@ import FontAwesome from 'react-fontawesome'
 import { insertImageStrategy } from './ImageUtils'
 
 
-const ImageButton = ({ state, onChange }) => (
+const ImageButton = ({ state, onChange, className }) => (
   <button
+    className={className}
     onClick={e => {
       e.preventDefault()
       onChange(insertImageStrategy(state))

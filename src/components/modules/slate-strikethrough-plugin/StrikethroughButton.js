@@ -1,13 +1,14 @@
 import React from 'react'
 import FontAwesome from 'react-fontawesome'
+import classnames from 'classnames'
 
 import { strikethroughMarkStrategy, hasMark } from './StrikethroughUtils'
 import './StrikethroughButton.css'
 
 
-const StrikethroughButton = ({ state, onChange, changeState }) => (
+const StrikethroughButton = ({ state, onChange, changeState, className }) => (
   <button
-    className="slate-strikethrough-plugin--button"
+    className={classnames('slate-strikethrough-plugin--button', className)}
     onClick={e => {
       e.preventDefault()
       onChange(strikethroughMarkStrategy(state))

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import FontAwesome from 'react-fontawesome'
+import classnames from 'classnames'
 
 import DraggableColorPicker from './DraggableColorPicker'
 import './ColorButton.css'
@@ -13,7 +14,7 @@ class ColorButton extends Component {
   }
 
   render() {
-    const { state, changeState, outerState: { color } } = this.props
+    const { className, state, changeState, outerState: { color } } = this.props
 
     // If still does not have the initial state, do not render button.
     if (!color) return null
@@ -23,7 +24,7 @@ class ColorButton extends Component {
     return (
       <div className="slate-color-plugin--toolbar">
         <button
-          className="slate-color-plugin--button"
+          className={classnames('slate-color-plugin--button', className)}
           data-active={showPicker}
           onClick={e => {
             e.preventDefault()

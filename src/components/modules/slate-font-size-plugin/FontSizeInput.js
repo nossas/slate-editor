@@ -1,5 +1,6 @@
 import React from 'react'
 import keycode from 'keycode'
+import classnames from 'classnames'
 
 import { fontSizeStrategy } from './FontSizeUtils'
 import './FontSizeInput.css'
@@ -16,6 +17,8 @@ import './FontSizeInput.css'
 const FontSizeInput = ({
   state,
   onChange,
+  className,
+  style,
   changeState,
   initialFontSize,
   outerState: { fontSize: fontSizeState },
@@ -40,7 +43,8 @@ const FontSizeInput = ({
         changeState({ state, fontSize })
       }}
       onFocus={e => e.target.select()}
-      className="slate-font-size-plugin-input"
+      className={classnames('slate-font-size-plugin-input', className)}
+      style={style}
       type="number"
       value={fontSizeState}
       min="1"
