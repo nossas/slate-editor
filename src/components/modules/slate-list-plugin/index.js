@@ -1,4 +1,3 @@
-import React from 'react'
 import ListSchema from './ListSchema'
 import ListUtils from './ListUtils'
 import ListButton from './ListButton'
