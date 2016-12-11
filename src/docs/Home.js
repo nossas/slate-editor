@@ -33,18 +33,35 @@ const plugins = [
 ]
 
 const classNames = {
-  button: 'btn btn-primary not-rounded',
+  button: 'btn btn-primary not-rounded border border-gray',
   dropdown: 'select col-3 inline-block mx1',
   input: 'input col-3 inline-block mr1',
 }
 const styles = {
+  button: {
+    borderRight: '1px solid #fff',
+  },
   fixDropdown: {
     position: 'relative',
-    top: 1,
+    top: 3,
+    border: 0,
+    margin: 0,
+    backgroundColor: '#0275d8',
+    webkitAppearance: 'none',
+    webkitBorderRadius: 0,
+    height: 38,
+    color: '#fff',
+    paddingLeft: 20,
   },
   fixInput: {
     position: 'relative',
     top: 2,
+    border: 0,
+    backgroundColor: '#0275d8',
+    borderRadius: 0,
+    height: 38,
+    margin: 0,
+    color: '#fff',
   },
 }
 

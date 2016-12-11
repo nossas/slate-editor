@@ -1,13 +1,22 @@
 import keycode from 'keycode'
 
-import { unorderedListStrategy, orderedListStrategy } from './ListUtils'
+import {
+  unorderedListStrategy,
+  orderedListStrategy,
+  increaseListDepthStrategy,
+} from './ListUtils'
 
 
 const ListKeyboardShortcut = ({
   onKeyDown(event, data, state, editor) {
+
+    //
+    // Behaviour to increase or decrease depth of the list.
+    //
     if (keycode(data.code) === 'tab') {
       event.preventDefault()
-      console.log('tab pressed! (;')
+      if (data.isShift) return
+      return increaseListDepthStrategy(state)
     }
 
     const unorderedKey = keycode(data.code) === 'l'
