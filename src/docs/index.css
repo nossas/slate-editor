@@ -25,3 +25,5 @@
 .not-rounded {
   border-radius: 0;
 }
+
+:focus, :active { outline: none !important; }
