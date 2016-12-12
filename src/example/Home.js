@@ -45,31 +45,32 @@ const styles = {
   button: {
     borderRight: '1px solid #fff',
   },
-  fixDropdown: {
+  dropdown: {
     position: 'relative',
-    top: 3,
-    border: 0,
-    margin: 0,
-    backgroundColor: '#0275d8',
+    top: 2,
+    backgroundColor: 'transparent',
     WebkitAppearance: 'none',
     WebkitBorderRadius: 0,
     height: 38,
-    color: '#fff',
     paddingLeft: 20,
+    border: '3px solid #0275d8',
+    color: '#0275d8',
+    margin: '-3px 0',
+    padding: '0 10px',
   },
-  fixInput: {
+  input: {
     position: 'relative',
     top: 2,
-    border: 0,
-    backgroundColor: '#0275d8',
+    backgroundColor: 'transparent',
     borderRadius: 0,
     height: 38,
     margin: 0,
-    color: '#fff',
+    color: '#0275d8',
+    border: '3px solid #0275d8',
   },
 }
 
-const Home = ({ title, gh }) => {
+const Home = ({ title }) => {
   return (
     <div className="docs">
       <h1>{title}</h1>
@@ -83,8 +84,8 @@ const Home = ({ title, gh }) => {
           <ImageButton className={classNames.button} />
           <LinkButton className={classNames.button} />
           <ColorButton className={classNames.button} initialState={colorPluginOptions} pickerDefaultPosition={{ x: -520, y: 17 }} />
-          <FontFamilyDropdown className={classNames.dropdown} style={styles.fixDropdown} />
-          <FontSizeInput className={classNames.input} {...fontSizePluginOptions} style={styles.fixInput} />
+          <FontFamilyDropdown className={classNames.dropdown} style={styles.dropdown} />
+          <FontSizeInput className={classNames.input} {...fontSizePluginOptions} style={styles.input} />
           <AlignmentButton className={classNames.button} />
           <ListButton className={classNames.button} />
           <GridButton className={classNames.button} />
