@@ -5483,18 +5483,6 @@ slash@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"
 
-"slate-editor@github:ourcities/slate-editor":
-  version "1.0.0"
-  resolved "https://codeload.github.com/ourcities/slate-editor/tar.gz/f459a8bf85031f0916ed1df59f98e5b915c859dc"
-  dependencies:
-    classnames "^2.2.5"
-    json-beautify "^1.0.1"
-    keycode "^2.1.7"
-    react-color "^2.10.0"
-    react-draggable "^2.2.3"
-    react-fontawesome "^1.4.0"
-    slate "^0.16.1"
-
 slate@^0.16.1:
   version "0.16.3"
   resolved "https://registry.yarnpkg.com/slate/-/slate-0.16.3.tgz#a90e1fb09503ea354f9ba74aa3b797c9289a535f"

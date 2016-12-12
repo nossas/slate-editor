@@ -44,8 +44,7 @@
     "react-color": "^2.10.0",
     "react-draggable": "^2.2.3",
     "react-fontawesome": "^1.4.0",
-    "slate": "^0.16.1",
-    "slate-editor": "github:ourcities/slate-editor"
+    "slate": "^0.16.1"
   },
   "peerDependencies": {
     "reactstrap": "^2.0.0 || ^3.0.0"
