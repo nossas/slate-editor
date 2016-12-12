@@ -1,5 +1,1 @@
-import StateLoggerButton from './StateLoggerButton'
-
-export {
-  StateLoggerButton,
-}
+export { default as StateLoggerButton } from './StateLoggerButton'

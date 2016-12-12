@@ -1,5 +1,1 @@
-import ToggleReadOnlyButton from './ToggleReadOnlyButton'
-
-export {
-  ToggleReadOnlyButton,
-}
+export { default as ToggleReadOnlyButton } from './ToggleReadOnlyButton'

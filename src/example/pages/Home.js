@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { SlateEditor, SlateToolbar, SlateContent } from '../../package/SlateEditor'
 import BoldPlugin, { BoldButton } from '../../package/plugins/slate-bold-plugin'
 import ItalicPlugin, { ItalicButton } from '../../package/plugins/slate-italic-plugin'
