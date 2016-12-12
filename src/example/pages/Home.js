@@ -81,7 +81,6 @@ const Home = ({ title }) => {
         <p>A rich text editor based on SlateJS</p>
       </div>
       <SlateEditor plugins={plugins}>
-
         <SlateToolbar>
           <BoldButton className={classNames.button} />
           <ItalicButton className={classNames.button} />
@@ -90,7 +89,9 @@ const Home = ({ title }) => {
           <AlignmentButtonBar className={classNames.button} />
           <LinkButton className={classNames.button} />
           <ListButtonBar className={classNames.button} />
-          <br />
+        </SlateToolbar>
+
+        <SlateToolbar>
           <FontFamilyDropdown className={classNames.dropdown} style={styles.dropdown} />
           <FontSizeInput className={classNames.input} {...fontSizePluginOptions} style={styles.input} />
           <ImageButton className={classNames.button} />
@@ -102,14 +103,14 @@ const Home = ({ title }) => {
         <SlateContent />
 
         <SlateToolbar className="toolbar--footer">
-          <div className="footer">
-            <p>You had a problem?! Report click <a href="https://github.com/ourcities/slate-editor/issues/new" target="_blank">here</a>.</p>
-          </div>
           <StateLoggerButton className={classNames.button} />
           <ToggleReadOnlyButton className={classNames.button} />
         </SlateToolbar>
-
       </SlateEditor>
+
+      <div className="editor--root">
+        <p>You had a problem?! Report click <a href="https://github.com/ourcities/slate-editor/issues/new" target="_blank">here</a>.</p>
+      </div>
     </div>
   );
 }

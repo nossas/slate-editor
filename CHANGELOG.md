@@ -1,10 +1,7 @@
-<a name="0.2.0"></a>
-# 0.2.0 (2016-09-25)
+<a name="1.0.0"></a>
+# 1.0.0 (2016-12-12)
 
 
 ### Features
 
-* **HelloWorld:** add hello world component ([a2da070](https://github.com/reactstrap/component-template/commit/a2da070))
-
-
-
+* **Reboo SlateJS Editor:**
