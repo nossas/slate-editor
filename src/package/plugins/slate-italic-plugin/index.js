@@ -1,21 +1,33 @@
-import ItalicNode from './ItalicNode'
+//
+// Schema
+//
+import ItalicSchema from './ItalicSchema'
+import ItalicMark from './ItalicMark'
+
+//
+// Keyboard
+//
+import ItalicKeyboardShortcut from './ItalicKeyboardShortcut'
+
+//
+// External
+//
 import ItalicUtils from './ItalicUtils'
 import ItalicButton from './ItalicButton'
-import ItalicKeyboardShortcut from './ItalicKeyboardShortcut'
 
 
 export default options => ({
-  schema: {
-    marks: {
-      italic: ItalicNode,
-    },
+  schema: ItalicSchema,
+
+  onKeyDown(...args) {
+    return ItalicKeyboardShortcut(...args)
   },
-  ...ItalicKeyboardShortcut,
 })
 
 export {
-  ItalicNode,
+  ItalicSchema,
+  ItalicMark,
+  ItalicKeyboardShortcut,
   ItalicUtils,
   ItalicButton,
-  ItalicKeyboardShortcut,
 }
