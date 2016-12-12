@@ -11,6 +11,7 @@ import FontFamilyPlugin, { FontFamilyDropdown } from '../components/modules/slat
 import FontSizePlugin, { FontSizeInput } from '../components/modules/slate-font-size-plugin'
 import AlignmentPlugin, { AlignmentButton } from '../components/modules/slate-alignment-plugin'
 import ListPlugin, { ListButton } from '../components/modules/slate-list-plugin'
+import EmbedPlugin, { EmbedButton } from '../components/modules/slate-embed-plugin'
 
 import { StateLoggerButton } from '../components/modules/slate-state-logger'
 import { ToggleReadOnlyButton } from '../components/modules/slate-toggle-readonly'
@@ -30,6 +31,7 @@ const plugins = [
   FontSizePlugin(fontSizePluginOptions),
   AlignmentPlugin(),
   ListPlugin(),
+  EmbedPlugin(),
 ]
 
 const classNames = {
@@ -83,6 +85,7 @@ const Home = ({ title, gh }) => {
           <FontSizeInput className={classNames.input} {...fontSizePluginOptions} style={styles.fixInput} />
           <AlignmentButton className={classNames.button} />
           <ListButton className={classNames.button} />
+          <EmbedButton className={classNames.button} />
         </SlateToolbar>
 
         <SlateContent />
