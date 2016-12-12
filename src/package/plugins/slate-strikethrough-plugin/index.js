@@ -1,21 +1,33 @@
+//
+// Schame
+//
+import StrikethroughSchema from './StrikethroughSchema'
 import StrikethroughMark from './StrikethroughMark'
+
+//
+// Keyboard
+//
+import StrikethroughKeyboardShortcut from './StrikethroughKeyboardShortcut'
+
+//
+// External
+//
 import StrikethroughUtils from './StrikethroughUtils'
 import StrikethroughButton from './StrikethroughButton'
-import StrikethroughKeyboardShortcut from './StrikethroughKeyboardShortcut'
 
 
 export default options => ({
-  schema: {
-    marks: {
-      strikethrough: StrikethroughMark,
-    },
+  schema: StrikethroughSchema,
+
+  onKeyDown(...args) {
+    return StrikethroughKeyboardShortcut(...args)
   },
-  ...StrikethroughKeyboardShortcut,
 })
 
 export {
+  StrikethroughSchema,
   StrikethroughMark,
+  StrikethroughKeyboardShortcut,
   StrikethroughUtils,
   StrikethroughButton,
-  StrikethroughKeyboardShortcut,
 }
