@@ -1,11 +1,10 @@
 {
-  "name": "component-template",
-  "description": "A React component template for building and publishing reactstrap components",
-  "version": "0.2.0",
-  "homepage": "https://reactstrap.github.io/component-template",
+  "name": "reboo-slatejs-editor",
+  "description": "A Rich Text Editor designed for Reboo using SlateJS framework.",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/reactstrap/component-template.git"
+    "url": "git+ssh://git@github.com/ourcities/rebu-editor.git"
   },
   "main": "lib/index.js",
   "scripts": {
@@ -13,10 +12,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "prebuild": "babel src/components --out-dir lib --ignore test.js",
-    "create-release-branch": "sh ./scripts/create-release-branch",
-    "publish-release": "sh ./scripts/publish-release",
-    "deploy-docs": "sh ./scripts/docs",
-    "ci-deploy-docs": "sh ./scripts/docs-ci",
+    "create-release-branch": "sh ./bin/create-release-branch",
+    "publish-release": "sh ./bin/publish-release",
+    "deploy-docs": "sh ./bin/docs",
+    "ci-deploy-docs": "sh ./bin/docs-ci",
     "gh-pages": "REACT_APP_GH_PAGES_PATH='component-template' npm run build"
   },
   "devDependencies": {
@@ -56,12 +55,11 @@
     "lib"
   ],
   "keywords": [
-    "component-template",
+    "slatejs",
+    "reboo",
+    "rich-text",
+    "editor",
     "react",
-    "component",
-    "components",
-    "react-component",
-    "reactstrap-component",
-    "bootstrap"
+    "slatejs-plugins"
   ]
 }
