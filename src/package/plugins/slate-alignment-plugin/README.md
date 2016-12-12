@@ -66,12 +66,16 @@ class SlateEditor extends Component {
 
 # API
 
-| Target               | Description                                                               |
-|----------------------|---------------------------------------------------------------------------|
+| Target                    | Description                                                                    |
+|---------------------------|--------------------------------------------------------------------------------|
+| AlignmentSchema           | Schema object to configure the plugin.                                         |
 | AlignmentNode             | Component that holds the html that will wrap the content with alignment style. |
-| AlignmentUtils            | Generic file that holds the util common functions.                        |
-| AlignmentButton           | Button component that have behaviour to wrap content with alignment style.     |
-| AlignmentKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS. |
+| AlignmentUtils            | Generic file that holds the util common functions.                             |
+| AlignmentButtonBar        | Component that holds all action buttons to handle the alignment behaviour.     |
+| AlignmentLeftButton       | Component that holds button to handle the left alignment behaviour.            |
+| AlignmentCenterButton     | Component that holds button to handle the center alignment behaviour.          |
+| AlignmentRightButton      | Component that holds button to handle the right alignment behaviour.           |
+| AlignmentKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS.      |
 
 # TODO
 

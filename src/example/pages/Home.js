@@ -10,7 +10,7 @@ import LinkPlugin, { LinkButton } from '../../package/plugins/slate-link-plugin'
 import ColorPlugin, { ColorButton, ColorStateModel } from '../../package/plugins/slate-color-plugin'
 import FontFamilyPlugin, { FontFamilyDropdown } from '../../package/plugins/slate-font-family-plugin'
 import FontSizePlugin, { FontSizeInput } from '../../package/plugins/slate-font-size-plugin'
-import AlignmentPlugin, { AlignmentButton } from '../../package/plugins/slate-alignment-plugin'
+import AlignmentPlugin, { AlignmentButtonBar } from '../../package/plugins/slate-alignment-plugin'
 import ListPlugin, { ListButton } from '../../package/plugins/slate-list-plugin'
 import GridPlugin, { GridButton } from '../../package/plugins/slate-grid-plugin'
 import EmbedPlugin, { EmbedButton } from '../../package/plugins/slate-embed-plugin'
@@ -87,7 +87,7 @@ const Home = ({ title }) => {
           <ColorButton className={classNames.button} initialState={colorPluginOptions} pickerDefaultPosition={{ x: -520, y: 17 }} />
           <FontFamilyDropdown className={classNames.dropdown} style={styles.dropdown} />
           <FontSizeInput className={classNames.input} {...fontSizePluginOptions} style={styles.input} />
-          <AlignmentButton className={classNames.button} />
+          <AlignmentButtonBar className={classNames.button} />
           <ListButton className={classNames.button} />
           <GridButton className={classNames.button} />
           <EmbedButton className={classNames.button} />

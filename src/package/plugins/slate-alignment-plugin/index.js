@@ -13,7 +13,10 @@ import AlignmentKeyboardShortcut from './AlignmentKeyboardShortcut'
 // External
 //
 import AlignmentUtils from './AlignmentUtils'
-import AlignmentButton from './AlignmentButton'
+import AlignmentButtonBar from './AlignmentButtonBar'
+import AlignmentLeftButton from './AlignmentLeftButton'
+import AlignmentCenterButton from './AlignmentCenterButton'
+import AlignmentRightButton from './AlignmentRightButton'
 
 
 export default options => ({
@@ -29,5 +32,8 @@ export {
   AlignmentNode,
   AlignmentKeyboardShortcut,
   AlignmentUtils,
-  AlignmentButton,
+  AlignmentButtonBar,
+  AlignmentLeftButton,
+  AlignmentCenterButton,
+  AlignmentRightButton,
 }
