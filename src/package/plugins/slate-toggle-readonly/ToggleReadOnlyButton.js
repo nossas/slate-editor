@@ -13,13 +13,10 @@ const ToggleReadOnlyButton = ({
   <button
     className={className}
     style={style}
-    onClick={e => {
-      e.preventDefault()
-      changeState({ state, readOnly: !readOnly })
-    }}
+    onClick={e => changeState({ state, readOnly: !readOnly })}
   >
     <FontAwesome name={readOnly ? 'toggle-on' : 'toggle-off'} style={{ marginRight: 5 }} />
-    Toggle readOnly
+    Read Only
   </button>
 )
 
