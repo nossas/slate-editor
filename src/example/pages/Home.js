@@ -73,7 +73,10 @@ const styles = {
 const Home = ({ title }) => {
   return (
     <div className="docs">
-      <h1>{title}</h1>
+      <div className="header">
+        <h1>{title}</h1>
+        <p>A rich text editor based on SlateJS</p>
+      </div>
       <SlateEditor plugins={plugins}>
 
         <SlateToolbar>
@@ -95,7 +98,10 @@ const Home = ({ title }) => {
 
         <SlateContent />
 
-        <SlateToolbar className="footer">
+        <SlateToolbar className="toolbar--footer">
+          <div className="footer">
+            <p>You had a problem?! Report click <a href="https://github.com/ourcities/slate-editor/issues/new" target="_blank">here</a>.</p>
+          </div>
           <StateLoggerButton className={classNames.button} />
           <ToggleReadOnlyButton className={classNames.button} />
         </SlateToolbar>
