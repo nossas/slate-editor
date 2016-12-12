@@ -24,8 +24,8 @@ export const applyMark = ({ state, fontFamilyIndex }) => state
  * needs to be applied.
  *
  * @param {Object} attributes
- *     -> {State} state
- *     -> {int} fontFamilyIndex
+ *    @property {State} state
+ *    @property {int} fontFamilyIndex
  */
 export const fontFamilyMarkStrategy = attributes => {
   const { state } = attributes

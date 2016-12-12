@@ -1,21 +1,33 @@
-import FontFamilyNode from './FontFamilyNode'
+//
+// Schema
+//
+import FontFamilySchema from './FontFamilySchema'
+import FontFamilyMark from './FontFamilyMark'
+
+//
+// Keyboard
+//
+// import FontFamilyKeyboardShortcut from './FontFamilyKeyboardShortcut'
+
+//
+// External
+//
 import FontFamilyUtils from './FontFamilyUtils'
 import FontFamilyDropdown from './FontFamilyDropdown'
-// import FontFamilyKeyboardShortcut from './FontFamilyKeyboardShortcut'
 
 
 export default options => ({
-  schema: {
-    marks: {
-      'font-family': FontFamilyNode,
-    },
-  },
-  // ...FontFamilyKeyboardShortcut,
+  schema: FontFamilySchema,
+
+  // onKeyDown(...args) {
+  //   return FontFamilyKeyboardShortcut(...args)
+  // },
 })
 
 export {
-  FontFamilyNode,
+  FontFamilySchema,
+  FontFamilyMark,
+  // FontFamilyKeyboardShortcut,
   FontFamilyUtils,
   FontFamilyDropdown,
-  // FontFamilyKeyboardShortcut,
 }
