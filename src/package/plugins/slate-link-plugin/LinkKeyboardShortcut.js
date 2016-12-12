@@ -1,13 +1,9 @@
-import keycode from "keycode";
-
 import { insertLinkStrategy } from './LinkUtils'
 
 
-const LinkKeyboardShortcut = ({
-  onKeyDown(event, data, state) {
-    if (!data.isMod || keycode(data.code) !== 'k') return
-    return insertLinkStrategy(state)
-  }
-})
+const LinkKeyboardShortcut = (event, data, state) => {
+  if (data.isMod && data.key === 'k') return insertLinkStrategy(state)
+  return
+}
 
 export default LinkKeyboardShortcut

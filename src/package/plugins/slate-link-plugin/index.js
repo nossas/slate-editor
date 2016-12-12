@@ -1,21 +1,33 @@
+//
+// Schema
+//
+import LinkSchema from './LinkSchema'
 import LinkNode from './LinkNode'
+
+//
+// Keyboard
+//
+import LinkKeyboardShortcut from './LinkKeyboardShortcut'
+
+//
+// External
+//
 import LinkUtils from './LinkUtils'
 import LinkButton from './LinkButton'
-import LinkKeyboardShortcut from './LinkKeyboardShortcut'
 
 
 export default options => ({
-  schema: {
-    nodes: {
-      link: LinkNode,
-    },
+  schema: LinkSchema,
+
+  onKeyDown(...args) {
+    return LinkKeyboardShortcut(...args)
   },
-  ...LinkKeyboardShortcut,
 })
 
 export {
+  LinkSchema,
   LinkNode,
+  LinkKeyboardShortcut,
   LinkUtils,
   LinkButton,
-  LinkKeyboardShortcut,
 }
