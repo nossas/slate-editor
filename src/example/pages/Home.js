@@ -12,7 +12,7 @@ import FontFamilyPlugin, { FontFamilyDropdown } from '../../package/plugins/slat
 import FontSizePlugin, { FontSizeInput } from '../../package/plugins/slate-font-size-plugin'
 import AlignmentPlugin, { AlignmentButtonBar } from '../../package/plugins/slate-alignment-plugin'
 import ListPlugin, { ListButton } from '../../package/plugins/slate-list-plugin'
-import GridPlugin, { GridButton } from '../../package/plugins/slate-grid-plugin'
+import GridPlugin, { GridButtonBar } from '../../package/plugins/slate-grid-plugin'
 import EmbedPlugin, { EmbedButton } from '../../package/plugins/slate-embed-plugin'
 
 import { StateLoggerButton } from '../../package/plugins/slate-state-logger'
@@ -89,7 +89,7 @@ const Home = ({ title }) => {
           <FontSizeInput className={classNames.input} {...fontSizePluginOptions} style={styles.input} />
           <AlignmentButtonBar className={classNames.button} />
           <ListButton className={classNames.button} />
-          <GridButton className={classNames.button} />
+          <GridButtonBar className={classNames.button} />
           <EmbedButton className={classNames.button} />
         </SlateToolbar>
 

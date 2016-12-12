@@ -15,7 +15,9 @@ import GridKeyboardShortcut from './GridKeyboardShortcut'
 // External
 //
 import GridUtils from './GridUtils'
+import GridButtonBar from './GridButtonBar'
 import GridButton from './GridButton'
+import GridSplitRowButton from './GridSplitRowButton'
 
 
 export default options => ({
@@ -23,7 +25,7 @@ export default options => ({
 
   onKeyDown(...args) {
     return GridKeyboardShortcut(...args)
-  }
+  },
 })
 
 export {
@@ -31,7 +33,9 @@ export {
   GridNode,
   GridRowNode,
   GridCellNode,
-  GridUtils,
-  GridButton,
   GridKeyboardShortcut,
+  GridUtils,
+  GridButtonBar,
+  GridButton,
+  GridSplitRowButton,
 }
