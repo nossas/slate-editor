@@ -2,7 +2,7 @@ import { appendGrid, splitRow } from './GridUtils'
 
 
 const GridKeyboardShortcut = (event, data, state, editor) => {
-  const gridKey = data.key === 't'
+  const gridKey = data.key === 'g'
   const macGrid = data.isCtrl && data.isCmd && gridKey
   const winGrid = data.isCtrl && data.isAlt && gridKey
   const isGrid = macGrid || winGrid
