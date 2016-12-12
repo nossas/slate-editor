@@ -64,6 +64,7 @@ class SlateEditor extends Component {
 
 | Target                | Description                                                                |
 |-----------------------|----------------------------------------------------------------------------|
+| ColorSchema           | Schema object to configure the plugin.                                     |
 | ColorMark             | Component that holds the html that will wrap the content with color style. |
 | ColorUtils            | Generic file that holds the util common functions.                         |
 | ColorButton           | Button component that have behaviour to wrap content with color style.     |

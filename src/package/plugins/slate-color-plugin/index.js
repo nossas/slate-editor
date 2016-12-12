@@ -1,7 +1,19 @@
+//
+// Schema
+//
+import ColorSchema from './ColorSchema'
 import ColorMark from './ColorMark'
+
+//
+// Keyboard
+//
+import ColorKeyboardShortcut from './ColorKeyboardShortcut'
+
+//
+// External
+//
 import ColorUtils from './ColorUtils'
 import ColorButton from './ColorButton'
-import ColorKeyboardShortcut from './ColorKeyboardShortcut'
 import ColorStateModel from './ColorStateModel'
 
 //
@@ -11,21 +23,22 @@ import SelectionPickerColorUpdate from './SelectionPickerColorUpdate'
 
 
 export default options => ({
-  schema: {
-    marks: {
-      'color': ColorMark,
-    },
+  schema: ColorSchema,
+
+  onKeyDown(...args) {
+    return ColorKeyboardShortcut(...args)
   },
-  ...ColorKeyboardShortcut,
+
   onSelect(...args) {
     SelectionPickerColorUpdate(...args)
-  }
+  },
 })
 
 export {
+  ColorSchema,
   ColorMark,
+  ColorKeyboardShortcut,
   ColorUtils,
   ColorButton,
-  ColorKeyboardShortcut,
   ColorStateModel,
 }
