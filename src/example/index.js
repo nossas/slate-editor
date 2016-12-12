@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Match } from 'react-router'
-import Home from './Home'
+import Home from './pages/Home'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import './index.css'
