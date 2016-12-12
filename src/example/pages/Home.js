@@ -39,8 +39,9 @@ const plugins = [
 
 const classNames = {
   button: 'btn btn-primary not-rounded border border-gray',
-  dropdown: 'select col-3 inline-block mx1',
+  dropdown: 'select col-3 inline-block mx1 not-rounded',
   input: 'input col-3 inline-block mr1',
+  lastButton: 'btn btn-primary not-rounded border border-gray linebreak'
 }
 const styles = {
   button: {
@@ -48,21 +49,19 @@ const styles = {
   },
   dropdown: {
     position: 'relative',
-    top: 2,
-    backgroundColor: 'transparent',
-    WebkitAppearance: 'none',
-    WebkitBorderRadius: 0,
+    top: 1,
+    backgroundColor: 'white',
     height: 38,
     paddingLeft: 20,
     border: '3px solid #0275d8',
     color: '#0275d8',
-    margin: '-3px 0',
+    margin: '0',
     padding: '0 10px',
   },
   input: {
     position: 'relative',
-    top: 2,
-    backgroundColor: 'transparent',
+    top: 1,
+    backgroundColor: 'white',
     borderRadius: 0,
     height: 38,
     margin: 0,
@@ -82,13 +81,14 @@ const Home = ({ title }) => {
           <ItalicButton className={classNames.button} />
           <UnderlineButton className={classNames.button} />
           <StrikethroughButton className={classNames.button} />
-          <ImageButton className={classNames.button} />
+          <AlignmentButtonBar className={classNames.button} />
           <LinkButton className={classNames.button} />
-          <ColorButton className={classNames.button} initialState={colorPluginOptions} pickerDefaultPosition={{ x: -520, y: 17 }} />
+          <ListButtonBar className={classNames.button} />
+          <br />
           <FontFamilyDropdown className={classNames.dropdown} style={styles.dropdown} />
           <FontSizeInput className={classNames.input} {...fontSizePluginOptions} style={styles.input} />
-          <AlignmentButtonBar className={classNames.button} />
-          <ListButtonBar className={classNames.button} />
+          <ImageButton className={classNames.button} />
+          <ColorButton className={classNames.button} initialState={colorPluginOptions} pickerDefaultPosition={{ x: -520, y: 17 }} />
           <GridButtonBar className={classNames.button} />
           <EmbedButton className={classNames.button} />
         </SlateToolbar>
