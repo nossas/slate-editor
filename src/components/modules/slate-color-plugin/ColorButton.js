@@ -24,13 +24,13 @@ class ColorButton extends Component {
     return (
       <div className="slate-color-plugin--toolbar">
         <button
-          className={classnames('slate-color-plugin--button', className)}
           style={style}
-          data-active={showPicker}
-          onClick={e => {
-            e.preventDefault()
-            changeState({ state, color: { ...color, showPicker: !showPicker } })
-          }}
+          onClick={e => changeState({ state, color: { ...color, showPicker: !showPicker } })}
+          className={classnames(
+            'slate-color-plugin--button',
+            className,
+            { active: showPicker },
+          )}
         >
           <FontAwesome name="eyedropper" />
         </button>

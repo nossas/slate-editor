@@ -3,18 +3,17 @@ import FontAwesome from 'react-fontawesome'
 import classnames from 'classnames'
 
 import { insertLinkStrategy, hasLinks } from './LinkUtils'
-import './LinkButton.css'
 
 
 const LinkButton = ({ state, onChange, className, style }) => (
   <button
-    className={classnames('slate-link-plugin--button', className)}
     style={style}
-    onMouseDown={e => {
-      e.preventDefault()
-      onChange(insertLinkStrategy(state))
-    }}
-    data-active={hasLinks(state)}
+    onMouseDown={e => onChange(insertLinkStrategy(state))}
+    className={classnames(
+      'slate-link-plugin--button',
+      { active: hasLinks(state) },
+      className,
+    )}
   >
     <FontAwesome name="link" />
   </button>

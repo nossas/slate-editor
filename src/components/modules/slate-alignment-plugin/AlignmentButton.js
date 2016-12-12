@@ -9,37 +9,37 @@ import './AlignmentButton.css'
 const AlignmentButton = ({ state, onChange, changeState, className, style }) => (
   <div className="slate-alignment-plugin--buttons-bar">
     <button
-      className={classnames('slate-alignment-plugin--button', className)}
       style={style}
-      onClick={e => {
-        e.preventDefault()
-        onChange(alignmentMarkStrategy(state, 'left'))
-      }}
-      data-active={hasMark(state) && getMark(state).data.get('align') === 'left'}
+      onClick={e => onChange(alignmentMarkStrategy(state, 'left'))}
+      className={classnames(
+        'slate-alignment-plugin--button',
+        { active: hasMark(state) && getMark(state).data.get('align') === 'left' },
+        className,
+      )}
     >
       <FontAwesome name="align-left" />
     </button>
 
     <button
-      className={classnames('slate-alignment-plugin--button', className)}
       style={style}
-      onClick={e => {
-        e.preventDefault()
-        onChange(alignmentMarkStrategy(state, 'center'))
-      }}
-      data-active={hasMark(state) && getMark(state).data.get('align') === 'center'}
+      onClick={e => onChange(alignmentMarkStrategy(state, 'center'))}
+      className={classnames(
+        'slate-alignment-plugin--button',
+        { active: hasMark(state) && getMark(state).data.get('align') === 'center' },
+        className,
+      )}
     >
       <FontAwesome name="align-center" />
     </button>
 
     <button
-      className={classnames('slate-alignment-plugin--button', className)}
       style={style}
-      onClick={e => {
-        e.preventDefault()
-        onChange(alignmentMarkStrategy(state, 'right'))
-      }}
-      data-active={hasMark(state) && getMark(state).data.get('align') === 'right'}
+      onClick={e => onChange(alignmentMarkStrategy(state, 'right'))}
+      className={classnames(
+        'slate-alignment-plugin--button',
+        { active: hasMark(state) && getMark(state).data.get('align') === 'right' },
+        className,
+      )}
     >
       <FontAwesome name="align-right" />
     </button>

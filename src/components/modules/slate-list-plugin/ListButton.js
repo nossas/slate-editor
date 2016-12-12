@@ -14,22 +14,25 @@ import './ListButton.css'
 const ListButton = ({ state, onChange, changeState, className, style }) => (
   <div className="slate-list-plugin--buttons-bar">
     <button
-      className={classnames('slate-list-plugin--button', className)}
       style={style}
-      onClick={e => {
-        e.preventDefault()
-        onChange(unorderedListStrategy(state))
-      }}
-      data-active={isUnorderedList(state)}
+      onClick={e => onChange(unorderedListStrategy(state))}
+      className={classnames(
+        'slate-list-plugin--button',
+        { active: isUnorderedList(state) },
+        className,
+      )}
     >
       <FontAwesome name="list-ul" />
     </button>
 
     <button
-      className={classnames('slate-list-plugin--button', className)}
       style={style}
       onClick={e => onChange(orderedListStrategy(state, 'ordered-list'))}
-      data-active={isOrderedList(state)}
+      className={classnames(
+        'slate-list-plugin--button',
+        { active: isOrderedList(state) },
+        className,
+      )}
     >
       <FontAwesome name="list-ol" />
     </button>
