@@ -1,21 +1,33 @@
+//
+// Schema
+//
+import UnderlineSchema from './UnderlineSchema'
 import UnderlineMark from './UnderlineMark'
+
+//
+// Keyboard
+//
+import UnderlineKeyboardShortcut from './UnderlineKeyboardShortcut'
+
+//
+// External
+//
 import UnderlineUtils from './UnderlineUtils'
 import UnderlineButton from './UnderlineButton'
-import UnderlineKeyboardShortcut from './UnderlineKeyboardShortcut'
 
 
 export default options => ({
-  schema: {
-    marks: {
-      underline: UnderlineMark,
-    },
+  schema: UnderlineSchema,
+
+  onKeyDown(...args) {
+    return UnderlineKeyboardShortcut(...args)
   },
-  ...UnderlineKeyboardShortcut,
 })
 
 export {
+  UnderlineSchema,
   UnderlineMark,
+  UnderlineKeyboardShortcut,
   UnderlineUtils,
   UnderlineButton,
-  UnderlineKeyboardShortcut,
 }

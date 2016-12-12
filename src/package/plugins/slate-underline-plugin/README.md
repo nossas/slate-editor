@@ -55,19 +55,20 @@ class SlateEditor extends Component {
 
 # Keyboard Shortcut
 
-| Platform                 | Shortcut |
-|--------------------------|----------|
-| ![Apple Logo][apple]     | `⌘`+`u`  |
-| ![Windows Logo][windows] | `^`+`u`  |
+| Platform                 | Shortcut                     |
+|--------------------------|------------------------------|
+| ![Apple Logo][apple]     | <kbd>⌘</kbd> + <kbd>u</kbd>  |
+| ![Windows Logo][windows] | <kbd>^</kbd> + <kbd>u</kbd>  |
 
 # API
 
 | Target                    | Description                                                                    |
 |---------------------------|--------------------------------------------------------------------------------|
+| UnderlineSchema           | Schema object to configure the plugin.                                         |
 | UnderlineMark             | Component that holds the html that will wrap the content with underline style. |
+| UnderlineKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS.      |
 | UnderlineUtils            | Generic file that holds the util common functions.                             |
 | UnderlineButton           | Button component that have behaviour to wrap content with underline style.     |
-| UnderlineKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS.      |
 
 # TODO
 
