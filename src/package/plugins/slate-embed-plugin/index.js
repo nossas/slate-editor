@@ -1,8 +1,19 @@
-import EmbedNode from './EmbedNode'
+//
+// Schema
+//
 import EmbedSchema from './EmbedSchema'
+import EmbedNode from './EmbedNode'
+
+//
+// Keyboard
+//
+import EmbedKeyboardShortcut from './EmbedKeyboardShortcut'
+
+//
+// External
+//
 import EmbedUtils from './EmbedUtils'
 import EmbedButton from './EmbedButton'
-import EmbedKeyboardShortcut from './EmbedKeyboardShortcut'
 
 
 export default options => ({
@@ -14,8 +25,9 @@ export default options => ({
 })
 
 export {
+  EmbedSchema,
   EmbedNode,
+  EmbedKeyboardShortcut,
   EmbedUtils,
   EmbedButton,
-  EmbedKeyboardShortcut,
 }
