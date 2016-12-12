@@ -11,7 +11,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "prebuild": "babel src/package --presets stage-0,react --plugins transform-object-rest-spread --out-dir lib --ignore test.js",
+    "prebuild": "babel src/package --out-dir lib --copy-files",
     "create-release-branch": "sh ./bin/create-release-branch",
     "publish-release": "sh ./bin/publish-release",
     "deploy-docs": "sh ./bin/docs",
@@ -37,13 +37,15 @@
     "react-scripts": "0.6.0"
   },
   "dependencies": {
+    "babel-plugin-transform-es2015-destructuring": "^6.19.0",
     "classnames": "^2.2.5",
     "json-beautify": "^1.0.1",
     "keycode": "^2.1.7",
     "react-color": "^2.10.0",
     "react-draggable": "^2.2.3",
     "react-fontawesome": "^1.4.0",
-    "slate": "^0.16.1"
+    "slate": "^0.16.1",
+    "slate-editor": "github:ourcities/slate-editor"
   },
   "peerDependencies": {
     "reactstrap": "^2.0.0 || ^3.0.0"

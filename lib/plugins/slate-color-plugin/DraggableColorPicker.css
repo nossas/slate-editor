@@ -1,0 +1,26 @@
+.slate-color-plugin--draggable-handle-container {
+  position: absolute;
+  z-index: 9;
+}
+
+.slate-color-plugin--draggable-handle {
+  content: '';
+  width: 100px;
+  height: 5px;
+  position: absolute;
+  left: 50%;
+  top: 2px;
+  z-index: 1;
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+  margin-left: -50px;
+  cursor: all-scroll;
+}
+.slate-color-plugin--draggable-handle:after {
+  content: '';
+  background-color: #999;
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  top: 1px;
+}
