@@ -11,24 +11,19 @@ const ImageNode = ({
   editor: {
     props: { readOnly }
   }
-}) => {
-
-  const isFocused = state.selection.hasEdgeIn(node)
-  const src = node.data.get('src')
-  const className = isFocused ? 'active' : null
-
-  return (
-    <img
-      {...attributes}
-      role="presentation"
-      className={classnames(
-        'image-node',
-        { 'readonly': readOnly },
-        className,
-      )}
-      src={src}
-    />
-  )
-}
+}) => (
+  <img
+    {...attributes}
+    role="presentation"
+    className={classnames(
+      'image-node',
+      {
+        readonly: readOnly,
+        active: state.selection.hasEdgeIn(node),
+      },
+    )}
+    src={node.data.get('src')}
+  />
+)
 
 export default ImageNode

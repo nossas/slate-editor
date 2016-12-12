@@ -62,12 +62,13 @@ class SlateEditor extends Component {
 
 # API
 
-| Target                | Description                                                               |
-|-----------------------|---------------------------------------------------------------------------|
+| Target                | Description                                                                |
+|-----------------------|----------------------------------------------------------------------------|
+| ImageSchema           | Schema object to configure the plugin.                                     |
 | ImageNode             | Component that holds the html that will wrap the content with image style. |
-| ImageUtils            | Generic file that holds the util common functions.                        |
+| ImageKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS.  |
+| ImageUtils            | Generic file that holds the util common functions.                         |
 | ImageButton           | Button component that have behaviour to wrap content with image style.     |
-| ImageKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS. |
 
 # TODO
 

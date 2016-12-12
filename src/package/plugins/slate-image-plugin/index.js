@@ -1,21 +1,33 @@
+//
+// Schema
+//
+import ImageSchema from './ImageSchema'
 import ImageNode from './ImageNode'
+
+//
+// Keyboard
+//
+import ImageKeyboardShortcut from './ImageKeyboardShortcut'
+
+//
+// External
+//
 import ImageUtils from './ImageUtils'
 import ImageButton from './ImageButton'
-import ImageKeyboardShortcut from './ImageKeyboardShortcut'
 
 
 export default options => ({
-  schema: {
-    nodes: {
-      image: ImageNode,
-    },
+  schema: ImageSchema,
+
+  onKeyDown(...args) {
+    return ImageKeyboardShortcut(...args)
   },
-  ...ImageKeyboardShortcut,
 })
 
 export {
+  ImageSchema,
   ImageNode,
+  ImageKeyboardShortcut,
   ImageUtils,
   ImageButton,
-  ImageKeyboardShortcut,
 }
