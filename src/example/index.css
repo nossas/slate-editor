@@ -18,6 +18,10 @@
   min-height: 100px;
 }
 
+.docs .editor--toolbar {
+  background-color: #0275d8;
+}
+
 .docs .editor--toolbar.footer > * {
   float: right;
 }
