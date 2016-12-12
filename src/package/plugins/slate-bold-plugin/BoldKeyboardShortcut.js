@@ -1,13 +1,9 @@
-import keycode from 'keycode'
-
 import { boldMarkStrategy } from './BoldUtils'
 
 
-const BoldKeyboardShortcut = ({
-  onKeyDown(event, data, state) {
-    if (!data.isMod || keycode(data.code) !== 'b') return
-    return boldMarkStrategy(state)
-  }
-})
+const BoldKeyboardShortcut = (event, data, state) => {
+  if (data.isMod && data.key === 'b') return boldMarkStrategy(state)
+  return
+}
 
 export default BoldKeyboardShortcut
