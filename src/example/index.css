@@ -1,4 +1,8 @@
-.docs h1 {
+.docs {
+  margin-top: 80px;
+}
+
+.docs .header {
   margin: 10px auto 15px;
   text-align: center;
 }
@@ -22,8 +26,13 @@
   background-color: #0275d8;
 }
 
-.docs .editor--toolbar.footer > * {
+.docs .toolbar--footer > * {
   float: right;
+}
+
+.docs .footer {
+  float: left;
+  margin-top: 10px;
 }
 
 .not-rounded {
