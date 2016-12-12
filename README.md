@@ -1,6 +1,6 @@
-# REditor
+# Reboo Slate Editor
 
-A Editor Rich text based on SlateJS framework.
+A Rich Text Editor based on SlateJS framework.
 
 ## Reference
 
