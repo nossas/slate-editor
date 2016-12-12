@@ -3,7 +3,6 @@ import classnames from 'classnames'
 import Utils from './Utils'
 
 import initialEditorState from './initialEditorState'
-import '../assets/css/font-awesome.css'
 
 
 class SlateEditor extends Component {
