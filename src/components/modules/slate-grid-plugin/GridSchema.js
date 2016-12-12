@@ -1,5 +1,3 @@
-import React from 'react'
-
 import GridNode from './GridNode'
 import GridRowNode from './GridRowNode'
 import GridCellNode from './GridCellNode'

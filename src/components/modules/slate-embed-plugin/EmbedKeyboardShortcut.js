@@ -1,5 +1,3 @@
-import keycode from 'keycode'
-
 import { appendEmbed } from './EmbedUtils'
 
 
