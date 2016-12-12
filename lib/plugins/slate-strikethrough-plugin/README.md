@@ -55,19 +55,20 @@ class SlateEditor extends Component {
 
 # Keyboard Shortcut
 
-| Platform                 | Shortcut       |
-|--------------------------|----------------|
-| ![Apple Logo][apple]     | `⌘`+`^`+`s`    |
-| ![Windows Logo][windows] | `^`+`alt`+`s`  |
+| Platform                 | Shortcut                                     |
+|--------------------------|----------------------------------------------|
+| ![Apple Logo][apple]     | <kbd>⌘</kbd> + <kbd>^</kbd> + <kbd>s</kbd>   |
+| ![Windows Logo][windows] | <kbd>^</kbd> + <kbd>alt</kbd> + <kbd>s</kbd> |
 
 # API
 
 | Target                        | Description                                                                        |
 |-------------------------------|------------------------------------------------------------------------------------|
+| StrikethroughSchema           | Schema object to configure the plugin.                                             |
 | StrikethroughMark             | Component that holds the html that will wrap the content with strikethrough style. |
+| StrikethroughKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS.          |
 | StrikethroughUtils            | Generic file that holds the util common functions.                                 |
 | StrikethroughButton           | Button component that have behaviour to wrap content with strikethrough style.     |
-| StrikethroughKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS.          |
 
 # TODO
 

@@ -64,10 +64,11 @@ class SlateEditor extends Component {
 
 | Target                 | Description                                                                 |
 |------------------------|-----------------------------------------------------------------------------|
-| ItalicNode             | Component that holds the html that will wrap the content with italic style. |
+| ItalicSchema           | Schema object to configure the plugin.                                      |
+| ItalicMark             | Component that holds the html that will wrap the content with italic style. |
+| ItalicKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS.   |
 | ItalicUtils            | Generic file that holds the util common functions.                          |
 | ItalicButton           | Button component that have behaviour to wrap content with italic style.     |
-| ItalicKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS.   |
 
 # TODO
 

@@ -55,23 +55,25 @@ class SlateEditor extends Component {
 
 # Keyboard Shortcut
 
-| Platform                 | Shortcut                                                                  |
-|--------------------------|---------------------------------------------------------------------------|
-| ![Apple Logo][apple]     | `⌘`+`k`                                                                   |
-| ![Windows Logo][windows] | `^`+`k`                                                                   |
+| Platform                 | Shortcut                    |
+|--------------------------|-----------------------------|
+| ![Apple Logo][apple]     | <kbd>⌘</kbd> + <kbd>k</kbd> |
+| ![Windows Logo][windows] | <kbd>^</kbd> + <kbd>k</kbd> |
 
 # API
 
 | Target               | Description                                                               |
 |----------------------|---------------------------------------------------------------------------|
+| LinkSchema           | Schema object to configure the plugin.                                    |
 | LinkNode             | Component that holds the html that will wrap the content with link.       |
+| LinkKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS. |
 | LinkUtils            | Generic file that holds the util common functions.                        |
 | LinkButton           | Button component that have behaviour to wrap content with link.           |
-| LinkKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS. |
 
 # TODO
 
 - Make keyboard shortcut accepts customization;
+- Add behaviour to catch onPaste command and identify if it is an url and ask if wants to link it;
 
 [apple]: https://cdn2.iconfinder.com/data/icons/designer-skills/128/apple-ios-system-platform-os-mac-linux-48.png
 [windows]: https://cdn2.iconfinder.com/data/icons/designer-skills/128/windows-48.png

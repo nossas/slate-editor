@@ -55,15 +55,16 @@ class SlateEditor extends Component {
 
 # Keyboard Shortcut
 
-| Platform                 | Action              | Shortcut                                         |
-|--------------------------|---------------------|--------------------------------------------------|
-| ![Apple Logo][apple]     | Toggle Color Picker | <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>l</kbd> |
-| ![Windows Logo][windows] | Toggle Color Picker | <kbd>alt</kbd> + <kbd>shift</kbd> + <kbd>l</kbd> |
+| Platform                 | Action              | Shortcut                                     |
+|--------------------------|---------------------|----------------------------------------------|
+| ![Apple Logo][apple]     | Toggle Color Picker | <kbd>^</kbd> + <kbd>alt</kbd> + <kbd>l</kbd> |
+| ![Windows Logo][windows] | Toggle Color Picker | <kbd>^</kbd> + <kbd>alt</kbd> + <kbd>l</kbd> |
 
 # API
 
 | Target                | Description                                                                |
 |-----------------------|----------------------------------------------------------------------------|
+| ColorSchema           | Schema object to configure the plugin.                                     |
 | ColorMark             | Component that holds the html that will wrap the content with color style. |
 | ColorUtils            | Generic file that holds the util common functions.                         |
 | ColorButton           | Button component that have behaviour to wrap content with color style.     |

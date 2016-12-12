@@ -1,7 +1,7 @@
 {
   "name": "reboo-slatejs-editor",
   "description": "A Rich Text Editor designed for Reboo using SlateJS framework.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/ourcities/rebu-editor.git"
@@ -9,9 +9,9 @@
   "main": "lib/index.js",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "rs-build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "prebuild": "babel src/package --out-dir lib --copy-files",
+    "build": "babel src/package --out-dir lib --copy-files",
     "create-release-branch": "sh ./bin/create-release-branch",
     "publish-release": "sh ./bin/publish-release",
     "deploy-docs": "sh ./bin/docs",

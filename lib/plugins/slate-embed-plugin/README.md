@@ -1,18 +1,18 @@
 <img src="https://www.psdmockups.com/wp-content/uploads/2016/07/slatejs-520x292.jpg" alt="Nossas Cidades logo" title="Nossas Cidades" align="right" height="70"/>
 <img src="https://avatars2.githubusercontent.com/u/1479357?v=3&s=250" alt="Nossas Cidades logo" title="Nossas Cidades" align="right" height="70"/>
 
-# [SlateJS](https://github.com/ianstormtaylor/slate) - Bold Plugin
-The goal of this plugin is to offers an easy handling of SlateJS bold mark node content editable. Providing a simple API and easy usage, basing on concept of plugin-centric by SlateJS framework.
+# [SlateJS](https://github.com/ianstormtaylor/slate) - Embed Plugin
+The goal of this plugin is to offers an easy handling of SlateJS embed mark node content editable. Providing a simple API and easy usage, basing on concept of plugin-centric by SlateJS framework.
 
 # Usage
 
-#### SlateJS Bold Plugin
+#### SlateJS Embed Plugin
 ```js
 import React, { Component } from 'react'
-import BoldPlugin from 'slate-bold-plugin'
+import EmbedPlugin from 'slate-embed-plugin'
 
 const plugins = [
-  BoldPlugin()
+  EmbedPlugin()
 ]
 
 class SlateEditor extends Component {
@@ -31,10 +31,10 @@ class SlateEditor extends Component {
 }
 ```
 
-#### SlateJS Bold Plugin Button
+#### SlateJS Embed Plugin Button
 ```js
 import React, { Component } from 'react'
-import { BoldButton } from 'slate-bold-plugin'
+import { EmbedButton } from 'slate-embed-plugin'
 
 class SlateEditor extends Component {
   onChange(state) {
@@ -43,7 +43,7 @@ class SlateEditor extends Component {
   render() {
     return (
       <div className="editor--toolbar">
-        <BoldButton
+        <EmbedButton
           state={this.state.state}
           onChange={this.onChange.bind(this)}
         />
@@ -57,17 +57,18 @@ class SlateEditor extends Component {
 
 | Platform                 | Shortcut |
 |--------------------------|----------|
-| ![Apple Logo][apple]     | `⌘`+`b`  |
-| ![Windows Logo][windows] | `^`+`b`  |
+| ![Apple Logo][apple]     | `⌘`+`e`  |
+| ![Windows Logo][windows] | `^`+`e`  |
 
 # API
 
-| Target               | Description                                                               |
-|----------------------|---------------------------------------------------------------------------|
-| BoldNode             | Component that holds the html that will wrap the content with bold style. |
-| BoldUtils            | Generic file that holds the util common functions.                        |
-| BoldButton           | Button component that have behaviour to wrap content with bold style.     |
-| BoldKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS. |
+| Target                | Description                                                                |
+|-----------------------|----------------------------------------------------------------------------|
+| EmbedSchema           | Schema object to configure the plugin.                                     |
+| EmbedNode             | Component that holds the html that will wrap the content with embed style. |
+| EmbedKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS.  |
+| EmbedUtils            | Generic file that holds the util common functions.                         |
+| EmbedButton           | Button component that have behaviour to wrap content with embed style.     |
 
 # TODO
 

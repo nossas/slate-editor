@@ -1,18 +1,18 @@
 <img src="https://www.psdmockups.com/wp-content/uploads/2016/07/slatejs-520x292.jpg" alt="Nossas Cidades logo" title="Nossas Cidades" align="right" height="70"/>
 <img src="https://avatars2.githubusercontent.com/u/1479357?v=3&s=250" alt="Nossas Cidades logo" title="Nossas Cidades" align="right" height="70"/>
 
-# [SlateJS](https://github.com/ianstormtaylor/slate) - Bold Plugin
-The goal of this plugin is to offers an easy handling of SlateJS bold mark node content editable. Providing a simple API and easy usage, basing on concept of plugin-centric by SlateJS framework.
+# [SlateJS](https://github.com/ianstormtaylor/slate) - Grid Plugin
+The goal of this plugin is to offers an easy handling of SlateJS grid block node content editable. Providing a simple API and easy usage, basing on concept of plugin-centric by SlateJS framework.
 
 # Usage
 
-#### SlateJS Bold Plugin
+#### SlateJS Grid Plugin
 ```js
 import React, { Component } from 'react'
-import BoldPlugin from 'slate-bold-plugin'
+import GridPlugin from 'slate-grid-plugin'
 
 const plugins = [
-  BoldPlugin()
+  GridPlugin()
 ]
 
 class SlateEditor extends Component {
@@ -31,10 +31,10 @@ class SlateEditor extends Component {
 }
 ```
 
-#### SlateJS Bold Plugin Button
+#### SlateJS Grid Plugin Button
 ```js
 import React, { Component } from 'react'
-import { BoldButton } from 'slate-bold-plugin'
+import { GridButton } from 'slate-grid-plugin'
 
 class SlateEditor extends Component {
   onChange(state) {
@@ -43,7 +43,7 @@ class SlateEditor extends Component {
   render() {
     return (
       <div className="editor--toolbar">
-        <BoldButton
+        <GridButton
           state={this.state.state}
           onChange={this.onChange.bind(this)}
         />
@@ -55,19 +55,26 @@ class SlateEditor extends Component {
 
 # Keyboard Shortcut
 
-| Platform                 | Shortcut |
-|--------------------------|----------|
-| ![Apple Logo][apple]     | `⌘`+`b`  |
-| ![Windows Logo][windows] | `^`+`b`  |
+| Platform                 | Action    | Shortcut                                     |
+|--------------------------|-----------|----------------------------------------------|
+| ![Apple Logo][apple]     | Add Grid  | <kbd>⌘</kbd> + <kbd>^</kbd> + <kbd>g</kbd>   |
+| ![Apple Logo][apple]     | Split Row | <kbd>⌘</kbd> + <kbd>^</kbd> + <kbd>r</kbd>   |
+| ![Windows Logo][windows] | Add Grid  | <kbd>^</kbd> + <kbd>alt</kbd> + <kbd>g</kbd> |
+| ![Windows Logo][windows] | Split Row | <kbd>^</kbd> + <kbd>alt</kbd> + <kbd>r</kbd> |
 
 # API
 
-| Target               | Description                                                               |
-|----------------------|---------------------------------------------------------------------------|
-| BoldNode             | Component that holds the html that will wrap the content with bold style. |
-| BoldUtils            | Generic file that holds the util common functions.                        |
-| BoldButton           | Button component that have behaviour to wrap content with bold style.     |
-| BoldKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS. |
+| Target               | Description                                                                 |
+|----------------------|-----------------------------------------------------------------------------|
+| GridSchema           | Schema object to configure the plugin.                                      |
+| GridNode             | Component that holds the html that will render the content with grid style. |
+| GridRowNode          | Component that holds the html that will render the grid row.                |
+| GridCellNode         | Component that holds the html that will render the grid cell.               |
+| GridKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS.   |
+| GridUtils            | Generic file that holds the util common functions.                          |
+| GridButtonBar        | Component that holds all action buttons to handle the grid behaviour.       |
+| GridButton           | Component that handle behaviour to wrap content with grid style.            |
+| GridSplitRowButton   | Component that handle behaviour to split rows into the grid.                |
 
 # TODO
 

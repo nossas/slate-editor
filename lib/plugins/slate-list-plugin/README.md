@@ -66,10 +66,13 @@ class SlateEditor extends Component {
 
 | Target               | Description                                                               |
 |----------------------|---------------------------------------------------------------------------|
+| ListSchema           | Schema object to configure the plugin.                                    |
 | ListNode             | Component that holds the html that will wrap the content with list style. |
-| ListUtils            | Generic file that holds the util common functions.                        |
-| ListButton           | Button component that have behaviour to wrap content with list style.     |
 | ListKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS. |
+| ListUtils            | Generic file that holds the util common functions.                        |
+| ListButtonBar        | Component that holds all action buttons to handle list behaviours.        |
+| UnorderedListButton  | Component that render ordered list button to handle its behaviour.        |
+| OrderedListButton    | Component that render unordered list button to handle its behaviour.      |
 
 # TODO
 
