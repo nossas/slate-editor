@@ -17,7 +17,7 @@ import ColorButton from './ColorButton'
 import ColorStateModel from './ColorStateModel'
 
 //
-// onSelect
+// Selection
 //
 import SelectionPickerColorUpdate from './SelectionPickerColorUpdate'
 

@@ -1,37 +1,42 @@
+// Schema
+import FontSizeSchema from './FontSizeSchema'
 import FontSizeMark from './FontSizeMark'
+
+// Keyboard
+import FontSizeKeyboardShortcut from './FontSizeKeyboardShortcut'
+
+// External
 import FontSizeUtils from './FontSizeUtils'
 import FontSizeInput from './FontSizeInput'
-import FontSizeSchema from './FontSizeSchema'
-import FontSizeKeyboardShortcut from './FontSizeKeyboardShortcut'
 
 // Validation
 import ValidatePluginOptions from './ValidatePluginOptions'
 
-// onSelect
+// Selection
 import SelectionUpdateInputValue from './SelectionUpdateInputValue'
 
 const FontSizePlugin = options => {
 
   ValidatePluginOptions(options)
-  const { initialFontSize } = options
 
   return {
     schema: FontSizeSchema,
 
     onKeyDown(...args) {
-      return FontSizeKeyboardShortcut(...args, initialFontSize)
+      return FontSizeKeyboardShortcut(...args, options)
     },
 
     onSelect(...args) {
-      SelectionUpdateInputValue(...args, initialFontSize)
+      SelectionUpdateInputValue(...args, options)
     },
   }
 }
 
 export {
+  FontSizeSchema,
   FontSizeMark,
+  FontSizeKeyboardShortcut,
   FontSizeUtils,
   FontSizeInput,
-  FontSizeKeyboardShortcut,
 }
 export default FontSizePlugin

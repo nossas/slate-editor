@@ -66,10 +66,11 @@ class SlateEditor extends Component {
 
 | Target                     | Description                                                                    |
 |----------------------------|--------------------------------------------------------------------------------|
+| FontSizeSchema             | Schema object to configure the plugin.                                         |
 | FontSizeMark               | Component that holds the html that will wrap the content with font size style. |
+| FontSizeKeyboardShortcut   | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS.      |
 | FontSizeUtils              | Generic file that holds the util common functions.                             |
 | FontSizeInput              | Input component that have behaviour to wrap content with font size style.      |
-| FontSizeKeyboardShortcut   | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS.      |
 
 # TODO
 
