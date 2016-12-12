@@ -1,0 +1,36 @@
+.page--home {
+  margin-top: 80px;
+}
+
+.page--home .header {
+  margin: 10px auto 15px;
+  text-align: center;
+}
+
+.page--home .editor--root {
+  width: 65%;
+  margin: 0 auto;
+}
+
+.page--home .editor--content {
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: .2rem;
+}
+
+.page--home .editor--content > div {
+  min-height: 100px;
+}
+
+.page--home .editor--toolbar {
+  background-color: #0275d8;
+}
+
+.page--home .toolbar--footer > * {
+  float: right;
+}
+
+.page--home .footer {
+  float: left;
+  margin-top: 10px;
+}

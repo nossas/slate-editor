@@ -18,6 +18,8 @@ import EmbedPlugin, { EmbedButton } from '../../package/plugins/slate-embed-plug
 import { StateLoggerButton } from '../../package/plugins/slate-state-logger'
 import { ToggleReadOnlyButton } from '../../package/plugins/slate-toggle-readonly'
 
+import './Home.css'
+
 const fontSizePluginOptions = { initialFontSize: 16 }
 const colorPluginOptions = new ColorStateModel().rgba({ r: 100, g: 100, b: 100, a: 1  }).gen()
 
@@ -56,14 +58,15 @@ const styles = {
     border: '3px solid #0275d8',
     color: '#0275d8',
     margin: '0',
-    padding: '0 10px',
+    WebkitAppearance: 'none',
+    padding: '0 10px 0 15px',
   },
   input: {
     position: 'relative',
     top: 1,
     backgroundColor: 'white',
     borderRadius: 0,
-    height: 38,
+    height: 16,
     margin: 0,
     color: '#0275d8',
     border: '3px solid #0275d8',
@@ -72,7 +75,7 @@ const styles = {
 
 const Home = ({ title }) => {
   return (
-    <div className="docs">
+    <div className="page--home">
       <div className="header">
         <h1>{title}</h1>
         <p>A rich text editor based on SlateJS</p>
