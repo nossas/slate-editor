@@ -8,8 +8,8 @@ const ColorKeyboardShortcut = ({
     const { showPicker } = color
 
     const key = keycode(data.code) === 'l'
-    const mac = data.isCmd && data.isShift && key
-    const win = data.isAlt && data.isShift && key
+    const mac = data.isCtrl && data.isCmd && key
+    const win = data.isCtrl && data.isAlt && key
 
     if (mac || win) changeState({ color: { ...color, showPicker: !showPicker } })
     return

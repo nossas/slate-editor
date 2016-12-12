@@ -55,10 +55,14 @@ class SlateEditor extends Component {
 
 # Keyboard Shortcut
 
-| Platform                 | Shortcut |
-|--------------------------|----------|
-| ![Apple Logo][apple]     | `⌘`+`b`  |
-| ![Windows Logo][windows] | `^`+`b`  |
+| Platform                 | Action       | Shortcut                                          |
+|--------------------------|--------------|---------------------------------------------------|
+| ![Apple Logo][apple]     | Align Left   | <kbd>⌘</kbd> + <kbd>shift</kbd> + <kbd>l</kbd>    |
+| ![Apple Logo][apple]     | Align Center | <kbd>⌘</kbd> + <kbd>shift</kbd> + <kbd>c</kbd>    |
+| ![Apple Logo][apple]     | Align Right  | <kbd>⌘</kbd> + <kbd>shift</kbd> + <kbd>r</kbd>    |
+| ![Windows Logo][windows] | Align Left   | <kbd>alt</kbd> + <kbd>shift</kbd> + <kbd>l</kbd>  |
+| ![Windows Logo][windows] | Align Center | <kbd>alt</kbd> + <kbd>shift</kbd> + <kbd>c</kbd>  |
+| ![Windows Logo][windows] | Align Right  | <kbd>alt</kbd> + <kbd>shift</kbd> + <kbd>r</kbd>  |
 
 # API
 

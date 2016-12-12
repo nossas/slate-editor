@@ -1,13 +1,15 @@
 export const hasMark = state => state.blocks.some(node => node.type === 'alignment')
 export const getMark = state => state.blocks.filter(node => node.type === 'alignment').first()
 
-export const alignmentMarkStrategy = (state, align) => {
-  return state
-    .transform()
-    .setBlock({
-      type: 'alignment',
-      data: { align }
-    })
-    .focus()
-    .apply()
-}
+export const alignmentMarkStrategy = (state, align) => state
+  .transform()
+  .setBlock({
+    type: 'alignment',
+    data: { align }
+  })
+  .focus()
+  .apply()
+
+export const alignLeft = state => alignmentMarkStrategy(state, 'left')
+export const alignCenter = state => alignmentMarkStrategy(state, 'center')
+export const alignRight = state => alignmentMarkStrategy(state, 'right')
