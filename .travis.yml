@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+- 6
+cache:
+  directories:
+  - node_modules
+before_script:
+- chmod +x scripts/docs-ci
+script:
+- npm test -- --coverage
+after_success:
+- scripts/docs-ci
+env:
+  global:
+  - secure: pRfsrahapYSUhXlrYmYTQIKJ1NNPpPsN79Ni/eNbjnUzx4M96zRgyfBkVBg9CEDDXosBbND3E6n+n16EEiyKqWX/PxAU114qD5UEBgUPjSK63asM9Xdj8BD0/lS0z+Bk0qQcLRmLrbODC8ah1TFQFIFSO8uPnSBJOtANaj12xLZRdUUxOzRwh3BRhUMf/b00Lx8xzHJvDnzu0uYIPhvXTme3UKO4RY9DYeIlCxE9cG4dLZQamAE5XbvoLfVxYMf+oVw1dDlV3JuEfqL3B8NP57VsIl37hHlXHkCb3CuZZhFj+VLVCjUbHL9eRhAa3A3Xg1eNUgvvNWdGnNXyQeMdx1StMHYPjaN1OGtIaWmIFS8er/WSKAIcNiCJDGyUpZhRKi9ihGnTnDE2lhGJmbF+il+//h22dNQysRoJvIwz+vYelsQb41+IqWbAPsLgpNLNrXbVuo1idnUVnoZQ1FYT4fZGLRd2HZcuu4Uu4tSy34OYWzioIJgCivFtmlLaJGOKL7URIdW+eCd7pKus0nV29rW+NrfGAALUptFwMqaUEeFQZp5gcnREvaD0pBDElLgw+vGvJIFAF6a+UbHibHR/Kh9Oud9kfOiYuJhDFKvAFLGt7xRfGMqvCDiW+nHr8okOKVrueF9so9qG7l5ENQiT5/d7NefjWV/tTiCEmS2Dtf4=
+branches:
+  only:
+  - master

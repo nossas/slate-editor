@@ -1,0 +1,29 @@
+.docs h1 {
+  margin: 10px auto 15px;
+  text-align: center;
+}
+
+.docs .editor--root {
+  width: 65%;
+  margin: 0 auto;
+}
+
+.docs .editor--content {
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: .2rem;
+}
+
+.docs .editor--content > div {
+  min-height: 100px;
+}
+
+.docs .editor--toolbar.footer > * {
+  float: right;
+}
+
+.not-rounded {
+  border-radius: 0;
+}
+
+:focus, :active { outline: none !important; }
