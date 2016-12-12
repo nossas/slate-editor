@@ -6,12 +6,12 @@
     "type": "git",
     "url": "git+ssh://git@github.com/ourcities/rebu-editor.git"
   },
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "prebuild": "babel src/components --out-dir lib --ignore test.js",
+    "prebuild": "babel src/package --presets stage-0,react --plugins transform-object-rest-spread --out-dir lib --ignore test.js",
     "create-release-branch": "sh ./bin/create-release-branch",
     "publish-release": "sh ./bin/publish-release",
     "deploy-docs": "sh ./bin/docs",
@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",
+    "babel-plugin-transform-object-rest-spread": "^6.20.2",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",

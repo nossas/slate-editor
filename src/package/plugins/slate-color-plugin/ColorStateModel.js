@@ -17,7 +17,7 @@ class ColorStateModel {
     return this
   }
 
-  gen = () => this.color
+  gen() { return this.color }
 }
 
 export default ColorStateModel
