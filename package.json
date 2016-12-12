@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/ourcities/rebu-editor.git"
   },
-  "main": "lib/index.js",
+  "main": "index.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
