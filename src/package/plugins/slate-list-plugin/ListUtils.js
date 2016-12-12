@@ -35,6 +35,10 @@ export const applyList = (transform, type) => transform
   .wrapBlock(type)
   .focus()
 
+export const onlyRemove = (state, type) => state.transform().unwrapBlock(type).focus()
+export const onlyRemoveUnorderedList = state => onlyRemove(state, 'unordered-list')
+export const onlyRemoveOrderedList = state => onlyRemove(state, 'ordered-list')
+
 export const applyUnorderedList = state => applyList(state.transform(), 'unordered-list')
 export const applyOrderedList = state => applyList(state.transform(), 'ordered-list')
 
@@ -82,10 +86,6 @@ export const increaseListDepthStrategy = state => {
   return state
 }
 
-export const onlyRemove = (state, type) => state.transform().unwrapBlock(type).focus()
-export const onlyRemoveUnorderedList = state => onlyRemove(state, 'unordered-list')
-export const onlyRemoveOrderedList = state => onlyRemove(state, 'ordered-list')
-
 export const decreaseListDepthStrategy = state => {
   // If it is not a list, kill the action immediately.
   if (!isList(state)) return state
@@ -93,6 +93,6 @@ export const decreaseListDepthStrategy = state => {
   const node = getNodeOfType(state, 'list-item')
   const depth = state.document.getDepth(node.key)
   if (isUnorderedList(state) && depth > 2) return onlyRemoveUnorderedList(state).apply()
-  if (isOrderedList(state) && depth > 2) return onlyRemoveOrderedList().apply()
+  if (isOrderedList(state) && depth > 2) return onlyRemoveOrderedList(state).apply()
   return state
 }

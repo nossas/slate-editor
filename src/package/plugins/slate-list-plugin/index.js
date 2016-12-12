@@ -1,18 +1,37 @@
+//
+// Schema
+//
 import ListSchema from './ListSchema'
-import ListUtils from './ListUtils'
-import ListButton from './ListButton'
+import ListNode from './ListNode'
+
+//
+// Keyboard
+//
 import ListKeyboardShortcut from './ListKeyboardShortcut'
+
+//
+// External
+//
+import ListUtils from './ListUtils'
+import ListButtonBar from './ListButtonBar'
+import UnorderedListButton from './UnorderedListButton'
+import OrderedListButton from './OrderedListButton'
 
 
 export default options => ({
   schema: ListSchema,
 
-  ...ListKeyboardShortcut,
+  onKeyDown(...args) {
+    return ListKeyboardShortcut(...args)
+  },
 })
 
 export {
   ListSchema,
-  ListUtils,
-  ListButton,
+  ListNode,
   ListKeyboardShortcut,
+  ListUtils,
+  ListButtonBar,
+  UnorderedListButton,
+  OrderedListButton,
 }
