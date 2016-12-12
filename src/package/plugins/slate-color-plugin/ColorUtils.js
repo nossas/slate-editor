@@ -10,11 +10,13 @@ export const reapplyMark = ({ state, rgba }) => state
   .transform()
   .removeMark(getMark(state))
   .addMark(createMark(rgba))
+  .focus()
   .apply()
 
 export const applyMark = ({ state, rgba }) => state
   .transform()
   .addMark(createMark(rgba))
+  .focus()
   .apply()
 
 /**
