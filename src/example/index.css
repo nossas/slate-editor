@@ -6,4 +6,13 @@ body {
   border-radius: 0;
 }
 
+.btn.active {
+  background-color: #204d74;
+}
+
+.btn:focus {
+  border-color: transparent;
+  box-shadow: none;
+}
+
 :focus, :active { outline: none !important; }
