@@ -1,6 +1,7 @@
 import React from 'react'
 
-import './LinkNode.css'
+// FIXME: Needs to handle assets files to work with SSR
+if (process.env.REACT_APP_BROWSER || process.env.BROWSER) require('./LinkNode.css')
 
 
 const LinkNode = ({

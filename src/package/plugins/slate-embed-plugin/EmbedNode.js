@@ -1,7 +1,8 @@
 import React from 'react'
 import classnames from 'classnames'
 
-import './EmbedNode.css'
+// FIXME: Needs to handle assets files to work with SSR
+if (process.env.REACT_APP_BROWSER || process.env.BROWSER) require('./EmbedNode.css')
 
 
 const EmbedNode = ({ attributes, state, children, node }) => {

@@ -1,7 +1,8 @@
 import React from 'react'
 
 import { UnorderedListButton, OrderedListButton } from './'
-import './ListButtonBar.css'
+// FIXME: Needs to handle assets files to work with SSR
+if (process.env.REACT_APP_BROWSER || process.env.BROWSER) require('./ListButtonBar.css')
 
 
 const ListButtonBar = props => (

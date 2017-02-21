@@ -1,7 +1,8 @@
 import React from 'react'
 
 import { AlignmentLeftButton, AlignmentCenterButton, AlignmentRightButton } from './'
-import './AlignmentButtonBar.css'
+// FIXME: Needs to handle assets files to work with SSR
+if (process.env.REACT_APP_BROWSER || process.env.BROWSER) require('./AlignmentButtonBar.css')
 
 
 const AlignmentButtonBar = props => (

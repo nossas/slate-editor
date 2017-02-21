@@ -3,7 +3,8 @@ import FontAwesome from 'react-fontawesome'
 import classnames from 'classnames'
 
 import DraggableColorPicker from './DraggableColorPicker'
-import './ColorButton.css'
+// FIXME: Needs to handle assets files to work with SSR
+if (process.env.REACT_APP_BROWSER || process.env.BROWSER) require('./ColorButton.css')
 
 class ColorButton extends Component {
   componentWillMount() {
