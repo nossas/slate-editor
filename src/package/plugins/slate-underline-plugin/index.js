@@ -12,11 +12,11 @@ import UnderlineKeyboardShortcut from './UnderlineKeyboardShortcut'
 //
 // External
 //
-import UnderlineUtils from './UnderlineUtils'
+import * as UnderlineUtils from './UnderlineUtils'
 import UnderlineButton from './UnderlineButton'
 
 
-export default options => ({
+const UnderlinePlugin = options => ({
   schema: UnderlineSchema,
 
   onKeyDown(...args) {
@@ -25,6 +25,7 @@ export default options => ({
 })
 
 export {
+  UnderlinePlugin,
   UnderlineSchema,
   UnderlineMark,
   UnderlineKeyboardShortcut,

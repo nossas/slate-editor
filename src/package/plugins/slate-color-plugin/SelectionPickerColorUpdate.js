@@ -1,4 +1,4 @@
-import ColorUtils from './ColorUtils'
+import * as ColorUtils from './ColorUtils'
 
 
 const SelectionPickerColorUpdate = (event, data, state, editor) => {

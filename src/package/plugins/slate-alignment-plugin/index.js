@@ -12,14 +12,14 @@ import AlignmentKeyboardShortcut from './AlignmentKeyboardShortcut'
 //
 // External
 //
-import AlignmentUtils from './AlignmentUtils'
+import * as AlignmentUtils from './AlignmentUtils'
 import AlignmentButtonBar from './AlignmentButtonBar'
 import AlignmentLeftButton from './AlignmentLeftButton'
 import AlignmentCenterButton from './AlignmentCenterButton'
 import AlignmentRightButton from './AlignmentRightButton'
 
 
-export default options => ({
+const AlignmentPlugin = options => ({
   schema: AlignmentSchema,
 
   onKeyDown(...args) {
@@ -28,6 +28,7 @@ export default options => ({
 })
 
 export {
+  AlignmentPlugin,
   AlignmentSchema,
   AlignmentNode,
   AlignmentKeyboardShortcut,

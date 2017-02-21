@@ -12,11 +12,11 @@ import FontFamilyMark from './FontFamilyMark'
 //
 // External
 //
-import FontFamilyUtils from './FontFamilyUtils'
+import * as FontFamilyUtils from './FontFamilyUtils'
 import FontFamilyDropdown from './FontFamilyDropdown'
 
 
-export default options => ({
+const FontFamilyPlugin = options => ({
   schema: FontFamilySchema,
 
   // onKeyDown(...args) {
@@ -25,6 +25,7 @@ export default options => ({
 })
 
 export {
+  FontFamilyPlugin,
   FontFamilySchema,
   FontFamilyMark,
   // FontFamilyKeyboardShortcut,

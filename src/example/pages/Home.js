@@ -1,42 +1,44 @@
 import React from 'react'
 
-import { SlateEditor, SlateToolbar, SlateContent } from '../../package/SlateEditor'
-import BoldPlugin, { BoldButton } from '../../package/plugins/slate-bold-plugin'
-import ItalicPlugin, { ItalicButton } from '../../package/plugins/slate-italic-plugin'
-import UnderlinePlugin, { UnderlineButton } from '../../package/plugins/slate-underline-plugin'
-import StrikethroughPlugin, { StrikethroughButton } from '../../package/plugins/slate-strikethrough-plugin'
-import ImagePlugin, { ImageButton } from '../../package/plugins/slate-image-plugin'
-import LinkPlugin, { LinkButton } from '../../package/plugins/slate-link-plugin'
-import ColorPlugin, { ColorButton, ColorStateModel } from '../../package/plugins/slate-color-plugin'
-import FontFamilyPlugin, { FontFamilyDropdown } from '../../package/plugins/slate-font-family-plugin'
-import FontSizePlugin, { FontSizeInput } from '../../package/plugins/slate-font-size-plugin'
-import AlignmentPlugin, { AlignmentButtonBar } from '../../package/plugins/slate-alignment-plugin'
-import ListPlugin, { ListButtonBar } from '../../package/plugins/slate-list-plugin'
-import GridPlugin, { GridButtonBar } from '../../package/plugins/slate-grid-plugin'
-import EmbedPlugin, { EmbedButton } from '../../package/plugins/slate-embed-plugin'
-
-import { StateLoggerButton } from '../../package/plugins/slate-state-logger'
-import { ToggleReadOnlyButton } from '../../package/plugins/slate-toggle-readonly'
+import All, {
+  SlateEditor, SlateToolbar, SlateContent,
+  AlignmentPlugin, AlignmentButtonBar,
+  BoldPlugin, BoldButton,
+  ColorPlugin, ColorButton, ColorStateModel,
+  EmbedPlugin, EmbedButton,
+  FontFamilyPlugin, FontFamilyDropdown,
+  FontSizePlugin, FontSizeInput,
+  GridPlugin, GridButtonBar,
+  ImagePlugin, ImageButton,
+  ItalicPlugin, ItalicButton,
+  LinkPlugin, LinkButton,
+  ListPlugin, ListButtonBar,
+  StrikethroughPlugin, StrikethroughButton,
+  UnderlinePlugin, UnderlineButton,
+  StateLoggerButton,
+  ToggleReadOnlyButton
+} from '../../package'
+console.log('All', All)
 
 import './Home.css'
 
 const fontSizePluginOptions = { initialFontSize: 16 }
-const colorPluginOptions = new ColorStateModel().rgba({ r: 100, g: 100, b: 100, a: 1  }).gen()
+const colorPluginOptions = new ColorStateModel().rgba({ r: 100, g: 100, b: 100, a: 1 }).gen()
 
 const plugins = [
+  AlignmentPlugin(),
   BoldPlugin(),
-  ItalicPlugin(),
-  UnderlinePlugin(),
-  StrikethroughPlugin(),
-  ImagePlugin(),
-  LinkPlugin(),
   ColorPlugin(),
+  EmbedPlugin(),
   FontFamilyPlugin(),
   FontSizePlugin(fontSizePluginOptions),
-  AlignmentPlugin(),
-  ListPlugin(),
   GridPlugin(),
-  EmbedPlugin(),
+  ImagePlugin(),
+  ItalicPlugin(),
+  LinkPlugin(),
+  ListPlugin(),
+  StrikethroughPlugin(),
+  UnderlinePlugin(),
 ]
 
 const classNames = {
@@ -47,7 +49,7 @@ const classNames = {
 }
 const styles = {
   button: {
-    borderRight: '1px solid #fff',
+    borderRight: '1px solid #fff'
   },
   dropdown: {
     position: 'relative',
@@ -59,7 +61,7 @@ const styles = {
     color: '#0275d8',
     margin: '0',
     WebkitAppearance: 'none',
-    padding: '0 10px 0 15px',
+    padding: '0 10px 0 15px'
   },
   input: {
     position: 'relative',
@@ -69,14 +71,14 @@ const styles = {
     height: 16,
     margin: 0,
     color: '#0275d8',
-    border: '3px solid #0275d8',
-  },
+    border: '3px solid #0275d8'
+  }
 }
 
 const Home = ({ title }) => {
   return (
-    <div className="page--home">
-      <div className="header">
+    <div className='page--home'>
+      <div className='header'>
         <h1>{title}</h1>
         <p>A rich text editor based on SlateJS</p>
       </div>
@@ -108,11 +110,11 @@ const Home = ({ title }) => {
         </SlateToolbar>
       </SlateEditor>
 
-      <div className="editor--root">
-        <p>You had a problem?! Report click <a href="https://github.com/ourcities/slate-editor/issues/new" target="_blank">here</a>.</p>
+      <div className='editor--root'>
+        <p>You had a problem?! Report click <a href='https://github.com/ourcities/slate-editor/issues/new' target='_blank'>here</a>.</p>
       </div>
     </div>
-  );
+  )
 }
 
 export default Home

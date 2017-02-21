@@ -6,7 +6,7 @@ import FontSizeMark from './FontSizeMark'
 import FontSizeKeyboardShortcut from './FontSizeKeyboardShortcut'
 
 // External
-import FontSizeUtils from './FontSizeUtils'
+import * as FontSizeUtils from './FontSizeUtils'
 import FontSizeInput from './FontSizeInput'
 
 // Validation
@@ -33,10 +33,10 @@ const FontSizePlugin = options => {
 }
 
 export {
+  FontSizePlugin,
   FontSizeSchema,
   FontSizeMark,
   FontSizeKeyboardShortcut,
   FontSizeUtils,
   FontSizeInput,
 }
-export default FontSizePlugin
