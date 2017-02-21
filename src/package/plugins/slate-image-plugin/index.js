@@ -12,11 +12,11 @@ import ImageKeyboardShortcut from './ImageKeyboardShortcut'
 //
 // External
 //
-import ImageUtils from './ImageUtils'
+import * as ImageUtils from './ImageUtils'
 import ImageButton from './ImageButton'
 
 
-export default options => ({
+const ImagePlugin = options => ({
   schema: ImageSchema,
 
   onKeyDown(...args) {
@@ -25,6 +25,7 @@ export default options => ({
 })
 
 export {
+  ImagePlugin,
   ImageSchema,
   ImageNode,
   ImageKeyboardShortcut,

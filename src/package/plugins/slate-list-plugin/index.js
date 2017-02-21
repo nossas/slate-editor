@@ -12,13 +12,13 @@ import ListKeyboardShortcut from './ListKeyboardShortcut'
 //
 // External
 //
-import ListUtils from './ListUtils'
+import * as ListUtils from './ListUtils'
 import ListButtonBar from './ListButtonBar'
 import UnorderedListButton from './UnorderedListButton'
 import OrderedListButton from './OrderedListButton'
 
 
-export default options => ({
+const ListPlugin = options => ({
   schema: ListSchema,
 
   onKeyDown(...args) {
@@ -27,6 +27,7 @@ export default options => ({
 })
 
 export {
+  ListPlugin,
   ListSchema,
   ListNode,
   ListKeyboardShortcut,

@@ -12,7 +12,7 @@ import ColorKeyboardShortcut from './ColorKeyboardShortcut'
 //
 // External
 //
-import ColorUtils from './ColorUtils'
+import * as ColorUtils from './ColorUtils'
 import ColorButton from './ColorButton'
 import ColorStateModel from './ColorStateModel'
 
@@ -22,7 +22,7 @@ import ColorStateModel from './ColorStateModel'
 import SelectionPickerColorUpdate from './SelectionPickerColorUpdate'
 
 
-export default options => ({
+const ColorPlugin = options => ({
   schema: ColorSchema,
 
   onKeyDown(...args) {
@@ -35,6 +35,7 @@ export default options => ({
 })
 
 export {
+  ColorPlugin,
   ColorSchema,
   ColorMark,
   ColorKeyboardShortcut,

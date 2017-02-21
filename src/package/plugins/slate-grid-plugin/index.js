@@ -14,13 +14,13 @@ import GridKeyboardShortcut from './GridKeyboardShortcut'
 //
 // External
 //
-import GridUtils from './GridUtils'
+import * as GridUtils from './GridUtils'
 import GridButtonBar from './GridButtonBar'
 import GridButton from './GridButton'
 import GridSplitRowButton from './GridSplitRowButton'
 
 
-export default options => ({
+const GridPlugin = options => ({
   schema: GridSchema,
 
   onKeyDown(...args) {
@@ -29,6 +29,7 @@ export default options => ({
 })
 
 export {
+  GridPlugin,
   GridSchema,
   GridNode,
   GridRowNode,

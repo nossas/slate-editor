@@ -12,11 +12,11 @@ import StrikethroughKeyboardShortcut from './StrikethroughKeyboardShortcut'
 //
 // External
 //
-import StrikethroughUtils from './StrikethroughUtils'
+import * as StrikethroughUtils from './StrikethroughUtils'
 import StrikethroughButton from './StrikethroughButton'
 
 
-export default options => ({
+const StrikethroughPlugin = options => ({
   schema: StrikethroughSchema,
 
   onKeyDown(...args) {
@@ -25,6 +25,7 @@ export default options => ({
 })
 
 export {
+  StrikethroughPlugin,
   StrikethroughSchema,
   StrikethroughMark,
   StrikethroughKeyboardShortcut,

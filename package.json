@@ -1,7 +1,7 @@
 {
   "name": "slate-editor",
   "description": "A Rich Text Editor designed for Reboo using SlateJS framework.",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/ourcities/rebu-editor.git"

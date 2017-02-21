@@ -12,11 +12,11 @@ import EmbedKeyboardShortcut from './EmbedKeyboardShortcut'
 //
 // External
 //
-import EmbedUtils from './EmbedUtils'
+import * as EmbedUtils from './EmbedUtils'
 import EmbedButton from './EmbedButton'
 
 
-export default options => ({
+const EmbedPlugin = options => ({
   schema: EmbedSchema,
 
   onKeyDown(...args) {
@@ -25,6 +25,7 @@ export default options => ({
 })
 
 export {
+  EmbedPlugin,
   EmbedSchema,
   EmbedNode,
   EmbedKeyboardShortcut,

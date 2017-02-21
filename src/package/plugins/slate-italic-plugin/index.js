@@ -12,11 +12,11 @@ import ItalicKeyboardShortcut from './ItalicKeyboardShortcut'
 //
 // External
 //
-import ItalicUtils from './ItalicUtils'
+import * as ItalicUtils from './ItalicUtils'
 import ItalicButton from './ItalicButton'
 
 
-export default options => ({
+const ItalicPlugin = options => ({
   schema: ItalicSchema,
 
   onKeyDown(...args) {
@@ -25,6 +25,7 @@ export default options => ({
 })
 
 export {
+  ItalicPlugin,
   ItalicSchema,
   ItalicMark,
   ItalicKeyboardShortcut,

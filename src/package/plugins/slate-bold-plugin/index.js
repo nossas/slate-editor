@@ -12,11 +12,11 @@ import BoldKeyboardShortcut from './BoldKeyboardShortcut'
 //
 // External
 //
-import BoldUtils from './BoldUtils'
+import * as BoldUtils from './BoldUtils'
 import BoldButton from './BoldButton'
 
 
-export default options => ({
+const BoldPlugin = options => ({
   schema: BoldSchema,
 
   onKeyDown(...args) {
@@ -25,6 +25,7 @@ export default options => ({
 })
 
 export {
+  BoldPlugin,
   BoldSchema,
   BoldNode,
   BoldKeyboardShortcut,

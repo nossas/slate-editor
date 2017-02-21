@@ -12,11 +12,11 @@ import LinkKeyboardShortcut from './LinkKeyboardShortcut'
 //
 // External
 //
-import LinkUtils from './LinkUtils'
+import * as LinkUtils from './LinkUtils'
 import LinkButton from './LinkButton'
 
 
-export default options => ({
+const LinkPlugin = options => ({
   schema: LinkSchema,
 
   onKeyDown(...args) {
@@ -25,6 +25,7 @@ export default options => ({
 })
 
 export {
+  LinkPlugin,
   LinkSchema,
   LinkNode,
   LinkKeyboardShortcut,

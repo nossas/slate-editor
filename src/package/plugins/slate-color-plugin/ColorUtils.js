@@ -50,13 +50,3 @@ export const colorMarkStrategy = attributes => {
 
   return state
 }
-
-const ColorUtils = {
-  hasMark,
-  getMark,
-  createMark,
-  reapplyMark,
-  applyMark,
-  colorMarkStrategy,
-}
-export default ColorUtils
