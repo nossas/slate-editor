@@ -1,5 +1,5 @@
 {
-  "name": "reboo-slatejs-editor",
+  "name": "slate-editor",
   "description": "A Rich Text Editor designed for Reboo using SlateJS framework.",
   "version": "1.0.0",
   "repository": {
