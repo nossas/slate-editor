@@ -4,18 +4,17 @@ import Utils from './Utils'
 
 import initialEditorState from './initialEditorState'
 
-
 class SlateEditor extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = { state: initialEditorState, readOnly: false }
   }
 
-  onChange(state) {
+  onChange (state) {
     this.setState({ state })
   }
 
-  changeState(state) {
+  changeState (state) {
     //
     // The `setTimeout` function is need to prevent the warning below:
     //
@@ -30,9 +29,8 @@ class SlateEditor extends Component {
     setTimeout(() => { this.setState(state) }, 0)
   }
 
-  render() {
-
-    const { children, className, plugins } = this.props
+  render () {
+    const { children, style, className, plugins } = this.props
 
     const childProps = {
       plugins,
@@ -43,7 +41,7 @@ class SlateEditor extends Component {
     }
 
     return (
-      <div className={classnames("editor--root", className)}>
+      <div className={classnames('editor--root', className)} style={style}>
         {Utils.cloneElement(children, childProps)}
       </div>
     )

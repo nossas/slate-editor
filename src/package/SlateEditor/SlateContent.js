@@ -2,13 +2,12 @@ import React from 'react'
 import classnames from 'classnames'
 import { Editor } from 'slate'
 
-
 export default props => {
-  const { className, state, outerState, plugins, onChange, changeState } = props
+  const { className, style, state, outerState, plugins, onChange, changeState } = props
   const { readOnly } = outerState
 
   return (
-    <div className={classnames("editor--content", className)}>
+    <div className={classnames('editor--content', className)} style={style}>
       <Editor
         plugins={plugins}
         state={state}
