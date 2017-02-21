@@ -1,6 +1,6 @@
 import React from 'react'
 
-import All, {
+import {
   SlateEditor, SlateToolbar, SlateContent,
   AlignmentPlugin, AlignmentButtonBar,
   BoldPlugin, BoldButton,
@@ -18,7 +18,6 @@ import All, {
   StateLoggerButton,
   ToggleReadOnlyButton
 } from '../../package'
-console.log('All', All)
 
 import './Home.css'
 
