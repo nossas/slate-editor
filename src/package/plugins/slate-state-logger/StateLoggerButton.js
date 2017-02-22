@@ -3,7 +3,6 @@ import FontAwesome from 'react-fontawesome'
 import { Raw } from 'slate'
 import beautify from 'json-beautify'
 
-
 const LinkButton = ({ state, onChange, className, style }) => (
   <div>
     <button
@@ -14,10 +13,11 @@ const LinkButton = ({ state, onChange, className, style }) => (
         console.groupCollapsed('[State Logger]')
         console.info('State', beautify(state, null, 2, 100))
         console.info('State Serialized', beautify(Raw.serialize(state), null, 2, 100))
+        console.info('State Serialized (Terse)', beautify(Raw.serialize(state, { terse: true }), null, 2, 100))
         console.groupEnd()
       }}
     >
-      <FontAwesome name="code" style={{ marginRight: 5 }} />
+      <FontAwesome name='code' style={{ marginRight: 5 }} />
       State Logger
     </button>
   </div>
