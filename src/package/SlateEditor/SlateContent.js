@@ -2,12 +2,21 @@ import React from 'react'
 import classnames from 'classnames'
 import { Editor } from 'slate'
 
-export default props => {
-  const { className, style, state, outerState, plugins, onChange, changeState } = props
+export default ({
+  className,
+  wrapperStyle,
+  style,
+  state,
+  outerState,
+  plugins,
+  onChange,
+  changeState,
+  children
+}) => {
   const { readOnly } = outerState
 
   return (
-    <div className={classnames('editor--content', className)} style={style}>
+    <div className={classnames('editor--content', className)} style={wrapperStyle}>
       <Editor
         plugins={plugins}
         state={state}
@@ -15,7 +24,9 @@ export default props => {
         readOnly={readOnly}
         changeState={changeState}
         outerState={outerState}
+        style={style}
       />
+      {children}
     </div>
   )
 }
