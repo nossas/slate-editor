@@ -17,7 +17,7 @@ export default ({
   const { readOnly } = outerState
 
   return (
-    <div className={classnames('editor--content', className)} style={wrapperStyle} {...rest}>
+    <div className={classnames('editor--content', className)} style={wrapperStyle}>
       <Editor
         plugins={plugins}
         state={state}
@@ -26,6 +26,7 @@ export default ({
         changeState={changeState}
         outerState={outerState}
         style={style}
+        {...rest}
       />
       {children}
     </div>
