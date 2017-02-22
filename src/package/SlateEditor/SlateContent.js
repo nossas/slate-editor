@@ -11,12 +11,13 @@ export default ({
   plugins,
   onChange,
   changeState,
-  children
+  children,
+  ...rest
 }) => {
   const { readOnly } = outerState
 
   return (
-    <div className={classnames('editor--content', className)} style={wrapperStyle}>
+    <div className={classnames('editor--content', className)} style={wrapperStyle} {...rest}>
       <Editor
         plugins={plugins}
         state={state}
