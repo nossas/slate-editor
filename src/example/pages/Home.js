@@ -37,7 +37,7 @@ const plugins = [
   LinkPlugin(),
   ListPlugin(),
   StrikethroughPlugin(),
-  UnderlinePlugin(),
+  UnderlinePlugin()
 ]
 
 const classNames = {
@@ -95,7 +95,7 @@ const Home = ({ title }) => {
         <SlateToolbar>
           <FontFamilyDropdown className={classNames.dropdown} style={styles.dropdown} />
           <FontSizeInput className={classNames.input} {...fontSizePluginOptions} style={styles.input} />
-          <ImageButton className={classNames.button} />
+          <ImageButton className={classNames.button} signingUrl='http://localhost:3000/uploads' />
           <ColorButton className={classNames.button} initialState={colorPluginOptions} pickerDefaultPosition={{ x: -520, y: 17 }} />
           <GridButtonBar className={classNames.button} />
           <EmbedButton className={classNames.button} />
@@ -103,7 +103,7 @@ const Home = ({ title }) => {
 
         <SlateContent />
 
-        <SlateToolbar className="toolbar--footer">
+        <SlateToolbar className='toolbar--footer'>
           <StateLoggerButton className={classNames.button} />
           <ToggleReadOnlyButton className={classNames.button} />
         </SlateToolbar>
