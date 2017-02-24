@@ -1,5 +1,9 @@
 # Changelog
 
+### 2.2.1 (Feb 24, 2017)
+
+- Prepare project to publish on npm
+
 ### 2.2.0 (Feb 24, 2017)
 
 - Make ImagePlugin signingUrl injectable
