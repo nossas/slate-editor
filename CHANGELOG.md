@@ -1,5 +1,13 @@
 # Changelog
 
+### 2.2.0 (Fev 24, 2017)
+
+- Make ImagePlugin signingUrl injectable
+- Use react-s3-uploader package to upload images from slate-editor
+- Make editor's initial state can be injected
+- Move SlateContent component rest props to Editor
+- Make SlateEditor components stylish
+
 ### 2.1.0 (Fev 21, 2017)
 
 - Add environment variable check to load assets files only on browser to SSR works
