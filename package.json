@@ -1,10 +1,10 @@
 {
   "name": "slate-editor",
-  "description": "A Rich Text Editor designed for Reboo using SlateJS framework.",
+  "description": "A complete rich text editor based on SlateJS framework",
   "version": "2.2.0",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/ourcities/rebu-editor.git"
+    "url": "git+ssh://git@github.com/nossas/slate-editor.git"
   },
   "main": "lib/index.js",
   "scripts": {
@@ -47,7 +47,7 @@
   "peerDependencies": {
     "slate": "^0.16.1"
   },
-  "license": "MIT",
+  "license": "GPL-3.0",
   "files": [
     "LICENSE",
     "README.md",
@@ -61,5 +61,10 @@
     "editor",
     "react",
     "slatejs-plugins"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/nossas/slate-editor/issues"
+  },
+  "homepage": "https://github.com/nossas/slate-editor",
+  "author": "Nossas <tech@nossas.org> (http://github.com/nossas)"
 }
