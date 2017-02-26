@@ -55,12 +55,11 @@
     "lib"
   ],
   "keywords": [
-    "slatejs",
-    "reboo",
+    "slate",
     "rich-text",
     "editor",
     "react",
-    "slatejs-plugins"
+    "slate-plugins"
   ],
   "bugs": {
     "url": "https://github.com/nossas/slate-editor/issues"
