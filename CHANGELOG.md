@@ -1,5 +1,9 @@
 # Changelog
 
+### 2.2.4 (Mar 20, 2017)
+
+- Fix color plugin colorpicker draggable bar style
+
 ### 2.2.3 (Mar 20, 2017)
 
 - Replace process.env.BROWSER to exenv.canUseDOM
