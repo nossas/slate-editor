@@ -4,7 +4,7 @@ import classnames from 'classnames'
 
 import { fontSizeStrategy } from './FontSizeUtils'
 // FIXME: Needs to handle assets files to work with SSR
-if (process.env.REACT_APP_BROWSER || process.env.BROWSER) require('./FontSizeInput.css')
+if (require('exenv').canUseDOM) require('./FontSizeInput.css')
 
 //
 // It needs to check out how solve the warning below:

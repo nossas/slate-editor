@@ -2,7 +2,7 @@ import React from 'react'
 import classnames from 'classnames'
 
 // FIXME: Needs to handle assets files to work with SSR
-if (process.env.REACT_APP_BROWSER || process.env.BROWSER) require('./ImageNode.css')
+if (require('exenv').canUseDOM) require('./ImageNode.css')
 
 
 const ImageNode = ({

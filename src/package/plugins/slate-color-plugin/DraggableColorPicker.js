@@ -4,7 +4,7 @@ import { SketchPicker } from 'react-color'
 
 import { colorMarkStrategy } from './ColorUtils'
 // FIXME: Needs to handle assets files to work with SSR
-if (process.env.REACT_APP_BROWSER || process.env.BROWSER) require('./DraggableColorPicker.css')
+if (require('exenv').canUseDOM) require('./DraggableColorPicker.css')
 
 
 const DraggableColorPicker = ({

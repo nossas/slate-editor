@@ -8,7 +8,7 @@
   },
   "main": "lib/index.js",
   "scripts": {
-    "start": "REACT_APP_BROWSER=1 react-scripts start",
+    "start": "react-scripts start",
     "rs-build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "build": "babel src/package --out-dir lib --copy-files",
@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "exenv": "^1.2.1",
     "json-beautify": "^1.0.1",
     "keycode": "^2.1.7",
     "react-color": "^2.10.0",

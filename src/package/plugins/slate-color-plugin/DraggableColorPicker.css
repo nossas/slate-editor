@@ -18,9 +18,10 @@
 }
 .slate-color-plugin--draggable-handle:after {
   content: '';
-  background-color: #999;
   height: 1px;
   width: 100%;
   position: absolute;
   top: 1px;
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
 }

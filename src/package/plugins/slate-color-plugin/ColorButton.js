@@ -4,7 +4,7 @@ import classnames from 'classnames'
 
 import DraggableColorPicker from './DraggableColorPicker'
 // FIXME: Needs to handle assets files to work with SSR
-if (process.env.REACT_APP_BROWSER || process.env.BROWSER) require('./ColorButton.css')
+if (require('exenv').canUseDOM) require('./ColorButton.css')
 
 class ColorButton extends Component {
   componentWillMount() {
