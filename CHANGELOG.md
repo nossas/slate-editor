@@ -1,5 +1,9 @@
 # Changelog
 
+### 2.2.3 (Mar 20, 2017)
+
+- Replace process.env.BROWSER to exenv.canUseDOM
+
 ### 2.2.1 (Feb 24, 2017)
 
 - Prepare project to publish on npm
