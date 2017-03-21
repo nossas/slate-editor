@@ -43,10 +43,10 @@
     "react-draggable": "^2.2.3",
     "react-fontawesome": "^1.4.0",
     "react-s3-uploader": "^4.0.1",
-    "slate": "^0.16.1"
+    "slate": "^0.19.3"
   },
   "peerDependencies": {
-    "slate": "^0.16.1"
+    "slate": "^0.19.3"
   },
   "license": "GPL-3.0",
   "files": [
