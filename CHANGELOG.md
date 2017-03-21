@@ -1,5 +1,10 @@
 # Changelog
 
+### 2.2.6 (Mar 21, 2017)
+
+- Upgrade slate to v0.19.3
+- Add strategy to render a <td /> tag when block type is grid-cell
+
 ### 2.2.4 (Mar 20, 2017)
 
 - Fix color plugin colorpicker draggable bar style
