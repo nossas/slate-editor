@@ -1,5 +1,9 @@
 # Changelog
 
+### 2.2.8 (Mar 31, 2017)
+
+- Identify the instance of editor with an uid
+
 ### 2.2.7 (Mar 31, 2017)
 
 - Allow image upload multiple times
