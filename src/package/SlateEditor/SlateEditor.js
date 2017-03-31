@@ -7,7 +7,11 @@ import initialEditorState from './initialEditorState'
 class SlateEditor extends Component {
   constructor (props) {
     super(props)
-    this.state = { state: props.initialState || initialEditorState, readOnly: false }
+    this.state = {
+      state: props.initialState || initialEditorState,
+      readOnly: false,
+      uid: new Date().getUTCMilliseconds()
+    }
   }
 
   onChange (state) {

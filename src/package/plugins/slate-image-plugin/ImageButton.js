@@ -13,11 +13,11 @@ class ImageButton extends Component {
     }
   }
   render () {
-    const { state, onChange, className, style, signingUrl } = this.props
+    const { state, onChange, className, style, signingUrl, outerState } = this.props
     return (
       <div style={{ display: 'inline-block' }}>
         <button
-          id='slate-image-plugin-button'
+          id={`slate-image-plugin-button-${outerState.uid}`}
           style={{ position: 'relative', ...style }}
           className={className}
           onClick={e => {

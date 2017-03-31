@@ -9,6 +9,8 @@ export const insertInlineImage = ({ state, src }) => {
   .apply()
 }
 
-export const forceClickUploadButton = () => {
-  window.document.getElementById('slate-image-plugin-button').click()
+export const forceClickUploadButton = editor => {
+  window.document.getElementById(
+    `slate-image-plugin-button-${editor.props.outerState.uid}`
+  ).click()
 }
