@@ -20,7 +20,11 @@ class ImageButton extends Component {
           id='slate-image-plugin-button'
           style={{ position: 'relative', ...style }}
           className={className}
-          onClick={e => { ReactDOM.findDOMNode(this.upload).click() }}
+          onClick={e => {
+            const upload = ReactDOM.findDOMNode(this.upload)
+            upload.value = ''
+            upload.click()
+          }}
         >
           <div style={{
             position: 'absolute',
