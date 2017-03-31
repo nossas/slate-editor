@@ -1,5 +1,9 @@
 # Changelog
 
+### 2.2.7 (Mar 31, 2017)
+
+- Allow image upload multiple times
+
 ### 2.2.6 (Mar 21, 2017)
 
 - Upgrade slate to v0.19.3
