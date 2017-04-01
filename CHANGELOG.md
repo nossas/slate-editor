@@ -1,5 +1,10 @@
 # Changelog
 
+### 2.3.0 (Apr 01, 2017)
+
+- Fix image width when grid column be too small
+- Make columns of grid plugin with the same width
+
 ### 2.2.8 (Mar 31, 2017)
 
 - Identify the instance of editor with an uid
