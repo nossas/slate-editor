@@ -1,3 +1,7 @@
+.image-node {
+  max-width: 100%;
+}
+
 .image-node.active {
   border: 1px solid black;
   margin: -1px;
