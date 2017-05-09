@@ -1,5 +1,9 @@
 # Changelog
 
+### 2.3.1 (May 09, 2017)
+
+- Upgrade `react-fontawesome` to v1.6.1 #18
+
 ### 2.3.0 (Apr 01, 2017)
 
 - Fix image width when grid column be too small
