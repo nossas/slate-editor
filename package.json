@@ -41,7 +41,7 @@
     "keycode": "^2.1.7",
     "react-color": "^2.10.0",
     "react-draggable": "^2.2.3",
-    "react-fontawesome": "^1.4.0",
+    "react-fontawesome": "^1.6.1",
     "react-s3-uploader": "^4.0.1",
     "slate": "^0.19.3"
   },
