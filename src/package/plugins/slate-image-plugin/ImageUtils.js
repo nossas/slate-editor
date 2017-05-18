@@ -20,7 +20,7 @@ export const updateInlineImage = ({
       .transform()
       .setInline({
         type: 'imageLink',
-        isVoid: false,
+        isVoid: true,
         data: { src, title, href, openExternal }
       })
       .apply()
