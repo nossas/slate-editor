@@ -1,7 +1,31 @@
-<img src="https://avatars2.githubusercontent.com/u/1479357?v=3&s=250" alt="Nossas logo" title="Nossas" align="right" height="90" width="90"/>
+<h1 align="center">Slate Editor</h1>
 
-# [[Nossas]](http://github.com/nossas) Slate Editor
-A complete rich text editor based on SlateJS framework
+<p align="center">
+  <img
+    src="https://s3.amazonaws.com/hub-central/uploads/logo-nossas-20170517185909.svg"
+    width="320"
+    height="320"
+    alt="BONDE Logo"
+  />
+  <br />
+  <p style="margin-top: 50px" align="center">
+    <a href="http://ci.bonde.org/nossas/bonde-client">
+    <a href="https://github.com/nossas/slate-editor/blob/master/LICENSE">
+      <img
+        alt="Licence"
+        src="https://img.shields.io/github/license/nossas/slate-editor.svg"
+      />
+    </a>
+    <a href="https://conventionalcommits.org">
+      <img
+        alt="Conventional Commits"
+        src="https://img.shields.io/badge/Conventional%20Commits-1.0.0--beta.1-brightgreen.svg"
+      />
+    </a>
+  </p>
+</p>
+
+##
 
 # Let's install!
 It's just simply run `yarn add slate-editor --save` or `npm install slate-editor --save`
