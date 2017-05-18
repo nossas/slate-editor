@@ -1,15 +1,32 @@
 <h1 align="center">Slate Editor</h1>
 
-<p align="center">
-  <img
-    src="https://s3.amazonaws.com/hub-central/uploads/logo-nossas-20170517185909.svg"
-    width="320"
-    height="320"
-    alt="BONDE Logo"
-  />
-  <br />
-  <p style="margin-top: 50px" align="center">
-    <a href="http://ci.bonde.org/nossas/bonde-client">
+<div align="center">
+  <p>
+    <img
+      src="https://s3.amazonaws.com/hub-central/uploads/logo-nossas-20170517185909.svg"
+      width="320"
+      height="320"
+      alt="BONDE Logo"
+    />
+  </p>
+
+  <div align="center">
+    <a href="https://www.npmjs.com/package/slate-editor">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <img
+        alt="Slate Editor NPM Version"
+        src="https://img.shields.io/npm/v/slate-editor.svg"
+      />
+    </a>
+    <a href="https://www.npmjs.com/package/slate-editor">
+      <img
+        alt="Slate Editor NPM Downloads"
+        src="https://img.shields.io/npm/dt/slate-editor.svg"
+      />
+    </a>
+  </div>
+
+  <div align="center">
     <a href="https://github.com/nossas/slate-editor/blob/master/LICENSE">
       <img
         alt="Licence"
@@ -22,8 +39,8 @@
         src="https://img.shields.io/badge/Conventional%20Commits-1.0.0--beta.1-brightgreen.svg"
       />
     </a>
-  </p>
-</p>
+  </div>
+</div>
 
 ##
 
