@@ -13,18 +13,27 @@ const ImageNode = ({
     props: { readOnly }
   }
 }) => (
-  <img
-    {...attributes}
-    role="presentation"
+  <div
     className={classnames(
-      'image-node',
+      'image-node--container',
       {
         readonly: readOnly,
-        active: state.selection.hasEdgeIn(node),
-      },
+      }
     )}
-    src={node.data.get('src')}
-  />
+  >
+    <button className="image-node--edit-button">Editar</button>
+    <img
+      {...attributes}
+      role="presentation"
+      className={classnames(
+        'image-node',
+        {
+          active: state.selection.hasEdgeIn(node),
+        },
+      )}
+      src={node.data.get('src')}
+    />
+  </div>
 )
 
 export default ImageNode

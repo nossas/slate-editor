@@ -41,7 +41,7 @@ class ImageButton extends Component {
           signingUrl={signingUrl}
           accept='image/*'
           onProgress={progress => { this.setState({ progress }) }}
-          onError={e => console.error('[SlateEdit][ImagePlugin]:', e)}
+          onError={e => console.error('[SlateEditor][ImagePlugin]:', e)}
           onFinish={e => {
             const src = e.signedUrl.substring(0, e.signedUrl.indexOf('?'))
             onChange(insertInlineImage({ state, src }))
