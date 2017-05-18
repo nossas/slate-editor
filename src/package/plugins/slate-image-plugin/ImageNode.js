@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import classnames from 'classnames'
 
 import ImageDataModal from './ImageDataModal'
+import ImageEditLayer from './ImageEditLayer'
 
 // FIXME: Needs to handle assets files to work with SSR
 if (require('exenv').canUseDOM) require('./ImageNode.css')
@@ -32,11 +33,11 @@ class ImageNode extends Component {
         )}
 
         <div className={classnames('image-node--container', { readonly: readOnly })}>
-          <div className="image-node--image-edit-layer" onClick={() => this.modal(true)}>
-            <button className="image-node--image-edit-button" onClick={() => this.modal(true)}>
-              Edit
-            </button>
-          </div>
+          <ImageEditLayer
+            changeModalState={this.modal.bind(this)}
+          >
+            Edit
+          </ImageEditLayer>
           <img
             {...attributes}
             role="presentation"

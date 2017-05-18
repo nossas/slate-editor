@@ -1,0 +1,41 @@
+.image-node--container .image-node--image-edit-layer,
+.image-node--container .image-node--image-edit-layer:active,
+.image-node--container .image-node--image-edit-layer:focus {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  content: '';
+  width: 100%;
+  height: calc(100% - 6px);
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(255,255,255,.5);
+  z-index: 10;
+  cursor: pointer;
+  outline: 3px solid #1f78d8;
+  box-shadow: 0 0 12px #1f78d8;
+}
+.image-node--container .image-node--image-edit-layer .image-node--image-edit-button {
+  z-index: 11;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 3px;
+  border: none;
+  font-size: 12px;
+  padding: 7px 10px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  z-index: 11;
+  line-height: 1;
+}
+
+.image-node--container:not(.readonly):hover .image-node--image-edit-layer,
+.image-node--container:not(.readonly):hover .image-node--image-edit-button {
+  display: flex;
+}
+
+.image-node--container.readonly .image-node--image-edit-button {
+  display: none;
+}
