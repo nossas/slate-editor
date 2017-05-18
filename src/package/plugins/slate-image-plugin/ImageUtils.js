@@ -29,7 +29,7 @@ export const updateInlineImage = ({
       .setInline({
         type: 'image',
         isVoid: true,
-        data: { src, title }
+        data: { src, title, openExternal }
       })
       .apply()
 }
