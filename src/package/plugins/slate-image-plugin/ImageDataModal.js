@@ -92,9 +92,9 @@ class ImageDataModal extends Component {
                 </div>
 
                 <div className="container--action-buttons">
-                  <button type="submit">Save</button>
-                  <button type="button">Cancel</button>
-                  <button type="button">Delete</button>
+                  <button type="submit" className="primary">Save</button>
+                  <button type="button" className="opaque">Cancel</button>
+                  <button type="button" className="danger">Delete</button>
                 </div>
               </form>
             </div>
