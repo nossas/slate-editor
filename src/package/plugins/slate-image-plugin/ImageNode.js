@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import classnames from 'classnames'
 
+import { updateInlineImage } from './ImageUtils'
+
 // FIXME: Needs to handle assets files to work with SSR
 if (require('exenv').canUseDOM) require('./ImageNode.css')
 
@@ -10,6 +12,12 @@ class ImageNode extends Component {
 
     this.state = {
       modalActive: false,
+      imageAttributes: {
+        src: this.props.node.data.get('src'),
+        title: undefined,
+        href: undefined,
+        openExternal: false,
+      },
     }
   }
 
@@ -17,14 +25,22 @@ class ImageNode extends Component {
     this.setState({ modalActive })
   }
 
+  setImageAttribute(event) {
+    this.setState({
+      imageAttributes: {
+        ...this.state.imageAttributes,
+        [event.target.name]: event.target.value,
+      }
+    })
+  }
+
   render() {
     const {
       node,
       state,
       attributes,
-      editor: {
-        props: { readOnly }
-      }
+      readOnly,
+      editor: { onChange },
     } = this.props
 
     return (
@@ -45,34 +61,61 @@ class ImageNode extends Component {
                 </div>
 
                 <div className="modal--content-right">
-                  <div className="form-group">
-                    <label htmlFor="image-plugin--edit-title">Title</label>
-                    <input
-                      id="image-plugin--edit-title"
-                      type="text"
-                      onClick={e => {
-                        e.stopPropagation()
-                      }}
-                    />
-                  </div>
+                  <form onSubmit={e => {
+                    e.preventDefault()
+                    onChange(updateInlineImage({ state, data: this.state.imageAttributes }))
+                    this.modal(false)
+                  }}>
+                    <div className="form-group">
+                      <label htmlFor="image-plugin--edit-title">Title</label>
+                      <input
+                        id="image-plugin--edit-title"
+                        type="text"
+                        name="title"
+                        onClick={e => e.stopPropagation()}
+                        onBlur={e => {
+                          e.stopPropagation()
+                          this.setImageAttribute(e)
+                        }}
+                      />
+                    </div>
 
-                  <div className="form-group">
-                    <label htmlFor="image-plugin--edit-link">Link</label>
-                    <input id="image-plugin--edit-link" type="text" />
-                  </div>
+                    <div className="form-group">
+                      <label htmlFor="image-plugin--edit-href">Link</label>
+                      <input
+                        id="image-plugin--edit-href"
+                        type="text"
+                        name="href"
+                        onClick={e => e.stopPropagation()}
+                        onBlur={e => {
+                          e.stopPropagation()
+                          this.setImageAttribute(e)
+                        }}
+                      />
+                    </div>
 
-                  <div className="form-group">
-                    <label htmlFor="image-plugin--edit-open-in-tab">
-                      <input id="image-plugin--edit-open-in-tab" type="checkbox" />
-                      Open link in new tab
-                    </label>
-                  </div>
+                    <div className="form-group">
+                      <label htmlFor="image-plugin--edit-open-external">
+                        <input
+                          id="image-plugin--edit-open-external"
+                          type="checkbox"
+                          name="openExternal"
+                          onClick={e => e.stopPropagation()}
+                          onChange={e => {
+                            e.stopPropagation()
+                            this.setImageAttribute(e)
+                          }}
+                        />
+                        Open link in new tab
+                      </label>
+                    </div>
 
-                  <div className="container--action-buttons">
-                    <button>Save</button>
-                    <button>Cancel</button>
-                    <button>Delete</button>
-                  </div>
+                    <div className="container--action-buttons">
+                      <button type="submit">Save</button>
+                      <button type="button">Cancel</button>
+                      <button type="button">Delete</button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -108,6 +151,7 @@ class ImageNode extends Component {
               },
             )}
             src={node.data.get('src')}
+            title={node.data.get('title')}
           />
         </div>
       </span>
