@@ -15,4 +15,4 @@ body {
   box-shadow: none;
 }
 
-:focus, :active { outline: none !important; }
+input:focus, input:active { outline: none !important; }
