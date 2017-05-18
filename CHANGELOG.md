@@ -1,3 +1,18 @@
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+<a name="2.4.0"></a>
+# [2.4.0](https://github.com/nossas/slate-editor/compare/v2.3.1...v2.4.0) (2017-05-18)
+
+
+### Features
+
+* **image-plugin:** image data management via modal [#17](https://github.com/nossas/slate-editor/issues/17) ([b63843f](https://github.com/nossas/slate-editor/commit/b63843f))
+* **packages:** add standard-version [#17](https://github.com/nossas/slate-editor/issues/17) ([0570357](https://github.com/nossas/slate-editor/commit/0570357))
+
+
+
 # Changelog
 
 ### 2.3.1 (May 09, 2017)
