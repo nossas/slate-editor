@@ -91,19 +91,32 @@
   font-size: 15px;
   font-weight: 500;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .image-plugin--edit-modal .modal--content .container--action-buttons button.primary {
   background-color: #0B83F5;
   color: #fff;
 }
-.image-plugin--edit-modal .modal--content .container--action-buttons button.opaque {
-  background-color: #EDEEED;
+.image-plugin--edit-modal .modal--content .container--action-buttons button.primary:hover {
+  background-color: #096fd0;
 }
+
+.image-plugin--edit-modal .modal--content .container--action-buttons button.opaque {
+  background-color: #EEEEEE;
+}
+.image-plugin--edit-modal .modal--content .container--action-buttons button.opaque:hover {
+  background-color: #E4E4E4;
+}
+
 .image-plugin--edit-modal .modal--content .container--action-buttons button.danger {
   border: 2px solid #F43A35;
   color: #F43A35;
   margin-left: 20px;
+}
+.image-plugin--edit-modal .modal--content .container--action-buttons button.danger:hover {
+  background-color: #F43A35;
+  color: #FFFFFF;
 }
 
 .image-plugin--edit-modal .modal--content .modal--content-left {
