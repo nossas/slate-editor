@@ -85,5 +85,16 @@ To help us develop new features or fix bugs, to setup your development environme
 
 And it's done! Easy, isn't?!
 
+---
+
+To get the **ImagePlugin** working in 100% of its functionality, you need to define the
+environment variables below:
+
+- **REACT_APP_API_URL**: e.g. https://api.bonde.org
+  - The URL of the API
+- **REACT_APP_SIGNING_URL_ENDPOINT**: e.g. `/uploads`
+  - The endpoint that will sign the URL to upload the image to AWS S3.
+  - To sign the URL on your API, you can check an example with RoR [here](https://github.com/nossas/bonde-server/blob/master/app/controllers/uploads_controller.rb).
+
 ## References
 - [SlateJS](https://github.com/ianstormtaylor/slate) - A completely customizable framework for building rich text editors.
