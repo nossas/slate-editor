@@ -17,7 +17,7 @@
     "deploy-docs": "sh ./bin/docs",
     "ci-deploy-docs": "sh ./bin/docs-ci",
     "gh-pages": "REACT_APP_GH_PAGES_PATH='component-template' npm run build",
-    "release": "./node_modules/.bin/standard-version"
+    "release": "npm run build && ./node_modules/.bin/standard-version"
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",
