@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { updateInlineImage } from './ImageUtils'
+import { updateInlineImage, deleteInlineImage } from './ImageUtils'
 
 // FIXME: Needs to handle assets files to work with SSR
 if (require('exenv').canUseDOM) require('./ImageDataModal.css')
@@ -93,8 +93,24 @@ class ImageDataModal extends Component {
 
                 <div className="container--action-buttons">
                   <button type="submit" className="primary">Save</button>
-                  <button type="button" className="opaque">Cancel</button>
-                  <button type="button" className="danger">Delete</button>
+                  <button
+                    type="button"
+                    className="opaque"
+                    onClick={() => changeModalState(false)}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="button"
+                    className="danger"
+                    onClick={e => {
+                      e.preventDefault()
+                      e.stopPropagation()
+                      onChange(deleteInlineImage({ state }))
+                    }}
+                  >
+                    Delete
+                  </button>
                 </div>
               </form>
             </div>

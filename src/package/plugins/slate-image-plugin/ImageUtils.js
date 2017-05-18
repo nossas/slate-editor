@@ -1,12 +1,10 @@
-const tempImage = 'https://s3.amazonaws.com/hub-central-dev/uploads/1495072372_adventure-time.gif'
-
 export const insertInlineImage = ({ state, src }) => {
   return state
   .transform()
   .insertInline({
     type: 'image',
     isVoid: true,
-    data: { src: tempImage }
+    data: { src }
   })
   .apply()
 }
@@ -36,9 +34,9 @@ export const updateInlineImage = ({
 
 export const deleteInlineImage = ({ state }) => {
   return state
-    .transform()
-    .deleteBackward(1)
-    .apply()
+      .transform()
+      .deleteBackward(1)
+      .apply()
 }
 
 export const forceClickUploadButton = editor => {
