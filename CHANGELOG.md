@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.4.3"></a>
+## [2.4.3](https://github.com/nossas/slate-editor/compare/v2.4.1...v2.4.3) (2017-05-25)
+
+
+### Bug Fixes
+
+* **color-plugin:** remove all nested color marks close [#22](https://github.com/nossas/slate-editor/issues/22) ([82fd22e](https://github.com/nossas/slate-editor/commit/82fd22e))
+* **example:** accepts env vars to compose the signing url ([787687f](https://github.com/nossas/slate-editor/commit/787687f))
+* **scripts:** merge the build and release scripts ([e14e95c](https://github.com/nossas/slate-editor/commit/e14e95c))
+
+
+
 <a name="2.4.2"></a>
 ## [2.4.2](https://github.com/nossas/slate-editor/compare/v2.4.1...v2.4.2) (2017-05-18)
 
