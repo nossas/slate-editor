@@ -12,3 +12,47 @@
   border-color: #014c8c;
   margin: -1px;
 }
+
+
+/**
+ * Tooltip
+ */
+.link-node-container {
+  position: relative;
+}
+
+.link-node-container .link-node--tooltip {
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: -55px;
+  font-family: 'Trebuchet MS', 'Helvetica Neue', Helvetica, Tahoma, sans-serif;
+  background-color: rgba(0,0,0,.95);
+  color: #555;
+  font-size: 14px;
+  padding: 16px;
+  border-radius: 3px;
+  min-width: 250px;
+  max-height: 290px;
+  text-align: left;
+}
+
+.link-node-container .link-node--tooltip .tooltip--item {
+  display: inline-block;
+  font-size: 14px;
+  color: #ccc;
+  margin: 0 8px;
+  text-decoration: none;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.link-node-container .link-node--tooltip a.tooltip--item:hover,
+.link-node-container .link-node--tooltip a.tooltip--item:active,
+.link-node-container .link-node--tooltip a.tooltip--item:focus {
+  color: #fff;
+  cursor: pointer;
+}
