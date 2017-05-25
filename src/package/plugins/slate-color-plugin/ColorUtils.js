@@ -1,17 +1,23 @@
-export const hasMark = state => state.marks.some(mark => mark.type === 'color')
-export const getMark = state => state.marks.filter(mark => mark.type === 'color').first()
+export const typeFilter = mark => mark.type === 'color'
+export const hasMark = state => state.marks.some(typeFilter)
+export const getMarks = state => state.marks.filter(typeFilter)
+export const getMark = state => state.marks.filter(typeFilter).first()
 
 export const createMark = rgba => ({
   type: 'color',
   data: { rgba },
 })
 
-export const reapplyMark = ({ state, rgba }) => state
-  .transform()
-  .removeMark(getMark(state))
+export const reapplyMark = ({ state, rgba }) => {
+  const transformedState = state.transform()
+
+  getMarks(state).map(mark => { transformedState.removeMark(mark) })
+
+  return transformedState
   .addMark(createMark(rgba))
   .focus()
   .apply()
+}
 
 export const applyMark = ({ state, rgba }) => state
   .transform()
