@@ -11,7 +11,8 @@ export const createMark = rgba => ({
 export const reapplyMark = ({ state, rgba }) => {
   const transformedState = state.transform()
 
-  getMarks(state).map(mark => { transformedState.removeMark(mark) })
+  // remove all nested color marks
+  getMarks(state).map(mark => transformedState.removeMark(mark))
 
   return transformedState
   .addMark(createMark(rgba))
