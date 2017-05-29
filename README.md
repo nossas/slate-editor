@@ -98,6 +98,7 @@ Take a look at the [full working example](https://github.com/nossas/slate-editor
 # Contributing
 To help us develop new features or fix bugs, to setup your development environment is too simple. Just follow the steps:
 - `git clone git@github.com:nossas/slate-editor.git` the project
+- `yarn install` or `npm install` to install all the dependency packages
 - `yarn start` or `npm start`
 
 And it's done! Easy, isn't?!
