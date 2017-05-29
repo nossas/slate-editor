@@ -16,6 +16,7 @@
   max-height: 290px;
   text-align: left;
   user-select: none;
+  z-index: 1;
 }
 
 /**
