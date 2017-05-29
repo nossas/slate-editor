@@ -1,4 +1,11 @@
 /**
+ * Modal Button: Container
+ */
+.modal--container .modal--content .modal-button--container {
+  text-align: left;
+}
+
+/**
  * Modal Button
  */
 .modal--container .modal--content .modal-button--container button {
