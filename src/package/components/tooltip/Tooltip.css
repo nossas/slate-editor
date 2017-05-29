@@ -15,6 +15,7 @@
   min-width: 260px;
   max-height: 290px;
   text-align: left;
+  user-select: none;
 }
 
 /**
@@ -32,23 +33,28 @@
   vertical-align: middle;
   border-left:  1px solid #555;
   padding:  0 10px;
+  cursor: pointer;
 }
 .tooltip--container .tooltip--item:first-of-type {
   border: none;
+}
+.tooltip--container .tooltip--item:hover,
+.tooltip--container .tooltip--item:active,
+.tooltip--container .tooltip--item:focus {
+  color: #fff;
 }
 
 /**
  * Tooltip Item: Link Adjusts
  */
-.tooltip--container .tooltip--item > a:hover,
-.tooltip--container .tooltip--item > a:active,
-.tooltip--container .tooltip--item > a:focus {
-  color: #fff;
-  cursor: pointer;
-}
-
 .tooltip--container .tooltip--item > a,
 .tooltip--container .tooltip--item > a:visited {
   text-decoration: none;
   color: #ccc;
+}
+
+.tooltip--container .tooltip--item > a:hover,
+.tooltip--container .tooltip--item > a:active,
+.tooltip--container .tooltip--item > a:focus {
+  color: #fff;
 }
