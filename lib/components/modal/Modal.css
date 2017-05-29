@@ -1,0 +1,77 @@
+/**
+ * Layer
+ */
+.modal--layer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,.8);
+  left: 0;
+  top: 0;
+  z-index: 12;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/**
+ * Modal
+ */
+.modal--container {
+  background-color: #fff;
+  width: 768px;
+  box-shadow: 0 0 50px rgba(120,120,120,.3);
+}
+
+/**
+ * Modal Header
+ */
+.modal--container .modal--header {
+  padding: 30px;
+  border-bottom: 1px solid #efefef;
+  text-align: left;
+  color: #000;
+}
+
+/**
+ * Close Button
+ */
+.modal--container .modal--header .button--close {
+  float: right;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  outline: none;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.modal--container .modal--header .button--close::before,
+.modal--container .modal--header .button--close::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #ccc;
+  right: 0;
+  top: 8px;
+}
+
+.modal--container .modal--header .button--close:hover::before,
+.modal--container .modal--header .button--close:hover::after {
+  background-color: #aaa;
+}
+
+.modal--container .modal--header .button--close::before {
+  transform: rotate(45deg)
+}
+.modal--container .modal--header .button--close::after {
+  transform: rotate(-45deg)
+}
+
+@media screen and (max-width: 768px) {
+  .modal--container {
+    width: 100%;
+  }
+}
