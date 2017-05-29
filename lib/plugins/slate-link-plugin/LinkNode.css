@@ -12,3 +12,7 @@
   border-color: #014c8c;
   margin: -1px;
 }
+
+.link-node-container {
+  position: relative;
+}

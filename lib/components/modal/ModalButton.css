@@ -1,0 +1,54 @@
+/**
+ * Modal Button: Container
+ */
+.modal--container .modal--content .modal-button--container {
+  text-align: left;
+}
+
+/**
+ * Modal Button
+ */
+.modal--container .modal--content .modal-button--container button {
+  border: none;
+  border-radius: 3px;
+  background-color: transparent;
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 500;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/**
+ * Modal Button: Primary
+ */
+.modal--container .modal--content .modal-button--container button.primary {
+  background-color: #0B83F5;
+  color: #fff;
+}
+.modal--container .modal--content .modal-button--container button.primary:hover {
+  background-color: #096fd0;
+}
+
+/**
+ * Modal Button: Opaque
+ */
+.modal--container .modal--content .modal-button--container button.opaque {
+  background-color: #EEEEEE;
+}
+.modal--container .modal--content .modal-button--container button.opaque:hover {
+  background-color: #E4E4E4;
+}
+
+/**
+ * Modal Button: Danger
+ */
+.modal--container .modal--content .modal-button--container button.danger {
+  border: 2px solid #F43A35;
+  color: #F43A35;
+  margin-left: 20px;
+}
+.modal--container .modal--content .modal-button--container button.danger:hover {
+  background-color: #F43A35;
+  color: #FFFFFF;
+}
