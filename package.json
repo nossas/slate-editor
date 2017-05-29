@@ -17,7 +17,7 @@
     "deploy-docs": "sh ./bin/docs",
     "ci-deploy-docs": "sh ./bin/docs-ci",
     "gh-pages": "REACT_APP_GH_PAGES_PATH='component-template' npm run build",
-    "prerelease": "npm run build && git add .",
+    "prerelease": "rm -rf lib && npm run build && git add .",
     "release": "./node_modules/.bin/standard-version -a"
   },
   "devDependencies": {
