@@ -11,9 +11,9 @@ class LinkDataModal extends Component {
     this.state = {
       imageAttributes: {
         title: node.data.get('title'),
-        url: node.data.get('url'),
+        href: node.data.get('href'),
         text: node.data.get('text') || this.props.presetData.text,
-        openExternal: node.data.get('openExternal'),
+        target: node.data.get('target'),
       },
     }
   }
@@ -55,8 +55,8 @@ class LinkDataModal extends Component {
     })
   }
 
-  isValidURL(url) {
-    return /^https?:\/\/[\w]{2,}\.[\w\.]{2,}$/.test(url)
+  isValidHref(href) {
+    return /^https?:\/\/[\w]{2,}\.[\w\.]{2,}$/.test(href)
   }
 
   render() {
@@ -75,7 +75,7 @@ class LinkDataModal extends Component {
 
               const { imageAttributes } = this.state
 
-              if (this.isValidURL(imageAttributes.url)) {
+              if (this.isValidHref(imageAttributes.href)) {
                 onChange(updateLinkStrategy({ state, data: this.state.imageAttributes }))
                 changeModalState(false)
               }
@@ -93,14 +93,14 @@ class LinkDataModal extends Component {
               </ModalForm.Group>
 
               <ModalForm.Group>
-                <label htmlFor="image-plugin--edit-url">URL</label>
+                <label htmlFor="image-plugin--edit-href">URL</label>
                 <input
-                  id="image-plugin--edit-url"
+                  id="image-plugin--edit-href"
                   type="text"
-                  name="url"
+                  name="href"
                   onClick={e => e.stopPropagation()}
                   onChange={e => this.setLinkAttribute(e, e.target.value)}
-                  value={this.state.imageAttributes.url}
+                  value={this.state.imageAttributes.href}
                 />
               </ModalForm.Group>
 
@@ -121,10 +121,10 @@ class LinkDataModal extends Component {
                   <input
                     id="image-plugin--edit-open-external"
                     type="checkbox"
-                    name="openExternal"
+                    name="target"
                     onClick={e => e.stopPropagation()}
                     onChange={e => this.setLinkAttribute(e, e.target.checked)}
-                    checked={this.state.imageAttributes.openExternal}
+                    checked={this.state.imageAttributes.target === '_blank'}
                   />
                   Open link in new tab
                 </label>

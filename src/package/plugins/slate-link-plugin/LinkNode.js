@@ -59,8 +59,8 @@ class LinkNode extends Component {
           {!readOnly && (
             <Tooltip style={{ display: hasLinks(state) ? 'block' : 'none' }}>
               <Tooltip.Item>
-                <a href={node.data.get('url')} target="_blank">
-                  {node.data.get('url')}
+                <a href={node.data.get('href')} target="_blank">
+                  {node.data.get('href')}
                 </a>
               </Tooltip.Item>
               <Tooltip.Item onClick={() => this.modal(true)}>
@@ -74,8 +74,8 @@ class LinkNode extends Component {
           <a
             {...attributes}
             className="link-node"
-            href={node.data.get('url')}
-            target={node.data.get('openExternal')}
+            href={node.data.get('href')}
+            target={node.data.get('target')}
             title={node.data.get('title')}
             ref={text => {this.text = text}}
           >

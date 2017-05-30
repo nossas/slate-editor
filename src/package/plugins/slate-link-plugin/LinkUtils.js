@@ -11,7 +11,7 @@ export const unlink = state =>
     .focus()
     .apply()
 
-export const updateLinkStrategy = ({ state, data: { title, url, text, openExternal } }) => {
+export const updateLinkStrategy = ({ state, data: { title, url, text, target } }) => {
   let transform = state.transform()
 
   if (state.isCollapsed) {
@@ -28,7 +28,7 @@ export const updateLinkStrategy = ({ state, data: { title, url, text, openExtern
         title,
         url,
         text,
-        openExternal: openExternal ? '_blank' : '_self'
+        target: target ? '_blank' : '_self'
       }
     })
 
@@ -53,7 +53,7 @@ export const insertLinkStrategy = state => {
     }
 
     transform
-      .wrapInline(createLink({ openExternal: true, openModal: true }))
+      .wrapInline(createLink({ target: '_blank', openModal: true }))
 
     // fix offset 0 selection:
     // remove the white space added before
