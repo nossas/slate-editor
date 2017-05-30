@@ -53,7 +53,7 @@ export const insertLinkStrategy = state => {
     }
 
     transform
-      .wrapInline(createLink({ openExternal: true }))
+      .wrapInline(createLink({ openExternal: true, openModal: true }))
 
     // fix offset 0 selection:
     // remove the white space added before

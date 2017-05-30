@@ -10,7 +10,7 @@ class LinkNode extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isModalActive: true,
+      isModalActive: false,
       mounted: false,
       presetData: { text: '' }
     }
@@ -21,6 +21,10 @@ class LinkNode extends Component {
   }
 
   componentDidMount() {
+    const { node } = this.props
+
+    if (node.data.get('openModal')) this.modal(true)
+
     this.setState({
       presetData: { text: this.text.innerText },
       mounted: true,
