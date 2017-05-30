@@ -55,6 +55,10 @@ class LinkDataModal extends Component {
     })
   }
 
+  isValidURL(url) {
+    return /^https?:\/\/[\w]{2,}\.[\w\.]{2,}$/.test(url)
+  }
+
   render() {
     const { state, onChange, changeModalState } = this.props
 
@@ -68,8 +72,13 @@ class LinkDataModal extends Component {
           <ModalContent.Right>
             <ModalForm onSubmit={e => {
               e.preventDefault()
-              onChange(updateLinkStrategy({ state, data: this.state.imageAttributes }))
-              changeModalState(false)
+
+              const { imageAttributes } = this.state
+
+              if (this.isValidURL(imageAttributes.url)) {
+                onChange(updateLinkStrategy({ state, data: this.state.imageAttributes }))
+                changeModalState(false)
+              }
             }}>
               <ModalForm.Group>
                 <label htmlFor="image-plugin--edit-title">Title</label>
