@@ -23,3 +23,7 @@
   padding: 10px;
   font-size: 16px;
 }
+
+.modal--container .modal--form .modal--form-group input::placeholder {
+  color: #ccc;
+}

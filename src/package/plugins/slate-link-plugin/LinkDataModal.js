@@ -56,11 +56,12 @@ class LinkDataModal extends Component {
   }
 
   isValidHref(href) {
-    return /^https?:\/\/[\w]{2,}\.[\w\.]{2,}$/.test(href)
+    // allow http://, https:// (secure) and non-protocol (default http://)
+    return /^(https?:\/\/)?[\w]{2,}\.[\w\.]{2,}$/.test(href)
   }
 
   render() {
-    const { state, onChange, changeModalState } = this.props
+    const { node, state, onChange, changeModalState } = this.props
 
     return (
       <Modal>
@@ -76,7 +77,13 @@ class LinkDataModal extends Component {
               const { imageAttributes } = this.state
 
               if (this.isValidHref(imageAttributes.href)) {
-                onChange(updateLinkStrategy({ state, data: this.state.imageAttributes }))
+                const { href } = imageAttributes
+                const hasProtocol = /^https?:\/\/.+/.test(href)
+                console.log('imageAttributes', imageAttributes)
+                onChange(updateLinkStrategy({ state, data: {
+                  ...imageAttributes,
+                  href: hasProtocol ? href : `http://${href}`
+                } }))
                 changeModalState(false)
               }
             }}>
@@ -89,6 +96,7 @@ class LinkDataModal extends Component {
                   onClick={e => e.stopPropagation()}
                   onChange={e => this.setLinkAttribute(e, e.target.value)}
                   value={this.state.imageAttributes.title}
+                  placeholder="i.e. Hint text"
                 />
               </ModalForm.Group>
 
@@ -101,6 +109,7 @@ class LinkDataModal extends Component {
                   onClick={e => e.stopPropagation()}
                   onChange={e => this.setLinkAttribute(e, e.target.value)}
                   value={this.state.imageAttributes.href}
+                  placeholder="e.g. http://example.com"
                 />
               </ModalForm.Group>
 
@@ -137,7 +146,10 @@ class LinkDataModal extends Component {
                 />
                 <ModalButton.Opaque
                   text="Cancel"
-                  onClick={() => changeModalState(false)}
+                  onClick={() => {
+                    if (!node.data.get('href')) onChange(unlink(state))
+                    changeModalState(false)
+                  }}
                 />
                 <ModalButton.Danger
                   text="Unlink"

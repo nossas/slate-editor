@@ -11,7 +11,7 @@ export const unlink = state =>
     .focus()
     .apply()
 
-export const updateLinkStrategy = ({ state, data: { title, url, text, target } }) => {
+export const updateLinkStrategy = ({ state, data: { title, href, text, target } }) => {
   let transform = state.transform()
 
   if (state.isCollapsed) {
@@ -26,7 +26,7 @@ export const updateLinkStrategy = ({ state, data: { title, url, text, target } }
       type: 'link',
       data: {
         title,
-        url,
+        href,
         text,
         target: target ? '_blank' : '_self'
       }
