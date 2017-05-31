@@ -19,7 +19,7 @@
     "gh-pages": "REACT_APP_GH_PAGES_PATH='component-template' npm run build",
     "prerelease": "rm -rf lib && npm run build && git add .",
     "release": "./node_modules/.bin/standard-version -a",
-    "publish-release": "git push --set-upstream origin `git symbolic-ref --short -q HEAD` --follow-tags && npm publish"
+    "publish-release": "git push origin master --follow-tags && npm publish"
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",
