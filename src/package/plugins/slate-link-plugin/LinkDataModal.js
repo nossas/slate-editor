@@ -79,7 +79,7 @@ class LinkDataModal extends Component {
               if (this.isValidHref(imageAttributes.href)) {
                 const { href } = imageAttributes
                 const hasProtocol = /^https?:\/\/.+/.test(href)
-                console.log('imageAttributes', imageAttributes)
+
                 onChange(updateLinkStrategy({ state, data: {
                   ...imageAttributes,
                   href: hasProtocol ? href : `http://${href}`
