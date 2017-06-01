@@ -76,16 +76,13 @@ class LinkDataModal extends Component {
 
               const { imageAttributes } = this.state
 
-              if (this.isValidHref(imageAttributes.href)) {
-                const { href } = imageAttributes
-                const hasProtocol = /^https?:\/\/.+/.test(href)
-
-                onChange(updateLinkStrategy({ state, data: {
-                  ...imageAttributes,
-                  href: hasProtocol ? href : `http://${href}`
-                } }))
-                changeModalState(false)
+              if (!imageAttributes.href) {
+                onChange(unlink(state))
+              } else {
+                onChange(updateLinkStrategy({ state, data: imageAttributes }))
               }
+
+              changeModalState(false)
             }}>
               <ModalForm.Group>
                 <label htmlFor="image-plugin--edit-title">Title</label>
