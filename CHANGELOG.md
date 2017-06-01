@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.6.4"></a>
+## [2.6.4](https://github.com/nossas/slate-editor/compare/v2.6.3...v2.6.4) (2017-06-01)
+
+
+### Bug Fixes
+
+* **link-plugin:** remove modal's form validation fixes [#27](https://github.com/nossas/slate-editor/issues/27) ([ea64813](https://github.com/nossas/slate-editor/commit/ea64813))
+* **scripts:** update publish-release script ([da73528](https://github.com/nossas/slate-editor/commit/da73528))
+
+
+
 <a name="2.6.3"></a>
 ## [2.6.3](https://github.com/nossas/slate-editor/compare/v2.6.2...v2.6.3) (2017-05-31)
 
