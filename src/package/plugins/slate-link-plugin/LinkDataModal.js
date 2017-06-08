@@ -66,7 +66,10 @@ class LinkDataModal extends Component {
     return (
       <Modal>
         <Modal.Header
-          closeButtonAction={() => changeModalState(false)}
+          closeButtonAction={() => {
+            if (!node.data.get('href')) onChange(unlink(state))
+            changeModalState(false)
+          }}
         />
 
         <ModalContent>
