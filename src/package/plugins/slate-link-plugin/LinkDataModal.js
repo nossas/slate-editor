@@ -46,6 +46,10 @@ class LinkDataModal extends Component {
     }
   }
 
+  componentDidMount() {
+    this.inputHref.focus()
+  }
+
   setLinkAttribute(event, value) {
     this.setState({
       imageAttributes: {
@@ -110,6 +114,7 @@ class LinkDataModal extends Component {
                   onChange={e => this.setLinkAttribute(e, e.target.value)}
                   value={this.state.imageAttributes.href}
                   placeholder="e.g. http://example.com"
+                  ref={input => this.inputHref = input}
                 />
               </ModalForm.Group>
 
