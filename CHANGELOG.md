@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.6.5"></a>
+## [2.6.5](https://github.com/nossas/slate-editor/compare/v2.6.4...v2.6.5) (2017-06-08)
+
+
+### Bug Fixes
+
+* **link-plugin:** autofocus on href input on modal show ([b3ae3a3](https://github.com/nossas/slate-editor/commit/b3ae3a3))
+* **link-plugin:** show tooltip strategy ([cb71b10](https://github.com/nossas/slate-editor/commit/cb71b10))
+* **link-plugin:** unlink when close modal without fill the href ([0be15ca](https://github.com/nossas/slate-editor/commit/0be15ca))
+
+
+
 <a name="2.6.4"></a>
 ## [2.6.4](https://github.com/nossas/slate-editor/compare/v2.6.3...v2.6.4) (2017-06-01)
 
