@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { hasLinks, unlink } from './LinkUtils'
+import { hasLinks, getLink, unlink } from './LinkUtils'
 import Tooltip from '../../components/tooltip'
 import LinkDataModal from './LinkDataModal'
 
@@ -43,6 +43,9 @@ class LinkNode extends Component {
     const { isModalActive, presetData } = this.state
     const { children, attributes, state, node, readOnly, editor: { onChange } } = this.props
 
+    const focusedOnCurrentNode = getLink(state) && node.key === getLink(state).key
+    const showTooltip = !readOnly && state.isCollapsed && focusedOnCurrentNode
+
     return (
       <span>
         {!isModalActive ? null : (
@@ -56,7 +59,7 @@ class LinkNode extends Component {
         )}
 
         <span className="link-node-container">
-          {!readOnly && (
+          {showTooltip && (
             <Tooltip style={{ display: hasLinks(state) ? 'block' : 'none' }}>
               <Tooltip.Item>
                 <a href={node.data.get('href')} target="_blank">
