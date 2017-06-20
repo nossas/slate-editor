@@ -70,7 +70,7 @@ class LinkNode extends Component {
                 Editar
               </Tooltip.Item>
               <Tooltip.Item onClick={() => onChange(unlink(state))}>
-                Remover link
+                Remover
               </Tooltip.Item>
             </Tooltip>
           )}

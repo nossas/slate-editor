@@ -161,7 +161,7 @@ class LinkDataModal extends Component {
                   }}
                 />
                 <ModalButton.Danger
-                  text="Remover link"
+                  text="Remover"
                   onClick={e => {
                     e.preventDefault()
                     e.stopPropagation()
