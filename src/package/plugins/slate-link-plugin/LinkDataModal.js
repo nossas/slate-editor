@@ -92,7 +92,11 @@ class LinkDataModal extends Component {
               changeModalState(false)
             }}>
               <ModalForm.Group>
-                <label htmlFor="image-plugin--edit-title">Title</label>
+                <label htmlFor="image-plugin--edit-title">Título</label>
+                <ModalForm.LabelHelper>
+                  Esta mensagem aparecerá quando o cursor do mouse
+                  estiver posicionado sobre o link.
+                </ModalForm.LabelHelper>
                 <input
                   id="image-plugin--edit-title"
                   type="text"
@@ -100,7 +104,7 @@ class LinkDataModal extends Component {
                   onClick={e => e.stopPropagation()}
                   onChange={e => this.setLinkAttribute(e, e.target.value)}
                   value={this.state.imageAttributes.title}
-                  placeholder="i.e. Hint text"
+                  placeholder="Insira uma descrição para o link"
                 />
               </ModalForm.Group>
 
@@ -113,13 +117,13 @@ class LinkDataModal extends Component {
                   onClick={e => e.stopPropagation()}
                   onChange={e => this.setLinkAttribute(e, e.target.value)}
                   value={this.state.imageAttributes.href}
-                  placeholder="e.g. http://example.com"
+                  placeholder="Ex: http://dominio.com"
                   ref={input => this.inputHref = input}
                 />
               </ModalForm.Group>
 
               <ModalForm.Group>
-                <label htmlFor="image-plugin--edit-text">Text</label>
+                <label htmlFor="image-plugin--edit-text">Texto</label>
                 <input
                   id="image-plugin--edit-text"
                   type="text"
@@ -140,24 +144,24 @@ class LinkDataModal extends Component {
                     onChange={e => this.setLinkAttribute(e, e.target.checked)}
                     checked={this.state.imageAttributes.target === '_blank'}
                   />
-                  Open link in new tab
+                  Abrir em nova aba
                 </label>
               </ModalForm.Group>
 
               <ModalButton.Container>
                 <ModalButton.Primary
                   type="submit"
-                  text="Save"
+                  text="Salvar"
                 />
                 <ModalButton.Opaque
-                  text="Cancel"
+                  text="Cancelar"
                   onClick={() => {
                     if (!node.data.get('href')) onChange(unlink(state))
                     changeModalState(false)
                   }}
                 />
                 <ModalButton.Danger
-                  text="Unlink"
+                  text="Remover link"
                   onClick={e => {
                     e.preventDefault()
                     e.stopPropagation()

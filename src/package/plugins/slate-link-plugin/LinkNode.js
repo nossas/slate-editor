@@ -67,10 +67,10 @@ class LinkNode extends Component {
                 </a>
               </Tooltip.Item>
               <Tooltip.Item onClick={() => this.modal(true)}>
-                Edit
+                Editar
               </Tooltip.Item>
               <Tooltip.Item onClick={() => onChange(unlink(state))}>
-                Unlink
+                Remover link
               </Tooltip.Item>
             </Tooltip>
           )}
