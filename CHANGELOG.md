@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.6.6"></a>
+## [2.6.6](https://github.com/nossas/slate-editor/compare/v2.6.5...v2.6.6) (2017-06-20)
+
+
+### Bug Fixes
+
+* **intl:** make the default language of edito as pt-BR [#31](https://github.com/nossas/slate-editor/issues/31) ([e19639c](https://github.com/nossas/slate-editor/commit/e19639c))
+
+
+
 <a name="2.6.5"></a>
 ## [2.6.5](https://github.com/nossas/slate-editor/compare/v2.6.4...v2.6.5) (2017-06-08)
 
