@@ -48,7 +48,11 @@ class ImageDataModal extends Component {
               changeModalState(false)
             }}>
               <ModalForm.Group>
-                <label htmlFor="image-plugin--edit-title">Title</label>
+                <label htmlFor="image-plugin--edit-title">Título</label>
+                <ModalForm.LabelHelper>
+                  Esta mensagem aparecerá quando o cursor do mouse
+                  estiver posicionado sobre a imagem.
+                </ModalForm.LabelHelper>
                 <input
                   id="image-plugin--edit-title"
                   type="text"
@@ -56,6 +60,7 @@ class ImageDataModal extends Component {
                   onClick={e => e.stopPropagation()}
                   onChange={e => this.setImageAttribute(e, e.target.value)}
                   value={this.state.imageAttributes.title}
+                  placeholder='Insira uma descrição para a imagem'
                 />
               </ModalForm.Group>
 
@@ -68,6 +73,7 @@ class ImageDataModal extends Component {
                   onClick={e => e.stopPropagation()}
                   onChange={e => this.setImageAttribute(e, e.target.value)}
                   value={this.state.imageAttributes.href}
+                  placeholder='Ex: http://dominio.com'
                 />
               </ModalForm.Group>
 
@@ -81,21 +87,21 @@ class ImageDataModal extends Component {
                     onChange={e => this.setImageAttribute(e, e.target.checked)}
                     checked={this.state.imageAttributes.openExternal}
                   />
-                  Open link in new tab
+                  Abrir em nova aba
                 </label>
               </ModalForm.Group>
 
               <ModalButton.Container>
                 <ModalButton.Primary
                   type="submit"
-                  text="Save"
+                  text="Salvar"
                 />
                 <ModalButton.Opaque
-                  text="Cancel"
+                  text="Cancelar"
                   onClick={() => changeModalState(false)}
                 />
                 <ModalButton.Danger
-                  text="Delete"
+                  text="Deletar"
                   onClick={e => {
                     e.preventDefault()
                     e.stopPropagation()

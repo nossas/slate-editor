@@ -35,7 +35,7 @@ class ImageNode extends Component {
         <div className={classnames('image-node--container', { readonly: readOnly })}>
           <ImageEditLayer
             changeModalState={this.modal.bind(this)}
-            text="Edit"
+            text="Editar"
           />
           <img
             {...attributes}

@@ -27,3 +27,10 @@
 .modal--container .modal--form .modal--form-group input::placeholder {
   color: #ccc;
 }
+
+.modal--container .modal--form .modal--form-label-helper {
+  font-size: .75rem;
+  color: #999;
+  margin-bottom: .5rem;
+  line-height: 1rem;
+}

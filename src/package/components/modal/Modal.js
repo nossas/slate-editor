@@ -11,13 +11,14 @@ const Modal = ({ children }) => (
   </div>
 )
 
-Modal.Header = ({ title = 'Edit', closeButtonAction }) => (
+Modal.Header = ({ title = 'Editar', closeButtonAction }) => (
   <div className="modal--header">
     {title}
     {closeButtonAction && (
       <button
         className="button--close"
         onClick={closeButtonAction}
+        title='Fechar'
       />
     )}
   </div>

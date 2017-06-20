@@ -22,4 +22,13 @@ ModalForm.Group = ({ children, className, ...props }) => (
   </div>
 )
 
+ModalForm.LabelHelper = ({ children, className, ...props }) => (
+  <span
+    className={classnames('modal--form-label-helper', className)}
+    {...props}
+  >
+    {children}
+  </span>
+)
+
 export default ModalForm
