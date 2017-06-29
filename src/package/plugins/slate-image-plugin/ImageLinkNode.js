@@ -32,7 +32,7 @@ class ImageLinkNode extends Component {
         <div className={classnames('image-node--container', { readonly: readOnly })}>
           <ImageEditLayer
             changeModalState={this.modal.bind(this)}
-            text="Edit"
+            text="Editar"
           />
           <a
             href={node.data.get('href')}
