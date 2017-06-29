@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.6.7"></a>
+## [2.6.7](https://github.com/nossas/slate-editor/compare/v2.6.6...v2.6.7) (2017-06-29)
+
+
+### Bug Fixes
+
+* **intl:** image plugin's image link node translation fix [#33](https://github.com/nossas/slate-editor/issues/33) ([e173004](https://github.com/nossas/slate-editor/commit/e173004))
+
+
+
 <a name="2.6.6"></a>
 ## [2.6.6](https://github.com/nossas/slate-editor/compare/v2.6.5...v2.6.6) (2017-06-20)
 
