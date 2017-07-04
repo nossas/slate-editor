@@ -1,8 +1,28 @@
 import React, { Component } from 'react'
+import { IntlProvider , addLocaleData } from 'react-intl'
+import pt from 'react-intl/locale-data/pt'
+import en from 'react-intl/locale-data/en'
 import classnames from 'classnames'
 import Utils from './Utils'
-
 import initialEditorState from './initialEditorState'
+import locales from '../../intl/locale-data'
+
+addLocaleData([...pt ...en])
+
+// Define user's language. Different browsers have the user locale defined
+// on different fields on the `navigator` object, so we make sure to account
+// for these different by checking all of them
+const language = (
+  (navigator.languages && navigator.languages[0]) ||
+  navigator.language ||
+  navigator.userLanguage
+)
+
+// Split locales with a region code
+const languageWithoutRegionCode = language.toLowerCase().split(/[_-]+/)[0]
+
+// Try full locale, fallback to locale without region code, fallback to en
+const messages = locales[languageWithoutRegionCode] || locales[language]
 
 class SlateEditor extends Component {
   constructor (props) {
@@ -34,7 +54,7 @@ class SlateEditor extends Component {
   }
 
   render () {
-    const { children, style, className, plugins } = this.props
+    const { children, style, className, plugins, defaultLanguage } = this.props
 
     const childProps = {
       plugins,
@@ -45,9 +65,11 @@ class SlateEditor extends Component {
     }
 
     return (
-      <div className={classnames('editor--root', className)} style={style}>
-        {Utils.cloneElement(children, childProps)}
-      </div>
+      <IntlProvider locale={defaultLanguage || language} messages={messages}>
+        <div className={classnames('editor--root', className)} style={style}>
+          {Utils.cloneElement(children, childProps)}
+        </div>
+      </IntlProvider>
     )
   }
 }
