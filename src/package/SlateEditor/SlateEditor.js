@@ -5,7 +5,7 @@ import en from 'react-intl/locale-data/en'
 import classnames from 'classnames'
 import Utils from './Utils'
 import initialEditorState from './initialEditorState'
-import locales from '../../intl/locale-data'
+import locales from '../intl/locale-data'
 
 addLocaleData([...pt, ...en])
 
