@@ -7,7 +7,7 @@ import Utils from './Utils'
 import initialEditorState from './initialEditorState'
 import locales from '../../intl/locale-data'
 
-addLocaleData([...pt ...en])
+addLocaleData([...pt, ...en])
 
 // Define user's language. Different browsers have the user locale defined
 // on different fields on the `navigator` object, so we make sure to account
@@ -19,10 +19,8 @@ const language = (
 )
 
 // Split locales with a region code
-const languageWithoutRegionCode = language.toLowerCase().split(/[_-]+/)[0]
-
-// Try full locale, fallback to locale without region code, fallback to en
-const messages = locales[languageWithoutRegionCode] || locales[language]
+const removeRegionCode = lang => lang ? lang.toLowerCase().split(/[_-]+/)[0] : undefined
+const languageWithoutRegionCode = removeRegionCode(language)
 
 class SlateEditor extends Component {
   constructor (props) {
@@ -63,6 +61,15 @@ class SlateEditor extends Component {
       onChange: this.onChange.bind(this),
       changeState: this.changeState.bind(this)
     }
+
+    // Try the received full locale, fallback received locale without region code,
+    // fallback browser full locale, fallback to browser locale without region code
+    const messages = (
+      locales[defaultLanguage] ||
+      locales[removeRegionCode(defaultLanguage)] ||
+      locales[language] ||
+      locales[languageWithoutRegionCode]
+    )
 
     return (
       <IntlProvider locale={defaultLanguage || language} messages={messages}>
