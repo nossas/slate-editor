@@ -47,10 +47,10 @@
     "react-draggable": "^2.2.3",
     "react-fontawesome": "^1.6.1",
     "react-s3-uploader": "^4.0.1",
-    "slate": "^0.19.3"
+    "slate": "^0.21.1"
   },
   "peerDependencies": {
-    "slate": "^0.19.3"
+    "slate": "^0.21.1"
   },
   "license": "GPL-3.0",
   "files": [
