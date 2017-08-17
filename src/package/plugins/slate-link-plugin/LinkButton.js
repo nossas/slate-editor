@@ -2,11 +2,12 @@ import React from 'react'
 import FontAwesome from 'react-fontawesome'
 import classnames from 'classnames'
 
+import { Button} from '../../components/button'
 import { insertLinkStrategy, hasLinks } from './LinkUtils'
 
 
 const LinkButton = ({ state, onChange, className, style }) => (
-  <button
+  <Button
     style={style}
     onMouseDown={e => onChange(insertLinkStrategy(state))}
     className={classnames(
@@ -16,7 +17,7 @@ const LinkButton = ({ state, onChange, className, style }) => (
     )}
   >
     <FontAwesome name="link" />
-  </button>
+  </Button>
 )
 
 export default LinkButton

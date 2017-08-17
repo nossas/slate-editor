@@ -2,11 +2,12 @@ import React from 'react'
 import FontAwesome from 'react-fontawesome'
 import classnames from 'classnames'
 
+import { Button} from '../../components/button'
 import { strikethroughMarkStrategy, hasMark } from './StrikethroughUtils'
 
 
 const StrikethroughButton = ({ state, onChange, changeState, className, style }) => (
-  <button
+  <Button
     style={style}
     onClick={e => onChange(strikethroughMarkStrategy(state))}
     className={classnames(
@@ -16,7 +17,7 @@ const StrikethroughButton = ({ state, onChange, changeState, className, style })
     )}
   >
     <FontAwesome name="strikethrough" />
-  </button>
+  </Button>
 )
 
 export default StrikethroughButton

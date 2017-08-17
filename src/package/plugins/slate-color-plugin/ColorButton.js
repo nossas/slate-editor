@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import FontAwesome from 'react-fontawesome'
 import classnames from 'classnames'
 
+import { Button} from '../../components/button'
 import DraggableColorPicker from './DraggableColorPicker'
 // FIXME: Needs to handle assets files to work with SSR
 if (require('exenv').canUseDOM) require('./ColorButton.css')
@@ -24,7 +25,7 @@ class ColorButton extends Component {
 
     return (
       <div className="slate-color-plugin--toolbar">
-        <button
+        <Button
           style={style}
           onClick={e => changeState({ state, color: { ...color, showPicker: !showPicker } })}
           className={classnames(
@@ -34,7 +35,7 @@ class ColorButton extends Component {
           )}
         >
           <FontAwesome name="eyedropper" />
-        </button>
+        </Button>
         {showPicker && <DraggableColorPicker {...this.props} />}
       </div>
     )

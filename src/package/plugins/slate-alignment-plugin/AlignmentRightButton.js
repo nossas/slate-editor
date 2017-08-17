@@ -2,11 +2,12 @@ import React from 'react'
 import classnames from 'classnames'
 import FontAwesome from 'react-fontawesome'
 
+import { Button} from '../../components/button'
 import { alignmentMarkStrategy, hasMark, getMark } from './AlignmentUtils'
 
 
 const AlignmentRightButton = ({ state, onChange, changeState, className, style }) => (
-  <button
+  <Button
     style={style}
     onClick={e => onChange(alignmentMarkStrategy(state, 'right'))}
     className={classnames(
@@ -16,7 +17,7 @@ const AlignmentRightButton = ({ state, onChange, changeState, className, style }
     )}
   >
     <FontAwesome name="align-right" />
-  </button>
+  </Button>
 )
 
 export default AlignmentRightButton

@@ -3,9 +3,11 @@ import FontAwesome from 'react-fontawesome'
 import { Raw } from 'slate'
 import beautify from 'json-beautify'
 
+import { Button} from '../../components/button'
+
 const LinkButton = ({ state, onChange, className, style }) => (
   <div>
-    <button
+    <Button
       className={className}
       style={style}
       onMouseDown={e => {
@@ -19,7 +21,7 @@ const LinkButton = ({ state, onChange, className, style }) => (
     >
       <FontAwesome name='code' style={{ marginRight: 5 }} />
       State Logger
-    </button>
+    </Button>
   </div>
 )
 

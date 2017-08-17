@@ -2,10 +2,11 @@ import React from 'react'
 import FontAwesome from 'react-fontawesome'
 import classnames from 'classnames'
 
+import { Button} from '../../components/button'
 import { unorderedListStrategy, isUnorderedList } from './ListUtils'
 
 const UnorderedListButton = ({ state, onChange, className, style }) => (
-  <button
+  <Button
     style={style}
     onClick={e => onChange(unorderedListStrategy(state))}
     className={classnames(
@@ -15,7 +16,7 @@ const UnorderedListButton = ({ state, onChange, className, style }) => (
     )}
   >
     <FontAwesome name="list-ul" />
-  </button>
+  </Button>
 )
 
 export default UnorderedListButton
