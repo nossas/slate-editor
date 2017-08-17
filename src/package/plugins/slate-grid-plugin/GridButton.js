@@ -2,12 +2,14 @@ import React from 'react'
 import FontAwesome from 'react-fontawesome'
 import classnames from 'classnames'
 
+import { Button} from '../../components/button'
 import { appendGrid, hasGrid } from './GridUtils'
 
 
-const GridButton = ({ state, onChange, className, style }) => (
-  <button
+const GridButton = ({ state, onChange, className, style, type }) => (
+  <Button
     style={style}
+    type={type}
     onClick={e => onChange(appendGrid(state))}
     className={classnames(
       'slate-grid-plugin--button',
@@ -16,7 +18,7 @@ const GridButton = ({ state, onChange, className, style }) => (
     )}
   >
     <FontAwesome name="th" />
-  </button>
+  </Button>
 )
 
 export default GridButton

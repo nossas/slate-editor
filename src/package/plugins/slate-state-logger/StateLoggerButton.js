@@ -3,12 +3,15 @@ import FontAwesome from 'react-fontawesome'
 import { Raw } from 'slate'
 import beautify from 'json-beautify'
 
-const LinkButton = ({ state, onChange, className, style }) => (
+import { Button} from '../../components/button'
+
+const StateLoggerButton = ({ state, onChange, className, style, type }) => (
   <div>
-    <button
+    <Button
       className={className}
       style={style}
-      onMouseDown={e => {
+      type={type}
+      onClick={e => {
         e.preventDefault()
         console.groupCollapsed('[State Logger]')
         console.info('State', beautify(state, null, 2, 100))
@@ -19,8 +22,8 @@ const LinkButton = ({ state, onChange, className, style }) => (
     >
       <FontAwesome name='code' style={{ marginRight: 5 }} />
       State Logger
-    </button>
+    </Button>
   </div>
 )
 
-export default LinkButton
+export default StateLoggerButton
