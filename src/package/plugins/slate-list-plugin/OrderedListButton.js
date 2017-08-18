@@ -2,11 +2,13 @@ import React from 'react'
 import FontAwesome from 'react-fontawesome'
 import classnames from 'classnames'
 
+import { Button} from '../../components/button'
 import { orderedListStrategy, isOrderedList } from './ListUtils'
 
-const OrderedListButton = ({ state, onChange, className, style }) => (
-  <button
+const OrderedListButton = ({ state, onChange, className, style, type }) => (
+  <Button
     style={style}
+    type={type}
     onClick={e => onChange(orderedListStrategy(state, 'ordered-list'))}
     className={classnames(
       'slate-list-plugin--button',
@@ -15,7 +17,7 @@ const OrderedListButton = ({ state, onChange, className, style }) => (
     )}
   >
     <FontAwesome name="list-ol" />
-  </button>
+  </Button>
 )
 
 export default OrderedListButton

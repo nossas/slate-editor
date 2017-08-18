@@ -2,12 +2,13 @@ import React from 'react'
 import FontAwesome from 'react-fontawesome'
 import classnames from 'classnames'
 
+import { Button} from '../../components/button'
 import { italicMarkStrategy, hasMark } from './ItalicUtils'
 
-
-const ItalicButton = ({ state, onChange, className, style }) => (
-  <button
+const ItalicButton = ({ state, onChange, className, style, type }) => (
+  <Button
     style={style}
+    type={type}
     onClick={e => onChange(italicMarkStrategy(state))}
     className={classnames(
       'slate-italic-plugin--button',
@@ -16,7 +17,7 @@ const ItalicButton = ({ state, onChange, className, style }) => (
     )}
   >
     <FontAwesome name="italic" />
-  </button>
+  </Button>
 )
 
 export default ItalicButton
