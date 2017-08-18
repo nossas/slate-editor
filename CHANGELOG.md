@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.6.9"></a>
+## [2.6.9](https://github.com/nossas/slate-editor/compare/v2.6.8...v2.6.9) (2017-08-18)
+
+
+### Bug Fixes
+
+* **package:** update yarn.lock and package-lock.json close [#35](https://github.com/nossas/slate-editor/issues/35) ([c3a311b](https://github.com/nossas/slate-editor/commit/c3a311b))
+
+
+
 <a name="2.6.8"></a>
 ## [2.6.8](https://github.com/nossas/slate-editor/compare/v2.6.7...v2.6.8) (2017-08-18)
 
