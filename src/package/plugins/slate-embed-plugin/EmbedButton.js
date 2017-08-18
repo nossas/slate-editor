@@ -6,9 +6,10 @@ import { Button} from '../../components/button'
 import { appendEmbed, hasEmbed } from './EmbedUtils'
 
 
-const EmbedButton = ({ state, onChange, changeState, className, style }) => (
+const EmbedButton = ({ state, onChange, changeState, className, style, type }) => (
   <Button
     style={style}
+    type={type}
     onClick={e => onChange(appendEmbed(state))}
     className={classnames(
       'slate-embed-plugin--button',

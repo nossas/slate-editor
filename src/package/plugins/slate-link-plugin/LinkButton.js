@@ -5,8 +5,7 @@ import classnames from 'classnames'
 import { Button} from '../../components/button'
 import { insertLinkStrategy, hasLinks } from './LinkUtils'
 
-
-const LinkButton = ({ state, onChange, className, style }) => (
+const LinkButton = ({ state, onChange, className, style, type }) => (
   <Button
     style={style}
     onMouseDown={e => onChange(insertLinkStrategy(state))}

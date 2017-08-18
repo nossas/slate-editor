@@ -6,9 +6,10 @@ import { Button} from '../../components/button'
 import { appendGrid, hasGrid } from './GridUtils'
 
 
-const GridButton = ({ state, onChange, className, style }) => (
+const GridButton = ({ state, onChange, className, style, type }) => (
   <Button
     style={style}
+    type={type}
     onClick={e => onChange(appendGrid(state))}
     className={classnames(
       'slate-grid-plugin--button',

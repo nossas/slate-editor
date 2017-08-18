@@ -5,12 +5,13 @@ import beautify from 'json-beautify'
 
 import { Button} from '../../components/button'
 
-const LinkButton = ({ state, onChange, className, style }) => (
+const StateLoggerButton = ({ state, onChange, className, style, type }) => (
   <div>
     <Button
       className={className}
       style={style}
-      onMouseDown={e => {
+      type={type}
+      onClick={e => {
         e.preventDefault()
         console.groupCollapsed('[State Logger]')
         console.info('State', beautify(state, null, 2, 100))
@@ -25,4 +26,4 @@ const LinkButton = ({ state, onChange, className, style }) => (
   </div>
 )
 
-export default LinkButton
+export default StateLoggerButton

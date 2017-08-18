@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import classnames from 'classnames'
-import Utils from './Utils'
+import {cloneElement, isFunction} from './Utils'
 
 import initialEditorState from './initialEditorState'
 
@@ -15,11 +15,10 @@ class SlateEditor extends Component {
   }
 
   onChange (state) {
-    const { onChange } = this.props;
-    this.setState({ state });
-    if(onChange) {
-      onChange(state);
-    }
+    this.setState({ state })
+
+    const { onChange } = this.props
+    isFunction(onChange) && onChange(state)
   }
 
   changeState (state) {
@@ -50,7 +49,7 @@ class SlateEditor extends Component {
 
     return (
       <div className={classnames('editor--root', className)} style={style}>
-        {Utils.cloneElement(children, childProps)}
+        {cloneElement(children, childProps)}
       </div>
     )
   }

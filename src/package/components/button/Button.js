@@ -1,23 +1,20 @@
 import React from 'react'
+import {isFunction} from './../../SlateEditor/Utils'
 
-const preventDefault = (callback) => (e) => {
-  e.preventDefault();
-  if(callback) {
-    callback(e);
-  }
-};
+const Button = ({ children, id, onClick, className, style, type }) => (
+  <button
+    id={id}
+    style={style}
+    type={type}
+    onClick={(e) => isFunction(onClick) && onClick(e) }
+    className={className}
+  >
+    {children}
+  </button>
+)
 
-export default ({ children, id, onClick, className, style, type }) => {
-  const buttonType = type || 'button'; // Make button default so that when used in forms, "submit" does not become default
-  return (
-    <button
-      id={id}
-      style={style}
-      onClick={preventDefault(onClick)}
-      className={className}
-      type={buttonType}
-    >
-      {children}
-    </button>
-  );
+Button.defaultProps = {
+  type: 'button'
 }
+
+export default Button

@@ -5,10 +5,10 @@ import classnames from 'classnames'
 import { Button} from '../../components/button'
 import { strikethroughMarkStrategy, hasMark } from './StrikethroughUtils'
 
-
-const StrikethroughButton = ({ state, onChange, changeState, className, style }) => (
+const StrikethroughButton = ({ state, onChange, changeState, className, style, type }) => (
   <Button
     style={style}
+    type={type}
     onClick={e => onChange(strikethroughMarkStrategy(state))}
     className={classnames(
       'slate-strikethrough-plugin--button',

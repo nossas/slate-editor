@@ -6,9 +6,10 @@ import { Button} from '../../components/button'
 import { alignmentMarkStrategy, hasMark, getMark } from './AlignmentUtils'
 
 
-const AlignmentRightButton = ({ state, onChange, changeState, className, style }) => (
+const AlignmentRightButton = ({ state, onChange, changeState, className, style, type }) => (
   <Button
     style={style}
+    type={type}
     onClick={e => onChange(alignmentMarkStrategy(state, 'right'))}
     className={classnames(
       'slate-alignment-plugin--button',

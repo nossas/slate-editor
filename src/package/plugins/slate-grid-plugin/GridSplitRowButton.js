@@ -5,9 +5,10 @@ import classnames from 'classnames'
 import { Button} from '../../components/button'
 import { splitRow } from './GridUtils'
 
-const GridSplitRowButton = ({ state, onChange, className, style }) => (
+const GridSplitRowButton = ({ state, onChange, className, style, type }) => (
   <Button
     style={style}
+    type={type}
     onClick={e => onChange(splitRow(state))}
     className={classnames('slate-grid-plugin--button', className)}
   >
