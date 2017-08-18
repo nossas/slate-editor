@@ -5,6 +5,7 @@ const Button = ({ children, id, onClick, className, style, type }) => (
   <button
     id={id}
     style={style}
+    type={type}
     onClick={(e) => isFunction(onClick) && onClick(e) }
     className={className}
   >
