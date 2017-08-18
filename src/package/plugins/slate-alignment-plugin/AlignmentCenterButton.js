@@ -2,12 +2,14 @@ import React from 'react'
 import classnames from 'classnames'
 import FontAwesome from 'react-fontawesome'
 
+import { Button} from '../../components/button'
 import { alignmentMarkStrategy, hasMark, getMark } from './AlignmentUtils'
 
 
-const AlignmentCenterButton = ({ state, onChange, changeState, className, style }) => (
-  <button
+const AlignmentCenterButton = ({ state, onChange, changeState, className, style, type }) => (
+  <Button
     style={style}
+    type={type}
     onClick={e => onChange(alignmentMarkStrategy(state, 'center'))}
     className={classnames(
       'slate-alignment-plugin--button',
@@ -16,7 +18,7 @@ const AlignmentCenterButton = ({ state, onChange, changeState, className, style 
     )}
   >
     <FontAwesome name="align-center" />
-  </button>
+  </Button>
 )
 
 export default AlignmentCenterButton

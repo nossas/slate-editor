@@ -11,6 +11,11 @@ const cloneElement = (children, props) => {
   }))
 }
 
-export default {
+const isFunction = (obj) => {
+  return !!(obj && obj.constructor === Function)
+}
+
+export {
   cloneElement,
+  isFunction
 }

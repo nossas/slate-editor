@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import FontAwesome from 'react-fontawesome'
 import ReactS3Uploader from 'react-s3-uploader'
 
+import { Button} from '../../components/button'
 import { insertInlineImage } from './ImageUtils'
 
 class ImageButton extends Component {
@@ -13,11 +14,12 @@ class ImageButton extends Component {
     }
   }
   render () {
-    const { state, onChange, className, style, signingUrl, outerState } = this.props
+    const { state, onChange, className, style, signingUrl, outerState, type } = this.props
     return (
       <div style={{ display: 'inline-block' }}>
-        <button
+        <Button
           id={`slate-image-plugin-button-${outerState.uid}`}
+          type={type}
           style={{ position: 'relative', ...style }}
           className={className}
           onClick={e => {
@@ -36,7 +38,7 @@ class ImageButton extends Component {
             backgroundColor: !this.state.error ? '#000' : '#92063E'
           }} />
           <FontAwesome name='image' />
-        </button>
+        </Button>
         <ReactS3Uploader
           signingUrl={signingUrl}
           accept='image/*'

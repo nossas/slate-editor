@@ -1,7 +1,7 @@
 {
   "name": "slate-editor",
   "description": "A complete rich text editor based on SlateJS framework",
-  "version": "2.6.7",
+  "version": "2.6.8",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/nossas/slate-editor.git"
@@ -34,7 +34,7 @@
     "react": "^15.3.2",
     "react-addons-test-utils": "^15.3.2",
     "react-dom": "^15.3.2",
-    "react-router": "^4.0.0-alpha.3",
+    "react-router": "^4.1.2",
     "react-scripts": "0.6.0",
     "standard-version": "^4.0.0"
   },
@@ -47,10 +47,10 @@
     "react-draggable": "^2.2.3",
     "react-fontawesome": "^1.6.1",
     "react-s3-uploader": "^4.0.1",
-    "slate": "^0.19.3"
+    "slate": "^0.21.1"
   },
   "peerDependencies": {
-    "slate": "^0.19.3"
+    "slate": "^0.21.1"
   },
   "license": "GPL-3.0",
   "files": [
