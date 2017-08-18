@@ -74,7 +74,13 @@ const styles = {
   }
 }
 
-const Home = ({ title }) => {
+const Version = ({ version }) => (
+  <div style={{ textAlign: 'right' }}>
+    <small>v{version}</small>
+  </div>
+)
+
+const Home = ({ title, version }) => {
   return (
     <div className='page--home'>
       <div className='header'>
@@ -82,6 +88,7 @@ const Home = ({ title }) => {
         <p>A rich text editor based on SlateJS</p>
       </div>
       <SlateEditor plugins={plugins}>
+        <Version version={version} />
         <SlateToolbar>
           <BoldButton className={classNames.button} />
           <ItalicButton className={classNames.button} />
