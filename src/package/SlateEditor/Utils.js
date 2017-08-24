@@ -5,10 +5,16 @@ const cloneElement = (children, props) => {
     children = [children, ]
   }
 
-  return children && children.map((child, index) => React.cloneElement(child, {
-    ...props,
-    key: index
-  }))
+  return children && children.reduce((result, child, index) => {
+    if(child) {
+      result.push(React.cloneElement(child, {
+        ...props,
+        key: index
+      }))
+    }
+
+    return result;
+  }, [])
 }
 
 const isFunction = (obj) => {
