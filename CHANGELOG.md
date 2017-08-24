@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.6.10"></a>
+## [2.6.10](https://github.com/nossas/slate-editor/compare/v2.6.9...v2.6.10) (2017-08-24)
+
+
+### Bug Fixes
+
+* **clone:** Fixed the clone util to not attempt to create an element from an undefined child [#40](https://github.com/nossas/slate-editor/issues/40) ([5e1bfc6](https://github.com/nossas/slate-editor/commit/5e1bfc6))
+
+
+
 <a name="2.6.9"></a>
 ## [2.6.9](https://github.com/nossas/slate-editor/compare/v2.6.8...v2.6.9) (2017-08-18)
 
