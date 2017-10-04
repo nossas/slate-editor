@@ -10,7 +10,7 @@ const AlignmentRightButton = ({ state, onChange, changeState, className, style, 
   <Button
     style={style}
     type={type}
-    onClick={e => onChange(alignmentMarkStrategy(state, 'right'))}
+    onClick={e => onChange(alignmentMarkStrategy(state.change(), 'right'))}
     className={classnames(
       'slate-alignment-plugin--button',
       { active: hasMark(state) && getMark(state).data.get('align') === 'right' },

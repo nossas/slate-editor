@@ -14,54 +14,49 @@ export const createMark = fontSize => ({
  *    @property {int} fontSize
  *    @property {function} changeState
  */
-export const fontSizeStrategy = ({ state, fontSize, changeState }) => {
+export const fontSizeStrategy = ({ change, fontSize, changeState }) => {
+  const { state } = change
   if (hasMark(state)) {
     if (state.isExpanded) {
       // Change outerState to update the input font size number.
       changeState({ fontSize })
-      return state
-        .transform()
+      return change
         .removeMark(getMark(state))
         .addMark(createMark(fontSize))
         .focus()
-        .apply()
     }
     else console.info('[SlateJS][FontSizePlugin] selection collapsed, w/ inline.')
-  }
-
-  else {
+  } else {
     if (state.isExpanded) {
       // Change outerState to update the input font size number.
       changeState({ fontSize })
-      return state
-        .transform()
+      return change
         .addMark(createMark(fontSize))
         .focus()
-        .apply()
     }
     else console.info('[SlateJS][FontSizePlugin] selection collapsed, w/o inline.')
   }
 
-  return state
+  return change
 }
 
-const fontSizeLocationStrategy = ({ state, fontSize }) => hasMark(state) ?
-    Number(getMark(state).data.get('fontSize')) :
+const fontSizeLocationStrategy = ({ change, fontSize }) => hasMark(change.state) ?
+    Number(getMark(change.state).data.get('fontSize')) :
     Number(fontSize)
 
-export const fontSizeIncrease = ({ state, fontSize, changeState }) => (
+export const fontSizeIncrease = ({ change, fontSize, changeState }) => (
   fontSizeStrategy({
-    state,
+    change,
     changeState,
-    fontSize: fontSizeLocationStrategy({ state, fontSize }) + 1,
+    fontSize: fontSizeLocationStrategy({ change, fontSize }) + 1,
   })
 )
 
-export const fontSizeDecrease = ({ state, fontSize, changeState }) => (
+export const fontSizeDecrease = ({ change, fontSize, changeState }) => (
   fontSizeStrategy({
-    state,
+    change,
     changeState,
-    fontSize: fontSizeLocationStrategy({ state, fontSize }) - 1,
+    fontSize: fontSizeLocationStrategy({ change, fontSize }) - 1,
   })
 )
 

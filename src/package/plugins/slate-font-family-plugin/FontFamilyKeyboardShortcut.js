@@ -3,9 +3,9 @@ import keycode from 'keycode'
 import { fontFamilyMarkStrategy } from './FontFamilyUtils'
 
 
-const FontFamilyKeyboardShortcut = (event, data, state) => {
+const FontFamilyKeyboardShortcut = (event, data, change) => {
   if (!data.isMod || keycode(data.code) !== 'b') return
-  return fontFamilyMarkStrategy(state)
+  return fontFamilyMarkStrategy(change)
 }
 
 export default FontFamilyKeyboardShortcut

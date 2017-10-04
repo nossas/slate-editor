@@ -10,7 +10,7 @@ const AlignmentCenterButton = ({ state, onChange, changeState, className, style,
   <Button
     style={style}
     type={type}
-    onClick={e => onChange(alignmentMarkStrategy(state, 'center'))}
+    onClick={e => onChange(alignmentMarkStrategy(state.change(), 'center'))}
     className={classnames(
       'slate-alignment-plugin--button',
       { active: hasMark(state) && getMark(state).data.get('align') === 'center' },

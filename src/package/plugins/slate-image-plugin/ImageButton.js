@@ -46,7 +46,7 @@ class ImageButton extends Component {
           onError={e => console.error('[SlateEditor][ImagePlugin]:', e)}
           onFinish={e => {
             const src = e.signedUrl.substring(0, e.signedUrl.indexOf('?'))
-            onChange(insertInlineImage({ state, src }))
+            onChange(insertInlineImage({ change: state.change(), src }))
             this.setState({ progress: 0 })
           }}
           ref={input => { this.upload = input }}

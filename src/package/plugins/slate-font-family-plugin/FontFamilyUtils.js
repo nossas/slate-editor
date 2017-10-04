@@ -6,18 +6,14 @@ export const createMark = fontFamilyIndex => ({
   data: { fontFamilyIndex },
 })
 
-export const reapplyMark = ({ state, fontFamilyIndex }) => state
-  .transform()
-  .removeMark(getMark(state))
+export const reapplyMark = ({ change, fontFamilyIndex }) => change
+  .removeMark(getMark(change.state))
   .addMark(createMark(fontFamilyIndex))
   .focus()
-  .apply()
 
-export const applyMark = ({ state, fontFamilyIndex }) => state
-  .transform()
+export const applyMark = ({ change, fontFamilyIndex }) => change
   .addMark(createMark(fontFamilyIndex))
   .focus()
-  .apply()
 
 /**
  * Strategy that decides how font family mark plugin
@@ -28,21 +24,21 @@ export const applyMark = ({ state, fontFamilyIndex }) => state
  *    @property {int} fontFamilyIndex
  */
 export const fontFamilyMarkStrategy = attributes => {
-  const { state } = attributes
+  const { state, fontFamilyIndex } = attributes
 
   if (hasMark(state)) {
     if (state.isExpanded) {
-      return reapplyMark(attributes)
+      return reapplyMark({change: state.change(), fontFamilyIndex})
     }
     else console.info('[SlateJS][FontFamilyPlugin] selection collapsed, w/ mark exists')
   }
 
   else {
     if (state.isExpanded) {
-      return applyMark(attributes)
+      return applyMark({change: state.change(), fontFamilyIndex})
     }
     else console.info('[SlateJS][FontFamilyPlugin] selection collapsed, w/o mark')
   }
 
-  return state
+  return state.change()
 }

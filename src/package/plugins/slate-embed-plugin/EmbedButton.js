@@ -10,7 +10,7 @@ const EmbedButton = ({ state, onChange, changeState, className, style, type }) =
   <Button
     style={style}
     type={type}
-    onClick={e => onChange(appendEmbed(state))}
+    onClick={e => onChange(appendEmbed(state.change()))}
     className={classnames(
       'slate-embed-plugin--button',
       { active: hasEmbed(state) },

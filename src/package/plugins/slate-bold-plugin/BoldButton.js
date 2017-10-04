@@ -10,7 +10,7 @@ const BoldButton = ({ state, onChange, changeState, className, style, type }) =>
   <Button
     style={style}
     type={type}
-    onClick={e => onChange(boldMarkStrategy(state))}
+    onClick={e => onChange(boldMarkStrategy(state.change()))}
     className={classnames(
       'slate-bold-plugin--button',
       { active: hasMark(state) },

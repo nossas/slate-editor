@@ -9,7 +9,7 @@ const StrikethroughButton = ({ state, onChange, changeState, className, style, t
   <Button
     style={style}
     type={type}
-    onClick={e => onChange(strikethroughMarkStrategy(state))}
+    onClick={e => onChange(strikethroughMarkStrategy(state.change()))}
     className={classnames(
       'slate-strikethrough-plugin--button',
       { active: hasMark(state) },

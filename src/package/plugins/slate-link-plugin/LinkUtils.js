@@ -4,22 +4,19 @@ export const getLink = state => state.inlines.filter(inline => inline.type === '
 export const createLink = data => ({ type: 'link', data })
 export const hasMultiBlocks = state => state.blocks.size > 1
 
-export const unlink = state =>
-  state
-    .transform()
-    .unwrapInline('link')
-    .focus()
-    .apply()
+export const unlink = change => change
+  .unwrapInline('link')
+  .focus()
 
-export const updateLinkStrategy = ({ state, data: { title, href, text, target } }) => {
-  let transform = state.transform()
+export const updateLinkStrategy = ({ change, data: { title, href, text, target } }) => {
+  const { state } = change
 
   if (state.isCollapsed) {
-    transform
+    change
       .moveOffsetsTo(0, state.anchorText.characters.size)
   }
 
-  transform
+  change
     .insertText(text)
     .extend(text.length * -1)
     .setInline({
@@ -32,14 +29,14 @@ export const updateLinkStrategy = ({ state, data: { title, href, text, target } 
       }
     })
 
-  return transform.apply()
+  return change
 }
 
-export const insertLinkStrategy = state => {
-  let transform = state.transform()
+export const insertLinkStrategy = change => {
+  const { state } = change
 
   if (hasLinks(state)) {
-    transform.unwrapInline('link')
+    change.unwrapInline('link')
   }
   else if (state.isExpanded && !hasMultiBlocks(state)) {
     const startOffset = state.selection.startOffset
@@ -47,18 +44,18 @@ export const insertLinkStrategy = state => {
     // fix offset 0 selection:
     // add a single white space and select forward white space
     if (startOffset === 0) {
-      transform
+      change
         .insertText(` ${state.anchorText.text}`)
         .moveOffsetsTo(1, state.anchorText.characters.size + 1)
     }
 
-    transform
+    change
       .wrapInline(createLink({ target: '_blank', openModal: true }))
 
     // fix offset 0 selection:
     // remove the white space added before
     if (startOffset === 0) {
-      transform
+      change
         .moveOffsetsTo(0, 0)
         .deleteBackward()
     }
@@ -70,5 +67,5 @@ export const insertLinkStrategy = state => {
     console.info('[SlateJS][LinkPlugin] selection collapsed, w/o links on selection')
   }
 
-  return transform.apply()
+  return change
 }

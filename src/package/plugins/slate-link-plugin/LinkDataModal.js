@@ -84,9 +84,9 @@ class LinkDataModal extends Component {
               const { imageAttributes } = this.state
 
               if (!imageAttributes.href) {
-                onChange(unlink(state))
+                onChange(unlink(state.change()))
               } else {
-                onChange(updateLinkStrategy({ state, data: imageAttributes }))
+                onChange(updateLinkStrategy({ change: state.change(), data: imageAttributes }))
               }
 
               changeModalState(false)

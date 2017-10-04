@@ -10,7 +10,7 @@ const GridButton = ({ state, onChange, className, style, type }) => (
   <Button
     style={style}
     type={type}
-    onClick={e => onChange(appendGrid(state))}
+    onClick={e => onChange(appendGrid(state.change()))}
     className={classnames(
       'slate-grid-plugin--button',
       { active: hasGrid(state) },

@@ -10,89 +10,91 @@ export const getNodeOfType = (state, type) => state.blocks.filter(block => block
 export const getUnorderedListNode = state => getNodeOfType(state, 'unordered-list')
 export const getOrderedListNode = state => getNodeOfType(state, 'ordered-list')
 
-export const removeUnorderedList = transform => transform
+export const removeUnorderedList = change => change
   .setBlock('paragraph')
   .unwrapBlock('unordered-list')
   .focus()
 
-export const switchToOrderedList = transform => transform
+export const switchToOrderedList = change => change
   .unwrapBlock('unordered-list')
   .wrapBlock('ordered-list')
   .focus()
 
-export const removeOrderedList = transform => transform
+export const removeOrderedList = change => change
   .setBlock('paragraph')
   .unwrapBlock('ordered-list')
   .focus()
 
-export const switchToUnorderedList = transform => transform
+export const switchToUnorderedList = change => change
   .wrapBlock('unordered-list')
   .unwrapBlock('ordered-list')
   .focus()
 
-export const applyList = (transform, type) => transform
+export const applyList = (change, type) => change
   .setBlock('list-item')
   .wrapBlock(type)
   .focus()
 
-export const onlyRemove = (state, type) => state.transform().unwrapBlock(type).focus()
-export const onlyRemoveUnorderedList = state => onlyRemove(state, 'unordered-list')
-export const onlyRemoveOrderedList = state => onlyRemove(state, 'ordered-list')
+export const onlyRemove = (change, type) => change.unwrapBlock(type).focus()
+export const onlyRemoveUnorderedList = change => onlyRemove(change, 'unordered-list')
+export const onlyRemoveOrderedList = change => onlyRemove(change, 'ordered-list')
 
-export const applyUnorderedList = state => applyList(state.transform(), 'unordered-list')
-export const applyOrderedList = state => applyList(state.transform(), 'ordered-list')
+export const applyUnorderedList = change => applyList(change, 'unordered-list')
+export const applyOrderedList = change => applyList(change, 'ordered-list')
 
-const deepRemoveList = state => {
+const deepRemoveList = change => {
+  const { state } = change
   const { document } = state
   const node = getNodeOfType(state, 'list-item')
   const depth = document.getDepth(node.key)
 
-  let transform = state.transform()
   Array(depth).fill('.').forEach(() => {
     const parent = document.getParent(node.key)
-    if (parent.type === 'unordered-list') removeUnorderedList(transform)
-    else removeOrderedList(transform)
+    if (parent.type === 'unordered-list') removeUnorderedList(change)
+    else removeOrderedList(change)
   })
-  return transform
+  return change
 }
 
-export const unorderedListStrategy = state => {
-  let transform = state.transform()
-  if (!isList(state)) return applyList(transform, 'unordered-list').apply()
+export const unorderedListStrategy = change => {
+  const { state } = change
+  if (!isList(state)) return applyList(change, 'unordered-list')
 
-  if (isUnorderedList(state)) return deepRemoveList(state).apply()
-  if (isOrderedList(state)) return switchToUnorderedList(transform).apply()
-  console.info('[SlateJS][ListPlugin] It is a different type of list.'); return state
+  if (isUnorderedList(state)) return deepRemoveList(change)
+  if (isOrderedList(state)) return switchToUnorderedList(change)
+  console.info('[SlateJS][ListPlugin] It is a different type of list.'); return change
 }
 
-export const orderedListStrategy = state => {
-  const transform = state.transform()
-
+export const orderedListStrategy = change => {
+  const { state } = change
   // If it is not a list yet, transform it!
-  if (!isList(state)) return applyList(transform, 'ordered-list').apply()
+  if (!isList(state)) return applyList(change, 'ordered-list')
 
   // If it is already a list, handle it!
-  if (isOrderedList(state)) return deepRemoveList(state).apply()
-  else if (isUnorderedList(state)) return switchToOrderedList(transform).apply()
-  else console.info('[SlateJS][ListPlugin] It is a different type of list.'); return state
+  if (isOrderedList(state)) return deepRemoveList(change)
+  else if (isUnorderedList(state)) return switchToOrderedList(change)
+  else console.info('[SlateJS][ListPlugin] It is a different type of list.'); return change
 }
 
-export const increaseListDepthStrategy = state => {
+export const increaseListDepthStrategy = change => {
+  const { state } = change
   // If it is not a list, kill the action immediately.
-  if (!isList(state)) return state
+  if (!isList(state)) return change
 
-  if (isUnorderedList(state)) return applyUnorderedList(state).apply()
-  if (isOrderedList(state)) return applyOrderedList(state).apply()
-  return state
+
+  if (isUnorderedList(state)) return applyUnorderedList(change)
+  if (isOrderedList(state)) return applyOrderedList(change)
+  return change
 }
 
-export const decreaseListDepthStrategy = state => {
+export const decreaseListDepthStrategy = change => {
+  const { state } = change
   // If it is not a list, kill the action immediately.
-  if (!isList(state)) return state
+  if (!isList(state)) return change
 
   const node = getNodeOfType(state, 'list-item')
   const depth = state.document.getDepth(node.key)
-  if (isUnorderedList(state) && depth > 2) return onlyRemoveUnorderedList(state).apply()
-  if (isOrderedList(state) && depth > 2) return onlyRemoveOrderedList(state).apply()
-  return state
+  if (isUnorderedList(state) && depth > 2) return onlyRemoveUnorderedList(change)
+  if (isOrderedList(state) && depth > 2) return onlyRemoveOrderedList(change)
+  return change
 }

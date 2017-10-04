@@ -33,7 +33,7 @@ const FontSizeInput = ({
         const isEnter = keycode(keyCode) === 'enter'
 
         // Set new font size to selection
-        if (isEnter) changeState({ fontSize, state: fontSizeStrategy({ state, fontSize, changeState }) })
+        if (isEnter) changeState({ fontSize, state: fontSizeStrategy({ change: state.change(), fontSize, changeState }).state })
         else changeState({ fontSize, state })
       }}
       onChange={({ target: { value: fontSizeValue } }) => {

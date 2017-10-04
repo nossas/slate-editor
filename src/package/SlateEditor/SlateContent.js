@@ -1,6 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
-import { Editor } from 'slate'
+import { Editor } from 'slate-react'
 
 export default ({
   className,

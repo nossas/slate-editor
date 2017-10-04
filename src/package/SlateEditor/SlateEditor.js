@@ -14,7 +14,9 @@ class SlateEditor extends Component {
     }
   }
 
-  onChange (state) {
+  onChange (change) {
+    const state = change.state
+
     this.setState({ state })
 
     const { onChange } = this.props

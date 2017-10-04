@@ -9,7 +9,7 @@ const LinkButton = ({ state, onChange, className, style, type }) => (
   <Button
     style={style}
     type={type}
-    onMouseDown={e => onChange(insertLinkStrategy(state))}
+    onMouseDown={e => onChange(insertLinkStrategy(state.change()))}
     className={classnames(
       'slate-link-plugin--button',
       { active: hasLinks(state) },

@@ -27,7 +27,7 @@ const DraggableColorPicker = ({
         onChangeComplete={color => {
           const rgbaChange = color.rgb
           changeState({
-            state: colorMarkStrategy({ state, rgba: rgbaChange }),
+            state: colorMarkStrategy({ state, rgba: rgbaChange }).state,
             color: { rgba: rgbaChange, showPicker },
           })
         }}

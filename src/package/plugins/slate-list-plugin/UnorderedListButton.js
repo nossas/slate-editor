@@ -9,7 +9,7 @@ const UnorderedListButton = ({ state, onChange, className, style, type }) => (
   <Button
     style={style}
     type={type}
-    onClick={e => onChange(unorderedListStrategy(state))}
+    onClick={e => onChange(unorderedListStrategy(state.change()))}
     className={classnames(
       'slate-list-plugin--button',
       { active: isUnorderedList(state) },

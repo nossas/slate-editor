@@ -1,42 +1,34 @@
-export const insertInlineImage = ({ state, src }) => {
-  return state
-  .transform()
+export const insertInlineImage = ({ change, src }) => {
+  return change
   .insertInline({
     type: 'image',
     isVoid: true,
     data: { src }
   })
-  .apply()
 }
 
 export const updateInlineImage = ({
-  state,
+  change,
   data: { src, title, href, openExternal },
 }) => {
   return href
-    ? state
-      .transform()
+    ? change
       .setInline({
         type: 'imageLink',
         isVoid: true,
         data: { src, title, href, openExternal }
       })
-      .apply()
-    : state
-      .transform()
+    : change
       .setInline({
         type: 'image',
         isVoid: true,
         data: { src, title, openExternal }
       })
-      .apply()
 }
 
-export const deleteInlineImage = ({ state }) => {
-  return state
-      .transform()
+export const deleteInlineImage = ({ change }) => {
+  return change
       .deleteBackward(1)
-      .apply()
 }
 
 export const forceClickUploadButton = editor => {

@@ -3,7 +3,7 @@ import keycode from 'keycode'
 import { fontSizeIncrease, fontSizeDecrease } from './FontSizeUtils'
 
 
-const FontSizeKeyboardShortcut = (event, data, state, editor, options) => {
+const FontSizeKeyboardShortcut = (event, data, change, editor, options) => {
   const { changeState } = editor.props
   const { initialFontSize } = options
 
@@ -23,8 +23,8 @@ const FontSizeKeyboardShortcut = (event, data, state, editor, options) => {
 
   const fontSize = initialFontSize
 
-  if (isIncrease) return fontSizeIncrease({ state, fontSize, changeState })
-  if (isDecrease) return fontSizeDecrease({ state, fontSize, changeState })
+  if (isIncrease) return fontSizeIncrease({ change, fontSize, changeState })
+  if (isDecrease) return fontSizeDecrease({ change, fontSize, changeState })
   return
 }
 

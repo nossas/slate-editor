@@ -8,23 +8,18 @@ export const createMark = rgba => ({
   data: { rgba },
 })
 
-export const reapplyMark = ({ state, rgba }) => {
-  const transformedState = state.transform()
-
+export const reapplyMark = ({ change, rgba }) => {
   // remove all nested color marks
-  getMarks(state).map(mark => transformedState.removeMark(mark))
+  getMarks(change.state).map(mark => change.removeMark(mark))
 
-  return transformedState
+  return change
   .addMark(createMark(rgba))
   .focus()
-  .apply()
 }
 
-export const applyMark = ({ state, rgba }) => state
-  .transform()
+export const applyMark = ({ change, rgba }) => change
   .addMark(createMark(rgba))
   .focus()
-  .apply()
 
 /**
  * Strategy that decides how color mark plugin
@@ -39,21 +34,21 @@ export const applyMark = ({ state, rgba }) => state
  *        @property {int} a
  */
 export const colorMarkStrategy = attributes => {
-  const { state } = attributes
+  const { state, rgba } = attributes
 
   if (hasMark(state)) {
     if (state.isExpanded) {
-      return reapplyMark(attributes)
+      return reapplyMark({change: state.change(), rgba})
     }
     else console.info('[SlateJS][ColorPlugin] selection collapsed, w/ mark exists')
   }
 
   else {
     if (state.isExpanded) {
-      return applyMark(attributes)
+      return applyMark({change: state.change(), rgba})
     }
     else console.info('[SlateJS][ColorPlugin] selection collapsed, w/o mark')
   }
 
-  return state
+  return state.change()
 }

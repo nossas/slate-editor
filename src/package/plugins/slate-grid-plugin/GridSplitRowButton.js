@@ -9,7 +9,7 @@ const GridSplitRowButton = ({ state, onChange, className, style, type }) => (
   <Button
     style={style}
     type={type}
-    onClick={e => onChange(splitRow(state))}
+    onClick={e => onChange(splitRow(state.change()))}
     className={classnames('slate-grid-plugin--button', className)}
   >
     <FontAwesome name="level-down" />

@@ -9,7 +9,7 @@ const OrderedListButton = ({ state, onChange, className, style, type }) => (
   <Button
     style={style}
     type={type}
-    onClick={e => onChange(orderedListStrategy(state, 'ordered-list'))}
+    onClick={e => onChange(orderedListStrategy(state.change(), 'ordered-list'))}
     className={classnames(
       'slate-list-plugin--button',
       { active: isOrderedList(state) },

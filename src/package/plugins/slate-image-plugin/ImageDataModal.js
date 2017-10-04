@@ -44,7 +44,7 @@ class ImageDataModal extends Component {
           <ModalContent.Right>
             <ModalForm onSubmit={e => {
               e.preventDefault()
-              onChange(updateInlineImage({ state, data: this.state.imageAttributes }))
+              onChange(updateInlineImage({ change: state.change(), data: this.state.imageAttributes }))
               changeModalState(false)
             }}>
               <ModalForm.Group>
@@ -105,7 +105,7 @@ class ImageDataModal extends Component {
                   onClick={e => {
                     e.preventDefault()
                     e.stopPropagation()
-                    onChange(deleteInlineImage({ state }))
+                    onChange(deleteInlineImage({ change: state.change() }))
                   }}
                 />
               </ModalButton.Container>

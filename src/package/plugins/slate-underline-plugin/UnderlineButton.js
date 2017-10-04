@@ -9,7 +9,7 @@ const UnderlineButton = ({ state, onChange, changeState, className, style, type 
   <Button
     style={style}
     type={type}
-    onClick={e => onChange(underlineMarkStrategy(state))}
+    onClick={e => onChange(underlineMarkStrategy(state.change()))}
     className={classnames(
       'slate-underline-plugin--button',
       { active: hasMark(state) },

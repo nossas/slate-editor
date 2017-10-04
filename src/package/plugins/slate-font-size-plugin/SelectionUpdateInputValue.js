@@ -1,7 +1,8 @@
 import { hasMark, getMark } from './FontSizeUtils'
 
 
-const SelectionUpdateInputValue = (event, data, state, editor, options) => {
+const SelectionUpdateInputValue = (event, data, change, editor, options) => {
+  const { state } = change
   const { changeState } = editor.props
   const { initialFontSize } = options
 

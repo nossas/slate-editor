@@ -1,7 +1,5 @@
 export const hasMark = state => state.marks.some(mark => mark.type === 'underline')
 
-export const underlineMarkStrategy = state => state
-  .transform()
+export const underlineMarkStrategy = change => change
   .toggleMark('underline')
   .focus()
-  .apply()

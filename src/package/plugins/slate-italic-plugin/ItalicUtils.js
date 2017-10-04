@@ -1,7 +1,5 @@
 export const hasMark = state => state.marks.some(mark => mark.type === 'italic')
 
-export const italicMarkStrategy = state => state
-  .transform()
+export const italicMarkStrategy = change => change
   .toggleMark('italic')
   .focus()
-  .apply()

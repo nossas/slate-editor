@@ -2,16 +2,12 @@ export const hasGrid = state => state.blocks.some(
   block => !!state.document.getClosest(block.key, parent => parent.type === 'grid')
 )
 
-export const appendGrid = state => state
-  .transform()
+export const appendGrid = change => change
   .setBlock('grid-cell')
   .wrapBlock('grid')
   .wrapBlock('grid-row')
   .focus()
-  .apply()
 
-export const splitRow = state => state
-  .transform()
+export const splitRow = change => change
   .splitBlock(2)
   .focus()
-  .apply()

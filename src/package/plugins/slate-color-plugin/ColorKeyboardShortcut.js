@@ -1,7 +1,7 @@
 import keycode from 'keycode'
 
 
-const ColorKeyboardShortcut = (event, data, state, editor) => {
+const ColorKeyboardShortcut = (event, data, change, editor) => {
   const { changeState, outerState } = editor.props
   const { color } = outerState
   const { showPicker } = color

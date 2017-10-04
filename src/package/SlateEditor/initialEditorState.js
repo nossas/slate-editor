@@ -1,15 +1,17 @@
-import { Raw } from 'slate'
+import { State } from 'slate'
 
 const initialEditorState = {
-  nodes: [
-    {
-      kind: 'block',
-      type: 'paragraph',
-      nodes: [
-        { kind: 'text', text: 'Uma linha de texto em um parágrafo.' },
-      ]
-    }
-  ]
+  document: {
+    nodes: [
+      {
+        kind: 'block',
+        type: 'paragraph',
+        nodes: [
+          { kind: 'text', ranges: [{text: 'Uma linha de texto em um parágrafo.'}] },
+        ]
+      }
+    ]
+  }
 }
 
-export default Raw.deserialize(initialEditorState, { terse: true })
+export default State.fromJS(initialEditorState)

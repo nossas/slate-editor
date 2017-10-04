@@ -1,6 +1,5 @@
 import React from 'react'
 import FontAwesome from 'react-fontawesome'
-import { Raw } from 'slate'
 import beautify from 'json-beautify'
 
 import { Button} from '../../components/button'
@@ -15,8 +14,7 @@ const StateLoggerButton = ({ state, onChange, className, style, type }) => (
         e.preventDefault()
         console.groupCollapsed('[State Logger]')
         console.info('State', beautify(state, null, 2, 100))
-        console.info('State Serialized', beautify(Raw.serialize(state), null, 2, 100))
-        console.info('State Serialized (Terse)', beautify(Raw.serialize(state, { terse: true }), null, 2, 100))
+        console.info('State Serialized', beautify(state.toJS(), null, 2, 100))
         console.groupEnd()
       }}
     >
