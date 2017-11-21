@@ -1,5 +1,4 @@
 import React from 'react'
-import keycode from 'keycode'
 import classnames from 'classnames'
 
 import { fontSizeStrategy } from './FontSizeUtils'
@@ -17,31 +16,25 @@ if (require('exenv').canUseDOM) require('./FontSizeInput.css')
 //
 const FontSizeInput = ({
   state,
-  onChange,
   className,
   style,
   changeState,
   initialFontSize,
   outerState: { fontSize: fontSizeState },
-}) => {
+}) => { 
   if (!fontSizeState) changeState({ state, fontSize: initialFontSize })
 
   return (
     <input
-      onKeyDown={({ target: { value: fontSizeValue }, keyCode }) => {
-        const fontSize = Number(fontSizeValue)
-        const isEnter = keycode(keyCode) === 'enter'
-
-        // Set new font size to selection
-        if (isEnter) changeState({ fontSize, state: fontSizeStrategy({ change: state.change(), fontSize, changeState }).state })
-        else changeState({ fontSize, state })
-      }}
       onChange={({ target: { value: fontSizeValue } }) => {
         if (Number(fontSizeValue) <= 0) fontSizeValue = '1'
         const fontSize = fontSizeValue || '1'
-
-        // Only handle the input value
-        changeState({ state, fontSize })
+        const fontSizeState = fontSizeStrategy({
+          change: state.change(),
+          fontSize,
+          changeState
+        }).state
+        changeState({ fontSize, state: fontSizeState })
       }}
       onFocus={e => e.target.select()}
       className={classnames('slate-font-size-plugin-input', className)}

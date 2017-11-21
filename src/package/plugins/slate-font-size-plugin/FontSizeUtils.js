@@ -23,7 +23,6 @@ export const fontSizeStrategy = ({ change, fontSize, changeState }) => {
       return change
         .removeMark(getMark(state))
         .addMark(createMark(fontSize))
-        .focus()
     }
     else console.info('[SlateJS][FontSizePlugin] selection collapsed, w/ inline.')
   } else {
@@ -32,7 +31,6 @@ export const fontSizeStrategy = ({ change, fontSize, changeState }) => {
       changeState({ fontSize })
       return change
         .addMark(createMark(fontSize))
-        .focus()
     }
     else console.info('[SlateJS][FontSizePlugin] selection collapsed, w/o inline.')
   }
