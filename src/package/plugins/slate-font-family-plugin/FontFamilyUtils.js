@@ -9,11 +9,9 @@ export const createMark = fontFamilyIndex => ({
 export const reapplyMark = ({ change, fontFamilyIndex }) => change
   .removeMark(getMark(change.state))
   .addMark(createMark(fontFamilyIndex))
-  .focus()
 
 export const applyMark = ({ change, fontFamilyIndex }) => change
   .addMark(createMark(fontFamilyIndex))
-  .focus()
 
 /**
  * Strategy that decides how font family mark plugin
