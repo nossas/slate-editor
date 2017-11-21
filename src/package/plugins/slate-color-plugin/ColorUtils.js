@@ -14,12 +14,10 @@ export const reapplyMark = ({ change, rgba }) => {
 
   return change
   .addMark(createMark(rgba))
-  .focus()
 }
 
 export const applyMark = ({ change, rgba }) => change
   .addMark(createMark(rgba))
-  .focus()
 
 /**
  * Strategy that decides how color mark plugin
