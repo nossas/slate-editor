@@ -1,0 +1,48 @@
+pipeline:
+  build:
+    image: node:latest
+    commands:
+      - yarn
+    when:
+      event: [push, tag]
+
+  production-docker-publish:
+    image: plugins/docker
+    repo: nossas/slate-editor
+    secrets: [ docker_username, docker_password ]
+    tags:
+      - ${DRONE_BRANCH}
+    when:
+      status: success
+      event: tag
+
+  production-deploy-rancher:
+    image: peloton/drone-rancher
+    url: http://cluster.bonde.org
+    service: production/slate-editor
+    docker_image: nossas/bonde-slate-editor:${DRONE_BRANCH}
+    timeout: 360
+    confirm: true
+    secrets: [ rancher_access_key, rancher_secret_key ]
+    when:
+      status: success
+      event: [ tag ]
+
+  npm-publish:
+    image: plugins/npm
+    token: npm_github_token
+    email: gabrielrtakeda@gmail.com
+    # when tag
+    # http://plugins.drone.io/drone-plugins/drone-npm/
+    when:
+      status: success
+      event: tag
+
+  notify:
+    image: plugins/slack
+    webhook: https://hooks.slack.com/services/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
+    channel: bonde_bots
+    username: CI - ${DRONE_REPO_NAME}
+    when:
+      event: [ push, tag, build, publish, deployment, pull_request ]
+      status: [ success, failure ]
