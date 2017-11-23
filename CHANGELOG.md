@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.1.0"></a>
+# [3.1.0](https://github.com/nossas/slate-editor/compare/v3.0.1...v3.1.0) (2017-11-23)
+
+
+### Features
+
+* **ci:** add drone ci build integration close [#47](https://github.com/nossas/slate-editor/issues/47) ([f0021e5](https://github.com/nossas/slate-editor/commit/f0021e5))
+* **ci:** add staging build pipeline close [#47](https://github.com/nossas/slate-editor/issues/47) ([e17d100](https://github.com/nossas/slate-editor/commit/e17d100))
+
+
+
 <a name="3.0.1"></a>
 ## [3.0.1](https://github.com/nossas/slate-editor/compare/v3.0.0...v3.0.1) (2017-11-23)
 
