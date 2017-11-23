@@ -9,14 +9,8 @@
   "main": "lib/index.js",
   "scripts": {
     "start": "react-scripts start",
-    "rs-build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "build": "babel src/package --out-dir lib --copy-files",
-    "create-release-branch": "sh ./bin/create-release-branch",
-    "rs-publish-release": "sh ./bin/publish-release",
-    "deploy-docs": "sh ./bin/docs",
-    "ci-deploy-docs": "sh ./bin/docs-ci",
-    "gh-pages": "REACT_APP_GH_PAGES_PATH='component-template' npm run build",
     "prerelease": "rm -rf lib && npm run build && git add .",
     "release": "./node_modules/.bin/standard-version -a",
     "push": "git push origin master --follow-tags"
