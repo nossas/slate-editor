@@ -9,7 +9,7 @@ pipeline:
   staging-docker-publish:
     image: plugins/docker
     repo: nossas/slate-editor
-    secrets: [ docker_username, docker_password ]
+    secrets: [docker_username, docker_password]
     tags:
       - ${DRONE_BRANCH}
     when:
@@ -23,7 +23,7 @@ pipeline:
     docker_image: nossas/slate-editor:${DRONE_BRANCH}
     timeout: 360
     confirm: true
-    secrets: [ rancher_access_key, rancher_secret_key ]
+    secrets: [rancher_access_key, rancher_secret_key]
     when:
       status: success
       branch: [hotfix-*, release-*, feature-*, develop]
@@ -31,9 +31,9 @@ pipeline:
   production-docker-publish:
     image: plugins/docker
     repo: nossas/slate-editor
-    secrets: [ docker_username, docker_password ]
+    secrets: [docker_username, docker_password]
     tags:
-      - ${DRONE_BRANCH}
+      - ${DRONE_TAG##v}
     when:
       status: success
       event: tag
@@ -42,20 +42,25 @@ pipeline:
     image: peloton/drone-rancher
     url: http://cluster.bonde.org
     service: production/slate-editor
-    docker_image: nossas/bonde-slate-editor:${DRONE_BRANCH}
+    docker_image: nossas/slate-editor:${DRONE_BRANCH}
     timeout: 360
     confirm: true
-    secrets: [ rancher_access_key, rancher_secret_key ]
+    secrets: [rancher_access_key, rancher_secret_key]
     when:
       status: success
-      event: [ tag ]
+      branch: tag
+
+  npm-auth:
+    image: robertstettner/drone-npm-auth
+    secrets: [npm_username, npm_password, npm_email]
+    when:
+      status: success
+      event: tag
 
   npm-publish:
-    image: plugins/npm
-    token: npm_github_token
-    email: gabrielrtakeda@gmail.com
-    # when tag
-    # http://plugins.drone.io/drone-plugins/drone-npm/
+    image: node:latest
+    commands:
+      - npm publish
     when:
       status: success
       event: tag
@@ -66,5 +71,5 @@ pipeline:
     channel: bonde_bots
     username: CI - ${DRONE_REPO_NAME}
     when:
-      event: [ push, tag, build, publish, deployment, pull_request ]
-      status: [ success, failure ]
+      event: [push, tag, build, publish, deployment, pull_request]
+      status: [success, failure]
