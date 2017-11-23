@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.1"></a>
+## [3.0.1](https://github.com/nossas/slate-editor/compare/v3.0.0...v3.0.1) (2017-11-23)
+
+
+### Bug Fixes
+
+* **color-plugin:** remove focus when change state ([cfd7a75](https://github.com/nossas/slate-editor/commit/cfd7a75))
+* **font-family:** remove focus on strategy mark ([81790a7](https://github.com/nossas/slate-editor/commit/81790a7))
+* **font-size-plugin:** change keyboard shortcut; update doc [#2](https://github.com/nossas/slate-editor/issues/2) ([9e54345](https://github.com/nossas/slate-editor/commit/9e54345))
+* **font-size-plugin:** remove focus and onKeyDown. Closes [#2](https://github.com/nossas/slate-editor/issues/2) ([9b30fb0](https://github.com/nossas/slate-editor/commit/9b30fb0))
+
+
+
 <a name="3.0.0"></a>
 # [3.0.0](https://github.com/nossas/slate-editor/compare/v2.6.10...v3.0.0) (2017-10-25)
 
