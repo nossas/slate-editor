@@ -57,10 +57,10 @@ class SlateEditor extends Component {
 
 | Platform                 | Action   | Shortcut       |
 |--------------------------|----------|----------------|
-| ![Apple Logo][apple]     | Increase | `⌘`+`^`+`+`    |
-| ![Apple Logo][apple]     | Decrease | `⌘`+`^`+`-`    |
-| ![Windows Logo][windows] | Increase | `^`+`alt`+`+`  |
-| ![Windows Logo][windows] | Decrease | `^`+`alt`+`-`  |
+| ![Apple Logo][apple]     | Increase | <kbd>⌘</kbd>+<kbd>shift</kbd>+<kbd>></kbd>     |
+| ![Apple Logo][apple]     | Decrease | <kbd>⌘</kbd>+<kbd>shift</kbd>+<kbd><</kbd>     |
+| ![Windows Logo][windows] | Increase | <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>></kbd>  |
+| ![Windows Logo][windows] | Decrease | <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd><</kbd>  |
 
 # API
 
