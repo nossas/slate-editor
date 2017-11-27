@@ -32,8 +32,7 @@ pipeline:
     image: plugins/docker
     repo: nossas/slate-editor
     secrets: [docker_username, docker_password]
-    tags:
-      - ${DRONE_TAG##v}
+    tags: "${DRONE_TAG}"
     when:
       status: success
       event: tag
@@ -42,13 +41,13 @@ pipeline:
     image: peloton/drone-rancher
     url: http://cluster.bonde.org
     service: production/slate-editor
-    docker_image: nossas/slate-editor:${DRONE_BRANCH}
+    docker_image: nossas/slate-editor:${DRONE_TAG=$DRONE_BRANCH}
     timeout: 360
     confirm: true
     secrets: [rancher_access_key, rancher_secret_key]
     when:
       status: success
-      branch: tag
+      event: tag
 
   npm-auth:
     image: robertstettner/drone-npm-auth
