@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.1.2"></a>
+## [3.1.2](https://github.com/nossas/slate-editor/compare/v3.1.1...v3.1.2) (2017-11-27)
+
+
+### Bug Fixes
+
+* **ci:** production rancher deploy event tag ([402c8cd](https://github.com/nossas/slate-editor/commit/402c8cd))
+
+
+
 <a name="3.1.1"></a>
 ## [3.1.1](https://github.com/nossas/slate-editor/compare/v3.1.0...v3.1.1) (2017-11-23)
 
