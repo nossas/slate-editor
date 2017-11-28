@@ -1,7 +1,6 @@
 //
-// Schema
+// Rendering
 //
-import UnderlineSchema from './UnderlineSchema'
 import UnderlineMark from './UnderlineMark'
 
 //
@@ -17,8 +16,6 @@ import UnderlineButton from './UnderlineButton'
 
 
 const UnderlinePlugin = options => ({
-  schema: UnderlineSchema,
-
   onKeyDown(...args) {
     return UnderlineKeyboardShortcut(...args)
   },
@@ -26,7 +23,6 @@ const UnderlinePlugin = options => ({
 
 export {
   UnderlinePlugin,
-  UnderlineSchema,
   UnderlineMark,
   UnderlineKeyboardShortcut,
   UnderlineUtils,
