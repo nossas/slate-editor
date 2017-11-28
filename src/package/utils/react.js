@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default (children, props) => {
+export const cloneElement = (children, props) => {
   if (children && !children.length) {
     children = [children, ]
   }

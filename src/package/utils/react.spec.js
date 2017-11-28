@@ -1,7 +1,7 @@
 import React from 'react'
-import cloneElement from './clone-element'
+import { cloneElement } from './react'
 
-describe('package/utils/react/clone-element', () => {
+describe('package/utils/react', () => {
   describe('cloneElement(children, props)', () => {
     it('returns undefined if passed children undefined', () => {
       expect(cloneElement(undefined, {})).toEqual(undefined)
