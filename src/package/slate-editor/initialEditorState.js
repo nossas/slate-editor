@@ -7,7 +7,7 @@ const initialEditorState = {
         kind: 'block',
         type: 'paragraph',
         nodes: [
-          { kind: 'text', ranges: [{text: 'Uma linha de texto em um parágrafo.'}] },
+          { kind: 'text', leaves: [{text: 'Uma linha de texto em um parágrafo.'}] },
         ]
       }
     ]
