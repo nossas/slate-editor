@@ -1,7 +1,6 @@
 //
-// Schema
+// Rendering
 //
-import AlignmentSchema from './AlignmentSchema'
 import AlignmentNode from './AlignmentNode'
 
 //
@@ -20,8 +19,6 @@ import AlignmentRightButton from './AlignmentRightButton'
 
 
 const AlignmentPlugin = options => ({
-  schema: AlignmentSchema,
-
   onKeyDown(...args) {
     return AlignmentKeyboardShortcut(...args)
   },
@@ -29,7 +26,6 @@ const AlignmentPlugin = options => ({
 
 export {
   AlignmentPlugin,
-  AlignmentSchema,
   AlignmentNode,
   AlignmentKeyboardShortcut,
   AlignmentUtils,
