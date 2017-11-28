@@ -2,9 +2,9 @@ import React from 'react'
 
 
 const StrikethroughMark = ({ children }) => (
-  <strike>
+  <del>
     {children}
-  </strike>
+  </del>
 )
 
 export default StrikethroughMark

@@ -1,7 +1,6 @@
 //
-// Schame
+// Rendering
 //
-import StrikethroughSchema from './StrikethroughSchema'
 import StrikethroughMark from './StrikethroughMark'
 
 //
@@ -17,8 +16,6 @@ import StrikethroughButton from './StrikethroughButton'
 
 
 const StrikethroughPlugin = options => ({
-  schema: StrikethroughSchema,
-
   onKeyDown(...args) {
     return StrikethroughKeyboardShortcut(...args)
   },
@@ -26,7 +23,6 @@ const StrikethroughPlugin = options => ({
 
 export {
   StrikethroughPlugin,
-  StrikethroughSchema,
   StrikethroughMark,
   StrikethroughKeyboardShortcut,
   StrikethroughUtils,

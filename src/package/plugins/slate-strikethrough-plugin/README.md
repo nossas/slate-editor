@@ -64,7 +64,6 @@ class SlateEditor extends Component {
 
 | Target                        | Description                                                                        |
 |-------------------------------|------------------------------------------------------------------------------------|
-| StrikethroughSchema           | Schema object to configure the plugin.                                             |
 | StrikethroughMark             | Component that holds the html that will wrap the content with strikethrough style. |
 | StrikethroughKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS.          |
 | StrikethroughUtils            | Generic file that holds the util common functions.                                 |
