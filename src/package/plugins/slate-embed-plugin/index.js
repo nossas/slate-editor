@@ -1,7 +1,6 @@
 //
-// Schema
+// Rendering
 //
-import EmbedSchema from './EmbedSchema'
 import EmbedNode from './EmbedNode'
 
 //
@@ -17,8 +16,6 @@ import EmbedButton from './EmbedButton'
 
 
 const EmbedPlugin = options => ({
-  schema: EmbedSchema,
-
   onKeyDown(...args) {
     return EmbedKeyboardShortcut(...args)
   },
@@ -26,7 +23,6 @@ const EmbedPlugin = options => ({
 
 export {
   EmbedPlugin,
-  EmbedSchema,
   EmbedNode,
   EmbedKeyboardShortcut,
   EmbedUtils,

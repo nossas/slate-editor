@@ -64,7 +64,6 @@ class SlateEditor extends Component {
 
 | Target                | Description                                                                |
 |-----------------------|----------------------------------------------------------------------------|
-| EmbedSchema           | Schema object to configure the plugin.                                     |
 | EmbedNode             | Component that holds the html that will wrap the content with embed style. |
 | EmbedKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS.  |
 | EmbedUtils            | Generic file that holds the util common functions.                         |
