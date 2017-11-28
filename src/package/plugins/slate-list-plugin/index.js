@@ -1,8 +1,9 @@
 //
-// Schema
+// Rendering
 //
-import ListSchema from './ListSchema'
-import ListNode from './ListNode'
+import ListItemNode from './ListItemNode'
+import OrderedListNode from './OrderedListNode'
+import UnorderedListNode from './UnorderedListNode'
 
 //
 // Keyboard
@@ -19,8 +20,6 @@ import OrderedListButton from './OrderedListButton'
 
 
 const ListPlugin = options => ({
-  schema: ListSchema,
-
   onKeyDown(...args) {
     return ListKeyboardShortcut(...args)
   },
@@ -28,8 +27,9 @@ const ListPlugin = options => ({
 
 export {
   ListPlugin,
-  ListSchema,
-  ListNode,
+  ListItemNode,
+  OrderedListNode,
+  UnorderedListNode,
   ListKeyboardShortcut,
   ListUtils,
   ListButtonBar,

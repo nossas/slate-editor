@@ -6,25 +6,25 @@ import {
 } from './ListUtils'
 
 
-const ListKeyboardShortcut = (event, data, change) => {
+const ListKeyboardShortcut = (event, change) => {
   //
   // Behaviour to increase or decrease depth of the list.
   //
-  if (data.key === 'tab') {
+  if (event.key === 'Tab') {
     event.preventDefault()
-    if (data.isShift) return decreaseListDepthStrategy(change)
+    if (event.shiftKey) return decreaseListDepthStrategy(change)
     return increaseListDepthStrategy(change)
   }
 
-  const unorderedKey = data.key === 'l'
-  const macUnordered = data.isCtrl && data.isShift && unorderedKey
-  const winUnordered = data.isAlt && data.isShift && unorderedKey
+  const unorderedKey = event.key === 'l'
+  const macUnordered = event.ctrlKey && event.shiftKey && unorderedKey
+  const winUnordered = event.altKey && event.shiftKey && unorderedKey
   const isUnordered = macUnordered || winUnordered
   if (isUnordered) return unorderedListStrategy(change)
 
-  const orderedKey = data.key === 'n'
-  const macOrdered = data.isCtrl && data.isShift && orderedKey
-  const winOrdered = data.isAlt && data.isShift && orderedKey
+  const orderedKey = event.key === 'n'
+  const macOrdered = event.ctrlKey && event.shiftKey && orderedKey
+  const winOrdered = event.altKey && event.shiftKey && orderedKey
   const isOrdered = macOrdered || winOrdered
   if (isOrdered) return orderedListStrategy(change)
 
