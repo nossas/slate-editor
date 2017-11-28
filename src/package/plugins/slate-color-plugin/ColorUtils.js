@@ -1,7 +1,7 @@
 export const typeFilter = mark => mark.type === 'color'
-export const hasMark = state => state.marks.some(typeFilter)
-export const getMarks = state => state.marks.filter(typeFilter)
-export const getMark = state => state.marks.filter(typeFilter).first()
+export const hasMark = value => value.marks.some(typeFilter)
+export const getMarks = value => value.marks.filter(typeFilter)
+export const getMark = value => value.marks.filter(typeFilter).first()
 
 export const createMark = rgba => ({
   type: 'color',
@@ -10,7 +10,7 @@ export const createMark = rgba => ({
 
 export const reapplyMark = ({ change, rgba }) => {
   // remove all nested color marks
-  getMarks(change.state).map(mark => change.removeMark(mark))
+  getMarks(change.value).map(mark => change.removeMark(mark))
 
   return change
   .addMark(createMark(rgba))
@@ -24,7 +24,7 @@ export const applyMark = ({ change, rgba }) => change
  * needs to be applied.
  *
  * @param {Object} attributes
- *    @property {State} state
+ *    @property {Value} value
  *    @property {Object} rgba
  *        @property {int} r
  *        @property {int} g
@@ -32,21 +32,21 @@ export const applyMark = ({ change, rgba }) => change
  *        @property {int} a
  */
 export const colorMarkStrategy = attributes => {
-  const { state, rgba } = attributes
+  const { value, rgba } = attributes
 
-  if (hasMark(state)) {
-    if (state.isExpanded) {
-      return reapplyMark({change: state.change(), rgba})
+  if (hasMark(value)) {
+    if (value.isExpanded) {
+      return reapplyMark({change: value.change(), rgba})
     }
     else console.info('[SlateJS][ColorPlugin] selection collapsed, w/ mark exists')
   }
 
   else {
-    if (state.isExpanded) {
-      return applyMark({change: state.change(), rgba})
+    if (value.isExpanded) {
+      return applyMark({change: value.change(), rgba})
     }
     else console.info('[SlateJS][ColorPlugin] selection collapsed, w/o mark')
   }
 
-  return state.change()
+  return value.change()
 }

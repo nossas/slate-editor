@@ -1,14 +1,14 @@
 import * as ColorUtils from './ColorUtils'
 
 
-const SelectionPickerColorUpdate = (event, data, change, editor) => {
+const SelectionPickerColorUpdate = (event, change, editor) => {
   const { hasMark, getMark } = ColorUtils
   const { outerState, changeState } = editor.props
   const { color } = outerState
-  const { state } = change
+  const { value } = change
 
-  if (hasMark(state)) {
-    const rgba = getMark(state).data.get('rgba')
+  if (hasMark(value)) {
+    const rgba = getMark(value).data.get('rgba')
     changeState({ color: { ...color, rgba } })
   }
 }

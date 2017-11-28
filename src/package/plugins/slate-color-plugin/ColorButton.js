@@ -4,6 +4,7 @@ import classnames from 'classnames'
 
 import { Button} from '../../components/button'
 import DraggableColorPicker from './DraggableColorPicker'
+
 // FIXME: Needs to handle assets files to work with SSR
 if (require('exenv').canUseDOM) require('./ColorButton.css')
 
@@ -16,7 +17,7 @@ class ColorButton extends Component {
   }
 
   render() {
-    const { className, style, state, changeState, outerState: { color }, type } = this.props
+    const { className, style, value, changeState, outerState: { color }, type } = this.props
 
     // If still does not have the initial state, do not render button.
     if (!color) return null
@@ -28,7 +29,7 @@ class ColorButton extends Component {
         <Button
           style={style}
           type={type}
-          onClick={e => changeState({ state, color: { ...color, showPicker: !showPicker } })}
+          onClick={e => changeState({ value, color: { ...color, showPicker: !showPicker } })}
           className={classnames(
             'slate-color-plugin--button',
             className,

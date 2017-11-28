@@ -1,7 +1,6 @@
 //
-// Schema
+// Rendering
 //
-import ColorSchema from './ColorSchema'
 import ColorMark from './ColorMark'
 
 //
@@ -23,8 +22,6 @@ import SelectionPickerColorUpdate from './SelectionPickerColorUpdate'
 
 
 const ColorPlugin = options => ({
-  schema: ColorSchema,
-
   onKeyDown(...args) {
     return ColorKeyboardShortcut(...args)
   },
@@ -36,7 +33,6 @@ const ColorPlugin = options => ({
 
 export {
   ColorPlugin,
-  ColorSchema,
   ColorMark,
   ColorKeyboardShortcut,
   ColorUtils,

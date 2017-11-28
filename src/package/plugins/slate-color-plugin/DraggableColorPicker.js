@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import PropTypes from 'prop-types';
+import React from 'react';
 import Draggable from 'react-draggable'
 import { SketchPicker } from 'react-color'
 
@@ -8,7 +9,7 @@ if (require('exenv').canUseDOM) require('./DraggableColorPicker.css')
 
 
 const DraggableColorPicker = ({
-  state,
+  value,
   changeState,
   outerState: {
     color: { rgba, showPicker },
@@ -27,7 +28,7 @@ const DraggableColorPicker = ({
         onChangeComplete={color => {
           const rgbaChange = color.rgb
           changeState({
-            state: colorMarkStrategy({ state, rgba: rgbaChange }).state,
+            value: colorMarkStrategy({ value, rgba: rgbaChange }).value,
             color: { rgba: rgbaChange, showPicker },
           })
         }}
@@ -37,7 +38,7 @@ const DraggableColorPicker = ({
 )
 
 DraggableColorPicker.propTypes = {
-  state: PropTypes.object.isRequired,
+  value: PropTypes.object.isRequired,
   changeState: PropTypes.func.isRequired,
   outerState: PropTypes.shape({
     color: PropTypes.shape({
