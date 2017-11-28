@@ -1,8 +1,7 @@
 //
-// Schema
+// Rendering
 //
-import BoldSchema from './BoldSchema'
-import BoldNode from './BoldNode'
+import BoldMark from './BoldMark'
 
 //
 // Keyboard
@@ -17,8 +16,6 @@ import BoldButton from './BoldButton'
 
 
 const BoldPlugin = options => ({
-  schema: BoldSchema,
-
   onKeyDown(...args) {
     return BoldKeyboardShortcut(...args)
   },
@@ -26,8 +23,7 @@ const BoldPlugin = options => ({
 
 export {
   BoldPlugin,
-  BoldSchema,
-  BoldNode,
+  BoldMark,
   BoldKeyboardShortcut,
   BoldUtils,
   BoldButton,
