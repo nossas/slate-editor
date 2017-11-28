@@ -1,10 +1,8 @@
-import keycode from 'keycode'
-
+import { isMod } from '../../utils/keyboard-event'
 import { fontFamilyMarkStrategy } from './FontFamilyUtils'
 
-
-const FontFamilyKeyboardShortcut = (event, data, change) => {
-  if (!data.isMod || keycode(data.code) !== 'b') return
+const FontFamilyKeyboardShortcut = (event, change, editor) => {
+  if (!isMod(event) || event.key !== 'b') return
   return fontFamilyMarkStrategy(change)
 }
 

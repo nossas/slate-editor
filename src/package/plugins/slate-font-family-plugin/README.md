@@ -66,7 +66,6 @@ class SlateEditor extends Component {
 
 | Target                     | Description                                                                      |
 |----------------------------|----------------------------------------------------------------------------------|
-| FontFamilySchema           | Schema object to configure the plugin.                                           |
 | FontFamilyMark             | Component that holds the html that will wrap the content with font family style. |
 | FontFamilyUtils            | Generic file that holds the util common functions.                               |
 | FontFamilyButton           | Button component that have behaviour to wrap content with font family style.     |

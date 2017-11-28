@@ -1,5 +1,5 @@
-export const hasMark = state => state.marks.some(mark => mark.type === 'font-family')
-export const getMark = state => state.marks.filter(mark => mark.type === 'font-family').first()
+export const hasMark = value => value.marks.some(mark => mark.type === 'font-family')
+export const getMark = value => value.marks.filter(mark => mark.type === 'font-family').first()
 
 export const createMark = fontFamilyIndex => ({
   type: 'font-family',
@@ -7,7 +7,7 @@ export const createMark = fontFamilyIndex => ({
 })
 
 export const reapplyMark = ({ change, fontFamilyIndex }) => change
-  .removeMark(getMark(change.state))
+  .removeMark(getMark(change.value))
   .addMark(createMark(fontFamilyIndex))
 
 export const applyMark = ({ change, fontFamilyIndex }) => change
@@ -18,25 +18,25 @@ export const applyMark = ({ change, fontFamilyIndex }) => change
  * needs to be applied.
  *
  * @param {Object} attributes
- *    @property {State} state
+ *    @property {Value} value
  *    @property {int} fontFamilyIndex
  */
 export const fontFamilyMarkStrategy = attributes => {
-  const { state, fontFamilyIndex } = attributes
+  const { value, fontFamilyIndex } = attributes
 
-  if (hasMark(state)) {
-    if (state.isExpanded) {
-      return reapplyMark({change: state.change(), fontFamilyIndex})
+  if (hasMark(value)) {
+    if (value.isExpanded) {
+      return reapplyMark({change: value.change(), fontFamilyIndex})
     }
     else console.info('[SlateJS][FontFamilyPlugin] selection collapsed, w/ mark exists')
   }
 
   else {
-    if (state.isExpanded) {
-      return applyMark({change: state.change(), fontFamilyIndex})
+    if (value.isExpanded) {
+      return applyMark({change: value.change(), fontFamilyIndex})
     }
     else console.info('[SlateJS][FontFamilyPlugin] selection collapsed, w/o mark')
   }
 
-  return state.change()
+  return value.change()
 }

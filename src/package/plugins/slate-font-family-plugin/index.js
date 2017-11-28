@@ -1,7 +1,6 @@
 //
-// Schema
+// Rendering
 //
-import FontFamilySchema from './FontFamilySchema'
 import FontFamilyMark from './FontFamilyMark'
 
 //
@@ -17,7 +16,6 @@ import FontFamilyDropdown from './FontFamilyDropdown'
 
 
 const FontFamilyPlugin = options => ({
-  schema: FontFamilySchema,
 
   // onKeyDown(...args) {
   //   return FontFamilyKeyboardShortcut(...args)
@@ -26,7 +24,6 @@ const FontFamilyPlugin = options => ({
 
 export {
   FontFamilyPlugin,
-  FontFamilySchema,
   FontFamilyMark,
   // FontFamilyKeyboardShortcut,
   FontFamilyUtils,
