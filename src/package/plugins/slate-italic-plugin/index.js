@@ -1,7 +1,6 @@
 //
-// Schema
+// Rendering
 //
-import ItalicSchema from './ItalicSchema'
 import ItalicMark from './ItalicMark'
 
 //
@@ -17,8 +16,6 @@ import ItalicButton from './ItalicButton'
 
 
 const ItalicPlugin = options => ({
-  schema: ItalicSchema,
-
   onKeyDown(...args) {
     return ItalicKeyboardShortcut(...args)
   },
@@ -26,7 +23,6 @@ const ItalicPlugin = options => ({
 
 export {
   ItalicPlugin,
-  ItalicSchema,
   ItalicMark,
   ItalicKeyboardShortcut,
   ItalicUtils,
