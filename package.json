@@ -23,11 +23,11 @@
     "conventional-changelog-cli": "^1.1.1",
     "conventional-recommended-bump": "^0.3.0",
     "dentist": "^1.0.3",
-    "enzyme": "^2.4.1",
+    "enzyme": "^3",
     "history": "^4.2.0",
-    "react": "^15.3.2",
+    "react": "^16",
     "react-addons-test-utils": "^15.3.2",
-    "react-dom": "^15.3.2",
+    "react-dom": "^16",
     "react-router": "^4.1.2",
     "react-scripts": "0.6.0",
     "standard-version": "^4.0.0"
@@ -39,11 +39,11 @@
     "json-beautify": "^1.0.1",
     "keycode": "^2.1.7",
     "react-color": "^2.10.0",
-    "react-draggable": "^2.2.3",
+    "react-draggable": "^3",
     "react-fontawesome": "^1.6.1",
     "react-s3-uploader": "^4.0.1",
-    "slate": "^0.25.3",
-    "slate-react": "^0.2.1"
+    "slate": "^0.31.3",
+    "slate-react": "^0.10.17"
   },
   "peerDependencies": {
     "slate": "^0.25.3"
