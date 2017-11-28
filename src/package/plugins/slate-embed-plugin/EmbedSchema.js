@@ -1,10 +1,7 @@
-import EmbedNode from './EmbedNode'
-
-
 const EmbedSchema = {
-  nodes: {
-    embed: EmbedNode,
-  },
+  document: {
+    nodes: [{ types: ['embed'] }]
+  }
 }
 
 export default EmbedSchema

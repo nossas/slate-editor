@@ -1,9 +1,6 @@
-import LinkNode from './LinkNode'
-
-
 const LinkSchema = {
-  nodes: {
-    link: LinkNode,
-  },
+  document: {
+    nodes: [{ types: ['link'] }]
+  }
 }
 export default LinkSchema

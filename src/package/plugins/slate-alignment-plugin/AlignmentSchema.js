@@ -1,10 +1,7 @@
-import AlignmentNode from './AlignmentNode'
-
-
 const AlignmentSchema = {
-  nodes: {
-    alignment: AlignmentNode,
-  },
+  document: {
+    nodes: [{ types: ['alignment'] }]
+  }
 }
 
 export default AlignmentSchema
