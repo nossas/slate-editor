@@ -1,5 +1,4 @@
-// Schema
-import FontSizeSchema from './FontSizeSchema'
+// Rendering
 import FontSizeMark from './FontSizeMark'
 
 // Keyboard
@@ -20,8 +19,6 @@ const FontSizePlugin = options => {
   ValidatePluginOptions(options)
 
   return {
-    schema: FontSizeSchema,
-
     onKeyDown(...args) {
       return FontSizeKeyboardShortcut(...args, options)
     },
@@ -34,7 +31,6 @@ const FontSizePlugin = options => {
 
 export {
   FontSizePlugin,
-  FontSizeSchema,
   FontSizeMark,
   FontSizeKeyboardShortcut,
   FontSizeUtils,
