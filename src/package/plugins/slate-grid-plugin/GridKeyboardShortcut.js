@@ -1,16 +1,16 @@
 import { appendGrid, splitRow } from './GridUtils'
 
 
-const GridKeyboardShortcut = (event, data, change) => {
-  const gridKey = data.key === 'g'
-  const macGrid = data.isCtrl && data.isCmd && gridKey
-  const winGrid = data.isCtrl && data.isAlt && gridKey
+const GridKeyboardShortcut = (event, change) => {
+  const gridKey = event.key === 'g'
+  const macGrid = event.ctrlKey && event.metaKey && gridKey
+  const winGrid = event.ctrlKey && event.altKey && gridKey
   const isGrid = macGrid || winGrid
   if (isGrid) return appendGrid(change)
 
-  const keyRow = data.key === 'r'
-  const macRow = data.isCtrl && data.isCmd && keyRow
-  const winRow = data.isCtrl && data.isAlt && keyRow
+  const keyRow = event.key === 'r'
+  const macRow = event.ctrlKey && event.metaKey && keyRow
+  const winRow = event.ctrlKey && event.altKey && keyRow
   const isRow = macRow || winRow
   if (isRow) return splitRow(change)
 

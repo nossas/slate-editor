@@ -1,7 +1,6 @@
 //
-// Schema
+// Rendering
 //
-import GridSchema from './GridSchema'
 import GridNode from './GridNode'
 import GridRowNode from './GridRowNode'
 import GridCellNode from './GridCellNode'
@@ -21,8 +20,6 @@ import GridSplitRowButton from './GridSplitRowButton'
 
 
 const GridPlugin = options => ({
-  schema: GridSchema,
-
   onKeyDown(...args) {
     return GridKeyboardShortcut(...args)
   },
@@ -30,7 +27,6 @@ const GridPlugin = options => ({
 
 export {
   GridPlugin,
-  GridSchema,
   GridNode,
   GridRowNode,
   GridCellNode,

@@ -6,7 +6,7 @@ if (require('exenv').canUseDOM) require('./GridButtonBar.css')
 
 
 const GridButtonBar = props => (
-  <div className="slate-grid-plugin--button-bar">
+  <div className='slate-grid-plugin--button-bar'>
     <GridButton {...props} />
     <GridSplitRowButton {...props} />
   </div>

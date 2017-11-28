@@ -5,6 +5,7 @@ import classnames from 'classnames'
 import { Button} from '../../components/button'
 import { splitRow } from './GridUtils'
 
+
 const GridSplitRowButton = ({ value, onChange, className, style, type }) => (
   <Button
     style={style}
@@ -12,7 +13,7 @@ const GridSplitRowButton = ({ value, onChange, className, style, type }) => (
     onClick={e => onChange(splitRow(value.change()))}
     className={classnames('slate-grid-plugin--button', className)}
   >
-    <FontAwesome name="level-down" />
+    <FontAwesome name='level-down' />
   </Button>
 )
 
