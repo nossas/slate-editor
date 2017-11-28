@@ -1,5 +1,5 @@
 import React from 'react'
-import {isFunction} from './../../SlateEditor/Utils'
+import { isFunction } from '../../utils/type-check'
 
 const Button = ({ children, id, onClick, className, style, type, ...props }) => (
   <button

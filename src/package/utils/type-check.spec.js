@@ -1,22 +1,6 @@
-import React from 'react'
-import {cloneElement, isFunction} from '../Utils'
+import { isFunction } from './type-check'
 
-
-describe('Utils', () => {
-  describe('cloneElement(children, props)', () => {
-    it('returns undefined if passed children undefined', () => {
-      expect(cloneElement(undefined, {})).toEqual(undefined)
-    })
-
-    it('skips undefined children', () => {
-      const children = [<span></span>, undefined, <div></div>, <i></i>, undefined]
-
-      const cloned = cloneElement(children, {})
-
-      expect(cloned.length).toBe(3)
-    })
-  })
-
+describe('package/utils/type-check', () => {
   describe('isFunction', () => {
     it('returns false if object is falsey', () => {
       expect(isFunction(undefined)).toBe(false)

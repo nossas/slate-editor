@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import classnames from 'classnames'
-import {cloneElement, isFunction} from './Utils'
+import { cloneElement } from '../utils/react'
+import { isFunction } from '../utils/type-check'
 
 import initialEditorState from './initialEditorState'
 

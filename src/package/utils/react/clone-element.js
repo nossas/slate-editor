@@ -1,6 +1,6 @@
 import React from 'react'
 
-const cloneElement = (children, props) => {
+export default (children, props) => {
   if (children && !children.length) {
     children = [children, ]
   }
@@ -15,13 +15,4 @@ const cloneElement = (children, props) => {
 
     return result;
   }, [])
-}
-
-const isFunction = (obj) => {
-  return !!(obj && obj.constructor === Function)
-}
-
-export {
-  cloneElement,
-  isFunction
 }

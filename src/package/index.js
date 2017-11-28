@@ -1,4 +1,4 @@
-export * from './SlateEditor'
+export * from './slate-editor'
 export * from './plugins/slate-alignment-plugin'
 export * from './plugins/slate-bold-plugin'
 export * from './plugins/slate-color-plugin'
