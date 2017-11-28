@@ -4,7 +4,7 @@ import beautify from 'json-beautify'
 
 import { Button} from '../../components/button'
 
-const StateLoggerButton = ({ state, onChange, className, style, type }) => (
+const StateLoggerButton = ({ value, onChange, className, style, type }) => (
   <div>
     <Button
       className={className}
@@ -13,8 +13,8 @@ const StateLoggerButton = ({ state, onChange, className, style, type }) => (
       onClick={e => {
         e.preventDefault()
         console.groupCollapsed('[State Logger]')
-        console.info('State', beautify(state, null, 2, 100))
-        console.info('State Serialized', beautify(state.toJS(), null, 2, 100))
+        console.info('State', beautify(value, null, 2, 100))
+        console.info('State Serialized', beautify(value.toJS(), null, 2, 100))
         console.groupEnd()
       }}
     >

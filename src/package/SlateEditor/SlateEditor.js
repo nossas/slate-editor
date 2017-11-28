@@ -8,19 +8,19 @@ class SlateEditor extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      state: props.initialState || initialEditorState,
+      value: props.initialState || initialEditorState,
       readOnly: false,
       uid: new Date().getUTCMilliseconds()
     }
   }
 
   onChange (change) {
-    const state = change.state
+    const value = change.value
 
-    this.setState({ state })
+    this.setState({ value })
 
     const { onChange } = this.props
-    if (isFunction(onChange)) onChange(state)
+    if (isFunction(onChange)) onChange(value)
   }
 
   changeState (state) {
@@ -43,7 +43,7 @@ class SlateEditor extends Component {
 
     const childProps = {
       plugins,
-      state: this.state.state,
+      value: this.state.value,
       outerState: this.state,
       onChange: this.onChange.bind(this),
       changeState: this.changeState.bind(this)

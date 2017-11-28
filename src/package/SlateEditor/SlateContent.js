@@ -6,7 +6,7 @@ export default ({
   className,
   wrapperStyle,
   style,
-  state,
+  value,
   outerState,
   plugins,
   onChange,
@@ -20,12 +20,13 @@ export default ({
     <div className={classnames('editor--content', className)} style={wrapperStyle}>
       <Editor
         plugins={plugins}
-        state={state}
+        value={value}
         onChange={onChange}
         readOnly={readOnly}
         changeState={changeState}
         outerState={outerState}
         style={style}
+        renderNode={renderNode}
         {...rest}
       />
       {children}

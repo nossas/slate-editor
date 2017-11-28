@@ -1,5 +1,5 @@
-export const hasGrid = state => state.blocks.some(
-  block => !!state.document.getClosest(block.key, parent => parent.type === 'grid')
+export const hasGrid = value => value.blocks.some(
+  block => !!value.document.getClosest(block.key, parent => parent.type === 'grid')
 )
 
 export const appendGrid = change => change

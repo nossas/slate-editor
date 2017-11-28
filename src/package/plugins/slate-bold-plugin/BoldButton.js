@@ -6,14 +6,14 @@ import { Button} from '../../components/button'
 import { boldMarkStrategy, hasMark } from './BoldUtils'
 
 
-const BoldButton = ({ state, onChange, changeState, className, style, type }) => (
+const BoldButton = ({ value, onChange, changeState, className, style, type }) => (
   <Button
     style={style}
     type={type}
-    onClick={e => onChange(boldMarkStrategy(state.change()))}
+    onClick={e => onChange(boldMarkStrategy(value.change()))}
     className={classnames(
       'slate-bold-plugin--button',
-      { active: hasMark(state) },
+      { active: hasMark(value) },
       className,
     )}
   >

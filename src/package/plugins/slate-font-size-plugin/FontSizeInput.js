@@ -15,14 +15,14 @@ if (require('exenv').canUseDOM) require('./FontSizeInput.css')
 // More info: https://fb.me/react-controlled-components
 //
 const FontSizeInput = ({
-  state,
+  value,
   className,
   style,
   changeState,
   initialFontSize,
   outerState: { fontSize: fontSizeState },
-}) => { 
-  if (!fontSizeState) changeState({ state, fontSize: initialFontSize })
+}) => {
+  if (!fontSizeState) changeState({ value, fontSize: initialFontSize })
 
   return (
     <input
@@ -30,11 +30,11 @@ const FontSizeInput = ({
         if (Number(fontSizeValue) <= 0) fontSizeValue = '1'
         const fontSize = fontSizeValue || '1'
         const fontSizeState = fontSizeStrategy({
-          change: state.change(),
+          change: value.change(),
           fontSize,
           changeState
-        }).state
-        changeState({ fontSize, state: fontSizeState })
+        }).value
+        changeState({ fontSize, value: fontSizeState })
       }}
       onFocus={e => e.target.select()}
       className={classnames('slate-font-size-plugin-input', className)}

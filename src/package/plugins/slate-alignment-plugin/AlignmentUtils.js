@@ -1,11 +1,11 @@
-export const hasMark = state => state.blocks.some(node => node.type === 'alignment')
-export const getMark = state => state.blocks.filter(node => node.type === 'alignment').first()
-export const getType = state => state.blocks.first().type
+export const hasMark = value => value.blocks.some(node => node.type === 'alignment')
+export const getMark = value => value.blocks.filter(node => node.type === 'alignment').first()
+export const getType = value => value.blocks.first().type
 
 export const alignmentMarkStrategy = (change, align) => change
   .setBlock({
     type: 'alignment',
-    data: { align, currentBlockType: getType(change.state) }
+    data: { align, currentBlockType: getType(change.value) }
   })
   .focus()
 

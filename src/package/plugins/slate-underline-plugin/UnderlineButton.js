@@ -5,14 +5,14 @@ import classnames from 'classnames'
 import { Button} from '../../components/button'
 import { underlineMarkStrategy, hasMark } from './UnderlineUtils'
 
-const UnderlineButton = ({ state, onChange, changeState, className, style, type }) => (
+const UnderlineButton = ({ value, onChange, changeState, className, style, type }) => (
   <Button
     style={style}
     type={type}
-    onClick={e => onChange(underlineMarkStrategy(state.change()))}
+    onClick={e => onChange(underlineMarkStrategy(value.change()))}
     className={classnames(
       'slate-underline-plugin--button',
-      { active: hasMark(state) },
+      { active: hasMark(value) },
       className
     )}
   >

@@ -1,4 +1,4 @@
-export const hasEmbed = state => state.inlines.some(inline => inline.type === 'embed')
+export const hasEmbed = value => value.inlines.some(inline => inline.type === 'embed')
 
 export const appendEmbed = change => {
   const embed = window.prompt('Enter the embed that you want to add.')

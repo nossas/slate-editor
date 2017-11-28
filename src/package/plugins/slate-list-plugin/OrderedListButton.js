@@ -5,14 +5,14 @@ import classnames from 'classnames'
 import { Button} from '../../components/button'
 import { orderedListStrategy, isOrderedList } from './ListUtils'
 
-const OrderedListButton = ({ state, onChange, className, style, type }) => (
+const OrderedListButton = ({ value, onChange, className, style, type }) => (
   <Button
     style={style}
     type={type}
-    onClick={e => onChange(orderedListStrategy(state.change(), 'ordered-list'))}
+    onClick={e => onChange(orderedListStrategy(value.change(), 'ordered-list'))}
     className={classnames(
       'slate-list-plugin--button',
-      { active: isOrderedList(state) },
+      { active: isOrderedList(value) },
       className,
     )}
   >

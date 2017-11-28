@@ -41,17 +41,17 @@ class LinkNode extends Component {
 
   render() {
     const { isModalActive, presetData } = this.state
-    const { children, attributes, state, node, readOnly, editor: { onChange } } = this.props
+    const { children, attributes, value, node, readOnly, editor: { onChange } } = this.props
 
-    const focusedOnCurrentNode = getLink(state) && node.key === getLink(state).key
-    const showTooltip = !readOnly && state.isCollapsed && focusedOnCurrentNode
+    const focusedOnCurrentNode = getLink(value) && node.key === getLink(value).key
+    const showTooltip = !readOnly && value.isCollapsed && focusedOnCurrentNode
 
     return (
       <span>
         {!isModalActive ? null : (
           <LinkDataModal
             node={node}
-            state={state}
+            value={value}
             onChange={onChange}
             changeModalState={this.modal.bind(this)}
             presetData={presetData}
@@ -60,7 +60,7 @@ class LinkNode extends Component {
 
         <span className="link-node-container">
           {showTooltip && (
-            <Tooltip style={{ display: hasLinks(state) ? 'block' : 'none' }}>
+            <Tooltip style={{ display: hasLinks(value) ? 'block' : 'none' }}>
               <Tooltip.Item>
                 <a href={node.data.get('href')} target="_blank">
                   {node.data.get('href')}
@@ -69,7 +69,7 @@ class LinkNode extends Component {
               <Tooltip.Item onClick={() => this.modal(true)}>
                 Editar
               </Tooltip.Item>
-              <Tooltip.Item onClick={() => onChange(unlink(state))}>
+              <Tooltip.Item onClick={() => onChange(unlink(value))}>
                 Remover
               </Tooltip.Item>
             </Tooltip>

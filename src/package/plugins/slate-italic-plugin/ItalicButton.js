@@ -5,14 +5,14 @@ import classnames from 'classnames'
 import { Button} from '../../components/button'
 import { italicMarkStrategy, hasMark } from './ItalicUtils'
 
-const ItalicButton = ({ state, onChange, className, style, type }) => (
+const ItalicButton = ({ value, onChange, className, style, type }) => (
   <Button
     style={style}
     type={type}
-    onClick={e => onChange(italicMarkStrategy(state.change()))}
+    onClick={e => onChange(italicMarkStrategy(value.change()))}
     className={classnames(
       'slate-italic-plugin--button',
-      { active: hasMark(state) },
+      { active: hasMark(value) },
       className,
     )}
   >

@@ -1,19 +1,19 @@
 export const httpPreffixStrategy = href => href.search('https?://') >= 0 ? href : `http://${href}`
-export const hasLinks = state => state.inlines.some(inline => inline.type === 'link')
-export const getLink = state => state.inlines.filter(inline => inline.type === 'link').first()
+export const hasLinks = value => value.inlines.some(inline => inline.type === 'link')
+export const getLink = value => value.inlines.filter(inline => inline.type === 'link').first()
 export const createLink = data => ({ type: 'link', data })
-export const hasMultiBlocks = state => state.blocks.size > 1
+export const hasMultiBlocks = value => value.blocks.size > 1
 
 export const unlink = change => change
   .unwrapInline('link')
   .focus()
 
 export const updateLinkStrategy = ({ change, data: { title, href, text, target } }) => {
-  const { state } = change
+  const { value } = change
 
-  if (state.isCollapsed) {
+  if (value.isCollapsed) {
     change
-      .moveOffsetsTo(0, state.anchorText.characters.size)
+      .moveOffsetsTo(0, value.anchorText.characters.size)
   }
 
   change
@@ -33,20 +33,20 @@ export const updateLinkStrategy = ({ change, data: { title, href, text, target }
 }
 
 export const insertLinkStrategy = change => {
-  const { state } = change
+  const { value } = change
 
-  if (hasLinks(state)) {
+  if (hasLinks(value)) {
     change.unwrapInline('link')
   }
-  else if (state.isExpanded && !hasMultiBlocks(state)) {
-    const startOffset = state.selection.startOffset
+  else if (value.isExpanded && !hasMultiBlocks(value)) {
+    const startOffset = value.selection.startOffset
 
     // fix offset 0 selection:
     // add a single white space and select forward white space
     if (startOffset === 0) {
       change
-        .insertText(` ${state.anchorText.text}`)
-        .moveOffsetsTo(1, state.anchorText.characters.size + 1)
+        .insertText(` ${value.anchorText.text}`)
+        .moveOffsetsTo(1, value.anchorText.characters.size + 1)
     }
 
     change
@@ -60,10 +60,10 @@ export const insertLinkStrategy = change => {
         .deleteBackward()
     }
   }
-  else if (hasMultiBlocks(state)) {
+  else if (hasMultiBlocks(value)) {
     console.info('[SlateJS][LinkPlugin] has multiple blocks on selection')
   }
-  else if (state.isCollapsed && !hasLinks(state)) {
+  else if (value.isCollapsed && !hasLinks(value)) {
     console.info('[SlateJS][LinkPlugin] selection collapsed, w/o links on selection')
   }
 

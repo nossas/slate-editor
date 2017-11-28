@@ -1,14 +1,14 @@
-export const isList = state => state.blocks.some(block => block.type === 'list-item')
+export const isList = value => value.blocks.some(block => block.type === 'list-item')
 
-export const hasParentOfType = (state, type) => state.blocks.some(
-  block => !!state.document.getClosest(block.key, parent => parent.type === type)
+export const hasParentOfType = (value, type) => value.blocks.some(
+  block => !!value.document.getClosest(block.key, parent => parent.type === type)
 )
-export const isUnorderedList = state => hasParentOfType(state, 'unordered-list')
-export const isOrderedList = state => hasParentOfType(state, 'ordered-list')
+export const isUnorderedList = value => hasParentOfType(value, 'unordered-list')
+export const isOrderedList = value => hasParentOfType(value, 'ordered-list')
 
-export const getNodeOfType = (state, type) => state.blocks.filter(block => block.type === type).first()
-export const getUnorderedListNode = state => getNodeOfType(state, 'unordered-list')
-export const getOrderedListNode = state => getNodeOfType(state, 'ordered-list')
+export const getNodeOfType = (value, type) => value.blocks.filter(block => block.type === type).first()
+export const getUnorderedListNode = value => getNodeOfType(value, 'unordered-list')
+export const getOrderedListNode = value => getNodeOfType(value, 'ordered-list')
 
 export const removeUnorderedList = change => change
   .setBlock('paragraph')
@@ -43,9 +43,9 @@ export const applyUnorderedList = change => applyList(change, 'unordered-list')
 export const applyOrderedList = change => applyList(change, 'ordered-list')
 
 const deepRemoveList = change => {
-  const { state } = change
-  const { document } = state
-  const node = getNodeOfType(state, 'list-item')
+  const { value } = change
+  const { document } = value
+  const node = getNodeOfType(value, 'list-item')
   const depth = document.getDepth(node.key)
 
   Array(depth).fill('.').forEach(() => {
@@ -57,44 +57,44 @@ const deepRemoveList = change => {
 }
 
 export const unorderedListStrategy = change => {
-  const { state } = change
-  if (!isList(state)) return applyList(change, 'unordered-list')
+  const { value } = change
+  if (!isList(value)) return applyList(change, 'unordered-list')
 
-  if (isUnorderedList(state)) return deepRemoveList(change)
-  if (isOrderedList(state)) return switchToUnorderedList(change)
+  if (isUnorderedList(value)) return deepRemoveList(change)
+  if (isOrderedList(value)) return switchToUnorderedList(change)
   console.info('[SlateJS][ListPlugin] It is a different type of list.'); return change
 }
 
 export const orderedListStrategy = change => {
-  const { state } = change
+  const { value } = change
   // If it is not a list yet, transform it!
-  if (!isList(state)) return applyList(change, 'ordered-list')
+  if (!isList(value)) return applyList(change, 'ordered-list')
 
   // If it is already a list, handle it!
-  if (isOrderedList(state)) return deepRemoveList(change)
-  else if (isUnorderedList(state)) return switchToOrderedList(change)
+  if (isOrderedList(value)) return deepRemoveList(change)
+  else if (isUnorderedList(value)) return switchToOrderedList(change)
   else console.info('[SlateJS][ListPlugin] It is a different type of list.'); return change
 }
 
 export const increaseListDepthStrategy = change => {
-  const { state } = change
+  const { value } = change
   // If it is not a list, kill the action immediately.
-  if (!isList(state)) return change
+  if (!isList(value)) return change
 
 
-  if (isUnorderedList(state)) return applyUnorderedList(change)
-  if (isOrderedList(state)) return applyOrderedList(change)
+  if (isUnorderedList(value)) return applyUnorderedList(change)
+  if (isOrderedList(value)) return applyOrderedList(change)
   return change
 }
 
 export const decreaseListDepthStrategy = change => {
-  const { state } = change
+  const { value } = change
   // If it is not a list, kill the action immediately.
-  if (!isList(state)) return change
+  if (!isList(value)) return change
 
-  const node = getNodeOfType(state, 'list-item')
-  const depth = state.document.getDepth(node.key)
-  if (isUnorderedList(state) && depth > 2) return onlyRemoveUnorderedList(change)
-  if (isOrderedList(state) && depth > 2) return onlyRemoveOrderedList(change)
+  const node = getNodeOfType(value, 'list-item')
+  const depth = value.document.getDepth(node.key)
+  if (isUnorderedList(value) && depth > 2) return onlyRemoveUnorderedList(change)
+  if (isOrderedList(value) && depth > 2) return onlyRemoveOrderedList(change)
   return change
 }

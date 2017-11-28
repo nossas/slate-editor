@@ -65,13 +65,13 @@ class LinkDataModal extends Component {
   }
 
   render() {
-    const { node, state, onChange, changeModalState } = this.props
+    const { node, value, onChange, changeModalState } = this.props
 
     return (
       <Modal>
         <Modal.Header
           closeButtonAction={() => {
-            if (!node.data.get('href')) onChange(unlink(state))
+            if (!node.data.get('href')) onChange(unlink(value))
             changeModalState(false)
           }}
         />
@@ -84,9 +84,9 @@ class LinkDataModal extends Component {
               const { imageAttributes } = this.state
 
               if (!imageAttributes.href) {
-                onChange(unlink(state.change()))
+                onChange(unlink(value.change()))
               } else {
-                onChange(updateLinkStrategy({ change: state.change(), data: imageAttributes }))
+                onChange(updateLinkStrategy({ change: value.change(), data: imageAttributes }))
               }
 
               changeModalState(false)
@@ -156,7 +156,7 @@ class LinkDataModal extends Component {
                 <ModalButton.Opaque
                   text="Cancelar"
                   onClick={() => {
-                    if (!node.data.get('href')) onChange(unlink(state))
+                    if (!node.data.get('href')) onChange(unlink(value))
                     changeModalState(false)
                   }}
                 />
@@ -165,7 +165,7 @@ class LinkDataModal extends Component {
                   onClick={e => {
                     e.preventDefault()
                     e.stopPropagation()
-                    onChange(unlink(state))
+                    onChange(unlink(value))
                     changeModalState(false)
                   }}
                 />
