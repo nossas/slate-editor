@@ -1,8 +1,9 @@
+import { isMod } from '../../utils/keyboard-event'
 import { insertLinkStrategy } from './LinkUtils'
 
 
-const LinkKeyboardShortcut = (event, data, change) => {
-  if (data.isMod && data.key === 'k') return insertLinkStrategy(change)
+const LinkKeyboardShortcut = (event, change) => {
+  if (isMod(event) && event.key === 'k') return insertLinkStrategy(change)
   return
 }
 

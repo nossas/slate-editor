@@ -72,7 +72,7 @@ class LinkDataModal extends Component {
       <Modal>
         <Modal.Header
           closeButtonAction={() => {
-            if (!node.data.get('href')) onChange(unlink(value))
+            if (!node.data.get('href')) onChange(unlink(value.change()))
             changeModalState(false)
           }}
         />
@@ -157,7 +157,7 @@ class LinkDataModal extends Component {
                 <ModalButton.Opaque
                   text="Cancelar"
                   onClick={() => {
-                    if (!node.data.get('href')) onChange(unlink(value))
+                    if (!node.data.get('href')) onChange(unlink(value.change()))
                     changeModalState(false)
                   }}
                 />
@@ -166,7 +166,7 @@ class LinkDataModal extends Component {
                   onClick={e => {
                     e.preventDefault()
                     e.stopPropagation()
-                    onChange(unlink(value))
+                    onChange(unlink(value.change()))
                     changeModalState(false)
                   }}
                 />

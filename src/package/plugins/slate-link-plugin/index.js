@@ -1,7 +1,6 @@
 //
-// Schema
+// Rendering
 //
-import LinkSchema from './LinkSchema'
 import LinkNode from './LinkNode'
 
 //
@@ -17,8 +16,6 @@ import LinkButton from './LinkButton'
 
 
 const LinkPlugin = options => ({
-  schema: LinkSchema,
-
   onKeyDown(...args) {
     return LinkKeyboardShortcut(...args)
   },
@@ -26,7 +23,6 @@ const LinkPlugin = options => ({
 
 export {
   LinkPlugin,
-  LinkSchema,
   LinkNode,
   LinkKeyboardShortcut,
   LinkUtils,

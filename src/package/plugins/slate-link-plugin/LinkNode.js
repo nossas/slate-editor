@@ -41,7 +41,16 @@ class LinkNode extends Component {
 
   render() {
     const { isModalActive, presetData } = this.state
-    const { children, attributes, value, node, readOnly, editor: { onChange } } = this.props
+    const {
+      children,
+      attributes,
+      node,
+      readOnly,
+      editor: {
+        onChange,
+        props: { value }
+      }
+    } = this.props
 
     const focusedOnCurrentNode = getLink(value) && node.key === getLink(value).key
     const showTooltip = !readOnly && value.isCollapsed && focusedOnCurrentNode
@@ -69,7 +78,7 @@ class LinkNode extends Component {
               <Tooltip.Item onClick={() => this.modal(true)}>
                 Editar
               </Tooltip.Item>
-              <Tooltip.Item onClick={() => onChange(unlink(value))}>
+              <Tooltip.Item onClick={() => onChange(unlink(value.change()))}>
                 Remover
               </Tooltip.Item>
             </Tooltip>
