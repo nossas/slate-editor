@@ -14,7 +14,7 @@ class ImageButton extends Component {
     }
   }
   render () {
-    const { state, onChange, className, style, signingUrl, outerState, type } = this.props
+    const { value, onChange, className, style, signingUrl, outerState, type } = this.props
     return (
       <div style={{ display: 'inline-block' }}>
         <Button
@@ -46,7 +46,7 @@ class ImageButton extends Component {
           onError={e => console.error('[SlateEditor][ImagePlugin]:', e)}
           onFinish={e => {
             const src = e.signedUrl.substring(0, e.signedUrl.indexOf('?'))
-            onChange(insertInlineImage({ change: state.change(), src }))
+            onChange(insertInlineImage({ change: value.change(), src }))
             this.setState({ progress: 0 })
           }}
           ref={input => { this.upload = input }}

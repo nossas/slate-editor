@@ -16,14 +16,22 @@ class ImageLinkNode extends Component {
 
   render() {
     const { isModalActive } = this.state
-    const { node, state, attributes, readOnly, editor: { onChange } } = this.props
+    const {
+      node,
+      attributes,
+      readOnly,
+      editor: {
+        onChange,
+        props: { value }
+      }
+    } = this.props
 
     return (
       <span>
         {!isModalActive ? null : (
           <ImageDataModal
             node={node}
-            state={state}
+            value={value}
             onChange={onChange}
             changeModalState={this.modal.bind(this)}
           />

@@ -1,8 +1,8 @@
 //
-// Schema
+// Rendering
 //
-import ImageSchema from './ImageSchema'
 import ImageNode from './ImageNode'
+import ImageLinkNode from './ImageLinkNode'
 
 //
 // Keyboard
@@ -17,8 +17,6 @@ import ImageButton from './ImageButton'
 
 
 const ImagePlugin = options => ({
-  schema: ImageSchema,
-
   onKeyDown(...args) {
     return ImageKeyboardShortcut(...args)
   },
@@ -26,8 +24,8 @@ const ImagePlugin = options => ({
 
 export {
   ImagePlugin,
-  ImageSchema,
   ImageNode,
+  ImageLinkNode,
   ImageKeyboardShortcut,
   ImageUtils,
   ImageButton,

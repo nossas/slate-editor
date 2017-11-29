@@ -15,6 +15,9 @@ class SlateEditor extends Component {
     }
   }
 
+  //
+  // This function change only the Editor value object
+  //
   onChange (change) {
     const value = change.value
 
@@ -24,19 +27,12 @@ class SlateEditor extends Component {
     if (isFunction(onChange)) onChange(value)
   }
 
+  //
+  // This function change the SlateEditor state object.
+  // It can be change the Editor value object too...
+  //
   changeState (state) {
-    //
-    // The `setTimeout` function is need to prevent the warning below:
-    //
-    // Warning: setState(...): Cannot update during an existing state transition
-    // (such as within `render` or another component's constructor). Render methods
-    // should be a pure function of props and state; constructor side-effects are
-    // an anti-pattern, but can be moved to `componentWillMount`.
-    //
-    // It needs to check a better way to solve the case to update "outerState"
-    // inside the SlateJS node component.
-    //
-    setTimeout(() => { this.setState(state) }, 0)
+    this.setState(state)
   }
 
   render () {

@@ -1,7 +1,8 @@
+import { isMod } from '../../utils/keyboard-event'
 import { forceClickUploadButton } from './ImageUtils'
 
-const ImageKeyboardShortcut = (event, data, change, editor) => {
-  if (data.isMod && event.shiftKey && data.key === 'i') return forceClickUploadButton(editor)
+const ImageKeyboardShortcut = (event, change, editor) => {
+  if (isMod(event) && event.shiftKey && event.key === 'i') return forceClickUploadButton(editor)
   return
 }
 

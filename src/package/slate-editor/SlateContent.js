@@ -8,7 +8,7 @@ import { Editor } from 'slate-react'
 import { AlignmentNode } from '../plugins/slate-alignment-plugin'
 import { EmbedNode } from '../plugins/slate-embed-plugin'
 import { GridNode, GridRowNode, GridCellNode } from '../plugins/slate-grid-plugin'
-import { ImageNode } from '../plugins/slate-image-plugin'
+import { ImageNode, ImageLinkNode } from '../plugins/slate-image-plugin'
 import { LinkNode } from '../plugins/slate-link-plugin'
 import { ListItemNode, OrderedListNode, UnorderedListNode } from '../plugins/slate-list-plugin'
 
@@ -31,8 +31,8 @@ export const renderNode = props => {
     case 'grid': return <GridNode {...props} />
     case 'grid-row': return <GridRowNode {...props} />
     case 'grid-cell': return <GridCellNode {...props} />
-    case 'image':
-    case 'image-link': return <ImageNode {...props} />
+    case 'image': return <ImageNode {...props} />
+    case 'imageLink': return <ImageLinkNode {...props} />
     case 'link': return <LinkNode {...props} />
     case 'list-item': return <ListItemNode {...props} />
     case 'ordered-list': return <OrderedListNode {...props} />
