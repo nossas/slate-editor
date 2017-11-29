@@ -1,18 +1,41 @@
+import { PropTypes } from 'prop-types'
 import React, { Component } from 'react'
+import { Value } from 'slate'
 import classnames from 'classnames'
+
 import { cloneElement } from '../utils/react'
 import { isFunction } from '../utils/type-check'
-
 import initialEditorState from './initialEditorState'
+
 
 class SlateEditor extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      value: props.initialState || initialEditorState,
+      value: this.migrateStateVersion(props.initialState || initialEditorState),
       readOnly: false,
       uid: new Date().getUTCMilliseconds()
     }
+  }
+
+  //
+  // Migrate Slate's Value object
+  // From v0.25.3
+  // To   v0.31.3
+  //
+  migrateStateVersion (value) {
+    let updatedValue = value
+
+    if (value.kind !== 'value') {
+      updatedValue = JSON.parse(
+        JSON.stringify(value)
+          .replace(/"kind":"state"/g, '"kind":"value"')
+          .replace(/"ranges":\[/g, '"leaves":[')
+          .replace(/"kind":"range"/g, '"kind":"leaf"')
+      )
+    }
+
+    return Value.fromJSON(updatedValue)
   }
 
   //
@@ -52,6 +75,10 @@ class SlateEditor extends Component {
       </div>
     )
   }
+}
+
+SlateEditor.propTypes = {
+  initialState: PropTypes.object
 }
 
 export default SlateEditor
