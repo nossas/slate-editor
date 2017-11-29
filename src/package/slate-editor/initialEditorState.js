@@ -1,5 +1,3 @@
-import { Value } from 'slate'
-
 const initialEditorState = {
   document: {
     nodes: [
@@ -14,4 +12,4 @@ const initialEditorState = {
   }
 }
 
-export default Value.fromJSON(initialEditorState)
+export default initialEditorState
