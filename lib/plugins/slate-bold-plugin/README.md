@@ -64,8 +64,7 @@ class SlateEditor extends Component {
 
 | Target               | Description                                                               |
 |----------------------|---------------------------------------------------------------------------|
-| BoldSchema           | Schema object to configure the plugin.                                    |
-| BoldNode             | Component that holds the html that will wrap the content with bold style. |
+| BoldMark             | Component that holds the html that will wrap the content with bold style. |
 | BoldUtils            | Generic file that holds the util common functions.                        |
 | BoldButton           | Button component that have behaviour to wrap content with bold style.     |
 | BoldKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS. |

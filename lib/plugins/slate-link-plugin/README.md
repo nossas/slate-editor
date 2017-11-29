@@ -64,7 +64,6 @@ class SlateEditor extends Component {
 
 | Target               | Description                                                               |
 |----------------------|---------------------------------------------------------------------------|
-| LinkSchema           | Schema object to configure the plugin.                                    |
 | LinkNode             | Component that holds the html that will wrap the content with link.       |
 | LinkKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS. |
 | LinkUtils            | Generic file that holds the util common functions.                        |

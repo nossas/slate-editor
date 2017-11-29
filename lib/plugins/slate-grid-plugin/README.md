@@ -66,7 +66,6 @@ class SlateEditor extends Component {
 
 | Target               | Description                                                                 |
 |----------------------|-----------------------------------------------------------------------------|
-| GridSchema           | Schema object to configure the plugin.                                      |
 | GridNode             | Component that holds the html that will render the content with grid style. |
 | GridRowNode          | Component that holds the html that will render the grid row.                |
 | GridCellNode         | Component that holds the html that will render the grid cell.               |

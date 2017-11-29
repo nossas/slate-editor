@@ -64,7 +64,6 @@ class SlateEditor extends Component {
 
 | Target                    | Description                                                                    |
 |---------------------------|--------------------------------------------------------------------------------|
-| UnderlineSchema           | Schema object to configure the plugin.                                         |
 | UnderlineMark             | Component that holds the html that will wrap the content with underline style. |
 | UnderlineKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS.      |
 | UnderlineUtils            | Generic file that holds the util common functions.                             |

@@ -68,7 +68,6 @@ class SlateEditor extends Component {
 
 | Target                    | Description                                                                    |
 |---------------------------|--------------------------------------------------------------------------------|
-| AlignmentSchema           | Schema object to configure the plugin.                                         |
 | AlignmentNode             | Component that holds the html that will wrap the content with alignment style. |
 | AlignmentUtils            | Generic file that holds the util common functions.                             |
 | AlignmentButtonBar        | Component that holds all action buttons to handle the alignment behaviour.     |

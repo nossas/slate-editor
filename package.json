@@ -10,8 +10,8 @@
   "scripts": {
     "start": "react-scripts start",
     "test": "react-scripts test",
-    "build": "babel src/package --out-dir lib --copy-files",
-    "prerelease": "rm -rf lib && npm run build && git add .",
+    "build": "rm -rf lib && babel src/package --out-dir lib --copy-files",
+    "prerelease": " && npm run build && git add .",
     "release": "./node_modules/.bin/standard-version -a",
     "push": "git push origin master --follow-tags"
   },
