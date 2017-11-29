@@ -52,6 +52,7 @@ class ImageLinkNode extends Component {
               className="image-node"
               src={node.data.get('src')}
               title={node.data.get('title')}
+              alt={node.data.get('title')}
             />
           </a>
         </div>
