@@ -104,7 +104,7 @@ class LinkDataModal extends Component {
                   name="title"
                   onClick={e => e.stopPropagation()}
                   onChange={e => this.setLinkAttribute(e, e.target.value)}
-                  value={this.state.imageAttributes.title}
+                  value={this.state.imageAttributes.title || ''}
                   placeholder="Insira uma descrição para o link"
                 />
               </ModalForm.Group>
@@ -117,7 +117,7 @@ class LinkDataModal extends Component {
                   name="href"
                   onClick={e => e.stopPropagation()}
                   onChange={e => this.setLinkAttribute(e, e.target.value)}
-                  value={this.state.imageAttributes.href}
+                  value={this.state.imageAttributes.href || ''}
                   placeholder="Ex: http://dominio.com"
                   ref={input => this.inputHref = input}
                 />
@@ -131,7 +131,7 @@ class LinkDataModal extends Component {
                   name="text"
                   onClick={e => e.stopPropagation()}
                   onChange={e => this.setLinkAttribute(e, e.target.value)}
-                  value={this.state.imageAttributes.text}
+                  value={this.state.imageAttributes.text || ''}
                 />
               </ModalForm.Group>
 
@@ -142,7 +142,7 @@ class LinkDataModal extends Component {
                     type="checkbox"
                     name="target"
                     onClick={e => e.stopPropagation()}
-                    onChange={e => this.setLinkAttribute(e, e.target.checked)}
+                    onChange={e => this.setLinkAttribute(e, e.target.checked ? '_blank' : '_self')}
                     checked={this.state.imageAttributes.target === '_blank'}
                   />
                   Abrir em nova aba

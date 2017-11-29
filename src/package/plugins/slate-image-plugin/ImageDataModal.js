@@ -59,7 +59,7 @@ class ImageDataModal extends Component {
                   name="title"
                   onClick={e => e.stopPropagation()}
                   onChange={e => this.setImageAttribute(e, e.target.value)}
-                  value={this.state.imageAttributes.title}
+                  value={this.state.imageAttributes.title || ''}
                   placeholder='Insira uma descrição para a imagem'
                 />
               </ModalForm.Group>
@@ -72,7 +72,7 @@ class ImageDataModal extends Component {
                   name="href"
                   onClick={e => e.stopPropagation()}
                   onChange={e => this.setImageAttribute(e, e.target.value)}
-                  value={this.state.imageAttributes.href}
+                  value={this.state.imageAttributes.href || ''}
                   placeholder='Ex: http://dominio.com'
                 />
               </ModalForm.Group>
@@ -85,7 +85,7 @@ class ImageDataModal extends Component {
                     name="openExternal"
                     onClick={e => e.stopPropagation()}
                     onChange={e => this.setImageAttribute(e, e.target.checked)}
-                    checked={this.state.imageAttributes.openExternal}
+                    checked={!!this.state.imageAttributes.openExternal}
                   />
                   Abrir em nova aba
                 </label>

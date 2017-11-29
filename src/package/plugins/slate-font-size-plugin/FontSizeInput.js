@@ -40,7 +40,7 @@ const FontSizeInput = ({
       className={classnames('slate-font-size-plugin-input', className)}
       style={style}
       type="number"
-      value={fontSizeState}
+      value={fontSizeState || initialFontSize}
       min="1"
     />
   )

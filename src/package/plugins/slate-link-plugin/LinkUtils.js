@@ -21,12 +21,7 @@ export const updateLinkStrategy = ({ change, data: { title, href, text, target }
     .extend(text.length * -1)
     .setInline({
       type: 'link',
-      data: {
-        title,
-        href,
-        text,
-        target: target ? '_blank' : '_self'
-      }
+      data: { title, href, text, target }
     })
 
   return change
