@@ -61,6 +61,7 @@ class LinkDataModal extends Component {
 
   isValidHref(href) {
     // allow http://, https:// (secure) and non-protocol (default http://)
+    // eslint-disable-next-line
     return /^(https?:\/\/)?[\w]{2,}\.[\w\.]{2,}$/.test(href)
   }
 

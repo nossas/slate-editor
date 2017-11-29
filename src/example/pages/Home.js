@@ -136,6 +136,7 @@ const Home = ({ title, version }) => {
           Report click <a
             href="https://github.com/ourcities/slate-editor/issues/new"
             target="_blank"
+            rel="noopener noreferrer"
           >
             here
           </a>.

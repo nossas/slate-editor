@@ -38,7 +38,7 @@ class ImageDataModal extends Component {
 
         <ModalContent>
           <ModalContent.Left>
-            <img src={node.data.get('src')} role="presentation" />
+            <img src={node.data.get('src')} alt={node.data.get('title')} role="presentation" />
           </ModalContent.Left>
 
           <ModalContent.Right>
