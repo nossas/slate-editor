@@ -5861,9 +5861,9 @@ react-router@^4.2.0:
     prop-types "^15.5.4"
     warning "^3.0.0"
 
-react-s3-uploader@^4.0.1:
-  version "4.5.1"
-  resolved "https://registry.yarnpkg.com/react-s3-uploader/-/react-s3-uploader-4.5.1.tgz#d1d301aef24ecbdef825a74ab395519e2a77e65d"
+react-s3-uploader@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/react-s3-uploader/-/react-s3-uploader-4.6.0.tgz#f7aac19644a61e3cc05d6ced3d3ec445e186dd12"
   dependencies:
     aws-sdk "2.x"
     create-react-class "^15.5.2"

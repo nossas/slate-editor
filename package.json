@@ -38,7 +38,7 @@
     "react-color": "^2.13.8",
     "react-draggable": "^3",
     "react-fontawesome": "^1.6.1",
-    "react-s3-uploader": "^4.0.1",
+    "react-s3-uploader": "^4.6.0",
     "slate": "^0.31.3",
     "slate-react": "^0.10.17"
   },
