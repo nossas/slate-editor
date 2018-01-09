@@ -23,8 +23,8 @@
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "history": "^4.7.2",
-    "react": "^16",
-    "react-dom": "^16",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-router": "^4.2.0",
     "react-scripts": "^1",
     "standard-version": "^4.0.0"
@@ -39,12 +39,12 @@
     "react-draggable": "^3",
     "react-fontawesome": "^1.6.1",
     "react-s3-uploader": "^4.6.0",
-    "slate": "^0.31.3",
-    "slate-react": "^0.10.17"
+    "slate": "0.31.3",
+    "slate-react": "0.10.17"
   },
   "peerDependencies": {
-    "slate": "^0.31.3",
-    "slate-react": "^0.10.17"
+    "slate": "0.31.3",
+    "slate-react": "0.10.17"
   },
   "license": "GPL-3.0",
   "files": [
