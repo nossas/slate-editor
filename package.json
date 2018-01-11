@@ -25,6 +25,7 @@
     "dentist": "^1.0.3",
     "enzyme": "^2.4.1",
     "history": "^4.2.0",
+    "prop-types": "^15.6.0",
     "react": "^15.3.2",
     "react-addons-test-utils": "^15.3.2",
     "react-dom": "^15.3.2",
