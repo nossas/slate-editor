@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.2.0"></a>
+# [3.2.0](https://github.com/nossas/slate-editor/compare/v3.1.2...v3.2.0) (2018-01-11)
+
+
+### Bug Fixes
+
+* editor initial state object [#50](https://github.com/nossas/slate-editor/issues/50) ([1840185](https://github.com/nossas/slate-editor/commit/1840185))
+* **package:** upgrade react-s3-uploader to v4.6.0 ([d57d5e6](https://github.com/nossas/slate-editor/commit/d57d5e6))
+* **packages:** remove caret range from slate and slate-react ([6ad5ff2](https://github.com/nossas/slate-editor/commit/6ad5ff2))
+
+
+### Features
+
+* **package:** upgrade react, enzyme and other deps [#50](https://github.com/nossas/slate-editor/issues/50) ([a22174c](https://github.com/nossas/slate-editor/commit/a22174c))
+* **slate:** migrate value object from v0.25.3 to v0.31.3 [#50](https://github.com/nossas/slate-editor/issues/50) ([4c566cc](https://github.com/nossas/slate-editor/commit/4c566cc))
+* **tests:** upgrade all deps and test suite tools [#50](https://github.com/nossas/slate-editor/issues/50) ([07e4c76](https://github.com/nossas/slate-editor/commit/07e4c76))
+
+
+
 <a name="3.1.2"></a>
 ## [3.1.2](https://github.com/nossas/slate-editor/compare/v3.1.1...v3.1.2) (2017-11-27)
 
