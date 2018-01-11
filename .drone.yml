@@ -40,7 +40,7 @@ pipeline:
   production-rancher-deploy:
     image: peloton/drone-rancher
     url: http://cluster.bonde.org
-    service: production/slate-editor
+    service: partners/slate-editor
     docker_image: nossas/slate-editor:${DRONE_TAG=$DRONE_BRANCH}
     timeout: 360
     confirm: true
