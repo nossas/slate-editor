@@ -11,7 +11,7 @@
     "start": "react-scripts start",
     "test": "react-scripts test",
     "build": "rm -rf lib && babel src/package --out-dir lib --copy-files",
-    "prerelease": " && npm run build && git add .",
+    "prerelease": "npm run build && git add .",
     "release": "./node_modules/.bin/standard-version -a",
     "push": "git push origin master --follow-tags"
   },
