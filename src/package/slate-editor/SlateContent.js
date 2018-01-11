@@ -61,7 +61,6 @@ export default ({
   outerState,
   plugins,
   onChange,
-  changeState,
   children,
   ...rest
 }) => {
@@ -74,7 +73,6 @@ export default ({
         value={value}
         onChange={onChange}
         readOnly={readOnly}
-        changeState={changeState}
         outerState={outerState}
         style={style}
         renderNode={renderNode}
