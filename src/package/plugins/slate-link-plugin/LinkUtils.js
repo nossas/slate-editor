@@ -18,7 +18,6 @@ export const updateLinkStrategy = ({ change, data: { title, href, text, target }
 
   change
     .insertText(text)
-    .extend(text.length * -1)
     .setInline({
       type: 'link',
       data: { title, href, text, target }
@@ -33,31 +32,16 @@ export const insertLinkStrategy = change => {
   if (hasLinks(value)) {
     change.unwrapInline('link')
   }
+
   else if (value.isExpanded && !hasMultiBlocks(value)) {
-    const startOffset = value.selection.startOffset
-
-    // fix offset 0 selection:
-    // add a single white space and select forward white space
-    if (startOffset === 0) {
-      change
-        .insertText(` ${value.anchorText.text}`)
-        .moveOffsetsTo(1, value.anchorText.characters.size + 1)
-    }
-
     change
       .wrapInline(createLink({ target: '_blank', openModal: true }))
-
-    // fix offset 0 selection:
-    // remove the white space added before
-    if (startOffset === 0) {
-      change
-        .moveOffsetsTo(0, 0)
-        .deleteBackward()
-    }
   }
+
   else if (hasMultiBlocks(value)) {
     console.info('[SlateJS][LinkPlugin] has multiple blocks on selection')
   }
+
   else if (value.isCollapsed && !hasLinks(value)) {
     console.info('[SlateJS][LinkPlugin] selection collapsed, w/o links on selection')
   }
