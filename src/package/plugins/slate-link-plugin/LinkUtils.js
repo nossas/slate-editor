@@ -18,7 +18,6 @@ export const updateLinkStrategy = ({ change, data: { title, href, text, target }
 
   change
     .insertText(text)
-    .extend(text.length * -1)
     .setInline({
       type: 'link',
       data: { title, href, text, target }
@@ -34,7 +33,7 @@ export const insertLinkStrategy = change => {
     change.unwrapInline('link')
   }
   else if (value.isExpanded && !hasMultiBlocks(value)) {
-    const startOffset = value.selection.startOffset
+    const { startOffset } = value.selection
 
     // fix offset 0 selection:
     // add a single white space and select forward white space
