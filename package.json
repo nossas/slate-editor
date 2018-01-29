@@ -1,7 +1,7 @@
 {
   "name": "slate-editor",
   "description": "A complete rich text editor based on SlateJS framework",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/nossas/slate-editor.git"

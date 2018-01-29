@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.1"></a>
+## [4.0.1](https://github.com/nossas/slate-editor/compare/v4.0.0...v4.0.1) (2018-01-29)
+
+
+### Bug Fixes
+
+* prerelease script ([f34d5d3](https://github.com/nossas/slate-editor/commit/f34d5d3))
+* **ci:** production deploy rancher stack name ([203bf20](https://github.com/nossas/slate-editor/commit/203bf20))
+* **link-plugin:** forward selection link insert ([1f2c3c2](https://github.com/nossas/slate-editor/commit/1f2c3c2))
+* **link-plugin:** remove insert link legacy bugfix code fix [#42](https://github.com/nossas/slate-editor/issues/42) ([ceb403f](https://github.com/nossas/slate-editor/commit/ceb403f))
+
+
+
 <a name="4.0.0"></a>
 # [4.0.0](https://github.com/nossas/slate-editor/compare/v3.1.2...v4.0.0) (2018-01-11)
 
