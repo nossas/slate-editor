@@ -1,0 +1,68 @@
+{
+  "name": "slate-editor-example",
+  "private": true,
+  "description": "A complete rich text editor based on SlateJS framework",
+  "version": "3.1.2",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nossas/slate-editor.git"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "PORT=7777 react-scripts start",
+    "test": "react-scripts test",
+    "build": "rm -rf lib && babel src/package --out-dir lib --copy-files",
+    "prerelease": "npm run build && git add .",
+    "release": "./node_modules/.bin/standard-version -a",
+    "push": "git push origin master --follow-tags"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
+    "history": "^4.7.2",
+    "standard-version": "^4.0.0"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "exenv": "^1.2.1",
+    "immutable": "^3.8.2",
+    "json-beautify": "^1.0.1",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-color": "^2.13.8",
+    "react-draggable": "^3",
+    "react-fontawesome": "^1.6.1",
+    "react-s3-uploader": "^4.6.0",
+    "react-scripts": "^1.1.4",
+    "slate": "0.31.3",
+    "slate-editor-bold-plugin": "^0.0.0",
+    "slate-react": "0.10.17"
+  },
+  "peerDependencies": {
+    "slate": "0.31.3",
+    "slate-react": "0.10.17"
+  },
+  "license": "GPL-3.0",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md",
+    "lib"
+  ],
+  "keywords": [
+    "slate",
+    "rich-text",
+    "editor",
+    "react",
+    "slate-plugins"
+  ],
+  "bugs": {
+    "url": "https://github.com/nossas/slate-editor/issues"
+  },
+  "homepage": "https://github.com/nossas/slate-editor",
+  "author": "Nossas <tech@nossas.org> (http://github.com/nossas)"
+}

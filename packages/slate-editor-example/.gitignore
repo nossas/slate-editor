@@ -9,26 +9,12 @@ coverage
 # production
 dist
 build
-lib
+# lib
 
 # misc
 .DS_Store
 .env
 npm-debug.log
 
-# npm
-npm-debug.log*
-
 # yarn
-yarn-debug.log*
-yarn-error.log*
-
-# lerna
-lerna-debug.log
-
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+yarn-error.log

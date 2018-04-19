@@ -2,7 +2,7 @@ import React from 'react'
 import FontAwesome from 'react-fontawesome'
 import classnames from 'classnames'
 
-import { Button} from '../../components/button'
+import { Button } from 'slate-editor-components'
 import { boldMarkStrategy, hasMark } from './BoldUtils'
 
 

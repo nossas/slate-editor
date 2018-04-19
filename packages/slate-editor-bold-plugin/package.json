@@ -1,0 +1,22 @@
+{
+  "name": "slate-editor-bold-plugin",
+  "version": "0.0.0",
+  "description": "SlateJS framework bold plugin",
+  "main": "dist/index.js",
+  "repository": "https://github.com/nossas/slate-editor",
+  "author": "Nossas <tech@nossas.org> (http://github.com/nossas)",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "babel src --out-dir dist --copy-files"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "slate-editor-utils": "^0.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0"
+  }
+}

@@ -1,9 +1,9 @@
 import React from 'react'
+import { BoldPlugin, BoldButton } from 'slate-editor-bold-plugin'
 
 import {
   SlateEditor, SlateToolbar, SlateContent,
   AlignmentPlugin, AlignmentButtonBar,
-  BoldPlugin, BoldButton,
   ColorPlugin, ColorButton, ColorStateModel,
   EmbedPlugin, EmbedButton,
   FontFamilyPlugin, FontFamilyDropdown,
