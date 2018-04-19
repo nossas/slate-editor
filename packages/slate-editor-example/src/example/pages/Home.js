@@ -3,41 +3,41 @@ import { BoldPlugin, BoldButton } from 'slate-editor-bold-plugin'
 
 import {
   SlateEditor, SlateToolbar, SlateContent,
-  AlignmentPlugin, AlignmentButtonBar,
-  ColorPlugin, ColorButton, ColorStateModel,
-  EmbedPlugin, EmbedButton,
-  FontFamilyPlugin, FontFamilyDropdown,
-  FontSizePlugin, FontSizeInput,
-  GridPlugin, GridButtonBar,
-  ImagePlugin, ImageButton,
-  ItalicPlugin, ItalicButton,
-  LinkPlugin, LinkButton,
-  ListPlugin, ListButtonBar,
-  StrikethroughPlugin, StrikethroughButton,
-  UnderlinePlugin, UnderlineButton,
-  StateLoggerButton,
-  ToggleReadOnlyButton
+//   AlignmentPlugin, AlignmentButtonBar,
+//   ColorPlugin, ColorButton, ColorStateModel,
+//   EmbedPlugin, EmbedButton,
+//   FontFamilyPlugin, FontFamilyDropdown,
+//   FontSizePlugin, FontSizeInput,
+//   GridPlugin, GridButtonBar,
+//   ImagePlugin, ImageButton,
+//   ItalicPlugin, ItalicButton,
+//   LinkPlugin, LinkButton,
+//   ListPlugin, ListButtonBar,
+//   StrikethroughPlugin, StrikethroughButton,
+//   UnderlinePlugin, UnderlineButton,
+//   StateLoggerButton,
+//   ToggleReadOnlyButton
 } from '../../package'
 
 import './Home.css'
 
-const fontSizePluginOptions = { initialFontSize: 16 }
-const colorPluginOptions = new ColorStateModel().rgba({ r: 100, g: 100, b: 100, a: 1 }).gen()
+// const fontSizePluginOptions = { initialFontSize: 16 }
+// const colorPluginOptions = new ColorStateModel().rgba({ r: 100, g: 100, b: 100, a: 1 }).gen()
 
 const plugins = [
-  AlignmentPlugin(),
-  BoldPlugin(),
-  ColorPlugin(),
-  EmbedPlugin(),
-  FontFamilyPlugin(),
-  FontSizePlugin(fontSizePluginOptions),
-  GridPlugin(),
-  ImagePlugin(),
-  ItalicPlugin(),
-  LinkPlugin(),
-  ListPlugin(),
-  StrikethroughPlugin(),
-  UnderlinePlugin()
+  // AlignmentPlugin(),
+  // BoldPlugin(),
+  // ColorPlugin(),
+  // EmbedPlugin(),
+  // FontFamilyPlugin(),
+  // FontSizePlugin(fontSizePluginOptions),
+  // GridPlugin(),
+  // ImagePlugin(),
+  // ItalicPlugin(),
+  // LinkPlugin(),
+  // ListPlugin(),
+  // StrikethroughPlugin(),
+  // UnderlinePlugin()
 ]
 
 const classNames = {
@@ -91,14 +91,17 @@ const Home = ({ title, version }) => {
         <Version version={version} />
         <SlateToolbar>
           <BoldButton className={classNames.button} />
+        {/*
           <ItalicButton className={classNames.button} />
           <UnderlineButton className={classNames.button} />
           <StrikethroughButton className={classNames.button} />
           <AlignmentButtonBar className={classNames.button} />
           <LinkButton className={classNames.button} />
           <ListButtonBar className={classNames.button} />
+        */}
         </SlateToolbar>
 
+        {/*
         <SlateToolbar>
           <FontFamilyDropdown className={classNames.dropdown} style={styles.dropdown} />
           <FontSizeInput
@@ -121,13 +124,16 @@ const Home = ({ title, version }) => {
           <GridButtonBar className={classNames.button} />
           <EmbedButton className={classNames.button} />
         </SlateToolbar>
+        */}
 
         <SlateContent />
 
+        {/*
         <SlateToolbar className='toolbar--footer'>
           <StateLoggerButton className={classNames.button} />
           <ToggleReadOnlyButton className={classNames.button} />
         </SlateToolbar>
+        */}
       </SlateEditor>
 
       <div className='editor--root'>
