@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { updateInlineImage, deleteInlineImage } from './ImageUtils'
-import { Modal, ModalButton, ModalContent, ModalForm } from '../../components/modal'
+import { Modal, ModalButton, ModalContent, ModalForm } from 'slate-editor-components'
 
 class ImageDataModal extends Component {
   constructor(props) {

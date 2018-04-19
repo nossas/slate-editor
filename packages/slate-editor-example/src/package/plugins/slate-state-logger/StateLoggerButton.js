@@ -1,8 +1,7 @@
 import React from 'react'
 import FontAwesome from 'react-fontawesome'
 import beautify from 'json-beautify'
-
-import { Button} from '../../components/button'
+import { Button } from 'slate-editor-components'
 
 const StateLoggerButton = ({ value, onChange, className, style, type }) => (
   <div>

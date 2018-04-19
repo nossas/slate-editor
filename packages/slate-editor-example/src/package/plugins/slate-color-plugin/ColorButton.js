@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import FontAwesome from 'react-fontawesome'
 import classnames from 'classnames'
+import { Button } from 'slate-editor-components'
 
-import { Button} from '../../components/button'
 import DraggableColorPicker from './DraggableColorPicker'
 
 // FIXME: Needs to handle assets files to work with SSR

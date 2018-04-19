@@ -1,8 +1,8 @@
 import React from 'react'
 import FontAwesome from 'react-fontawesome'
 import classnames from 'classnames'
+import { Button } from 'slate-editor-components'
 
-import { Button} from '../../components/button'
 import { orderedListStrategy, isOrderedList } from './ListUtils'
 
 const OrderedListButton = ({ value, onChange, className, style, type }) => (

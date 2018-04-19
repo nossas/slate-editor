@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import FontAwesome from 'react-fontawesome'
 import ReactS3Uploader from 'react-s3-uploader'
+import { Button } from 'slate-editor-components'
 
-import { Button} from '../../components/button'
 import { insertInlineImage } from './ImageUtils'
 
 class ImageButton extends Component {

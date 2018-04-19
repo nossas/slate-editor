@@ -40,6 +40,7 @@
     "react-scripts": "^1.1.4",
     "slate": "0.31.3",
     "slate-editor-bold-plugin": "^0.0.0",
+    "slate-editor-components": "^0.0.0",
     "slate-react": "0.10.17"
   },
   "peerDependencies": {

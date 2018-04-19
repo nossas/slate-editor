@@ -1,10 +1,9 @@
 import React from 'react'
 import FontAwesome from 'react-fontawesome'
 import classnames from 'classnames'
+import { Button } from 'slate-editor-components'
 
-import { Button} from '../../components/button'
 import { splitRow } from './GridUtils'
-
 
 const GridSplitRowButton = ({ value, onChange, className, style, type }) => (
   <Button

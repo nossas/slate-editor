@@ -1,10 +1,9 @@
 import React from 'react'
 import classnames from 'classnames'
 import FontAwesome from 'react-fontawesome'
+import { Button } from 'slate-editor-components'
 
-import { Button} from '../../components/button'
 import { alignmentMarkStrategy, hasMark, getMark } from './AlignmentUtils'
-
 
 const AlignmentCenterButton = ({ value, onChange, changeState, className, style, type }) => (
   <Button
