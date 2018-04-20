@@ -15,7 +15,7 @@ import { ListItemNode, OrderedListNode, UnorderedListNode } from '../plugins/sla
 //
 // Marks
 //
-import { BoldMark } from 'slate-editor-bold-plugin'
+import { BoldMark } from '@slate-editor/bold-plugin'
 import { ColorMark } from '../plugins/slate-color-plugin'
 import { FontFamilyMark } from '../plugins/slate-font-family-plugin'
 import { FontSizeMark } from '../plugins/slate-font-size-plugin'

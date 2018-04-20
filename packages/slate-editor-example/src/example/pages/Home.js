@@ -1,5 +1,5 @@
 import React from 'react'
-import { BoldPlugin, BoldButton } from 'slate-editor-bold-plugin'
+import { BoldPlugin, BoldButton } from '@slate-editor/bold-plugin'
 
 import {
   SlateEditor, SlateToolbar, SlateContent,
