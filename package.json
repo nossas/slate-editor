@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "bootstrap": "lerna bootstrap",
+    "boot": "lerna bootstrap",
     "test": "lerna run test",
     "prepublish": "rimraf packages/**/dist",
     "prepare": "lerna run prepare",

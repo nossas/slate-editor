@@ -2,10 +2,9 @@ import { PropTypes } from 'prop-types'
 import React, { Component } from 'react'
 import { Value } from 'slate'
 import classnames from 'classnames'
+import { react, typeCheck } from '@slate-editor/utils'
 
-import { react, typeCheck } from 'slate-editor-utils'
 import initialEditorState from './initialEditorState'
-
 
 class SlateEditor extends Component {
   constructor (props) {

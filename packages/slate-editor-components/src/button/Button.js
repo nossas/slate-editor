@@ -1,5 +1,5 @@
 import React from 'react'
-import { typeCheck } from 'slate-editor-utils'
+import { typeCheck } from '@slate-editor/utils'
 
 const Button = ({ children, id, onClick, className, style, type, ...props }) => (
   <button

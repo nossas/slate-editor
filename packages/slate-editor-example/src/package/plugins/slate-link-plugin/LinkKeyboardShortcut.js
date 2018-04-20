@@ -1,4 +1,4 @@
-import { keyboardEvent } from 'slate-editor-utils'
+import { keyboardEvent } from '@slate-editor/utils'
 import { insertLinkStrategy } from './LinkUtils'
 
 

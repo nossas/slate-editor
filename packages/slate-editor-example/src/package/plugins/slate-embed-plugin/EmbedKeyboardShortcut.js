@@ -1,4 +1,4 @@
-import { keyboardEvent } from 'slate-editor-utils'
+import { keyboardEvent } from '@slate-editor/utils'
 import { appendEmbed } from './EmbedUtils'
 
 const EmbedKeyboardShortcut = (event, change) => {

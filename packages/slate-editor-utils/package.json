@@ -1,5 +1,5 @@
 {
-  "name": "slate-editor-utils",
+  "name": "@slate-editor/utils",
   "version": "0.0.0",
   "description": "Utils for slate-editor, a complete rich text editor based on SlateJS framework",
   "main": "dist/index.js",

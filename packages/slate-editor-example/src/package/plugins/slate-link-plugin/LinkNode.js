@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { hasLinks, getLink, unlink } from './LinkUtils'
-import { Tooltip } from 'slate-editor-components'
+import { Tooltip } from '@slate-editor/components'
 import LinkDataModal from './LinkDataModal'
 
 // FIXME: Needs to handle assets files to work with SSR

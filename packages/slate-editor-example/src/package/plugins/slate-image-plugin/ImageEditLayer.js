@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from 'slate-editor-components'
+import { Button } from '@slate-editor/components'
 
 // FIXME: Needs to handle assets files to work with SSR
 if (require('exenv').canUseDOM) require('./ImageEditLayer.css')

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import FontAwesome from 'react-fontawesome'
 import classnames from 'classnames'
-import { Button } from 'slate-editor-components'
+import { Button } from '@slate-editor/components'
 
 import DraggableColorPicker from './DraggableColorPicker'
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import FontAwesome from 'react-fontawesome'
-import { Button } from 'slate-editor-components'
+import { Button } from '@slate-editor/components'
 
 const ToggleReadOnlyButton = ({
   value,

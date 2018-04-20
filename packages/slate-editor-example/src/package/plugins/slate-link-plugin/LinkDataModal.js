@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { updateLinkStrategy, unlink } from './LinkUtils'
-import { Modal, ModalButton, ModalContent, ModalForm } from 'slate-editor-components'
+import { Modal, ModalButton, ModalContent, ModalForm } from '@slate-editor/components'
 
 class LinkDataModal extends Component {
   constructor(props) {
