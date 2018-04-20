@@ -18,7 +18,7 @@ import { ListItemNode, OrderedListNode, UnorderedListNode } from '@slate-editor/
 import { BoldMark } from '@slate-editor/bold-plugin'
 // import { ColorMark } from '../plugins/slate-color-plugin'
 import { FontFamilyMark } from '@slate-editor/font-family-plugin'
-// import { FontSizeMark } from '../plugins/slate-font-size-plugin'
+import { FontSizeMark } from '@slate-editor/font-size-plugin'
 import { ItalicMark } from '@slate-editor/italic-plugin'
 import { StrikethroughMark } from '@slate-editor/strikethrough-plugin'
 import { UnderlineMark } from '@slate-editor/underline-plugin'
@@ -45,7 +45,7 @@ export const renderMark = props => {
     case 'bold': return <BoldMark {...props} />
     // case 'color': return <ColorMark {...props} />
     case 'font-family': return <FontFamilyMark {...props} />
-    // case 'font-size': return <FontSizeMark {...props} />
+    case 'font-size': return <FontSizeMark {...props} />
     case 'italic': return <ItalicMark {...props} />
     case 'strikethrough': return <StrikethroughMark {...props} />
     case 'underline': return <UnderlineMark {...props} />

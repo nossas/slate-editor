@@ -7,12 +7,12 @@ import { AlignmentPlugin, AlignmentButtonBar } from '@slate-editor/alignment-plu
 import { LinkPlugin, LinkButton } from '@slate-editor/link-plugin'
 import { ListPlugin, ListButtonBar } from '@slate-editor/list-plugin'
 import { FontFamilyPlugin, FontFamilyDropdown } from '@slate-editor/font-family-plugin'
+import { FontSizePlugin, FontSizeInput } from '@slate-editor/font-size-plugin'
 
 import {
   SlateEditor, SlateToolbar, SlateContent,
 //   ColorPlugin, ColorButton, ColorStateModel,
 //   EmbedPlugin, EmbedButton,
-//   FontSizePlugin, FontSizeInput,
 //   GridPlugin, GridButtonBar,
 //   ImagePlugin, ImageButton,
 //   StateLoggerButton,
@@ -21,7 +21,7 @@ import {
 
 import './Home.css'
 
-// const fontSizePluginOptions = { initialFontSize: 16 }
+const fontSizePluginOptions = { initialFontSize: 16 }
 // const colorPluginOptions = new ColorStateModel().rgba({ r: 100, g: 100, b: 100, a: 1 }).gen()
 
 const plugins = [
@@ -30,7 +30,7 @@ const plugins = [
   // ColorPlugin(),
   // EmbedPlugin(),
   FontFamilyPlugin(),
-  // FontSizePlugin(fontSizePluginOptions),
+  FontSizePlugin(fontSizePluginOptions),
   // GridPlugin(),
   // ImagePlugin(),
   ItalicPlugin(),
@@ -101,12 +101,12 @@ const Home = ({ title, version }) => {
 
         <SlateToolbar>
           <FontFamilyDropdown className={classNames.dropdown} style={styles.dropdown} />
-        {/*
           <FontSizeInput
             {...fontSizePluginOptions}
             className={classNames.input}
             style={styles.input}
           />
+        {/*
           <ImageButton
             className={classNames.button}
             signingUrl={
