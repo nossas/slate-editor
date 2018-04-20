@@ -1,13 +1,19 @@
 {
   "name": "slate-editor-example",
-  "private": true,
-  "description": "A complete rich text editor based on SlateJS framework",
   "version": "4.0.1",
+  "description": "A complete rich text editor based on SlateJS framework",
+  "private": true,
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/nossas/slate-editor.git"
   },
-  "main": "lib/index.js",
+  "homepage": "https://github.com/nossas/slate-editor",
+  "author": "Nossas <tech@nossas.org> (http://github.com/nossas)",
+  "license": "GPL-3.0",
+  "publishConfig": {
+    "access": "restricted"
+  },
   "scripts": {
     "start": "PORT=7777 react-scripts start",
     "test": "react-scripts test",
@@ -49,7 +55,6 @@
     "slate": "0.31.3",
     "slate-react": "0.10.17"
   },
-  "license": "GPL-3.0",
   "files": [
     "LICENSE",
     "README.md",
@@ -65,7 +70,5 @@
   ],
   "bugs": {
     "url": "https://github.com/nossas/slate-editor/issues"
-  },
-  "homepage": "https://github.com/nossas/slate-editor",
-  "author": "Nossas <tech@nossas.org> (http://github.com/nossas)"
+  }
 }
