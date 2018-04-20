@@ -19,9 +19,9 @@ import { BoldMark } from '@slate-editor/bold-plugin'
 // import { ColorMark } from '../plugins/slate-color-plugin'
 // import { FontFamilyMark } from '../plugins/slate-font-family-plugin'
 // import { FontSizeMark } from '../plugins/slate-font-size-plugin'
-import { ItalicMark } from '../plugins/slate-italic-plugin'
+import { ItalicMark } from '@slate-editor/italic-plugin'
 // import { StrikethroughMark } from '../plugins/slate-strikethrough-plugin'
-// import { UnderlineMark } from '../plugins/slate-underline-plugin'
+import { UnderlineMark } from '@slate-editor/underline-plugin'
 
 /* eslint-disable default-case */
 export const renderNode = props => {
@@ -48,7 +48,7 @@ export const renderMark = props => {
     // case 'font-size': return <FontSizeMark {...props} />
     case 'italic': return <ItalicMark {...props} />
     // case 'strikethrough': return <StrikethroughMark {...props} />
-    // case 'underline': return <UnderlineMark {...props} />
+    case 'underline': return <UnderlineMark {...props} />
   }
 }
 /* eslint-disable default-case */
