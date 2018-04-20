@@ -4,6 +4,7 @@ import { ItalicPlugin, ItalicButton } from '@slate-editor/italic-plugin'
 import { UnderlinePlugin, UnderlineButton } from '@slate-editor/underline-plugin'
 import { StrikethroughPlugin, StrikethroughButton } from '@slate-editor/strikethrough-plugin'
 import { AlignmentPlugin, AlignmentButtonBar } from '@slate-editor/alignment-plugin'
+import { LinkPlugin, LinkButton } from '@slate-editor/link-plugin'
 
 import {
   SlateEditor, SlateToolbar, SlateContent,
@@ -13,7 +14,6 @@ import {
 //   FontSizePlugin, FontSizeInput,
 //   GridPlugin, GridButtonBar,
 //   ImagePlugin, ImageButton,
-//   LinkPlugin, LinkButton,
 //   ListPlugin, ListButtonBar,
 //   StateLoggerButton,
 //   ToggleReadOnlyButton
@@ -34,7 +34,7 @@ const plugins = [
   // GridPlugin(),
   // ImagePlugin(),
   ItalicPlugin(),
-  // LinkPlugin(),
+  LinkPlugin(),
   // ListPlugin(),
   StrikethroughPlugin(),
   UnderlinePlugin()
@@ -95,8 +95,8 @@ const Home = ({ title, version }) => {
           <UnderlineButton className={classNames.button} />
           <StrikethroughButton className={classNames.button} />
           <AlignmentButtonBar className={classNames.button} />
-        {/*
           <LinkButton className={classNames.button} />
+        {/*
           <ListButtonBar className={classNames.button} />
         */}
         </SlateToolbar>
