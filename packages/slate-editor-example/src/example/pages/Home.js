@@ -11,10 +11,10 @@ import { FontSizePlugin, FontSizeInput } from '@slate-editor/font-size-plugin'
 import { ImagePlugin, ImageButton } from '@slate-editor/image-plugin'
 import { ColorPlugin, ColorButton, ColorStateModel } from '@slate-editor/color-plugin'
 import { GridPlugin, GridButtonBar } from '@slate-editor/grid-plugin'
+import { EmbedPlugin, EmbedButton } from '@slate-editor/embed-plugin'
 
 import {
   SlateEditor, SlateToolbar, SlateContent,
-//   EmbedPlugin, EmbedButton,
 //   StateLoggerButton,
 //   ToggleReadOnlyButton
 } from '../../package'
@@ -28,7 +28,7 @@ const plugins = [
   AlignmentPlugin(),
   BoldPlugin(),
   ColorPlugin(),
-  // EmbedPlugin(),
+  EmbedPlugin(),
   FontFamilyPlugin(),
   FontSizePlugin(fontSizePluginOptions),
   GridPlugin(),
@@ -119,9 +119,7 @@ const Home = ({ title, version }) => {
             pickerDefaultPosition={{ x: -520, y: 17 }}
           />
           <GridButtonBar className={classNames.button} />
-        {/*
           <EmbedButton className={classNames.button} />
-        */}
         </SlateToolbar>
 
         <SlateContent />

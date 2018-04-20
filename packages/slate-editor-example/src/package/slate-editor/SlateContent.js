@@ -6,7 +6,7 @@ import { Editor } from 'slate-react'
 // Nodes
 //
 import { AlignmentNode } from '@slate-editor/alignment-plugin'
-// import { EmbedNode } from '../plugins/slate-embed-plugin'
+import { EmbedNode } from '@slate-editor/embed-plugin'
 import { GridNode, GridRowNode, GridCellNode } from '@slate-editor/grid-plugin'
 import { ImageNode, ImageLinkNode } from '@slate-editor/image-plugin'
 import { LinkNode } from '@slate-editor/link-plugin'
@@ -27,7 +27,7 @@ import { UnderlineMark } from '@slate-editor/underline-plugin'
 export const renderNode = props => {
   switch (props.node.type) {
     case 'alignment': return <AlignmentNode {...props} />
-    //case 'embed': return <EmbedNode {...props} />
+    case 'embed': return <EmbedNode {...props} />
     case 'grid': return <GridNode {...props} />
     case 'grid-row': return <GridRowNode {...props} />
     case 'grid-cell': return <GridCellNode {...props} />
