@@ -6,12 +6,12 @@ import { StrikethroughPlugin, StrikethroughButton } from '@slate-editor/striketh
 import { AlignmentPlugin, AlignmentButtonBar } from '@slate-editor/alignment-plugin'
 import { LinkPlugin, LinkButton } from '@slate-editor/link-plugin'
 import { ListPlugin, ListButtonBar } from '@slate-editor/list-plugin'
+import { FontFamilyPlugin, FontFamilyDropdown } from '@slate-editor/font-family-plugin'
 
 import {
   SlateEditor, SlateToolbar, SlateContent,
 //   ColorPlugin, ColorButton, ColorStateModel,
 //   EmbedPlugin, EmbedButton,
-//   FontFamilyPlugin, FontFamilyDropdown,
 //   FontSizePlugin, FontSizeInput,
 //   GridPlugin, GridButtonBar,
 //   ImagePlugin, ImageButton,
@@ -29,7 +29,7 @@ const plugins = [
   BoldPlugin(),
   // ColorPlugin(),
   // EmbedPlugin(),
-  // FontFamilyPlugin(),
+  FontFamilyPlugin(),
   // FontSizePlugin(fontSizePluginOptions),
   // GridPlugin(),
   // ImagePlugin(),
@@ -99,9 +99,9 @@ const Home = ({ title, version }) => {
           <ListButtonBar className={classNames.button} />
         </SlateToolbar>
 
-        {/*
         <SlateToolbar>
           <FontFamilyDropdown className={classNames.dropdown} style={styles.dropdown} />
+        {/*
           <FontSizeInput
             {...fontSizePluginOptions}
             className={classNames.input}
@@ -121,8 +121,8 @@ const Home = ({ title, version }) => {
           />
           <GridButtonBar className={classNames.button} />
           <EmbedButton className={classNames.button} />
-        </SlateToolbar>
         */}
+        </SlateToolbar>
 
         <SlateContent />
 
