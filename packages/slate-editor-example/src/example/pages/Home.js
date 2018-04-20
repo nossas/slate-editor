@@ -8,13 +8,13 @@ import { LinkPlugin, LinkButton } from '@slate-editor/link-plugin'
 import { ListPlugin, ListButtonBar } from '@slate-editor/list-plugin'
 import { FontFamilyPlugin, FontFamilyDropdown } from '@slate-editor/font-family-plugin'
 import { FontSizePlugin, FontSizeInput } from '@slate-editor/font-size-plugin'
+import { ImagePlugin, ImageButton } from '@slate-editor/image-plugin'
 
 import {
   SlateEditor, SlateToolbar, SlateContent,
 //   ColorPlugin, ColorButton, ColorStateModel,
 //   EmbedPlugin, EmbedButton,
 //   GridPlugin, GridButtonBar,
-//   ImagePlugin, ImageButton,
 //   StateLoggerButton,
 //   ToggleReadOnlyButton
 } from '../../package'
@@ -32,7 +32,7 @@ const plugins = [
   FontFamilyPlugin(),
   FontSizePlugin(fontSizePluginOptions),
   // GridPlugin(),
-  // ImagePlugin(),
+  ImagePlugin(),
   ItalicPlugin(),
   LinkPlugin(),
   ListPlugin(),
@@ -106,7 +106,6 @@ const Home = ({ title, version }) => {
             className={classNames.input}
             style={styles.input}
           />
-        {/*
           <ImageButton
             className={classNames.button}
             signingUrl={
@@ -114,6 +113,7 @@ const Home = ({ title, version }) => {
               process.env.REACT_APP_SIGNING_URL_ENDPOINT
             }
           />
+        {/*
           <ColorButton
             className={classNames.button}
             initialState={colorPluginOptions}

@@ -15,7 +15,7 @@
     "access": "restricted"
   },
   "scripts": {
-    "start": "PORT=7777 react-scripts start",
+    "start": "react-scripts start",
     "test": "react-scripts test",
     "build": "rm -rf lib && babel src/package --out-dir lib --copy-files",
     "prerelease": "npm run build && git add .",
