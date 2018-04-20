@@ -1,7 +1,7 @@
 {
-  "name": "@slate-editor/components",
+  "name": "@slate-editor/strikethrough-plugin",
   "version": "5.0.0-alpha.f7181996",
-  "description": "Components for slate-editor, a complete rich text editor based on SlateJS framework",
+  "description": "SlateJS strikethrough mark content editable plugin.",
   "main": "dist/index.js",
   "repository": "https://github.com/nossas/slate-editor",
   "author": "Nossas <tech@nossas.org> (http://github.com/nossas)",
@@ -13,6 +13,7 @@
     "prepare": "babel src --out-dir dist --copy-files"
   },
   "dependencies": {
+    "@slate-editor/components": "^5.0.0-alpha.f7181996",
     "react": "^16.2.0"
   },
   "devDependencies": {

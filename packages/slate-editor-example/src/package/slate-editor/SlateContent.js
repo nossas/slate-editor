@@ -20,7 +20,7 @@ import { BoldMark } from '@slate-editor/bold-plugin'
 // import { FontFamilyMark } from '../plugins/slate-font-family-plugin'
 // import { FontSizeMark } from '../plugins/slate-font-size-plugin'
 import { ItalicMark } from '@slate-editor/italic-plugin'
-// import { StrikethroughMark } from '../plugins/slate-strikethrough-plugin'
+import { StrikethroughMark } from '@slate-editor/strikethrough-plugin'
 import { UnderlineMark } from '@slate-editor/underline-plugin'
 
 /* eslint-disable default-case */
@@ -47,7 +47,7 @@ export const renderMark = props => {
     // case 'font-family': return <FontFamilyMark {...props} />
     // case 'font-size': return <FontSizeMark {...props} />
     case 'italic': return <ItalicMark {...props} />
-    // case 'strikethrough': return <StrikethroughMark {...props} />
+    case 'strikethrough': return <StrikethroughMark {...props} />
     case 'underline': return <UnderlineMark {...props} />
   }
 }

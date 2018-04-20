@@ -2,6 +2,7 @@ import React from 'react'
 import { BoldPlugin, BoldButton } from '@slate-editor/bold-plugin'
 import { ItalicPlugin, ItalicButton } from '@slate-editor/italic-plugin'
 import { UnderlinePlugin, UnderlineButton } from '@slate-editor/underline-plugin'
+import { StrikethroughPlugin, StrikethroughButton } from '@slate-editor/strikethrough-plugin'
 
 import {
   SlateEditor, SlateToolbar, SlateContent,
@@ -14,7 +15,6 @@ import {
 //   ImagePlugin, ImageButton,
 //   LinkPlugin, LinkButton,
 //   ListPlugin, ListButtonBar,
-//   StrikethroughPlugin, StrikethroughButton,
 //   StateLoggerButton,
 //   ToggleReadOnlyButton
 } from '../../package'
@@ -36,7 +36,7 @@ const plugins = [
   ItalicPlugin(),
   // LinkPlugin(),
   // ListPlugin(),
-  // StrikethroughPlugin(),
+  StrikethroughPlugin(),
   UnderlinePlugin()
 ]
 
@@ -93,8 +93,8 @@ const Home = ({ title, version }) => {
           <BoldButton className={classNames.button} />
           <ItalicButton className={classNames.button} />
           <UnderlineButton className={classNames.button} />
-        {/*
           <StrikethroughButton className={classNames.button} />
+        {/*
           <AlignmentButtonBar className={classNames.button} />
           <LinkButton className={classNames.button} />
           <ListButtonBar className={classNames.button} />

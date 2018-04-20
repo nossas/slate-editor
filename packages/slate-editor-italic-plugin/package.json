@@ -1,6 +1,6 @@
 {
   "name": "@slate-editor/italic-plugin",
-  "version": "5.0.0-alpha.dbf50702",
+  "version": "5.0.0-alpha.f7181996",
   "description": "SlateJS framework italic plugin",
   "main": "dist/index.js",
   "repository": "https://github.com/nossas/slate-editor",
@@ -13,8 +13,8 @@
     "prepare": "babel src --out-dir dist --copy-files"
   },
   "dependencies": {
-    "@slate-editor/components": "^5.0.0-alpha.dbf50702",
-    "@slate-editor/utils": "^5.0.0-alpha.dbf50702",
+    "@slate-editor/components": "^5.0.0-alpha.f7181996",
+    "@slate-editor/utils": "^5.0.0-alpha.f7181996",
     "react": "^16.2.0"
   },
   "devDependencies": {

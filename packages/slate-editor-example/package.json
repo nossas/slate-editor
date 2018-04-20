@@ -1,6 +1,6 @@
 {
   "name": "slate-editor-example",
-  "version": "5.0.0-alpha.dbf50702",
+  "version": "5.0.0-alpha.f7181996",
   "description": "A complete rich text editor based on SlateJS framework",
   "private": true,
   "main": "lib/index.js",
@@ -33,10 +33,10 @@
     "standard-version": "^4.0.0"
   },
   "dependencies": {
-    "@slate-editor/bold-plugin": "^5.0.0-alpha.dbf50702",
-    "@slate-editor/components": "^5.0.0-alpha.dbf50702",
-    "@slate-editor/italic-plugin": "^5.0.0-alpha.dbf50702",
-    "@slate-editor/underline-plugin": "^5.0.0-alpha.dbf50702",
+    "@slate-editor/bold-plugin": "^5.0.0-alpha.f7181996",
+    "@slate-editor/components": "^5.0.0-alpha.f7181996",
+    "@slate-editor/italic-plugin": "^5.0.0-alpha.f7181996",
+    "@slate-editor/underline-plugin": "^5.0.0-alpha.f7181996",
     "classnames": "^2.2.5",
     "exenv": "^1.2.1",
     "immutable": "^3.8.2",
