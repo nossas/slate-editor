@@ -10,11 +10,11 @@ import { FontFamilyPlugin, FontFamilyDropdown } from '@slate-editor/font-family-
 import { FontSizePlugin, FontSizeInput } from '@slate-editor/font-size-plugin'
 import { ImagePlugin, ImageButton } from '@slate-editor/image-plugin'
 import { ColorPlugin, ColorButton, ColorStateModel } from '@slate-editor/color-plugin'
+import { GridPlugin, GridButtonBar } from '@slate-editor/grid-plugin'
 
 import {
   SlateEditor, SlateToolbar, SlateContent,
 //   EmbedPlugin, EmbedButton,
-//   GridPlugin, GridButtonBar,
 //   StateLoggerButton,
 //   ToggleReadOnlyButton
 } from '../../package'
@@ -31,7 +31,7 @@ const plugins = [
   // EmbedPlugin(),
   FontFamilyPlugin(),
   FontSizePlugin(fontSizePluginOptions),
-  // GridPlugin(),
+  GridPlugin(),
   ImagePlugin(),
   ItalicPlugin(),
   LinkPlugin(),
@@ -118,8 +118,8 @@ const Home = ({ title, version }) => {
             initialState={colorPluginOptions}
             pickerDefaultPosition={{ x: -520, y: 17 }}
           />
-        {/*
           <GridButtonBar className={classNames.button} />
+        {/*
           <EmbedButton className={classNames.button} />
         */}
         </SlateToolbar>

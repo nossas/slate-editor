@@ -1,0 +1,25 @@
+{
+  "name": "@slate-editor/grid-plugin",
+  "version": "5.0.0-alpha.f7181996",
+  "description": "SlateJS grid block node content editable plugin.",
+  "main": "dist/index.js",
+  "repository": "https://github.com/nossas/slate-editor",
+  "author": "Nossas <tech@nossas.org> (http://github.com/nossas)",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "prepare": "babel src --out-dir dist --copy-files"
+  },
+  "dependencies": {
+    "@slate-editor/components": "^5.0.0-alpha.f7181996",
+    "react": "^16.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0"
+  }
+}
