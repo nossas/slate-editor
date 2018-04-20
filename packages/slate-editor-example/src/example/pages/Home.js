@@ -1,4 +1,5 @@
 import React from 'react'
+import { SlateEditor, SlateToolbar, SlateContent } from 'slate-editor'
 import { BoldPlugin, BoldButton } from '@slate-editor/bold-plugin'
 import { ItalicPlugin, ItalicButton } from '@slate-editor/italic-plugin'
 import { UnderlinePlugin, UnderlineButton } from '@slate-editor/underline-plugin'
@@ -14,8 +15,6 @@ import { GridPlugin, GridButtonBar } from '@slate-editor/grid-plugin'
 import { EmbedPlugin, EmbedButton } from '@slate-editor/embed-plugin'
 import { StateLoggerButton } from '@slate-editor/state-logger'
 import { ToggleReadOnlyButton } from '@slate-editor/toggle-readonly'
-
-import { SlateEditor, SlateToolbar, SlateContent } from '../../package'
 
 import './Home.css'
 
