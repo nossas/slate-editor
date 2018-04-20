@@ -6,6 +6,9 @@
   "repository": "https://github.com/nossas/slate-editor",
   "author": "Nossas <tech@nossas.org> (http://github.com/nossas)",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "prepare": "babel src --out-dir dist --copy-files"
   },
