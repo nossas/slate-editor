@@ -3,8 +3,7 @@ import React, { Component } from 'react'
 import { Value } from 'slate'
 import classnames from 'classnames'
 
-import { cloneElement } from '../utils/react'
-import { isFunction } from '../utils/type-check'
+import { react, typeCheck } from 'slate-editor-utils'
 import initialEditorState from './initialEditorState'
 
 
@@ -47,7 +46,7 @@ class SlateEditor extends Component {
     this.setState({ value })
 
     const { onChange } = this.props
-    if (isFunction(onChange)) onChange(value)
+    if (typeCheck.isFunction(onChange)) onChange(value)
   }
 
   //
@@ -71,7 +70,7 @@ class SlateEditor extends Component {
 
     return (
       <div className={classnames('editor--root', className)} style={style}>
-        {cloneElement(children, childProps)}
+        {react.cloneElement(children, childProps)}
       </div>
     )
   }

@@ -1,12 +1,12 @@
 import React from 'react'
-import { isFunction } from '../../utils/type-check'
+import { typeCheck } from 'slate-editor-utils'
 
 const Button = ({ children, id, onClick, className, style, type, ...props }) => (
   <button
     id={id}
     style={style}
     type={type}
-    onClick={(e) => isFunction(onClick) && onClick(e) }
+    onClick={(e) => typeCheck.isFunction(onClick) && onClick(e) }
     className={className}
     {...props}
   >

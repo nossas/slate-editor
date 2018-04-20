@@ -26,7 +26,7 @@ import './Home.css'
 
 const plugins = [
   // AlignmentPlugin(),
-  // BoldPlugin(),
+  BoldPlugin(),
   // ColorPlugin(),
   // EmbedPlugin(),
   // FontFamilyPlugin(),

@@ -1,9 +1,9 @@
-import { isMod } from '../../utils/keyboard-event'
+import { keyboardEvent } from 'slate-editor-utils'
 import { underlineMarkStrategy } from './UnderlineUtils'
 
 
 const UnderlineKeyboardShortcut = (event, change) => {
-  if (isMod(event) && event.key === 'u') return underlineMarkStrategy(change)
+  if (keyboardEvent.isMod(event) && event.key === 'u') return underlineMarkStrategy(change)
   return
 }
 

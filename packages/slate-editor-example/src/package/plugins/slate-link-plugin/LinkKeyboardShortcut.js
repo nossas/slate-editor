@@ -1,9 +1,9 @@
-import { isMod } from '../../utils/keyboard-event'
+import { keyboardEvent } from 'slate-editor-utils'
 import { insertLinkStrategy } from './LinkUtils'
 
 
 const LinkKeyboardShortcut = (event, change) => {
-  if (isMod(event) && event.key === 'k') return insertLinkStrategy(change)
+  if (keyboardEvent.isMod(event) && event.key === 'k') return insertLinkStrategy(change)
   return
 }
 

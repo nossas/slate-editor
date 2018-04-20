@@ -1,8 +1,10 @@
-import { isMod } from '../../utils/keyboard-event'
+import { keyboardEvent } from 'slate-editor-utils'
 import { forceClickUploadButton } from './ImageUtils'
 
 const ImageKeyboardShortcut = (event, change, editor) => {
-  if (isMod(event) && event.shiftKey && event.key === 'i') return forceClickUploadButton(editor)
+  if (keyboardEvent.isMod(event) && event.shiftKey && event.key === 'i') {
+    return forceClickUploadButton(editor)
+  }
   return
 }
 

@@ -1,6 +1,6 @@
 import { isFunction } from './type-check'
 
-describe('package/utils/type-check', () => {
+describe('slate-editor-utils/type-check', () => {
   describe('isFunction', () => {
     it('returns false if object is falsey', () => {
       expect(isFunction(undefined)).toBe(false)

@@ -1,9 +1,11 @@
-import { isMod } from '../../utils/keyboard-event'
+import { keyboardEvent } from 'slate-editor-utils'
 import { italicMarkStrategy } from './ItalicUtils'
 
 
 const ItalicKeyboardShortcut = (event, change) => {
-  if (isMod(event) && !event.shiftKey && event.key === 'i') return italicMarkStrategy(change)
+  if (keyboardEvent.isMod(event) && !event.shiftKey && event.key === 'i') {
+    return italicMarkStrategy(change)
+  }
   return
 }
 
