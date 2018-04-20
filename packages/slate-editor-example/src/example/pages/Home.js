@@ -9,10 +9,10 @@ import { ListPlugin, ListButtonBar } from '@slate-editor/list-plugin'
 import { FontFamilyPlugin, FontFamilyDropdown } from '@slate-editor/font-family-plugin'
 import { FontSizePlugin, FontSizeInput } from '@slate-editor/font-size-plugin'
 import { ImagePlugin, ImageButton } from '@slate-editor/image-plugin'
+import { ColorPlugin, ColorButton, ColorStateModel } from '@slate-editor/color-plugin'
 
 import {
   SlateEditor, SlateToolbar, SlateContent,
-//   ColorPlugin, ColorButton, ColorStateModel,
 //   EmbedPlugin, EmbedButton,
 //   GridPlugin, GridButtonBar,
 //   StateLoggerButton,
@@ -22,12 +22,12 @@ import {
 import './Home.css'
 
 const fontSizePluginOptions = { initialFontSize: 16 }
-// const colorPluginOptions = new ColorStateModel().rgba({ r: 100, g: 100, b: 100, a: 1 }).gen()
+const colorPluginOptions = new ColorStateModel().rgba({ r: 100, g: 100, b: 100, a: 1 }).gen()
 
 const plugins = [
   AlignmentPlugin(),
   BoldPlugin(),
-  // ColorPlugin(),
+  ColorPlugin(),
   // EmbedPlugin(),
   FontFamilyPlugin(),
   FontSizePlugin(fontSizePluginOptions),
@@ -113,12 +113,12 @@ const Home = ({ title, version }) => {
               process.env.REACT_APP_SIGNING_URL_ENDPOINT
             }
           />
-        {/*
           <ColorButton
             className={classNames.button}
             initialState={colorPluginOptions}
             pickerDefaultPosition={{ x: -520, y: 17 }}
           />
+        {/*
           <GridButtonBar className={classNames.button} />
           <EmbedButton className={classNames.button} />
         */}
