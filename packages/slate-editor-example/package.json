@@ -1,6 +1,6 @@
 {
   "name": "slate-editor-example",
-  "version": "5.0.0-alpha.ecf4264b",
+  "version": "5.0.0-alpha.dbf50702",
   "description": "A complete rich text editor based on SlateJS framework",
   "private": true,
   "main": "lib/index.js",
@@ -33,7 +33,8 @@
     "standard-version": "^4.0.0"
   },
   "dependencies": {
-    "@slate-editor/components": "^5.0.0-alpha.ecf4264b",
+    "@slate-editor/bold-plugin": "^5.0.0-alpha.dbf50702",
+    "@slate-editor/components": "^5.0.0-alpha.dbf50702",
     "classnames": "^2.2.5",
     "exenv": "^1.2.1",
     "immutable": "^3.8.2",
@@ -48,7 +49,6 @@
     "react-s3-uploader": "^4.6.0",
     "react-scripts": "^1.1.4",
     "slate": "0.31.3",
-    "@slate-editor/bold-plugin": "^5.0.0-alpha.ecf4264b",
     "slate-react": "0.10.17"
   },
   "peerDependencies": {

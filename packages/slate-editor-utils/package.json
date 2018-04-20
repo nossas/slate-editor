@@ -1,6 +1,6 @@
 {
   "name": "@slate-editor/utils",
-  "version": "5.0.0-alpha.ecf4264b",
+  "version": "5.0.0-alpha.dbf50702",
   "description": "Utils for slate-editor, a complete rich text editor based on SlateJS framework",
   "main": "dist/index.js",
   "repository": "https://github.com/nossas/slate-editor",
