@@ -3,10 +3,10 @@ import { BoldPlugin, BoldButton } from '@slate-editor/bold-plugin'
 import { ItalicPlugin, ItalicButton } from '@slate-editor/italic-plugin'
 import { UnderlinePlugin, UnderlineButton } from '@slate-editor/underline-plugin'
 import { StrikethroughPlugin, StrikethroughButton } from '@slate-editor/strikethrough-plugin'
+import { AlignmentPlugin, AlignmentButtonBar } from '@slate-editor/alignment-plugin'
 
 import {
   SlateEditor, SlateToolbar, SlateContent,
-//   AlignmentPlugin, AlignmentButtonBar,
 //   ColorPlugin, ColorButton, ColorStateModel,
 //   EmbedPlugin, EmbedButton,
 //   FontFamilyPlugin, FontFamilyDropdown,
@@ -25,7 +25,7 @@ import './Home.css'
 // const colorPluginOptions = new ColorStateModel().rgba({ r: 100, g: 100, b: 100, a: 1 }).gen()
 
 const plugins = [
-  // AlignmentPlugin(),
+  AlignmentPlugin(),
   BoldPlugin(),
   // ColorPlugin(),
   // EmbedPlugin(),
@@ -94,8 +94,8 @@ const Home = ({ title, version }) => {
           <ItalicButton className={classNames.button} />
           <UnderlineButton className={classNames.button} />
           <StrikethroughButton className={classNames.button} />
-        {/*
           <AlignmentButtonBar className={classNames.button} />
+        {/*
           <LinkButton className={classNames.button} />
           <ListButtonBar className={classNames.button} />
         */}
