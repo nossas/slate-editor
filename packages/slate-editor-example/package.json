@@ -3,6 +3,7 @@
   "version": "4.0.1",
   "description": "A complete rich text editor based on SlateJS framework",
   "private": true,
+  "sideEffects": false,
   "main": "lib/index.js",
   "repository": {
     "type": "git",
