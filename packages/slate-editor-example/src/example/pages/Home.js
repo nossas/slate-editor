@@ -13,11 +13,9 @@ import { ColorPlugin, ColorButton, ColorStateModel } from '@slate-editor/color-p
 import { GridPlugin, GridButtonBar } from '@slate-editor/grid-plugin'
 import { EmbedPlugin, EmbedButton } from '@slate-editor/embed-plugin'
 import { StateLoggerButton } from '@slate-editor/state-logger'
+import { ToggleReadOnlyButton } from '@slate-editor/toggle-readonly'
 
-import {
-  SlateEditor, SlateToolbar, SlateContent,
-//   ToggleReadOnlyButton
-} from '../../package'
+import { SlateEditor, SlateToolbar, SlateContent } from '../../package'
 
 import './Home.css'
 
@@ -126,9 +124,7 @@ const Home = ({ title, version }) => {
 
         <SlateToolbar className='toolbar--footer'>
           <StateLoggerButton className={classNames.button} />
-        {/*
           <ToggleReadOnlyButton className={classNames.button} />
-        */}
         </SlateToolbar>
       </SlateEditor>
 
@@ -136,7 +132,7 @@ const Home = ({ title, version }) => {
         <p>
           You had a problem?!
           Report click <a
-            href="https://github.com/ourcities/slate-editor/issues/new"
+            href="https://github.com/nossas/slate-editor/issues/new"
             target="_blank"
             rel="noopener noreferrer"
           >

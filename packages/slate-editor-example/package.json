@@ -47,6 +47,7 @@
     "@slate-editor/list-plugin": "^5.0.0-alpha.f7181996",
     "@slate-editor/state-logger": "^5.0.0-alpha.f7181996",
     "@slate-editor/strikethrough-plugin": "^5.0.0-alpha.f7181996",
+    "@slate-editor/toggle-readonly": "^5.0.0-alpha.f7181996",
     "@slate-editor/underline-plugin": "^5.0.0-alpha.f7181996",
     "@slate-editor/utils": "^5.0.0-alpha.f7181996",
     "classnames": "^2.2.5",
