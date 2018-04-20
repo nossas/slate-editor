@@ -10,7 +10,7 @@ import { AlignmentNode } from '@slate-editor/alignment-plugin'
 // import { GridNode, GridRowNode, GridCellNode } from '../plugins/slate-grid-plugin'
 // import { ImageNode, ImageLinkNode } from '../plugins/slate-image-plugin'
 import { LinkNode } from '@slate-editor/link-plugin'
-// import { ListItemNode, OrderedListNode, UnorderedListNode } from '../plugins/slate-list-plugin'
+import { ListItemNode, OrderedListNode, UnorderedListNode } from '@slate-editor/list-plugin'
 
 //
 // Marks
@@ -34,9 +34,9 @@ export const renderNode = props => {
     //case 'image': return <ImageNode {...props} />
     // case 'imageLink': return <ImageLinkNode {...props} />
     case 'link': return <LinkNode {...props} />
-    //case 'list-item': return <ListItemNode {...props} />
-    //case 'ordered-list': return <OrderedListNode {...props} />
-    //case 'unordered-list': return <UnorderedListNode {...props} />
+    case 'list-item': return <ListItemNode {...props} />
+    case 'ordered-list': return <OrderedListNode {...props} />
+    case 'unordered-list': return <UnorderedListNode {...props} />
   }
 }
 

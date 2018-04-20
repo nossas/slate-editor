@@ -2,7 +2,7 @@
 <img src="https://avatars2.githubusercontent.com/u/1479357?v=3&s=250" alt="Nossas Cidades logo" title="Nossas Cidades" align="right" height="70"/>
 
 # [SlateJS](https://github.com/ianstormtaylor/slate) - List Plugin
-The goal of this plugin is to offers an easy handling of SlateJS list mark node content editable. Providing a simple API and easy usage, basing on concept of plugin-centric by SlateJS framework.
+The goal of this plugin is to offers an easy handling of SlateJS list node content editable. Providing a simple API and easy usage, basing on concept of plugin-centric by SlateJS framework.
 
 # Usage
 
