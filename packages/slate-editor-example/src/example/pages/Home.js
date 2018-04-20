@@ -12,10 +12,10 @@ import { ImagePlugin, ImageButton } from '@slate-editor/image-plugin'
 import { ColorPlugin, ColorButton, ColorStateModel } from '@slate-editor/color-plugin'
 import { GridPlugin, GridButtonBar } from '@slate-editor/grid-plugin'
 import { EmbedPlugin, EmbedButton } from '@slate-editor/embed-plugin'
+import { StateLoggerButton } from '@slate-editor/state-logger'
 
 import {
   SlateEditor, SlateToolbar, SlateContent,
-//   StateLoggerButton,
 //   ToggleReadOnlyButton
 } from '../../package'
 
@@ -124,12 +124,12 @@ const Home = ({ title, version }) => {
 
         <SlateContent />
 
-        {/*
         <SlateToolbar className='toolbar--footer'>
           <StateLoggerButton className={classNames.button} />
+        {/*
           <ToggleReadOnlyButton className={classNames.button} />
-        </SlateToolbar>
         */}
+        </SlateToolbar>
       </SlateEditor>
 
       <div className='editor--root'>
