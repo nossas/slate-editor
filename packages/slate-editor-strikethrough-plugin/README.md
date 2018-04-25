@@ -1,75 +1,82 @@
-<img src="https://www.psdmockups.com/wp-content/uploads/2016/07/slatejs-520x292.jpg" alt="Nossas Cidades logo" title="Nossas Cidades" align="right" height="70"/>
-<img src="https://avatars2.githubusercontent.com/u/1479357?v=3&s=250" alt="Nossas Cidades logo" title="Nossas Cidades" align="right" height="70"/>
+<div align="center">
+  <a href="https://www.en.nossas.org" rel="noopener" target="_blank">
+    <img
+      width="200"
+      src="https://s3.amazonaws.com/hub-central/uploads/logo-nossas-20170517185909.svg"
+      alt="Nossas logo"
+      title="Nossas"
+    />
+  </a>
+</div>
+<div align="center">
+  <img
+    src="https://www.psdmockups.com/wp-content/uploads/2016/07/slatejs-520x292.jpg"
+    alt="Nossas Cidades logo"
+    title="Nossas Cidades"
+    height="50"
+  />
+</div>
 
-# [SlateJS](https://github.com/ianstormtaylor/slate) - Strikethrough Plugin
-The goal of this plugin is to offers an easy handling of SlateJS strikethrough mark content editable. Providing a simple API and easy usage, basing on concept of plugin-centric by SlateJS framework.
+<h1 align="center">@slate-editor/strikethrough-plugin</h1>
 
-# Usage
+<div align="center">
 
-#### SlateJS Strikethrough Plugin
+[SlateJS](https://github.com/ianstormtaylor/slate) strikethrough plugin.
+
+[![npm package](https://img.shields.io/npm/v/@slate-editor/strikethrough-plugin.svg?maxAge=60)](https://www.npmjs.com/package/@slate-editor/strikethrough-plugin)
+[![npm downloads](https://img.shields.io/npm/dt/@slate-editor/strikethrough-plugin.svg?maxAge=60)](https://www.npmjs.com/package/@slate-editor/strikethrough-plugin)
+
+</div>
+
+## Installation
+The **@slate-editor/strikethrough-plugin** is available as an [npm package](https://www.npmjs.com/package/@slate-editor/strikethrough-plugin).
+
+```
+yarn add @slate-editor/strikethrough-plugin
+```
+
+## Usage
+Here is a quick example to get you started:
+
 ```js
-import React, { Component } from 'react'
-import StrikethroughPlugin from 'slate-strikethrough-plugin'
+import React from 'react'
+import { SlateEditor, SlateToolbar, SlateContent } from 'slate-editor'
+import { StrikethroughPlugin, StrikethroughButton } from '@slate-editor/strikethrough-plugin'
 
 const plugins = [
   StrikethroughPlugin()
 ]
 
-class SlateEditor extends Component {
-  onChange(state) {
-    this.setState({ state })
-  }
-  render() {
-    return (
-      <Editor
-        plugins={plugins}
-        state={this.state.state}
-        onChange={this.onChange.bind(this)}
-      />
-    )
-  }
-}
+const SlateRichTextEditor = () => (
+  <SlateEditor plugins={plugins}>
+    <SlateToolbar>
+      <StrikethroughButton />
+    </SlateToolbar>
+
+    <SlateContent />
+  </SlateEditor>
+)
+
+export default SlateRichTextEditor
 ```
 
-#### SlateJS Strikethrough Plugin Button
-```js
-import React, { Component } from 'react'
-import { StrikethroughButton } from 'slate-strikethrough-plugin'
+## Keyboard Shortcut
 
-class SlateEditor extends Component {
-  onChange(state) {
-    this.setState({ state })
-  }
-  render() {
-    return (
-      <div className="editor--toolbar">
-        <StrikethroughButton
-          state={this.state.state}
-          onChange={this.onChange.bind(this)}
-        />
-      </div>
-    )
-  }
-}
-```
+| OS                       | Shortcut                                        |
+|--------------------------|-------------------------------------------------|
+| ![Apple Logo][apple]     | <kbd>⌘</kbd> + <kbd>^</kbd> + <kbd>s</kbd>      |
+| ![Windows Logo][windows] | <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>s</kbd> |
 
-# Keyboard Shortcut
+## API
 
-| Platform                 | Shortcut                                     |
-|--------------------------|----------------------------------------------|
-| ![Apple Logo][apple]     | <kbd>⌘</kbd> + <kbd>^</kbd> + <kbd>s</kbd>   |
-| ![Windows Logo][windows] | <kbd>^</kbd> + <kbd>alt</kbd> + <kbd>s</kbd> |
-
-# API
-
-| Target                        | Description                                                                        |
+| Name                          | Description                                                                        |
 |-------------------------------|------------------------------------------------------------------------------------|
 | StrikethroughMark             | Component that holds the html that will wrap the content with strikethrough style. |
 | StrikethroughKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS.          |
 | StrikethroughUtils            | Generic file that holds the util common functions.                                 |
 | StrikethroughButton           | Button component that have behaviour to wrap content with strikethrough style.     |
 
-# TODO
+## TODO
 
 - Make keyboard shortcut accepts customization
 
