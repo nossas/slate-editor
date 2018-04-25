@@ -29,7 +29,7 @@ yarn add slate-editor
 ```
 
 ## Usage
-You can use which plugin you want. No need to use [all plugins available](../).
+You can use which plugin you want. No need to use [all plugins available](./packages).
 
 In the example below we only add the [Bold](https://github.com/nossas/slate-editor/tree/master/src/package/plugins/slate-bold-plugin) plugin with its button in the toolbar.
 
