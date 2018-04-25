@@ -1,9 +1,0 @@
-.slate-embed-plugin--node {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.slate-embed-plugin--node.active {
-  border: 3px solid #0275d8;
-  margin: -3px 0;
-}
