@@ -1,68 +1,80 @@
-<img src="https://www.psdmockups.com/wp-content/uploads/2016/07/slatejs-520x292.jpg" alt="Nossas Cidades logo" title="Nossas Cidades" align="right" height="70"/>
-<img src="https://avatars2.githubusercontent.com/u/1479357?v=3&s=250" alt="Nossas Cidades logo" title="Nossas Cidades" align="right" height="70"/>
+<div align="center">
+  <a href="https://www.en.nossas.org" rel="noopener" target="_blank">
+    <img
+      width="200"
+      src="https://s3.amazonaws.com/hub-central/uploads/logo-nossas-20170517185909.svg"
+      alt="Nossas logo"
+      title="Nossas"
+    />
+  </a>
+</div>
+<div align="center">
+  <img
+    src="https://www.psdmockups.com/wp-content/uploads/2016/07/slatejs-520x292.jpg"
+    alt="Nossas Cidades logo"
+    title="Nossas Cidades"
+    height="50"
+  />
+</div>
 
-# [SlateJS](https://github.com/ianstormtaylor/slate) - Color Plugin
-The goal of this plugin is to offers an easy handling of SlateJS color mark content editable. Providing a simple API and easy usage, basing on concept of plugin-centric by SlateJS framework.
+<h1 align="center">@slate-editor/color-plugin</h1>
 
-# Usage
+<div align="center">
 
-#### SlateJS Color Plugin
+[SlateJS](https://github.com/ianstormtaylor/slate) color plugin.
+
+[![npm package](https://img.shields.io/npm/v/@slate-editor/color-plugin.svg?maxAge=60)](https://www.npmjs.com/package/@slate-editor/color-plugin)
+[![npm downloads](https://img.shields.io/npm/dt/@slate-editor/color-plugin.svg?maxAge=60)](https://www.npmjs.com/package/@slate-editor/color-plugin)
+
+</div>
+
+## Installation
+The @slate-editor/color-plugin is available as an [npm package](https://www.npmjs.com/package/@slate-editor/color-plugin).
+
+```
+yarn add @slate-editor/color-plugin
+```
+
+## Usage
+Here is a quick example to get you started:
+
 ```js
-import React, { Component } from 'react'
-import ColorPlugin from 'slate-font-family-plugin'
+import React from 'react'
+import { SlateEditor, SlateToolbar, SlateContent } from 'slate-editor'
+import { ColorPlugin, ColorButton, ColorStateModel } from '@slate-editor/color-plugin'
+
+const colorPluginOptions = new ColorStateModel().rgba({ r: 100, g: 100, b: 100, a: 1 }).gen()
 
 const plugins = [
   ColorPlugin()
 ]
 
-class SlateEditor extends Component {
-  onChange(state) {
-    this.setState({ state })
-  }
-  render() {
-    return (
-      <Editor
-        plugins={plugins}
-        state={this.state.state}
-        onChange={this.onChange.bind(this)}
+const SlateRichTextEditor = () => (
+  <SlateEditor plugins={plugins}>
+    <SlateToolbar>
+      <ColorButton
+        initialState={colorPluginOptions}
+        pickerDefaultPosition={{ x: -520, y: 17 }}
       />
-    )
-  }
-}
+    </SlateToolbar>
+
+    <SlateContent />
+  </SlateEditor>
+)
+
+export default SlateRichTextEditor
 ```
 
-#### SlateJS Color Plugin Button
-```js
-import React, { Component } from 'react'
-import { ColorButton } from 'slate-font-family-plugin'
+## Keyboard Shortcut
 
-class SlateEditor extends Component {
-  onChange(state) {
-    this.setState({ state })
-  }
-  render() {
-    return (
-      <div className="editor--toolbar">
-        <ColorButton
-          state={this.state.state}
-          onChange={this.onChange.bind(this)}
-        />
-      </div>
-    )
-  }
-}
-```
-
-# Keyboard Shortcut
-
-| Platform                 | Action              | Shortcut                                     |
+| OS                       | Action              | Shortcut                                     |
 |--------------------------|---------------------|----------------------------------------------|
 | ![Apple Logo][apple]     | Toggle Color Picker | <kbd>^</kbd> + <kbd>alt</kbd> + <kbd>l</kbd> |
 | ![Windows Logo][windows] | Toggle Color Picker | <kbd>^</kbd> + <kbd>alt</kbd> + <kbd>l</kbd> |
 
-# API
+## API
 
-| Target                | Description                                                                |
+| Name                  | Description                                                                |
 |-----------------------|----------------------------------------------------------------------------|
 | ColorMark             | Component that holds the html that will wrap the content with color style. |
 | ColorUtils            | Generic file that holds the util common functions.                         |
@@ -70,7 +82,7 @@ class SlateEditor extends Component {
 | ColorKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS.  |
 | ColorStateModel       | Class that knows the state structure of the plugin                         |
 
-# TODO
+## TODO
 
 - Make keyboard shortcut accepts customization;
 - Add keyboard shortcut to apply color to expanded selection;
