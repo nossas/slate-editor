@@ -56,7 +56,7 @@ export default SlateRichTextEditor
 
 **Advanced example**
 
-- Take a look at the [full working example](https://github.com/nossas/slate-editor/blob/master/src/example/pages/Home.js).
+- Take a look at the [full working example](./packages/slate-editor-example/src/example/pages/Home.js).
 
 ## Plugins
 The slate-editor plugins can be installed individually. Check the list below:
