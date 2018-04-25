@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "start": "yarn install && node -r dotenv/config ./node_modules/.bin/lerna run start --scope slate-editor-example --parallel",
     "boot": "lerna bootstrap",
     "test": "lerna run test",
     "prepublish": "rimraf packages/**/dist",
@@ -13,6 +14,7 @@
     "packages/*"
   ],
   "devDependencies": {
+    "dotenv": "^5.0.1",
     "lerna": "^2.7.1",
     "rimraf": "^2.6.2"
   }
