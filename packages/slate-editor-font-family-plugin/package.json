@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@slate-editor/utils": "^5.0.0-alpha.f7181996",
+    "classnames": "^2.2.5",
     "react": "^16.2.0"
   },
   "devDependencies": {

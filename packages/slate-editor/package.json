@@ -19,8 +19,7 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
     "enzyme": "^3.2.0",
-    "enzyme-adapter-react-16": "^1.1.0",
-    "history": "^4.7.2"
+    "enzyme-adapter-react-16": "^1.1.0"
   },
   "dependencies": {
     "@slate-editor/alignment-plugin": "^5.0.0-alpha.f7181996",
@@ -41,18 +40,9 @@
     "@slate-editor/underline-plugin": "^5.0.0-alpha.f7181996",
     "@slate-editor/utils": "^5.0.0-alpha.f7181996",
     "classnames": "^2.2.5",
-    "exenv": "^1.2.1",
     "immutable": "^3.8.2",
-    "json-beautify": "^1.0.1",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
-    "react-color": "^2.13.8",
-    "react-dom": "^16.2.0",
-    "react-draggable": "^3",
-    "react-fontawesome": "^1.6.1",
-    "react-router": "^4.2.0",
-    "react-s3-uploader": "^4.6.0",
-    "react-scripts": "^1.1.4",
     "slate": "0.31.3",
     "slate-react": "0.10.17"
   },

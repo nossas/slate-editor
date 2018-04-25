@@ -30,7 +30,10 @@
   "dependencies": {
     "@slate-editor/components": "^5.0.0-alpha.f7181996",
     "@slate-editor/utils": "^5.0.0-alpha.f7181996",
-    "react": "^16.2.0"
+    "classnames": "^2.2.5",
+    "exenv": "^1.2.1",
+    "react": "^16.2.0",
+    "react-fontawesome": "^1.6.1"
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",
