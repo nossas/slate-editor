@@ -1,64 +1,43 @@
-<h1 align="center">Slate Editor</h1>
+<p align="center">
+  <a href="https://www.en.nossas.org" rel="noopener" target="_blank">
+    <img
+      width="200"
+      src="https://s3.amazonaws.com/hub-central/uploads/logo-nossas-20170517185909.svg"
+      alt="Nossas logo"
+      title="Nossas"
+    />
+  </a>
+</p>
+
+<h1 align="center">slate-editor</h1>
 
 <div align="center">
-  <p>
-    <img
-      src="https://s3.amazonaws.com/hub-central/uploads/logo-nossas-20170517185909.svg"
-      width="320"
-      height="320"
-      alt="BONDE Logo"
-    />
-  </p>
 
-  <div align="center">
-    <a href="https://www.npmjs.com/package/slate-editor">
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <img
-        alt="Slate Editor NPM Version"
-        src="https://img.shields.io/npm/v/slate-editor.svg"
-      />
-    </a>
-    <a href="https://www.npmjs.com/package/slate-editor">
-      <img
-        alt="Slate Editor NPM Downloads"
-        src="https://img.shields.io/npm/dt/slate-editor.svg"
-      />
-    </a>
-  </div>
+A complete rich text editor based on [SlateJS](https://github.com/ianstormtaylor/slate) framework
 
-  <div align="center">
-    <a href="https://github.com/nossas/slate-editor/blob/master/LICENSE">
-      <img
-        alt="Licence"
-        src="https://img.shields.io/github/license/nossas/slate-editor.svg"
-      />
-    </a>
-    <a href="https://conventionalcommits.org">
-      <img
-        alt="Conventional Commits"
-        src="https://img.shields.io/badge/Conventional%20Commits-1.0.0--beta.1-brightgreen.svg"
-      />
-    </a>
-  </div>
+[![npm package](https://img.shields.io/npm/v/slate-editor.svg?maxAge=60)](https://www.npmjs.com/package/slate-editor)
+[![npm downloads](https://img.shields.io/npm/dt/slate-editor.svg?maxAge=60)](https://www.npmjs.com/package/slate-editor)
+[![Licence](https://img.shields.io/github/license/nossas/slate-editor.svg?maxAge=60)](https://github.com/nossas/slate-editor/blob/master/LICENSE)
+
 </div>
 
-##
+## Installation
+The slate-editor is available as an [npm package](https://www.npmjs.com/package/slate-editor).
 
-# Let's install!
-It's just simply run `yarn add slate-editor --save` or `npm install slate-editor --save`
+```sh
+yarn add slate-editor
+```
 
-# How to use
-You can use which plugin you want. No need to use all plugins available.
+## Usage
+You can use which plugin you want. No need to use [all plugins available](../).
 
 In the example below we only add the [Bold](https://github.com/nossas/slate-editor/tree/master/src/package/plugins/slate-bold-plugin) plugin with its button in the toolbar.
 
 **Basic example**
 ```jsx
 import React from 'react'
-import {
-  SlateEditor, SlateToolbar, SlateContent,
-  BoldPlugin, BoldButton
-} from 'slate-editor'
+import { SlateEditor, SlateToolbar, SlateContent } from 'slate-editor'
+import { BoldPlugin, BoldButton } from '@slate-editor/bold-plugin'
 
 const plugins = [BoldPlugin()]
 
@@ -74,39 +53,50 @@ const SlateRichTextEditor = () => (
 
 export default SlateRichTextEditor
 ```
-And it's done! :rocket:
 
-Take a look at the [full working example](https://github.com/nossas/slate-editor/blob/master/src/example/pages/Home.js).
+**Advanced example**
 
-# Plugins docs
-- [Alignment](https://github.com/nossas/slate-editor/tree/master/src/package/plugins/slate-alignment-plugin)
-- [Bold](https://github.com/nossas/slate-editor/tree/master/src/package/plugins/slate-bold-plugin)
-- [Color](https://github.com/nossas/slate-editor/tree/master/src/package/plugins/slate-color-plugin)
-- [Embed](https://github.com/nossas/slate-editor/tree/master/src/package/plugins/slate-embed-plugin)
-- [FontFamily](https://github.com/nossas/slate-editor/tree/master/src/package/plugins/slate-font-family-plugin)
-- [FontSize](https://github.com/nossas/slate-editor/tree/master/src/package/plugins/slate-font-size-plugin)
-- [Grid](https://github.com/nossas/slate-editor/tree/master/src/package/plugins/slate-grid-plugin)
-- [Image](https://github.com/nossas/slate-editor/tree/master/src/package/plugins/slate-image-plugin)
-- [Italic](https://github.com/nossas/slate-editor/tree/master/src/package/plugins/slate-italic-plugin)
-- [Link](https://github.com/nossas/slate-editor/tree/master/src/package/plugins/slate-link-plugin)
-- [List](https://github.com/nossas/slate-editor/tree/master/src/package/plugins/slate-list-plugin)
-- [StateLogger](https://github.com/nossas/slate-editor/tree/master/src/package/plugins/slate-state-logger)
-- [Strikethrough](https://github.com/nossas/slate-editor/tree/master/src/package/plugins/slate-strikethrough-plugin)
-- [ToggleReadonly](https://github.com/nossas/slate-editor/tree/master/src/package/plugins/slate-toggle-readonly)
-- [Underline](https://github.com/nossas/slate-editor/tree/master/src/package/plugins/slate-underline-plugin)
+- Take a look at the [full working example](https://github.com/nossas/slate-editor/blob/master/src/example/pages/Home.js).
 
-# Contributing
+## Plugins
+The slate-editor plugins can be installed individually. Check the list below:
+
+| **Docs**                                                      | **Package**                          |
+|:--------------------------------------------------------------|:-------------------------------------|
+| [Alignment](./packages/slate-editor-alignment-plugin)         | `@slate-editor/alignment-plugin`     |
+| [Bold](./packages/slate-editor-bold-plugin)                   | `@slate-editor/bold-plugin`          |
+| [Color](./packages/slate-editor-color-plugin)                 | `@slate-editor/color-plugin`         |
+| [Embed](./packages/slate-editor-embed-plugin)                 | `@slate-editor/embed-plugin`         |
+| [FontFamily](./packages/slate-editor-font-family-plugin)      | `@slate-editor/font-family-plugin`   |
+| [FontSize](./packages/slate-editor-font-size-plugin)          | `@slate-editor/font-size-plugin`     |
+| [Grid](./packages/slate-editor-grid-plugin)                   | `@slate-editor/grid-plugin`          |
+| [Image](./packages/slate-editor-image-plugin)                 | `@slate-editor/image-plugin`         |
+| [Italic](./packages/slate-editor-italic-plugin)               | `@slate-editor/italic-plugin`        |
+| [Link](./packages/slate-editor-link-plugin)                   | `@slate-editor/link-plugin`          |
+| [List](./packages/slate-editor-list-plugin)                   | `@slate-editor/list-plugin`          |
+| [StateLogger](./packages/slate-editor-state-logger)           | `@slate-editor/state-logger`         |
+| [Strikethrough](./packages/slate-editor-strikethrough-plugin) | `@slate-editor/strikethrough-plugin` |
+| [ToggleReadonly](./packages/slate-editor-toggle-readonly)     | `@slate-editor/toggle-readonly`      |
+| [Underline](./packages/slate-editor-underline-plugin)         | `@slate-editor/underline-plugin`     |
+
+## Contributing
 To help us develop new features or fix bugs, to setup your development environment is too simple. Just follow the steps:
-- `git clone git@github.com:nossas/slate-editor.git` the project
-- `yarn install` or `npm install` to install all the dependency packages
-- `yarn start` or `npm start`
+
+- Clone the project
+```
+git clone git@github.com:nossas/slate-editor.git
+```
+- Start the example
+```
+yarn start
+```
 
 And it's done! Easy, isn't?!
 
 ---
 
 To get the **ImagePlugin** working in 100% of its functionality, you need to define the
-environment variables below:
+environment variables below in .env file:
 
 - **REACT_APP_API_URL**: e.g. https://api.bonde.org
   - The URL of the API

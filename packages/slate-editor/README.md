@@ -1,78 +1,108 @@
-<img src="https://www.psdmockups.com/wp-content/uploads/2016/07/slatejs-520x292.jpg" alt="Nossas Cidades logo" title="Nossas Cidades" align="right" height="70"/>
-<img src="https://avatars2.githubusercontent.com/u/1479357?v=3&s=250" alt="Nossas Cidades logo" title="Nossas Cidades" align="right" height="70"/>
+<p align="center">
+  <a href="https://www.en.nossas.org" rel="noopener" target="_blank">
+    <img
+      width="200"
+      src="https://s3.amazonaws.com/hub-central/uploads/logo-nossas-20170517185909.svg"
+      alt="Nossas logo"
+      title="Nossas"
+    />
+  </a>
+</p>
 
-# [SlateJS](https://github.com/ianstormtaylor/slate) - Link Plugin
-The goal of this plugin is to offers an easy handling of SlateJS link node content editable. Providing a simple API and easy usage, basing on concept of plugin-centric by SlateJS framework.
+<h1 align="center">slate-editor</h1>
 
-# Usage
+<div align="center">
 
-#### SlateJS Link Plugin
-```js
-import React, { Component } from 'react'
-import LinkPlugin from 'slate-link-plugin'
+A complete rich text editor based on [SlateJS](https://github.com/ianstormtaylor/slate) framework
 
-const plugins = [
-  LinkPlugin()
-]
+[![npm package](https://img.shields.io/npm/v/slate-editor.svg?maxAge=60)](https://www.npmjs.com/package/slate-editor)
+[![npm downloads](https://img.shields.io/npm/dt/slate-editor.svg?maxAge=60)](https://www.npmjs.com/package/slate-editor)
+[![Licence](https://img.shields.io/github/license/nossas/slate-editor.svg?maxAge=60)](https://github.com/nossas/slate-editor/blob/master/LICENSE)
 
-class SlateEditor extends Component {
-  onChange(state) {
-    this.setState({ state })
-  }
-  render() {
-    return (
-      <Editor
-        plugins={plugins}
-        state={this.state.state}
-        onChange={this.onChange.bind(this)}
-      />
-    )
-  }
-}
+</div>
+
+## Installation
+The slate-editor is available as an [npm package](https://www.npmjs.com/package/slate-editor).
+
+```sh
+yarn add slate-editor
 ```
 
-#### SlateJS Link Plugin Button
-```js
-import React, { Component } from 'react'
-import { LinkButton } from 'slate-link-plugin'
+## Usage
+You can use which plugin you want. No need to use [all plugins available](../).
 
-class SlateEditor extends Component {
-  onChange(state) {
-    this.setState({ state })
-  }
-  render() {
-    return (
-      <div className="editor--toolbar">
-        <LinkButton
-          state={this.state.state}
-          onChange={this.onChange.bind(this)}
-        />
-      </div>
-    )
-  }
-}
+In the example below we only add the [Bold](https://github.com/nossas/slate-editor/tree/master/src/package/plugins/slate-bold-plugin) plugin with its button in the toolbar.
+
+**Basic example**
+```jsx
+import React from 'react'
+import { SlateEditor, SlateToolbar, SlateContent } from 'slate-editor'
+import { BoldPlugin, BoldButton } from '@slate-editor/bold-plugin'
+
+const plugins = [BoldPlugin()]
+
+const SlateRichTextEditor = () => (
+  <SlateEditor plugins={plugins}>
+    <SlateToolbar>
+      <BoldButton />
+    </SlateToolbar>
+
+    <SlateContent />
+  </SlateEditor>
+)
+
+export default SlateRichTextEditor
 ```
 
-# Keyboard Shortcut
+**Advanced example**
 
-| Platform                 | Shortcut                    |
-|--------------------------|-----------------------------|
-| ![Apple Logo][apple]     | <kbd>⌘</kbd> + <kbd>k</kbd> |
-| ![Windows Logo][windows] | <kbd>^</kbd> + <kbd>k</kbd> |
+- Take a look at the [full working example](https://github.com/nossas/slate-editor/blob/master/src/example/pages/Home.js).
 
-# API
+## Plugins
+The slate-editor plugins can be installed individually. Check the list below:
 
-| Target               | Description                                                               |
-|----------------------|---------------------------------------------------------------------------|
-| LinkNode             | Component that holds the html that will wrap the content with link.       |
-| LinkKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS. |
-| LinkUtils            | Generic file that holds the util common functions.                        |
-| LinkButton           | Button component that have behaviour to wrap content with link.           |
+| **Docs**                                              | **Package**                          |
+|:------------------------------------------------------|:-------------------------------------|
+| [Alignment](../slate-editor-alignment-plugin)         | `@slate-editor/alignment-plugin`     |
+| [Bold](../slate-editor-bold-plugin)                   | `@slate-editor/bold-plugin`          |
+| [Color](../slate-editor-color-plugin)                 | `@slate-editor/color-plugin`         |
+| [Embed](../slate-editor-embed-plugin)                 | `@slate-editor/embed-plugin`         |
+| [FontFamily](../slate-editor-font-family-plugin)      | `@slate-editor/font-family-plugin`   |
+| [FontSize](../slate-editor-font-size-plugin)          | `@slate-editor/font-size-plugin`     |
+| [Grid](../slate-editor-grid-plugin)                   | `@slate-editor/grid-plugin`          |
+| [Image](../slate-editor-image-plugin)                 | `@slate-editor/image-plugin`         |
+| [Italic](../slate-editor-italic-plugin)               | `@slate-editor/italic-plugin`        |
+| [Link](../slate-editor-link-plugin)                   | `@slate-editor/link-plugin`          |
+| [List](../slate-editor-list-plugin)                   | `@slate-editor/list-plugin`          |
+| [StateLogger](../slate-editor-state-logger)           | `@slate-editor/state-logger`         |
+| [Strikethrough](../slate-editor-strikethrough-plugin) | `@slate-editor/strikethrough-plugin` |
+| [ToggleReadonly](../slate-editor-toggle-readonly)     | `@slate-editor/toggle-readonly`      |
+| [Underline](../slate-editor-underline-plugin)         | `@slate-editor/underline-plugin`     |
 
-# TODO
+## Contributing
+To help us develop new features or fix bugs, to setup your development environment is too simple. Just follow the steps:
 
-- Make keyboard shortcut accepts customization;
-- Add behaviour to catch onPaste command and identify if it is an url and ask if wants to link it;
+- Clone the project
+```
+git clone git@github.com:nossas/slate-editor.git
+```
+- Start the example
+```
+yarn start
+```
 
-[apple]: https://cdn2.iconfinder.com/data/icons/designer-skills/128/apple-ios-system-platform-os-mac-linux-48.png
-[windows]: https://cdn2.iconfinder.com/data/icons/designer-skills/128/windows-48.png
+And it's done! Easy, isn't?!
+
+---
+
+To get the **ImagePlugin** working in 100% of its functionality, you need to define the
+environment variables below in .env file:
+
+- **REACT_APP_API_URL**: e.g. https://api.bonde.org
+  - The URL of the API
+- **REACT_APP_SIGNING_URL_ENDPOINT**: e.g. `/uploads`
+  - The endpoint that will sign the URL to upload the image to AWS S3.
+  - To sign the URL on your API, you can check an example with RoR [here](https://github.com/nossas/bonde-server/blob/master/app/controllers/uploads_controller.rb).
+
+## References
+- [SlateJS](https://github.com/ianstormtaylor/slate) - A completely customizable framework for building rich text editors.
