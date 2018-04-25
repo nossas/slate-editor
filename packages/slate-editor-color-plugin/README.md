@@ -29,7 +29,7 @@
 </div>
 
 ## Installation
-The @slate-editor/color-plugin is available as an [npm package](https://www.npmjs.com/package/@slate-editor/color-plugin).
+The **@slate-editor/color-plugin** is available as an [npm package](https://www.npmjs.com/package/@slate-editor/color-plugin).
 
 ```
 yarn add @slate-editor/color-plugin

@@ -29,7 +29,7 @@
 </div>
 
 ## Installation
-The @slate-editor/bold-plugin is available as an [npm package](https://www.npmjs.com/package/@slate-editor/bold-plugin).
+The **@slate-editor/bold-plugin** is available as an [npm package](https://www.npmjs.com/package/@slate-editor/bold-plugin).
 
 ```
 yarn add @slate-editor/bold-plugin

@@ -29,7 +29,7 @@
 </div>
 
 ## Installation
-The @slate-editor/alignment-plugin is available as an [npm package](https://www.npmjs.com/package/@slate-editor/alignment-plugin).
+The **@slate-editor/alignment-plugin** is available as an [npm package](https://www.npmjs.com/package/@slate-editor/alignment-plugin).
 
 ```sh
 yarn add @slate-editor/alignment-plugin
