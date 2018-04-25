@@ -1,75 +1,82 @@
-<img src="https://www.psdmockups.com/wp-content/uploads/2016/07/slatejs-520x292.jpg" alt="Nossas Cidades logo" title="Nossas Cidades" align="right" height="70"/>
-<img src="https://avatars2.githubusercontent.com/u/1479357?v=3&s=250" alt="Nossas Cidades logo" title="Nossas Cidades" align="right" height="70"/>
+<div align="center">
+  <a href="https://www.en.nossas.org" rel="noopener" target="_blank">
+    <img
+      width="200"
+      src="https://s3.amazonaws.com/hub-central/uploads/logo-nossas-20170517185909.svg"
+      alt="Nossas logo"
+      title="Nossas"
+    />
+  </a>
+</div>
+<div align="center">
+  <img
+    src="https://www.psdmockups.com/wp-content/uploads/2016/07/slatejs-520x292.jpg"
+    alt="Nossas Cidades logo"
+    title="Nossas Cidades"
+    height="50"
+  />
+</div>
 
-# [SlateJS](https://github.com/ianstormtaylor/slate) - Italic Plugin
-The goal of this plugin is to offers an easy handling of SlateJS italic mark node content editable. Providing a simple API and easy usage, basing on concept of plugin-centric by SlateJS framework.
+<h1 align="center">@slate-editor/italic-plugin</h1>
 
-# Usage
+<div align="center">
 
-#### SlateJS Italic Plugin
+[SlateJS](https://github.com/ianstormtaylor/slate) italic plugin.
+
+[![npm package](https://img.shields.io/npm/v/@slate-editor/italic-plugin.svg?maxAge=60)](https://www.npmjs.com/package/@slate-editor/italic-plugin)
+[![npm downloads](https://img.shields.io/npm/dt/@slate-editor/italic-plugin.svg?maxAge=60)](https://www.npmjs.com/package/@slate-editor/italic-plugin)
+
+</div>
+
+## Installation
+The **@slate-editor/italic-plugin** is available as an [npm package](https://www.npmjs.com/package/@slate-editor/italic-plugin).
+
+```
+yarn add @slate-editor/italic-plugin
+```
+
+## Usage
+Here is a quick example to get you started:
+
 ```js
-import React, { Component } from 'react'
-import ItalicPlugin from 'slate-italic-plugin'
+import React from 'react'
+import { SlateEditor, SlateToolbar, SlateContent } from 'slate-editor'
+import { ItalicPlugin, ItalicButton } from '@slate-editor/italic-plugin'
 
 const plugins = [
   ItalicPlugin()
 ]
 
-class SlateEditor extends Component {
-  onChange(state) {
-    this.setState({ state })
-  }
-  render() {
-    return (
-      <Editor
-        plugins={plugins}
-        state={this.state.state}
-        onChange={this.onChange.bind(this)}
-      />
-    )
-  }
-}
+const SlateRichTextEditor = () => (
+  <SlateEditor plugins={plugins}>
+    <SlateToolbar>
+      <ItalicButton />
+    </SlateToolbar>
+
+    <SlateContent />
+  </SlateEditor>
+)
+
+export default SlateRichTextEditor
 ```
 
-#### SlateJS Italic Plugin Button
-```js
-import React, { Component } from 'react'
-import { ItalicButton } from 'slate-italic-plugin'
+## Keyboard Shortcut
 
-class SlateEditor extends Component {
-  onChange(state) {
-    this.setState({ state })
-  }
-  render() {
-    return (
-      <div className="editor--toolbar">
-        <ItalicButton
-          state={this.state.state}
-          onChange={this.onChange.bind(this)}
-        />
-      </div>
-    )
-  }
-}
-```
+| OS                       | Shortcut   |
+|--------------------------|------------|
+| ![Apple Logo][apple]     | `⌘`+`i`    |
+| ![Windows Logo][windows] | `ctrl`+`i` |
 
-# Keyboard Shortcut
+## API
 
-| Platform                 | Shortcut |
-|--------------------------|----------|
-| ![Apple Logo][apple]     | `⌘`+`i`  |
-| ![Windows Logo][windows] | `^`+`i`  |
-
-# API
-
-| Target                 | Description                                                                 |
+| Name                   | Description                                                                 |
 |------------------------|-----------------------------------------------------------------------------|
 | ItalicMark             | Component that holds the html that will wrap the content with italic style. |
 | ItalicKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS.   |
 | ItalicUtils            | Generic file that holds the util common functions.                          |
 | ItalicButton           | Button component that have behaviour to wrap content with italic style.     |
 
-# TODO
+## TODO
 
 - Make keyboard shortcut accepts customization
 
