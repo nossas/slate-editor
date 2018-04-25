@@ -1,75 +1,82 @@
-<img src="https://www.psdmockups.com/wp-content/uploads/2016/07/slatejs-520x292.jpg" alt="Nossas Cidades logo" title="Nossas Cidades" align="right" height="70"/>
-<img src="https://avatars2.githubusercontent.com/u/1479357?v=3&s=250" alt="Nossas Cidades logo" title="Nossas Cidades" align="right" height="70"/>
+<div align="center">
+  <a href="https://www.en.nossas.org" rel="noopener" target="_blank">
+    <img
+      width="200"
+      src="https://s3.amazonaws.com/hub-central/uploads/logo-nossas-20170517185909.svg"
+      alt="Nossas logo"
+      title="Nossas"
+    />
+  </a>
+</div>
+<div align="center">
+  <img
+    src="https://www.psdmockups.com/wp-content/uploads/2016/07/slatejs-520x292.jpg"
+    alt="Nossas Cidades logo"
+    title="Nossas Cidades"
+    height="50"
+  />
+</div>
 
-# [SlateJS](https://github.com/ianstormtaylor/slate) - Link Plugin
-The goal of this plugin is to offers an easy handling of SlateJS link node content editable. Providing a simple API and easy usage, basing on concept of plugin-centric by SlateJS framework.
+<h1 align="center">@slate-editor/link-plugin</h1>
 
-# Usage
+<div align="center">
 
-#### SlateJS Link Plugin
+[SlateJS](https://github.com/ianstormtaylor/slate) link plugin.
+
+[![npm package](https://img.shields.io/npm/v/@slate-editor/link-plugin.svg?maxAge=60)](https://www.npmjs.com/package/@slate-editor/link-plugin)
+[![npm downloads](https://img.shields.io/npm/dt/@slate-editor/link-plugin.svg?maxAge=60)](https://www.npmjs.com/package/@slate-editor/link-plugin)
+
+</div>
+
+## Installation
+The **@slate-editor/link-plugin** is available as an [npm package](https://www.npmjs.com/package/@slate-editor/link-plugin).
+
+```
+yarn add @slate-editor/link-plugin
+```
+
+## Usage
+Here is a quick example to get you started:
+
 ```js
-import React, { Component } from 'react'
-import LinkPlugin from 'slate-link-plugin'
+import React from 'react'
+import { SlateEditor, SlateToolbar, SlateContent } from 'slate-editor'
+import { LinkPlugin, LinkButton } from '@slate-editor/link-plugin'
 
 const plugins = [
   LinkPlugin()
 ]
 
-class SlateEditor extends Component {
-  onChange(state) {
-    this.setState({ state })
-  }
-  render() {
-    return (
-      <Editor
-        plugins={plugins}
-        state={this.state.state}
-        onChange={this.onChange.bind(this)}
-      />
-    )
-  }
-}
+const SlateRichTextEditor = () => (
+  <SlateEditor plugins={plugins}>
+    <SlateToolbar>
+      <LinkButton />
+    </SlateToolbar>
+
+    <SlateContent />
+  </SlateEditor>
+)
+
+export default SlateRichTextEditor
 ```
 
-#### SlateJS Link Plugin Button
-```js
-import React, { Component } from 'react'
-import { LinkButton } from 'slate-link-plugin'
+## Keyboard Shortcut
 
-class SlateEditor extends Component {
-  onChange(state) {
-    this.setState({ state })
-  }
-  render() {
-    return (
-      <div className="editor--toolbar">
-        <LinkButton
-          state={this.state.state}
-          onChange={this.onChange.bind(this)}
-        />
-      </div>
-    )
-  }
-}
-```
-
-# Keyboard Shortcut
-
-| Platform                 | Shortcut                    |
+| OS                       | Shortcut                    |
 |--------------------------|-----------------------------|
 | ![Apple Logo][apple]     | <kbd>⌘</kbd> + <kbd>k</kbd> |
 | ![Windows Logo][windows] | <kbd>^</kbd> + <kbd>k</kbd> |
 
-# API
+## API
 
-| Target               | Description                                                               |
+| Name                 | Description                                                               |
 |----------------------|---------------------------------------------------------------------------|
 | LinkNode             | Component that holds the html that will wrap the content with link.       |
 | LinkKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS. |
 | LinkUtils            | Generic file that holds the util common functions.                        |
 | LinkButton           | Button component that have behaviour to wrap content with link.           |
 
-# TODO
+## TODO
 
 - Make keyboard shortcut accepts customization;
 - Add behaviour to catch onPaste command and identify if it is an url and ask if wants to link it;
