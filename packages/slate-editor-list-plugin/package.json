@@ -1,7 +1,7 @@
 {
   "name": "@slate-editor/list-plugin",
   "version": "5.0.0-alpha.f7181996",
-  "description": "SlateJS list node content editable plugin.",
+  "description": "SlateJS list node plugin.",
   "main": "dist/index.js",
   "repository": "https://github.com/nossas/slate-editor",
   "author": "Nossas <tech@nossas.org> (http://github.com/nossas)",

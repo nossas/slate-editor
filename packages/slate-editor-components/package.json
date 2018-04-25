@@ -1,7 +1,7 @@
 {
   "name": "@slate-editor/components",
   "version": "5.0.0-alpha.f7181996",
-  "description": "Components for slate-editor, a complete rich text editor based on SlateJS framework",
+  "description": "Components for slate-editor.",
   "main": "dist/index.js",
   "repository": "https://github.com/nossas/slate-editor",
   "author": "Nossas <tech@nossas.org> (http://github.com/nossas)",

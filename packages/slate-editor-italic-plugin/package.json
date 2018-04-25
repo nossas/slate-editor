@@ -1,7 +1,7 @@
 {
   "name": "@slate-editor/italic-plugin",
   "version": "5.0.0-alpha.f7181996",
-  "description": "SlateJS framework italic plugin",
+  "description": "SlateJS italic mark plugin.",
   "main": "dist/index.js",
   "repository": "https://github.com/nossas/slate-editor",
   "author": "Nossas <tech@nossas.org> (http://github.com/nossas)",
