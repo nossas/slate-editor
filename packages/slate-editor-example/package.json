@@ -10,7 +10,7 @@
   },
   "homepage": "https://github.com/nossas/slate-editor",
   "author": "Nossas <tech@nossas.org> (http://github.com/nossas)",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "publishConfig": {
     "access": "restricted"
   },
