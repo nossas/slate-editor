@@ -1,68 +1,75 @@
-<img src="https://www.psdmockups.com/wp-content/uploads/2016/07/slatejs-520x292.jpg" alt="Nossas Cidades logo" title="Nossas Cidades" align="right" height="70"/>
-<img src="https://avatars2.githubusercontent.com/u/1479357?v=3&s=250" alt="Nossas Cidades logo" title="Nossas Cidades" align="right" height="70"/>
+<div align="center">
+  <a href="https://www.en.nossas.org" rel="noopener" target="_blank">
+    <img
+      width="200"
+      src="https://s3.amazonaws.com/hub-central/uploads/logo-nossas-20170517185909.svg"
+      alt="Nossas logo"
+      title="Nossas"
+    />
+  </a>
+</div>
+<div align="center">
+  <img
+    src="https://www.psdmockups.com/wp-content/uploads/2016/07/slatejs-520x292.jpg"
+    alt="Nossas Cidades logo"
+    title="Nossas Cidades"
+    height="50"
+  />
+</div>
 
-# [SlateJS](https://github.com/ianstormtaylor/slate) - Embed Plugin
-The goal of this plugin is to offers an easy handling of SlateJS embed node content editable. Providing a simple API and easy usage, basing on concept of plugin-centric by SlateJS framework.
+<h1 align="center">@slate-editor/embed-plugin</h1>
 
-# Usage
+<div align="center">
 
-#### SlateJS Embed Plugin
+[SlateJS](https://github.com/ianstormtaylor/slate) embed plugin.
+
+[![npm package](https://img.shields.io/npm/v/@slate-editor/embed-plugin.svg?maxAge=60)](https://www.npmjs.com/package/@slate-editor/embed-plugin)
+[![npm downloads](https://img.shields.io/npm/dt/@slate-editor/embed-plugin.svg?maxAge=60)](https://www.npmjs.com/package/@slate-editor/embed-plugin)
+
+</div>
+
+## Installation
+The **@slate-editor/embed-plugin** is available as an [npm package](https://www.npmjs.com/package/@slate-editor/embed-plugin).
+
+```
+yarn add @slate-editor/embed-plugin
+```
+
+## Usage
+Here is a quick example to get you started:
+
 ```js
-import React, { Component } from 'react'
-import EmbedPlugin from 'slate-embed-plugin'
+import React from 'react'
+import { SlateEditor, SlateToolbar, SlateContent } from 'slate-editor'
+import { EmbedPlugin, EmbedButton } from '@slate-editor/embed-plugin'
 
 const plugins = [
   EmbedPlugin()
 ]
 
-class SlateEditor extends Component {
-  onChange(state) {
-    this.setState({ state })
-  }
-  render() {
-    return (
-      <Editor
-        plugins={plugins}
-        state={this.state.state}
-        onChange={this.onChange.bind(this)}
-      />
-    )
-  }
-}
-```
+const SlateRichTextEditor = () => (
+  <SlateEditor plugins={plugins}>
+    <SlateToolbar>
+      <EmbedButton />
+    </SlateToolbar>
 
-#### SlateJS Embed Plugin Button
-```js
-import React, { Component } from 'react'
-import { EmbedButton } from 'slate-embed-plugin'
+    <SlateContent />
+  </SlateEditor>
+)
 
-class SlateEditor extends Component {
-  onChange(state) {
-    this.setState({ state })
-  }
-  render() {
-    return (
-      <div className="editor--toolbar">
-        <EmbedButton
-          state={this.state.state}
-          onChange={this.onChange.bind(this)}
-        />
-      </div>
-    )
-  }
-}
+export default SlateRichTextEditor
 ```
 
 # Keyboard Shortcut
 
-| Platform                 | Shortcut |
+| OS                       | Shortcut |
 |--------------------------|----------|
 | ![Apple Logo][apple]     | `⌘`+`e`  |
 | ![Windows Logo][windows] | `^`+`e`  |
 
 # API
 
-| Target                | Description                                                                |
+| Name                  | Description                                                                |
 |-----------------------|----------------------------------------------------------------------------|
 | EmbedNode             | Component that holds the html that will wrap the content with embed style. |
 | EmbedKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS.  |
