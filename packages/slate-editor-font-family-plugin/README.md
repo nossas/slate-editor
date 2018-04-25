@@ -1,79 +1,77 @@
-<img src="https://www.psdmockups.com/wp-content/uploads/2016/07/slatejs-520x292.jpg" alt="Nossas Cidades logo" title="Nossas Cidades" align="right" height="70"/>
-<img src="https://avatars2.githubusercontent.com/u/1479357?v=3&s=250" alt="Nossas Cidades logo" title="Nossas Cidades" align="right" height="70"/>
+<div align="center">
+  <a href="https://www.en.nossas.org" rel="noopener" target="_blank">
+    <img
+      width="200"
+      src="https://s3.amazonaws.com/hub-central/uploads/logo-nossas-20170517185909.svg"
+      alt="Nossas logo"
+      title="Nossas"
+    />
+  </a>
+</div>
+<div align="center">
+  <img
+    src="https://www.psdmockups.com/wp-content/uploads/2016/07/slatejs-520x292.jpg"
+    alt="Nossas Cidades logo"
+    title="Nossas Cidades"
+    height="50"
+  />
+</div>
 
-# [SlateJS](https://github.com/ianstormtaylor/slate) - Font Family Plugin
-The goal of this plugin is to offers an easy handling of SlateJS font family mark content editable. Providing a simple API and easy usage, basing on concept of plugin-centric by SlateJS framework.
+<h1 align="center">@slate-editor/font-family-plugin</h1>
 
-# Usage
+<div align="center">
 
-#### SlateJS Font Family Plugin
+[SlateJS](https://github.com/ianstormtaylor/slate) font family plugin.
+
+[![npm package](https://img.shields.io/npm/v/@slate-editor/font-family-plugin.svg?maxAge=60)](https://www.npmjs.com/package/@slate-editor/font-family-plugin)
+[![npm downloads](https://img.shields.io/npm/dt/@slate-editor/font-family-plugin.svg?maxAge=60)](https://www.npmjs.com/package/@slate-editor/font-family-plugin)
+
+</div>
+
+## Installation
+The **@slate-editor/font-family-plugin** is available as an [npm package](https://www.npmjs.com/package/@slate-editor/font-family-plugin).
+
+```
+yarn add @slate-editor/font-family-plugin
+```
+
+## Usage
+Here is a quick example to get you started:
+
 ```js
-import React, { Component } from 'react'
-import FontFamilyPlugin from 'slate-font-family-plugin'
+import React from 'react'
+import { SlateEditor, SlateToolbar, SlateContent } from 'slate-editor'
+import { FontFamilyPlugin, FontFamilyDropdown } from '@slate-editor/font-family-plugin'
 
 const plugins = [
   FontFamilyPlugin()
 ]
 
-class SlateEditor extends Component {
-  onChange(state) {
-    this.setState({ state })
-  }
-  render() {
-    return (
-      <Editor
-        plugins={plugins}
-        state={this.state.state}
-        onChange={this.onChange.bind(this)}
-      />
-    )
-  }
-}
+const SlateRichTextEditor = () => (
+  <SlateEditor plugins={plugins}>
+    <SlateToolbar>
+      <FontFamilyDropdown />
+    </SlateToolbar>
+
+    <SlateContent />
+  </SlateEditor>
+)
+
+export default SlateRichTextEditor
 ```
 
-#### SlateJS Font Family Plugin Button
-```js
-import React, { Component } from 'react'
-import { FontFamilyButton } from 'slate-font-family-plugin'
+## API
 
-class SlateEditor extends Component {
-  onChange(state) {
-    this.setState({ state })
-  }
-  render() {
-    return (
-      <div className="editor--toolbar">
-        <FontFamilyButton
-          state={this.state.state}
-          onChange={this.onChange.bind(this)}
-        />
-      </div>
-    )
-  }
-}
-```
-
-# Keyboard Shortcut
-
-| Platform                 | Action  | Shortcut |
-|--------------------------|---------|----------|
-| ![Apple Logo][apple]     | Apply   | `⌘`+`j`  |
-| ![Apple Logo][apple]     | Remove  | `⌘`+`i`  |
-| ![Windows Logo][windows] | Apply   | `^`+`j`  |
-| ![Windows Logo][windows] | Remove  | `^`+`i`  |
-
-# API
-
-| Target                     | Description                                                                      |
+| Name                       | Description                                                                      |
 |----------------------------|----------------------------------------------------------------------------------|
 | FontFamilyMark             | Component that holds the html that will wrap the content with font family style. |
 | FontFamilyUtils            | Generic file that holds the util common functions.                               |
 | FontFamilyButton           | Button component that have behaviour to wrap content with font family style.     |
 | FontFamilyKeyboardShortcut | Keyboard shortcut file that manipulates `onKeyDown` event inside SlateJS.        |
 
-# TODO
+## TODO
 
-- Make keyboard shortcut accepts customization;
+- Make accepts keyboard shortcuts?;
 - Add keyboard shortcut to apply font family to expanded selection;
 - Add keyboard shortcut to remove font family from expanded selection;
 - Add button to apply font family to expanded selection;
