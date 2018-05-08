@@ -1,6 +1,30 @@
 # Change Log
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+<a name="5.0.0"></a>
+# [5.0.0](https://github.com/nossas/slate-editor/compare/v4.0.1...v5.0.0) (2018-05-08)
+
+
+### Bug Fixes
+
+* **ci:** add staging slate-editor-example package context [#62](https://github.com/nossas/slate-editor/issues/62) ([9bc14b7](https://github.com/nossas/slate-editor/commit/9bc14b7))
+* **ci:** example to initialize example on staging [#62](https://github.com/nossas/slate-editor/issues/62) ([0ec1ac5](https://github.com/nossas/slate-editor/commit/0ec1ac5))
+* **ci:** replace slash from branch name ([d001d99](https://github.com/nossas/slate-editor/commit/d001d99))
+* **components:** tooltip module export [#62](https://github.com/nossas/slate-editor/issues/62) ([d9feb44](https://github.com/nossas/slate-editor/commit/d9feb44))
+* **example:** rename slate-editor-components and slate-editor-utils [#62](https://github.com/nossas/slate-editor/issues/62) ([a088706](https://github.com/nossas/slate-editor/commit/a088706))
+* **lerna:** update current version to latest published version [#62](https://github.com/nossas/slate-editor/issues/62) ([c4cecfb](https://github.com/nossas/slate-editor/commit/c4cecfb))
+* **package:** add config to publish scoped packages [#62](https://github.com/nossas/slate-editor/issues/62) ([5323c29](https://github.com/nossas/slate-editor/commit/5323c29))
+* **package:** update latest published version ([f5790fa](https://github.com/nossas/slate-editor/commit/f5790fa))
+* **packages:** add npm publishConfig to all packages [#62](https://github.com/nossas/slate-editor/issues/62) ([d8ba31b](https://github.com/nossas/slate-editor/commit/d8ba31b))
+* **packages:** add sideEffects to false for all packages [#62](https://github.com/nossas/slate-editor/issues/62) ([378d01b](https://github.com/nossas/slate-editor/commit/378d01b))
+* start command that install packages  and loads .env file [#62](https://github.com/nossas/slate-editor/issues/62) ([e440678](https://github.com/nossas/slate-editor/commit/e440678))
+* **packages:** ensure integrity of dependencies for each package [#62](https://github.com/nossas/slate-editor/issues/62) ([4a50079](https://github.com/nossas/slate-editor/commit/4a50079))
+* **packages:** specify explicitly public access on scoped packages [#62](https://github.com/nossas/slate-editor/issues/62) ([c7b53cf](https://github.com/nossas/slate-editor/commit/c7b53cf))
+
+
+
 
 <a name="4.0.1"></a>
 ## [4.0.1](https://github.com/nossas/slate-editor/compare/v4.0.0...v4.0.1) (2018-01-29)

@@ -1,6 +1,6 @@
 {
   "name": "@slate-editor/grid-plugin",
-  "version": "5.0.0-alpha.f7181996",
+  "version": "5.0.0",
   "description": "SlateJS grid block node plugin.",
   "main": "dist/index.js",
   "repository": "https://github.com/nossas/slate-editor",
@@ -28,7 +28,7 @@
     "prepare": "babel src --out-dir dist --copy-files"
   },
   "dependencies": {
-    "@slate-editor/components": "^5.0.0-alpha.f7181996",
+    "@slate-editor/components": "^5.0.0",
     "classnames": "^2.2.5",
     "exenv": "^1.2.1",
     "react": "^16.2.0",
