@@ -14,7 +14,7 @@ pipeline:
     dockerfile: packages/slate-editor-example/Dockerfile
     context: packages/slate-editor-example
     tags:
-      - ${DRONE_BRANCH}
+      - ${DRONE_BRANCH/\//-}
     when:
       status: success
       branch: [feature/*, release/*, hotfix/*, support/*, develop]
@@ -23,7 +23,7 @@ pipeline:
     image: peloton/drone-rancher
     url: http://cluster.bonde.org
     service: staging/slate-editor
-    docker_image: nossas/slate-editor:${DRONE_BRANCH}
+    docker_image: nossas/slate-editor:${DRONE_BRANCH/\//-}
     timeout: 360
     confirm: true
     secrets: [rancher_access_key, rancher_secret_key]
