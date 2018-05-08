@@ -54,7 +54,7 @@ pipeline:
     image: robertstettner/drone-npm-auth
     secrets: [npm_username, npm_password, npm_email]
     commands:
-      - ./node_modules/.bin/lerna publish --npm-tag=${DRONE_TAG##v} --skip-git
+      - ./node_modules/.bin/lerna publish --repo-version=${DRONE_TAG##v} --skip-git
     when:
       status: success
       event: tag
