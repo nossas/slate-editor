@@ -1,11 +1,26 @@
 pipeline:
   build:
-    image: node:alpine
+    image: node:latest
     commands:
       - yarn
       - ./node_modules/.bin/lerna bootstrap
     when:
       event: [push, tag]
+
+  npm-auth:
+    image: robertstettner/drone-npm-auth
+    secrets: [npm_username, npm_password, npm_email]
+    when:
+      status: success
+      event: tag
+
+  npm-publish:
+    image: node:latest
+    commands:
+      - ./node_modules/.bin/lerna publish --repo-version=${DRONE_TAG##v} --skip-git --yes
+    when:
+      status: success
+      event: tag
 
   staging-docker-publish:
     image: plugins/docker
@@ -46,21 +61,6 @@ pipeline:
     timeout: 360
     confirm: true
     secrets: [rancher_access_key, rancher_secret_key]
-    when:
-      status: success
-      event: tag
-
-  npm-auth:
-    image: robertstettner/drone-npm-auth
-    secrets: [npm_username, npm_password, npm_email]
-    when:
-      status: success
-      event: tag
-
-  npm-publish:
-    image: node:alpine
-    commands:
-      - ./node_modules/.bin/lerna publish --repo-version=${DRONE_TAG##v} --skip-git --yes
     when:
       status: success
       event: tag
