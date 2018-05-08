@@ -2,13 +2,13 @@
   "private": true,
   "scripts": {
     "start": "yarn install && node -r dotenv/config ./node_modules/.bin/lerna run start --scope slate-editor-example --parallel",
-    "boot": "lerna bootstrap",
-    "test": "lerna run test",
+    "boot": "./node_modules/.bin/lerna bootstrap",
+    "test": "./node_modules/.bin/lerna run test",
     "prepublish": "rimraf packages/**/dist",
-    "prepare": "lerna run prepare",
-    "prerelease": "lerna run prerelease",
-    "release:alpha": "lerna publish --canary=alpha",
-    "release": "lerna publish --conventional-commits"
+    "prepare": "./node_modules/.bin/lerna run prepare",
+    "prerelease": "./node_modules/.bin/lerna run prerelease",
+    "release:alpha": "./node_modules/.bin/lerna publish --canary=alpha",
+    "release": "./node_modules/.bin/lerna publish --conventional-commits"
   },
   "workspaces": [
     "packages/*"
