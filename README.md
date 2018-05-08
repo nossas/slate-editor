@@ -88,7 +88,7 @@ git clone git@github.com:nossas/slate-editor.git
 ```
 - Start the example
 ```
-yarn start
+yarn dev
 ```
 
 And it's done! Easy, isn't?!
