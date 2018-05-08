@@ -11,8 +11,6 @@ pipeline:
     image: plugins/docker
     repo: nossas/slate-editor
     secrets: [docker_username, docker_password]
-    dockerfile: packages/slate-editor-example/Dockerfile
-    context: packages/slate-editor-example
     tags:
       - ${DRONE_BRANCH/\//-}
     when:
@@ -35,8 +33,6 @@ pipeline:
     image: plugins/docker
     repo: nossas/slate-editor
     secrets: [docker_username, docker_password]
-    dockerfile: packages/slate-editor-example/Dockerfile
-    context: packages/slate-editor-example
     tags: "${DRONE_TAG}"
     when:
       status: success
