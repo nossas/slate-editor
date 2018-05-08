@@ -1,6 +1,6 @@
 pipeline:
   build:
-    image: node:latest
+    image: node:9
     commands:
       - yarn
       - ./node_modules/.bin/lerna bootstrap
@@ -58,7 +58,7 @@ pipeline:
       event: tag
 
   npm-publish:
-    image: node:latest
+    image: node:9
     commands:
       - yarn release
     when:
