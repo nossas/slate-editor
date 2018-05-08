@@ -7,10 +7,8 @@
     "test": "./node_modules/.bin/lerna run test",
     "prepublish": "rimraf packages/**/dist",
     "prepare": "./node_modules/.bin/lerna run prepare",
-    "prerelease": "./node_modules/.bin/lerna run prerelease",
     "release:alpha": "./node_modules/.bin/lerna publish --canary=alpha",
-    "v": "./node_modules/.bin/lerna publish --conventional-commits --skip-npm",
-    "release": "./node_modules/.bin/lerna publish --conventional-commits --skip-git"
+    "version-bump": "./node_modules/.bin/lerna publish --conventional-commits --skip-npm"
   },
   "workspaces": [
     "packages/*"
