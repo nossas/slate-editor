@@ -9,7 +9,8 @@
     "prepare": "./node_modules/.bin/lerna run prepare",
     "prerelease": "./node_modules/.bin/lerna run prerelease",
     "release:alpha": "./node_modules/.bin/lerna publish --canary=alpha",
-    "release": "./node_modules/.bin/lerna publish --conventional-commits"
+    "v": "./node_modules/.bin/lerna publish --conventional-commits --skip-npm",
+    "release": "./node_modules/.bin/lerna publish --conventional-commits --skip-git"
   },
   "workspaces": [
     "packages/*"

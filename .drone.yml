@@ -60,7 +60,7 @@ pipeline:
   npm-publish:
     image: node:latest
     commands:
-      - yarn release
+      - yarn release --yes
     when:
       status: success
       event: tag
