@@ -15,8 +15,8 @@
     "access": "restricted"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "test": "react-scripts test"
+    "start": "./node_modules/.bin/react-scripts start",
+    "test": "./node_modules/.bin/react-scripts test"
   },
   "dependencies": {
     "@slate-editor/alignment-plugin": "^5.0.0-alpha.f7181996",
