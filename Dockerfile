@@ -1,9 +1,8 @@
 FROM node:latest
 MAINTAINER Nossas <tech@nossas.org>
 
-WORKDIR /usr/src/app
-
+RUN mkdir /code
+WORKDIR /code
 COPY . .
-RUN yarn
 
 CMD ["yarn", "start"]

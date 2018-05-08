@@ -1,0 +1,41 @@
+{
+  "name": "@slate-editor/toggle-readonly",
+  "version": "5.0.0-alpha.f7181996",
+  "description": "SlateJS Toggle read-only.",
+  "main": "dist/index.js",
+  "repository": "https://github.com/nossas/slate-editor",
+  "author": "Nossas <tech@nossas.org> (http://github.com/nossas)",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "README.md",
+    "CHANGELOG.md",
+    "dist"
+  ],
+  "keywords": [
+    "slate",
+    "rich-text",
+    "editor",
+    "react",
+    "slate-plugins"
+  ],
+  "bugs": {
+    "url": "https://github.com/nossas/slate-editor/issues"
+  },
+  "scripts": {
+    "prepare": "babel src --out-dir dist --copy-files"
+  },
+  "dependencies": {
+    "@slate-editor/components": "^5.0.0-alpha.f7181996",
+    "react": "^16.2.0",
+    "react-fontawesome": "^1.6.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0"
+  }
+}

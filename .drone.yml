@@ -3,6 +3,7 @@ pipeline:
     image: node:latest
     commands:
       - yarn
+      - ./node_modules/.bin/lerna bootstrap
     when:
       event: [push, tag]
 
@@ -11,22 +12,22 @@ pipeline:
     repo: nossas/slate-editor
     secrets: [docker_username, docker_password]
     tags:
-      - ${DRONE_BRANCH}
+      - ${DRONE_BRANCH/\//-}
     when:
       status: success
-      branch: [hotfix-*, release-*, feature-*, develop]
+      branch: [feature/*, release/*, hotfix/*, support/*, develop]
 
   staging-rancher-deploy:
     image: peloton/drone-rancher
     url: http://cluster.bonde.org
     service: staging/slate-editor
-    docker_image: nossas/slate-editor:${DRONE_BRANCH}
+    docker_image: nossas/slate-editor:${DRONE_BRANCH/\//-}
     timeout: 360
     confirm: true
     secrets: [rancher_access_key, rancher_secret_key]
     when:
       status: success
-      branch: [hotfix-*, release-*, feature-*, develop]
+      branch: [feature/*, release/*, hotfix/*, support/*, develop]
 
   production-docker-publish:
     image: plugins/docker
@@ -59,7 +60,7 @@ pipeline:
   npm-publish:
     image: node:latest
     commands:
-      - npm publish
+      - yarn release
     when:
       status: success
       event: tag

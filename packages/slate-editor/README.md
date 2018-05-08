@@ -29,9 +29,9 @@ yarn add slate-editor
 ```
 
 ## Usage
-You can use which plugin you want. No need to use [all plugins available](./packages).
+You can use which plugin you want. No need to use [all plugins available](../).
 
-In the example below we only add the **[bold](./packages/slate-editor-bold-plugin)** plugin with its button in the toolbar.
+In the example below we only add the **[bold](../slate-editor-bold-plugin)** plugin with its button in the toolbar.
 
 **Basic example**
 ```jsx
@@ -56,28 +56,28 @@ export default SlateRichTextEditor
 
 **Advanced example**
 
-- Take a look at the [full working example](./packages/slate-editor-example/src/example/pages/Home.js).
+- Take a look at the [full working example](../slate-editor-example/src/example/pages/Home.js).
 
 ## Plugins
 The slate-editor plugins can be installed individually. Check the list below:
 
-| **Docs**                                                      | **Package**                          |
-|:--------------------------------------------------------------|:-------------------------------------|
-| [Alignment](./packages/slate-editor-alignment-plugin)         | `@slate-editor/alignment-plugin`     |
-| [Bold](./packages/slate-editor-bold-plugin)                   | `@slate-editor/bold-plugin`          |
-| [Color](./packages/slate-editor-color-plugin)                 | `@slate-editor/color-plugin`         |
-| [Embed](./packages/slate-editor-embed-plugin)                 | `@slate-editor/embed-plugin`         |
-| [FontFamily](./packages/slate-editor-font-family-plugin)      | `@slate-editor/font-family-plugin`   |
-| [FontSize](./packages/slate-editor-font-size-plugin)          | `@slate-editor/font-size-plugin`     |
-| [Grid](./packages/slate-editor-grid-plugin)                   | `@slate-editor/grid-plugin`          |
-| [Image](./packages/slate-editor-image-plugin)                 | `@slate-editor/image-plugin`         |
-| [Italic](./packages/slate-editor-italic-plugin)               | `@slate-editor/italic-plugin`        |
-| [Link](./packages/slate-editor-link-plugin)                   | `@slate-editor/link-plugin`          |
-| [List](./packages/slate-editor-list-plugin)                   | `@slate-editor/list-plugin`          |
-| [StateLogger](./packages/slate-editor-state-logger)           | `@slate-editor/state-logger`         |
-| [Strikethrough](./packages/slate-editor-strikethrough-plugin) | `@slate-editor/strikethrough-plugin` |
-| [ToggleReadonly](./packages/slate-editor-toggle-readonly)     | `@slate-editor/toggle-readonly`      |
-| [Underline](./packages/slate-editor-underline-plugin)         | `@slate-editor/underline-plugin`     |
+| **Docs**                                              | **Package**                          |
+|:------------------------------------------------------|:-------------------------------------|
+| [Alignment](../slate-editor-alignment-plugin)         | `@slate-editor/alignment-plugin`     |
+| [Bold](../slate-editor-bold-plugin)                   | `@slate-editor/bold-plugin`          |
+| [Color](../slate-editor-color-plugin)                 | `@slate-editor/color-plugin`         |
+| [Embed](../slate-editor-embed-plugin)                 | `@slate-editor/embed-plugin`         |
+| [FontFamily](../slate-editor-font-family-plugin)      | `@slate-editor/font-family-plugin`   |
+| [FontSize](../slate-editor-font-size-plugin)          | `@slate-editor/font-size-plugin`     |
+| [Grid](../slate-editor-grid-plugin)                   | `@slate-editor/grid-plugin`          |
+| [Image](../slate-editor-image-plugin)                 | `@slate-editor/image-plugin`         |
+| [Italic](../slate-editor-italic-plugin)               | `@slate-editor/italic-plugin`        |
+| [Link](../slate-editor-link-plugin)                   | `@slate-editor/link-plugin`          |
+| [List](../slate-editor-list-plugin)                   | `@slate-editor/list-plugin`          |
+| [StateLogger](../slate-editor-state-logger)           | `@slate-editor/state-logger`         |
+| [Strikethrough](../slate-editor-strikethrough-plugin) | `@slate-editor/strikethrough-plugin` |
+| [ToggleReadonly](../slate-editor-toggle-readonly)     | `@slate-editor/toggle-readonly`      |
+| [Underline](../slate-editor-underline-plugin)         | `@slate-editor/underline-plugin`     |
 
 ## Contributing
 To help us develop new features or fix bugs, to setup your development environment is too simple. Just follow the steps:
