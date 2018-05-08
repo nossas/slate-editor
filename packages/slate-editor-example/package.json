@@ -1,0 +1,57 @@
+{
+  "name": "slate-editor-example",
+  "version": "5.0.0-alpha.f7181996",
+  "description": "A complete rich text editor based on SlateJS framework",
+  "private": true,
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nossas/slate-editor.git"
+  },
+  "homepage": "https://github.com/nossas/slate-editor",
+  "author": "Nossas <tech@nossas.org> (http://github.com/nossas)",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "scripts": {
+    "start": "./node_modules/.bin/react-scripts start",
+    "test": "./node_modules/.bin/react-scripts test"
+  },
+  "dependencies": {
+    "@slate-editor/alignment-plugin": "^5.0.0-alpha.f7181996",
+    "@slate-editor/bold-plugin": "^5.0.0-alpha.f7181996",
+    "@slate-editor/color-plugin": "^5.0.0-alpha.f7181996",
+    "@slate-editor/embed-plugin": "^5.0.0-alpha.f7181996",
+    "@slate-editor/font-family-plugin": "^5.0.0-alpha.f7181996",
+    "@slate-editor/font-size-plugin": "^5.0.0-alpha.f7181996",
+    "@slate-editor/grid-plugin": "^5.0.0-alpha.f7181996",
+    "@slate-editor/image-plugin": "^5.0.0-alpha.f7181996",
+    "@slate-editor/italic-plugin": "^5.0.0-alpha.f7181996",
+    "@slate-editor/link-plugin": "^5.0.0-alpha.f7181996",
+    "@slate-editor/list-plugin": "^5.0.0-alpha.f7181996",
+    "@slate-editor/state-logger": "^5.0.0-alpha.f7181996",
+    "@slate-editor/strikethrough-plugin": "^5.0.0-alpha.f7181996",
+    "@slate-editor/toggle-readonly": "^5.0.0-alpha.f7181996",
+    "@slate-editor/underline-plugin": "^5.0.0-alpha.f7181996",
+    "history": "^4.7.2",
+    "react-dom": "^16.2.0",
+    "react-router": "^4.2.0",
+    "react-scripts": "^1.1.4",
+    "slate-editor": "^5.0.0-alpha.f7181996"
+  },
+  "files": [
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "keywords": [
+    "slate",
+    "rich-text",
+    "editor",
+    "react",
+    "slate-plugins"
+  ],
+  "bugs": {
+    "url": "https://github.com/nossas/slate-editor/issues"
+  }
+}
