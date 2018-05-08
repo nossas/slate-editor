@@ -3,6 +3,7 @@ pipeline:
     image: node:latest
     commands:
       - yarn
+      - ./node_modules/.bin/lerna bootstrap
     when:
       event: [push, tag]
 
@@ -14,7 +15,7 @@ pipeline:
       - ${DRONE_BRANCH}
     when:
       status: success
-      branch: [hotfix-*, release-*, feature-*, develop]
+      branch: [feature/*, release/*, hotfix/*, support/*, develop]
 
   staging-rancher-deploy:
     image: peloton/drone-rancher
@@ -26,7 +27,7 @@ pipeline:
     secrets: [rancher_access_key, rancher_secret_key]
     when:
       status: success
-      branch: [hotfix-*, release-*, feature-*, develop]
+      branch: [feature/*, release/*, hotfix/*, support/*, develop]
 
   production-docker-publish:
     image: plugins/docker
@@ -59,7 +60,7 @@ pipeline:
   npm-publish:
     image: node:latest
     commands:
-      - npm publish
+      - yarn release
     when:
       status: success
       event: tag
