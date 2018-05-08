@@ -1,6 +1,6 @@
 pipeline:
   build:
-    image: node-alpine:latest
+    image: node:alpine
     commands:
       - yarn
       - ./node_modules/.bin/lerna bootstrap
@@ -58,7 +58,7 @@ pipeline:
       event: tag
 
   npm-publish:
-    image: node-alpine:latest
+    image: node:alpine
     commands:
       - ./node_modules/.bin/lerna publish --repo-version=${DRONE_TAG##v} --skip-git --yes
     when:
