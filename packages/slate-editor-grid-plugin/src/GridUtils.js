@@ -3,7 +3,7 @@ export const hasGrid = value => value.blocks.some(
 )
 
 export const appendGrid = change => change
-  .setBlock('grid-cell')
+  .setBlocks('grid-cell')
   .wrapBlock('grid')
   .wrapBlock('grid-row')
   .focus()
