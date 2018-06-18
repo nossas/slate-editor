@@ -20,6 +20,7 @@ class SlateEditor extends Component {
   // Migrate Slate's Value object
   // From v0.25.3
   // To   v0.31.3
+  // To   v0.32.0 (rename kind to object)
   //
   migrateStateVersion (value) {
     let updatedValue = value
@@ -31,6 +32,14 @@ class SlateEditor extends Component {
           .replace(/"ranges":\[/g, '"leaves":[')
           .replace(/"kind":"range"/g, '"kind":"leaf"')
       )
+    }
+
+    if (updatedValue.kind && !updatedValue.object) {
+      updatedValue = JSON.parse(
+        JSON.stringify(updatedValue)
+          .replace(/"kind":/g, '"object":')
+      )
+
     }
 
     return Value.fromJSON(updatedValue)

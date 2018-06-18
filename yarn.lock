@@ -2278,7 +2278,7 @@ dateformat@^3.0.0:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/dateformat/-/dateformat-3.0.3.tgz#a6e37499a4d9a9cf85ef5872044d62901c9889ae"
 
-debug@2.6.9, debug@^2.1.2, debug@^2.2.0, debug@^2.3.2, debug@^2.3.3, debug@^2.6.0, debug@^2.6.6, debug@^2.6.8, debug@^2.6.9:
+debug@2.6.9, debug@^2.1.2, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.6, debug@^2.6.8, debug@^2.6.9:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   dependencies:
@@ -5019,7 +5019,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-"lodash@>=3.5 <5", lodash@^4.0.0, lodash@^4.0.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.1, lodash@^4.3.0:
+"lodash@>=3.5 <5", lodash@^4.0.0, lodash@^4.0.1, lodash@^4.1.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.1, lodash@^4.3.0:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
 
@@ -7162,58 +7162,77 @@ slash@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"
 
-slate-base64-serializer@^0.2.13:
-  version "0.2.30"
-  resolved "https://registry.yarnpkg.com/slate-base64-serializer/-/slate-base64-serializer-0.2.30.tgz#d333b500bda0907e5f5d0f6325fbafb28d6eff55"
+slate-base64-serializer@^0.2.34:
+  version "0.2.34"
+  resolved "https://registry.yarnpkg.com/slate-base64-serializer/-/slate-base64-serializer-0.2.34.tgz#8a310672bf2f1b00dd469bc5e5247c20bb1ecd40"
   dependencies:
     isomorphic-base64 "^1.0.2"
 
-slate-dev-logger@^0.1.36, slate-dev-logger@^0.1.39:
+slate-dev-environment@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/slate-dev-environment/-/slate-dev-environment-0.1.2.tgz#743a8bd7f427dc272425b0439a29e83ca5521688"
+  dependencies:
+    is-in-browser "^1.1.3"
+
+slate-dev-logger@^0.1.39:
   version "0.1.39"
   resolved "https://registry.yarnpkg.com/slate-dev-logger/-/slate-dev-logger-0.1.39.tgz#744a69b85034244713e6de51483af5713c345af4"
 
-slate-plain-serializer@^0.4.11:
-  version "0.4.16"
-  resolved "https://registry.yarnpkg.com/slate-plain-serializer/-/slate-plain-serializer-0.4.16.tgz#eff277b58943e130905114c7da431ab307cb4c1e"
+slate-hotkeys@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/slate-hotkeys/-/slate-hotkeys-0.1.2.tgz#2e35a08a42eaaa113b64d438d537e77a582c8d4a"
   dependencies:
-    slate-dev-logger "^0.1.36"
+    is-hotkey "^0.1.1"
+    slate-dev-environment "^0.1.2"
 
-slate-prop-types@^0.4.11:
-  version "0.4.28"
-  resolved "https://registry.yarnpkg.com/slate-prop-types/-/slate-prop-types-0.4.28.tgz#0261330537351315919f1d1c216e8de0af7b3a09"
+slate-plain-serializer@^0.5.15:
+  version "0.5.15"
+  resolved "https://registry.yarnpkg.com/slate-plain-serializer/-/slate-plain-serializer-0.5.15.tgz#a1a306ae2f395ae90bf0f618799d886a4f0ce499"
   dependencies:
     slate-dev-logger "^0.1.39"
 
-slate-react@0.10.17:
-  version "0.10.17"
-  resolved "https://registry.yarnpkg.com/slate-react/-/slate-react-0.10.17.tgz#450a43a43c245212e0104aa2feb038b98b99de5f"
+slate-prop-types@^0.4.32:
+  version "0.4.32"
+  resolved "https://registry.yarnpkg.com/slate-prop-types/-/slate-prop-types-0.4.32.tgz#3d39a6db4b61a416ea54af6512f5ffa5542095d2"
   dependencies:
-    debug "^2.3.2"
+    slate-dev-logger "^0.1.39"
+
+slate-react@0.12.9:
+  version "0.12.9"
+  resolved "https://registry.yarnpkg.com/slate-react/-/slate-react-0.12.9.tgz#6cb6f1fa86c868f56b5dce064146520545884351"
+  dependencies:
+    debug "^3.1.0"
     get-window "^1.1.1"
-    is-hotkey "^0.1.1"
-    is-in-browser "^1.1.3"
     is-window "^1.0.2"
     keycode "^2.1.2"
+    lodash "^4.1.1"
     prop-types "^15.5.8"
     react-immutable-proptypes "^2.1.0"
     react-portal "^3.1.0"
     selection-is-backward "^1.0.0"
-    slate-base64-serializer "^0.2.13"
-    slate-dev-logger "^0.1.36"
-    slate-plain-serializer "^0.4.11"
-    slate-prop-types "^0.4.11"
+    slate-base64-serializer "^0.2.34"
+    slate-dev-environment "^0.1.2"
+    slate-dev-logger "^0.1.39"
+    slate-hotkeys "^0.1.2"
+    slate-plain-serializer "^0.5.15"
+    slate-prop-types "^0.4.32"
 
-slate@0.31.3:
-  version "0.31.3"
-  resolved "https://registry.yarnpkg.com/slate/-/slate-0.31.3.tgz#21f95a1484a5a13937e33fd5a1aca1b34edf44f8"
+slate-schema-violations@^0.1.13:
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/slate-schema-violations/-/slate-schema-violations-0.1.13.tgz#0b6133ff8e1c0237714249ef6d6adf7b97908985"
+
+slate@0.34.0:
+  version "0.34.0"
+  resolved "https://registry.yarnpkg.com/slate/-/slate-0.34.0.tgz#967d24460f2caf32e409251d042e25f789420d6b"
   dependencies:
-    debug "^2.3.2"
+    debug "^3.1.0"
     direction "^0.1.5"
     esrever "^0.2.0"
     is-empty "^1.0.0"
     is-plain-object "^2.0.4"
     lodash "^4.17.4"
-    slate-dev-logger "^0.1.36"
+    slate-dev-logger "^0.1.39"
+    slate-schema-violations "^0.1.13"
     type-of "^2.0.1"
 
 slice-ansi@1.0.0:
