@@ -18,7 +18,7 @@ export const updateLinkStrategy = ({ change, data: { title, href, text, target }
 
   change
     .insertText(text)
-    .setInline({
+    .setInlines({
       type: 'link',
       data: { title, href, text, target }
     })
