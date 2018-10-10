@@ -20,10 +20,8 @@ class SlateEditor extends Component {
   // Migrate Slate's Value object
   // From v0.25.3
   // To   v0.31.3
-  //
   migrateStateVersion (value) {
     let updatedValue = value
-
     if (value.kind !== 'value') {
       updatedValue = JSON.parse(
         JSON.stringify(value)
@@ -32,7 +30,12 @@ class SlateEditor extends Component {
           .replace(/"kind":"range"/g, '"kind":"leaf"')
       )
     }
-
+    // Upgrade to v0.32.0
+    // https://github.com/ianstormtaylor/slate/blob/master/packages/slate/Changelog.md#0320--january-4-2018
+    updatedValue = JSON.parse(
+      JSON.stringify(updatedValue)
+        .replace(/"kind":/g, '"object":')
+    )
     return Value.fromJSON(updatedValue)
   }
 

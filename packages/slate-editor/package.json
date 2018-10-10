@@ -43,7 +43,7 @@
     "immutable": "^3.8.2",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
-    "slate": "0.31.3",
+    "slate": "0.32.0",
     "slate-react": "0.10.17"
   },
   "peerDependencies": {
