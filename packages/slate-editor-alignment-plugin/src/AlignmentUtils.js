@@ -3,7 +3,7 @@ export const getMark = value => value.blocks.filter(node => node.type === 'align
 export const getType = value => value.blocks.first().type
 
 export const alignmentMarkStrategy = (change, align) => change
-  .setBlock({
+  .setBlocks({
     type: 'alignment',
     data: { align, currentBlockType: getType(change.value) }
   })

@@ -11,7 +11,7 @@ export const getUnorderedListNode = value => getNodeOfType(value, 'unordered-lis
 export const getOrderedListNode = value => getNodeOfType(value, 'ordered-list')
 
 export const removeUnorderedList = change => change
-  .setBlock('paragraph')
+  .setBlocks('paragraph')
   .unwrapBlock('unordered-list')
   .focus()
 
@@ -21,7 +21,7 @@ export const switchToOrderedList = change => change
   .focus()
 
 export const removeOrderedList = change => change
-  .setBlock('paragraph')
+  .setBlocks('paragraph')
   .unwrapBlock('ordered-list')
   .focus()
 
@@ -31,7 +31,7 @@ export const switchToUnorderedList = change => change
   .focus()
 
 export const applyList = (change, type) => change
-  .setBlock('list-item')
+  .setBlocks('list-item')
   .wrapBlock(type)
   .focus()
 
