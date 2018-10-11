@@ -5,13 +5,13 @@ import classnames from 'classnames'
 if (require('exenv').canUseDOM) require('./EmbedNode.css')
 
 
-const EmbedNode = ({ attributes, editor, children, node, isSelected }) => {
+const EmbedNode = ({ attributes, editor, children, node, isFocused }) => {
   return (
     <span
       {...attributes}
       className={classnames(
         'slate-embed-plugin--node',
-        { active: isSelected },
+        { active: isFocused },
       )}
       dangerouslySetInnerHTML={{ __html: node.data.get('embed') }}
     />

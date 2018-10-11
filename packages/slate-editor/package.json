@@ -43,12 +43,12 @@
     "immutable": "^3.8.2",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
-    "slate": "0.34.0",
-    "slate-react": "0.12.9"
+    "slate": "0.35.0",
+    "slate-react": "0.14.0"
   },
   "peerDependencies": {
-    "slate": "0.34.0",
-    "slate-react": "0.10.17"
+    "slate": "0.35.0",
+    "slate-react": "0.14.0"
   },
   "files": [
     "LICENSE",
