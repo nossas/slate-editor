@@ -10,10 +10,12 @@ export const unlink = change => change
 
 export const updateLinkStrategy = ({ change, data: { title, href, text, target } }) => {
   const { value } = change
+  const { selection } = value
 
-  if (value.isCollapsed) {
+  if (selection.isCollapsed) {
     change
-      .moveOffsetsTo(0, value.anchorText.characters.size)
+      .moveAnchorTo(0)
+      .moveFocusTo(text && text.length)
   }
 
   change
