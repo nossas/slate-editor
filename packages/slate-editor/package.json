@@ -43,11 +43,11 @@
     "immutable": "^3.8.2",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
-    "slate": "0.35.0",
+    "slate": "0.36.0",
     "slate-react": "0.14.0"
   },
   "peerDependencies": {
-    "slate": "0.35.0",
+    "slate": "0.36.0",
     "slate-react": "0.14.0"
   },
   "files": [
