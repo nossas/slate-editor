@@ -23,16 +23,17 @@ export const applyMark = ({ change, fontFamilyIndex }) => change
  */
 export const fontFamilyMarkStrategy = attributes => {
   const { value, fontFamilyIndex } = attributes
+  const { selection } = value
 
   if (hasMark(value)) {
-    if (value.isExpanded) {
+    if (selection.isExpanded) {
       return reapplyMark({change: value.change(), fontFamilyIndex})
     }
     else console.info('[SlateJS][FontFamilyPlugin] selection collapsed, w/ mark exists')
   }
 
   else {
-    if (value.isExpanded) {
+    if (selection.isExpanded) {
       return applyMark({change: value.change(), fontFamilyIndex})
     }
     else console.info('[SlateJS][FontFamilyPlugin] selection collapsed, w/o mark')

@@ -13,13 +13,13 @@ export const updateInlineImage = ({
 }) => {
   return href
     ? change
-      .setInline({
+      .setInlines({
         type: 'imageLink',
         isVoid: true,
         data: { src, title, href, openExternal }
       })
     : change
-      .setInline({
+      .setInlines({
         type: 'image',
         isVoid: true,
         data: { src, title, openExternal }

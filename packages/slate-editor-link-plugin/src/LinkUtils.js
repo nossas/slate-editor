@@ -20,7 +20,7 @@ export const updateLinkStrategy = ({ change, data: { title, href, text, target }
 
   change
     .insertText(text)
-    .setInline({
+    .setInlines({
       type: 'link',
       data: { title, href, text, target }
     })
@@ -30,12 +30,13 @@ export const updateLinkStrategy = ({ change, data: { title, href, text, target }
 
 export const insertLinkStrategy = change => {
   const { value } = change
+  const { selection } = value
 
   if (hasLinks(value)) {
     change.unwrapInline('link')
   }
 
-  else if (value.isExpanded && !hasMultiBlocks(value)) {
+  else if (selection.isExpanded && !hasMultiBlocks(value)) {
     change
       .wrapInline(createLink({ target: '_blank', openModal: true }))
   }
@@ -44,7 +45,7 @@ export const insertLinkStrategy = change => {
     console.info('[SlateJS][LinkPlugin] has multiple blocks on selection')
   }
 
-  else if (value.isCollapsed && !hasLinks(value)) {
+  else if (selection.isCollapsed && !hasLinks(value)) {
     console.info('[SlateJS][LinkPlugin] selection collapsed, w/o links on selection')
   }
 
