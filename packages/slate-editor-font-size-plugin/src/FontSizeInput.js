@@ -1,7 +1,7 @@
 import React from 'react'
 import classnames from 'classnames'
 
-import { fontSizeStrategy } from './FontSizeUtils'
+import { fontSizeStrategy, hasMark, getMark } from './FontSizeUtils'
 // FIXME: Needs to handle assets files to work with SSR
 if (require('exenv').canUseDOM) require('./FontSizeInput.css')
 
@@ -19,10 +19,12 @@ const FontSizeInput = ({
   className,
   style,
   changeState,
-  initialFontSize,
-  outerState: { fontSize: fontSizeState },
+  initialFontSize
 }) => {
-  if (!fontSizeState) changeState({ value, fontSize: initialFontSize })
+  let fontSizeDefault = initialFontSize
+  if (hasMark(value)) {
+    fontSizeDefault = getMark(value).data.get('fontSize')
+  }
 
   return (
     <input
@@ -40,7 +42,7 @@ const FontSizeInput = ({
       className={classnames('slate-font-size-plugin-input', className)}
       style={style}
       type="number"
-      value={fontSizeState || initialFontSize}
+      value={fontSizeDefault}
       min="1"
     />
   )

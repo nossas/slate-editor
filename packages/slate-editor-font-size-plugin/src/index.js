@@ -11,9 +11,6 @@ import FontSizeInput from './FontSizeInput'
 // Validation
 import ValidatePluginOptions from './ValidatePluginOptions'
 
-// Selection
-import SelectionUpdateInputValue from './SelectionUpdateInputValue'
-
 const FontSizePlugin = options => {
 
   ValidatePluginOptions(options)
@@ -21,11 +18,7 @@ const FontSizePlugin = options => {
   return {
     onKeyDown(...args) {
       return FontSizeKeyboardShortcut(...args, options)
-    },
-
-    onSelect(...args) {
-      SelectionUpdateInputValue(...args, options)
-    },
+    }
   }
 }
 
