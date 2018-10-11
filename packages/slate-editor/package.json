@@ -44,7 +44,7 @@
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "slate": "0.34.0",
-    "slate-react": "0.10.17"
+    "slate-react": "0.12.9"
   },
   "peerDependencies": {
     "slate": "0.34.0",
