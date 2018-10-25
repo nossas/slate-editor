@@ -1,6 +1,6 @@
 {
   "name": "@slate-editor/font-size-plugin",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "description": "SlateJS font size mark plugin.",
   "main": "dist/index.js",
   "repository": "https://github.com/nossas/slate-editor",
