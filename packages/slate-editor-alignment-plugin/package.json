@@ -1,6 +1,6 @@
 {
   "name": "@slate-editor/alignment-plugin",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "description": "SlateJS alignment node plugin.",
   "main": "dist/index.js",
   "repository": "https://github.com/nossas/slate-editor",
