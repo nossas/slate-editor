@@ -16,8 +16,10 @@ export const createMark = fontSize => ({
  */
 export const fontSizeStrategy = ({ change, fontSize, changeState }) => {
   const { value } = change
+  const { selection } = value
+
   if (hasMark(value)) {
-    if (value.isExpanded) {
+    if (selection.isExpanded) {
       // Change outerState to update the input font size number.
       changeState({ fontSize })
       return change
@@ -26,7 +28,7 @@ export const fontSizeStrategy = ({ change, fontSize, changeState }) => {
     }
     else console.info('[SlateJS][FontSizePlugin] selection collapsed, w/ inline.')
   } else {
-    if (value.isExpanded) {
+    if (selection.isExpanded) {
       // Change outerState to update the input font size number.
       changeState({ fontSize })
       return change

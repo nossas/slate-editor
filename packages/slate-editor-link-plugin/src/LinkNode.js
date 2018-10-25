@@ -51,9 +51,9 @@ class LinkNode extends Component {
         props: { value }
       }
     } = this.props
-
+    const { selection } = value
     const focusedOnCurrentNode = getLink(value) && node.key === getLink(value).key
-    const showTooltip = !readOnly && value.isCollapsed && focusedOnCurrentNode
+    const showTooltip = !readOnly && selection.isCollapsed && focusedOnCurrentNode
 
     return (
       <span>

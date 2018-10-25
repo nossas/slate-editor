@@ -33,16 +33,17 @@ export const applyMark = ({ change, rgba }) => change
  */
 export const colorMarkStrategy = attributes => {
   const { value, rgba } = attributes
+  const { selection } = value
 
   if (hasMark(value)) {
-    if (value.isExpanded) {
+    if (selection.isExpanded) {
       return reapplyMark({change: value.change(), rgba})
     }
     else console.info('[SlateJS][ColorPlugin] selection collapsed, w/ mark exists')
   }
 
   else {
-    if (value.isExpanded) {
+    if (selection.isExpanded) {
       return applyMark({change: value.change(), rgba})
     }
     else console.info('[SlateJS][ColorPlugin] selection collapsed, w/o mark')
