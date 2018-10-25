@@ -7,5 +7,4 @@ export const appendEmbed = (change, embed) => {
       isVoid: true,
       data: { embed }
     })
-    .focus()
 }
