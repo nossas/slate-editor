@@ -1,6 +1,6 @@
 {
   "name": "@slate-editor/image-plugin",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "description": "SlateJS image node plugin.",
   "main": "dist/index.js",
   "repository": "https://github.com/nossas/slate-editor",
@@ -25,7 +25,8 @@
     "url": "https://github.com/nossas/slate-editor/issues"
   },
   "scripts": {
-    "prepare": "babel src --out-dir dist --copy-files"
+    "prepare": "babel src --out-dir dist --copy-files",
+    "start": "yarn prepare --watch"
   },
   "dependencies": {
     "@slate-editor/components": "^5.0.0",
