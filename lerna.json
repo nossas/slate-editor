@@ -10,7 +10,8 @@
     "publish": {
       "allowBranch": [
         "master",
-        "feature/*"
+        "feature/*",
+        "release/*"
       ]
     }
   }
