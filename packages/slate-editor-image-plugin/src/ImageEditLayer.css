@@ -30,6 +30,15 @@
   z-index: 11;
   line-height: 1;
 }
+.image-node--container .image-node--image-edit-layer .image-node--image-edit-text {
+  color: #000;
+  font-size: 14px;
+  padding: 7px 10px;
+  text-align: center;
+  position: relative;
+  line-height: 1;
+  font-weight: 600;
+}
 
 .image-node--container:not(.readonly):hover .image-node--image-edit-layer,
 .image-node--container:not(.readonly):hover .image-node--image-edit-button {
