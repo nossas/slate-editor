@@ -13,3 +13,7 @@
   max-width: 100%;
   position: relative;
 }
+
+.image-node.selected {
+  border: 3px dotted blue;
+}

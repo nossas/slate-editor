@@ -1,6 +1,6 @@
 {
   "name": "slate-editor-example",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "description": "A complete rich text editor based on SlateJS framework",
   "private": true,
   "main": "lib/index.js",
@@ -26,7 +26,7 @@
     "@slate-editor/font-family-plugin": "^5.1.0",
     "@slate-editor/font-size-plugin": "^5.1.0",
     "@slate-editor/grid-plugin": "^5.1.0",
-    "@slate-editor/image-plugin": "^5.1.0",
+    "@slate-editor/image-plugin": "^5.1.1",
     "@slate-editor/italic-plugin": "^5.0.0",
     "@slate-editor/link-plugin": "^5.1.0",
     "@slate-editor/list-plugin": "^5.1.0",
@@ -38,7 +38,7 @@
     "react-dom": "^16.2.0",
     "react-router": "^4.2.0",
     "react-scripts": "^1.1.4",
-    "slate-editor": "^5.1.0"
+    "slate-editor": "^5.1.1"
   },
   "files": [
     "README.md",
