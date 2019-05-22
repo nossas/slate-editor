@@ -38,10 +38,18 @@ class ImageLinkNode extends Component {
         )}
 
         <div className={classnames('image-node--container', { readonly: readOnly })}>
-          <ImageEditLayer
-            changeModalState={this.modal.bind(this)}
-            text="Editar"
-          />
+          {this.props.children}
+          {this.props.isSelected && (
+            <ImageEditLayer
+              changeModalState={this.modal.bind(this)}
+              text="Editar"
+            />
+          )}
+          {!readOnly && !this.props.isSelected && (
+            <ImageEditLayer
+              text="Selecione a imagem para editar"
+            />
+          )}
           <a
             href={node.data.get('href')}
             target={node.data.get('openExternal') ? '_blank' : '_self'}
