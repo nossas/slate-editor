@@ -37,7 +37,7 @@
     "history": "^4.7.2",
     "react-dom": "^16.2.0",
     "react-router": "^4.2.0",
-    "react-scripts": "^1.1.4",
+    "react-scripts": "^3.0.0",
     "slate-editor": "^5.1.0"
   },
   "files": [
